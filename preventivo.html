@@ -1,0 +1,672 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Preventivo indicativo in un minuto: scegliete il settore, caricate l&#x27;STL o inserite le misure, la conferma in 24 ore lavorative.">
+<meta name="theme-color" content="#0B0B0C">
+<title>Preventivo · Due Pi Greco</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/stile-r07.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="assets/comune.js"></script>
+</head><body class="r07 p-preventivo ">
+<!-- DPG-WEB · DPG-WEB · Preventivo · Rev. 07. FILE GENERATO da _lavoro/r07/build_r07.py: si modifica _lavoro/r07/pagine/preventivo.src.html.
+     Testi dal dizionario I18N in fondo (it, de, en; il de e' una bozza). Dati: solo quelli di 00_CONTENUTI_REV06.md. -->
+<a class="salta" href="#contenuto" data-i="salta">Vai al contenuto</a>
+
+<!-- BARRA (manuale 4.1): fissa, trasparente sopra la testata scura; .piena dopo 80 px. Il pannello telefono lo apre comune.js.
+     Parte comune a tutte le pagine (_lavoro/r07/parti/barra.html): la pagina corrente riceve aria-current dal build. -->
+<header class="topbar barra su-nero"><div class="barra-dentro">
+  <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+  <span class="targhetta">Demo · Rev. 07</span>
+  <nav class="nav" aria-label="Menu" data-i-aria="nav_menu">
+    <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a>
+    <div class="menu-voce"><button type="button" class="menu-apri" aria-expanded="false" aria-controls="menu-app" data-i="nav_app">Applicazioni</button>
+      <div class="menu-sotto" id="menu-app">
+        <a href="settore-oem.html"><i>01</i><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a>
+        <a href="settore-vsp.html"><i>02</i><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a>
+        <a href="settore-phm.html"><i>03</i><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a>
+        <a class="menu-tutte" href="applicazioni.html"><i>17</i><b data-i="nav_tutti">Tutte le applicazioni</b><span data-i="nav_fam">Famiglie di parti</span></a>
+      </div></div>
+    <a href="materiali.html" data-i="nav_mat">Materiali</a>
+    <a href="casi.html" data-i="nav_casi">Casi</a>
+    <a href="contatti.html" data-i="nav_cont">Contatti</a>
+  </nav>
+  <div class="lingue" role="group" aria-label="Lingua" data-i-aria="lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a class="btn btn--contorno btn--p btn-barra" href="preventivo.html" data-i="nav_prev" aria-current="page">Preventivo</a>
+  <button type="button" class="menu-tasto" aria-expanded="false" aria-controls="menu-pannello" data-i="nav_menu">Menu</button>
+</div></header>
+
+<!-- PANNELLO TELEFONO: data-bp e' la larghezza da cui la barra torna intera (comune.js lo chiude oltre questa misura) -->
+<div class="menu-pannello" id="menu-pannello" role="dialog" aria-modal="true" aria-label="Menu" data-i-aria="nav_menu" data-bp="1080">
+  <div class="mp-testa"><a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+    <button type="button" class="menu-tasto" data-menu-chiudi data-i="nav_chiudi">Chiudi</button></div>
+  <ul class="mp-voci">
+    <li><a href="index.html" data-i="nav_home">Home</a></li>
+    <li><a href="tecnologie.html" data-i="nav_tec">Tecnologie</a></li>
+    <li><a href="applicazioni.html" data-i="nav_app">Applicazioni</a></li>
+    <li><a href="materiali.html" data-i="nav_mat">Materiali</a></li>
+    <li><a href="casi.html" data-i="nav_casi">Casi</a></li>
+    <li><a href="contatti.html" data-i="nav_cont">Contatti</a></li>
+  </ul>
+  <a class="btn btn--primario mp-cta" href="preventivo.html" data-i="nav_prev" aria-current="page">Preventivo</a>
+  <p class="etichetta mp-lab" data-i="nav_set">Settori</p>
+  <ul class="mp-settori">
+    <li><a href="settore-oem.html"><span class="solo-lettore">01 </span><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a></li>
+    <li><a href="settore-vsp.html"><span class="solo-lettore">02 </span><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a></li>
+    <li><a href="settore-phm.html"><span class="solo-lettore">03 </span><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a></li>
+  </ul>
+  <p class="etichetta mp-lab" data-i="top_c">Contatti</p>
+  <p class="mp-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><br><a href="tel:+390423715172">+39 0423 715172</a></p>
+  <p class="etichetta mp-lab" id="mp-lingua" data-i="lingua">Lingua</p>
+  <div class="mp-lingue" role="group" aria-labelledby="mp-lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<main id="contenuto" tabindex="-1">
+
+<!-- TESTATA · nero. Briciole, H1 (lo slogan della pagina), lead con quello che si fa nel calcolatore, un link ai calcolatori di settore.
+     Sotto, al posto della tavola, il calcolatore nella cornice smussata con il suo cartiglio (parti/quota.html):
+     le colonne del calcolatore stanno sulla griglia della pagina, i dati sotto l'H1 e la fascia sotto la lead. -->
+<section class="testata su-nero" aria-labelledby="h-titolo">
+  <div class="griglia testata-testa">
+    <div class="testata-titolo rivela">
+      <nav class="briciole" aria-label="Sei qui" data-i-aria="f7_bric"><a href="index.html" data-i="torna">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i="occ">Preventivo indicativo</span></nav>
+      <h1 id="h-titolo" data-i="h1">La fascia di prezzo, in un minuto.</h1>
+    </div>
+    <div class="testata-lato rivela r2">
+      <p class="lead" data-i="s6p">Caricate l'STL o inserite i dati a mano; lo STEP mandatecelo per mail. Il file non viene caricato su nessun server: l'analisi avviene nel vostro browser.</p>
+      <div class="testata-azioni">
+        <a class="link" href="#calcolatori"><span data-i="q7_set">I calcolatori per settore</span> <span class="freccia" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+  <h2 class="solo-lettore" data-i="s6o">Il calcolatore</h2>
+<!-- PREVENTIVATORE (fascia di prezzo indicativa, calcolata nel browser) · parte comune, Rev. 07 (12/10/2026)
+     File: _lavoro/r07/parti/quota.html (markup), _lavoro/r07/css/20_quota.css (stile), sito/assets/r07-quota.js (script).
+     Pagine: preventivo.html e, piu' avanti, settore-oem, settore-vsp, settore-phm. La parte e' solo la cornice col calcolatore:
+     il titolo della sezione lo scrive la pagina, prima della parte (sul preventivo un h2 nascosto, sul settore una testa-split).
+     La cornice porta gia' su-nero: funziona dentro una testata nera e dentro una sezione chiara.
+
+     Come si usa nella pagina:
+       1. nel main, dove serve il calcolatore: PARTE:quota fra doppie graffe (una sola volta per pagina);
+       2. dopo la chiusura del main, prima dello script della pagina:
+          script src="assets/r07-quota.js" con gli attributi della pagina (tutti facoltativi, di serie i valori del preventivo):
+            data-esempio="214 182 124 58"                   volume cm3 e ingombro X Y Z mm del pezzo d'esempio
+            data-pezzo="carter"                             nome dell'esempio nel corpo della mail (italiano)
+            data-riga="Pagina: preventivo generale"         riga della mail (sui settori: "Settore: mezzi speciali e allestimenti")
+            data-sls="PA2200|TPU 90A|PA11"                  ordine e presenza dei materiali SLS (PHM: "PA2200|TPU 90A")
+            data-fdm="Nylon 12CF|Ultem 1010 CG|Ultem 9085"  ordine dei materiali FDM (VSP: "Ultem 9085|Ultem 1010 CG|Nylon 12CF")
+          I coefficienti e i flag "fascia / su richiesta" stanno solo nello script: la pagina non li tocca.
+       3. una nota propria della pagina (PHM: q_nota) va subito dopo la parte, in un p con classe quota-nota.
+
+     Id che lo script usa e che nessun altro elemento della pagina deve avere:
+       quotazione (contenitore: ascolto degli input e ritorno del bottone), q_drop, q_ok, q_es, q_vol, q_x, q_y, q_z, q_q,
+       l_proc, q_mat, q_v, q_u, q_tab, q_cta; bottoni .tec con data-t SLS e FDM e aria-pressed.
+       Altre pagine puntano a settore-*.html#quotazione: l'id resta sulla cornice.
+
+     Chiavi del dizionario che la pagina deve avere in it, de, en:
+       nel markup: drop, es_btn, vol, qta, proc, fascia_k, cta, demo_d, trasp, qc_file, qc_an, qc_an_v, qc_pro, qc_conf, qc_conf_v
+       lette dallo script, che sta in un file a parte: il build e qa_sito.py trovano le chiavi cercando nella pagina
+       le chiamate a t() con la chiave fra apici, percio' sono scritte qui, una per una:
+         t('compila') t('surich') t('cta') t('cta_req') t('f_q') t('f_f') t('da') t('file_ok') t('es_ok') t('err_stl') t('mail_sub')
+       proprie della pagina: es_btn, es_ok (il pezzo d'esempio), mail_sub (oggetto della mail: lo script usa sempre il testo italiano,
+       la mail la legge l'ufficio DPG). Le chiavi qc_* (cartiglio) sono nuove della Rev. 07: oggi stanno in pagine/preventivo.json;
+       una pagina di settore le copia nel suo json finche' non passano in un dizionario comune.
+     Mono e rossi della schermata: mono = bottoni SLS/FDM, numeri della tabella, STL nel cartiglio; rosso = bottone pieno e quadrato
+     del processo scelto (la zona del file diventa rossa solo al passaggio, al fuoco e mentre si trascina). -->
+<div class="cornice quota su-nero rivela r3" id="quotazione">
+  <div class="cornice-dentro quota-dentro">
+    <div class="griglia quota-calc">
+
+      <!-- i dati: il file, le misure, il processo e il materiale -->
+      <div class="quota-dati">
+        <div class="quota-drop" id="q_drop" role="button" tabindex="0">
+          <span class="quota-drop-testo" data-i="drop">Trascinate qui il file STL, o cliccate per sceglierlo</span>
+          <span class="quota-ok" id="q_ok" aria-live="polite"></span>
+          <span class="freccia" aria-hidden="true">↓</span>
+        </div>
+        <p class="quota-es"><button type="button" class="link" id="q_es" data-i="es_btn">Provate con un esempio: carter, 182 × 124 × 58 mm</button></p>
+        <div class="quota-campi">
+          <div class="campo quota-vol"><label for="q_vol" data-i="vol">Volume cm³</label><input id="q_vol" type="number" step="1" min="0" inputmode="decimal"></div>
+          <div class="campo"><label for="q_x">X mm</label><input id="q_x" type="number" step="1" min="0" inputmode="decimal"></div>
+          <div class="campo"><label for="q_y">Y mm</label><input id="q_y" type="number" step="1" min="0" inputmode="decimal"></div>
+          <div class="campo"><label for="q_z">Z mm</label><input id="q_z" type="number" step="1" min="0" inputmode="decimal"></div>
+          <div class="campo quota-qta"><label for="q_q" data-i="qta">Quantità</label><input id="q_q" type="number" step="1" min="1" value="10" inputmode="numeric"></div>
+        </div>
+        <div class="campo quota-proc" role="group" aria-labelledby="l_proc">
+          <span class="campo-et" id="l_proc" data-i="proc">Processo e materiale</span>
+          <div class="quota-proc-riga">
+            <div class="quota-tec">
+              <button type="button" class="tec attiva" data-t="SLS" aria-pressed="true">SLS</button>
+              <button type="button" class="tec" data-t="FDM" aria-pressed="false">FDM</button>
+            </div>
+            <select id="q_mat" aria-labelledby="l_proc"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- la fascia: cifra, tabella per quantita', richiesta di conferma; l'avvertenza della demo resta accanto alla cifra -->
+      <div class="quota-esito">
+        <div class="quota-fascia" aria-live="polite" aria-atomic="true">
+          <span class="etichetta" data-i="fascia_k">Indicativamente, al pezzo</span>
+          <div class="quota-v vuota" id="q_v">·</div>
+          <div class="quota-u" id="q_u"></div>
+        </div>
+        <table class="quota-tab" id="q_tab"></table>
+        <div class="quota-azione">
+          <a class="btn btn--primario quota-cta" id="q_cta" href="#quotazione" data-i="cta">Chiedete la conferma (24 ore lavorative)</a>
+          <div class="rovescio quota-demo"><span class="etichetta">Demo</span><p><span data-i="demo_d">I parametri di questa demo sono di esempio: la fascia non è un'offerta.</span> <span data-i="trasp">Sul prezzo reale incide anche la saturazione della camera della macchina. La fascia è indicativa e non vincolante: la conferma è di una persona, entro 24 ore lavorative.</span></p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cartiglio della tavola: il terzo filo verticale incontra quello fra dati e fascia -->
+    <dl class="cartiglio quota-cartiglio">
+      <div><dt data-i="qc_file">File</dt><dd class="mono">STL</dd></div>
+      <div><dt data-i="qc_an">Analisi</dt><dd data-i="qc_an_v">nel vostro browser, nessun server</dd></div>
+      <div><dt data-i="qc_pro">Processo</dt><dd>SLS · FDM</dd></div>
+      <div><dt data-i="qc_conf">Conferma</dt><dd data-i="qc_conf_v">una persona, entro 24 ore lavorative</dd></div>
+    </dl>
+  </div>
+</div>
+
+</section>
+
+<!-- I CALCOLATORI DI SETTORE · carta. Tre tavole come le card della home: il disegno su nero, il testo sulla carta.
+     Ogni card apre il calcolatore della pagina di settore (stesso calcolo, materiali e pezzo d'esempio del comparto). -->
+<section class="sezione su-carta" id="calcolatori" aria-labelledby="h-calcolatori">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="s_o">Per settore</p><h2 id="h-calcolatori" data-i="s_t">Il calcolatore con i materiali e l'esempio del vostro comparto</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="s_p">Scegliete il settore: il calcolo è lo stesso, cambiano l'elenco dei materiali e il pezzo d'esempio.</p>
+  </div>
+  <ul class="griglia carte calc-carte">
+    <li><a class="app rivela" href="settore-oem.html#quotazione" aria-labelledby="cc1-t cc1-l" aria-describedby="cc1-p">
+      <figure><img src="assets/tav_oem_banda.webp" width="1500" height="1000" alt="Tavola tecnica: cella di automazione con rulliera, presa a pettine e carter a griglia, parti additive in rosso" data-i-alt="s7_1alt" loading="lazy" decoding="async"><span class="etichetta calc-tav" aria-hidden="true" data-i="s7_tav1">Tav. 01 · da CAD</span></figure>
+      <h3 id="cc1-t" data-i="p_s1">Macchine industriali e OEM</h3><p id="cc1-p" data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</p>
+      <span class="scarica"><span class="link" id="cc1-l"><span data-i="vai">Apri il calcolatore</span> <span class="freccia" aria-hidden="true">↗</span></span></span></a></li>
+    <li><a class="app rivela r2" href="settore-vsp.html#quotazione" aria-labelledby="cc2-t cc2-l" aria-describedby="cc2-p">
+      <figure><img src="assets/tav_vsp_hero.webp" width="1500" height="1000" alt="Tavola tecnica di un&#x27;autopompa su telaio a tre assi, parti additive in rosso" data-i-alt="s7_2alt" loading="lazy" decoding="async"><span class="etichetta calc-tav" aria-hidden="true" data-i="s7_tav2">Tav. 02 · da CAD</span></figure>
+      <h3 id="cc2-t" data-i="p_s2">Mezzi speciali e allestimenti</h3><p id="cc2-p" data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</p>
+      <span class="scarica"><span class="link" id="cc2-l"><span data-i="vai">Apri il calcolatore</span> <span class="freccia" aria-hidden="true">↗</span></span></span></a></li>
+    <li><a class="app rivela r3" href="settore-phm.html#quotazione" aria-labelledby="cc3-t cc3-l" aria-describedby="cc3-p">
+      <figure><img src="assets/tav_phm_hero.webp" width="1500" height="1000" alt="Tavola tecnica: unità di processo da banco con trasporto fiale, parti additive in rosso" data-i-alt="s7_3alt" loading="lazy" decoding="async"><span class="etichetta calc-tav" aria-hidden="true" data-i="s7_tav3">Tav. 03 · da CAD</span></figure>
+      <h3 id="cc3-t" data-i="p_s3">Pharma e macchine di processo</h3><p id="cc3-p" data-i="nav_s3d">parti a formato, dossier, cleanroom</p>
+      <span class="scarica"><span class="link" id="cc3-l"><span data-i="vai">Apri il calcolatore</span> <span class="freccia" aria-hidden="true">↗</span></span></span></a></li>
+  </ul>
+</section>
+
+<!-- IL PERCORSO · nero (il percorso della home). Nella colonna ferma il riquadro "Preferite scriverci?" della Rev. 06. -->
+<section class="percorso su-nero" id="passi" aria-labelledby="h-percorso">
+  <div class="griglia">
+    <div class="perc-lato rivela">
+      <p class="occhiello" data-i="pa_o">Il percorso</p>
+      <h2 id="h-percorso" data-i="pa_t">Dal file al pezzo, in tre passi.</h2>
+      <div class="riquadro perc-scrivi">
+        <span class="etichetta" data-i="o_t">Preferite scriverci?</span>
+        <p data-i="o_p">Mandateci lo STEP o l'assieme per mail: vi rispondiamo con la fascia e, se serve, con quello che non conviene fare in additive.</p>
+      </div>
+      <a class="btn btn--contorno" href="mailto:info@duepigreco3d.it" data-i="scrivi">Scriveteci</a>
+    </div>
+    <div class="passi-colonna">
+      <ol class="passi">
+        <li class="passo rivela"><span class="numerale" aria-hidden="true">1</span><div><h3 data-i="pa1t">Mandateci lo STEP</h3><p data-i="pa1p">La fascia di prezzo indicativa si calcola nel browser, sull'STL del pezzo. La conferma è di una persona, entro 24 ore lavorative.</p><p class="mono passo-file">STEP · STL · GLB</p></div></li>
+        <li class="passo rivela"><span class="numerale" aria-hidden="true">2</span><div><h3 data-i="pa2t">Il primo articolo</h3><p data-i="pa2p">Lo discutiamo al vostro banco e lo validate voi: è un percorso breve, ma reale. Materiale e finitura si confermano sul vostro disegno.</p></div></li>
+        <li class="passo rivela"><span class="numerale" aria-hidden="true">3</span><div><h3 data-i="pa3t">Serie e riordino</h3><p data-i="pa3p">Si produce alla firma dell'ordine, a lotto tracciato. Il riordino arriva dal magazzino digitale, identico al lotto precedente.</p></div></li>
+      </ol>
+      <span class="indicatore" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- IL CONFRONTO · carta. Tabella a fili orizzontali; la colonna additive col quadrato rosso; la riga contro di noi
+     (grandi volumi) su una fascia panna. Su telefono ogni riga diventa un blocco, con l'intestazione davanti a ogni cella. -->
+<section class="sezione su-carta" id="confronto" aria-labelledby="h-confronto">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="co_o">Il confronto</p><h2 id="h-confronto" data-i="co_t">Additive o stampo: il confronto onesto.</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="co_s">Dove vince l'additive, e dove no. La riga che non ci conviene la scriviamo lo stesso.</p>
+  </div>
+  <div class="griglia conf-griglia rivela">
+    <table class="confronto">
+      <colgroup><col class="conf-c1"><col class="conf-c2"><col class="conf-c3"></colgroup>
+      <thead><tr><th scope="col" data-i="co_h1">Voce</th><th scope="col" class="noi" data-i="co_h2">Additive in serie</th><th scope="col" data-i="co_h3">Stampo</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" data-i="co1">Attrezzatura</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co1a">nessuna: si produce alla firma dell'ordine</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co1b">da pagare e ammortizzare prima del primo pezzo</span></td></tr>
+        <tr><th scope="row" data-i="co2">Varianti</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co2a">la variante è un file, in produzione in giorni</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co2b">un nuovo attrezzaggio per ogni variante</span></td></tr>
+        <tr><th scope="row" data-i="co3">Costo per pezzo</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co3a">stabile dal n° 1 al n° 50</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co3b">scende con i volumi, dopo l'ammortamento</span></td></tr>
+        <tr><th scope="row" data-i="co4">Ricambi</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co4a">magazzino digitale, riordino identico al lotto</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co4b">scaffale, minimi d'ordine, stampo da conservare</span></td></tr>
+        <tr><th scope="row" data-i="co5">Geometria</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co5a">canali e funzioni dentro il corpo, niente sformo</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co5b">vincoli di sformo e di anime</span></td></tr>
+        <tr class="conf-limite"><th scope="row" data-i="co6">Grandi volumi</th><td class="conf-noi"><span class="conf-et" data-i="co_h2">Additive in serie</span><span data-i="co6a">sopra i volumi da stampo non conviene</span></td><td><span class="conf-et" data-i="co_h3">Stampo</span><span data-i="co6b">torna lo stampo, e vi aiutiamo a fare il passaggio</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="griglia sez-nota conf-nota"><span data-i="co_nota">Il pezzo strutturale in metallo resta in metallo: quando serve, lo instradiamo alla nostra rete di partner qualificati.</span></p>
+</section>
+
+</main>
+
+
+
+<!-- STRISCIA FINALE (manuale 4.12) · nero, la cornice smussata della testata: chiude ogni pagina con le tre chiamate all'azione.
+     Parte comune (_lavoro/r07/parti/striscia.html); una pagina la toglie con "striscia": false nei META. -->
+<section class="striscia su-nero" id="contatti-rapidi" aria-labelledby="h-fine">
+  <div class="cornice cornice--fine rivela">
+    <div class="cornice-dentro striscia-dentro">
+      <h2 id="h-fine" data-i="fine_t">Mandateci lo STEP di un componente.</h2>
+      <p class="lead" data-i="fine_p">Vi diciamo anche quando non conviene.</p>
+      <div class="striscia-azioni">
+        <a class="btn btn--primario btn--g" href="#quotazione" data-i="cta_file">Inviate STEP o STL</a>
+        <a class="btn btn--contorno btn--g" href="mailto:info@duepigreco3d.it?subject=Parlare%20con%20un%20tecnico" data-i="cta_tecnico">Parlate con un tecnico</a>
+        <a class="btn btn--contorno btn--g" href="casi.html#schede" data-i="cta_scheda">Richiedete una scheda</a>
+      </div>
+      <p class="striscia-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PIEDE (manuale 4.13) · secondo nero. Parte comune (_lavoro/r07/parti/piede.html); il build scrive il codice del documento -->
+<footer class="piede su-nero" id="contatti">
+  <div class="griglia piede-alto">
+    <div class="piede-marchio">
+      <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+      <p data-i="p_claim">Produzione additiva industriale per serie piccole e medie.</p>
+      <address class="piede-sedi">Via delle Industrie 18/20, Ponzano Veneto (TV)<br>Via Roma 55, Resana (TV)</address>
+    </div>
+    <nav class="piede-col piede-col--prima" aria-labelledby="pc1"><h2 class="etichetta piede-tit" id="pc1" data-i="p_settori">Settori</h2>
+      <a href="settore-oem.html" data-i="p_s1">Macchine industriali e OEM</a><a href="settore-vsp.html" data-i="p_s2">Mezzi speciali e allestimenti</a><a href="settore-phm.html" data-i="p_s3">Pharma e macchine di processo</a></nav>
+    <nav class="piede-col" aria-labelledby="pc2"><h2 class="etichetta piede-tit" id="pc2" data-i="p_espl">Esplora</h2>
+      <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a><a href="applicazioni.html" data-i="nav_app">Applicazioni</a><a href="materiali.html" data-i="nav_mat">Materiali</a>
+      <a href="casi.html" data-i="nav_casi">Casi</a><a href="casi.html#schede" data-i="nav_schede">Schede PDF</a><a href="faq.html" data-i="nav_ris_faq">Domande frequenti</a><a href="preventivo.html" data-i="nav_prev">Preventivo</a></nav>
+    <div class="piede-col"><h2 class="etichetta piede-tit" data-i="p_contatti">Contatti</h2>
+      <a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a>
+      <a href="https://duepigreco3d.it">duepigreco3d.it</a><a href="contatti.html" data-i="nav_cont">Contatti</a></div>
+  </div>
+  <div class="griglia piede-legale">
+    <p>Due Pi Greco S.r.l. · <span data-i="p_iva">P.IVA</span> <span class="mono">04499050286</span></p>
+    <dl class="iscrizioni">
+      <div><dt data-i="c_doc">Documento</dt><dd>DPG-WEB · Preventivo</dd></div>
+      <div><dt data-i="c_rev">Revisione</dt><dd>Rev. 07 · demo</dd></div>
+      <div><dt data-i="c_anno">Anno</dt><dd>2026</dd></div>
+      <div><dt data-i="c_note">Note</dt><dd data-i="c_de">DE: bozza da rileggere</dd></div>
+    </dl>
+  </div>
+</footer>
+
+<script>
+const I18N={
+"it": {
+"c_anno": "Anno",
+"c_de": "DE: bozza da rileggere",
+"c_doc": "Documento",
+"c_note": "Note",
+"c_rev": "Revisione",
+"co1": "Attrezzatura",
+"co1a": "nessuna: si produce alla firma dell'ordine",
+"co1b": "da pagare e ammortizzare prima del primo pezzo",
+"co2": "Varianti",
+"co2a": "la variante è un file, in produzione in giorni",
+"co2b": "un nuovo attrezzaggio per ogni variante",
+"co3": "Costo per pezzo",
+"co3a": "stabile dal n° 1 al n° 50",
+"co3b": "scende con i volumi, dopo l'ammortamento",
+"co4": "Ricambi",
+"co4a": "magazzino digitale, riordino identico al lotto",
+"co4b": "scaffale, minimi d'ordine, stampo da conservare",
+"co5": "Geometria",
+"co5a": "canali e funzioni dentro il corpo, niente sformo",
+"co5b": "vincoli di sformo e di anime",
+"co6": "Grandi volumi",
+"co6a": "sopra i volumi da stampo non conviene",
+"co6b": "torna lo stampo, e vi aiutiamo a fare il passaggio",
+"co_h1": "Voce",
+"co_h2": "Additive in serie",
+"co_h3": "Stampo",
+"co_nota": "Il pezzo strutturale in metallo resta in metallo: quando serve, lo instradiamo alla nostra rete di partner qualificati.",
+"co_o": "Il confronto",
+"co_s": "Dove vince l'additive, e dove no. La riga che non ci conviene la scriviamo lo stesso.",
+"co_t": "Additive o stampo: il confronto onesto.",
+"compila": "Inserite volume e dimensioni, o caricate lo STL.",
+"cta": "Chiedete la conferma (24 ore lavorative)",
+"cta_file": "Inviate STEP o STL",
+"cta_req": "Chiedete la quotazione",
+"cta_scheda": "Richiedete una scheda",
+"cta_tecnico": "Parlate con un tecnico",
+"da": "da",
+"demo_d": "I parametri di questa demo sono di esempio: la fascia non è un'offerta.",
+"drop": "Trascinate qui il file STL, o cliccate per sceglierlo",
+"err_stl": "File non riconosciuto o troppo grande: inserite i dati a mano o mandatecelo per mail.",
+"es_btn": "Provate con un esempio: carter, 182 × 124 × 58 mm",
+"es_ok": "Esempio caricato: carter, circa 214 cm³",
+"f7_bric": "Sei qui",
+"f_f": "Fascia al pezzo",
+"f_q": "Quantità",
+"fascia_k": "Indicativamente, al pezzo",
+"file_ok": "letto nel browser",
+"fine_p": "Vi diciamo anche quando non conviene.",
+"fine_t": "Mandateci lo STEP di un componente.",
+"h1": "La fascia di prezzo, in un minuto.",
+"lingua": "Lingua",
+"mail_sub": "Richiesta di conferma quotazione (preventivatore web)",
+"meta_d": "Preventivo indicativo in un minuto: scegliete il settore, caricate l'STL o inserite le misure, la conferma in 24 ore lavorative.",
+"nav_app": "Applicazioni",
+"nav_casi": "Casi",
+"nav_chiudi": "Chiudi",
+"nav_cont": "Contatti",
+"nav_fam": "Famiglie di parti",
+"nav_home": "Home",
+"nav_mat": "Materiali",
+"nav_menu": "Menu",
+"nav_prev": "Preventivo",
+"nav_ris_faq": "Domande frequenti",
+"nav_s1d": "carter, formati, attrezzaggi, ricambi",
+"nav_s2d": "allestimenti, flotte, finitura da carrozzeria",
+"nav_s3d": "parti a formato, dossier, cleanroom",
+"nav_schede": "Schede PDF",
+"nav_set": "Settori",
+"nav_tec": "Tecnologie",
+"nav_tutti": "Tutte le applicazioni",
+"o_p": "Mandateci lo STEP o l'assieme per mail: vi rispondiamo con la fascia e, se serve, con quello che non conviene fare in additive.",
+"o_t": "Preferite scriverci?",
+"occ": "Preventivo indicativo",
+"p_claim": "Produzione additiva industriale per serie piccole e medie.",
+"p_contatti": "Contatti",
+"p_espl": "Esplora",
+"p_iva": "P.IVA",
+"p_s1": "Macchine industriali e OEM",
+"p_s2": "Mezzi speciali e allestimenti",
+"p_s3": "Pharma e macchine di processo",
+"p_settori": "Settori",
+"pa1p": "La fascia di prezzo indicativa si calcola nel browser, sull'STL del pezzo. La conferma è di una persona, entro 24 ore lavorative.",
+"pa1t": "Mandateci lo STEP",
+"pa2p": "Lo discutiamo al vostro banco e lo validate voi: è un percorso breve, ma reale. Materiale e finitura si confermano sul vostro disegno.",
+"pa2t": "Il primo articolo",
+"pa3p": "Si produce alla firma dell'ordine, a lotto tracciato. Il riordino arriva dal magazzino digitale, identico al lotto precedente.",
+"pa3t": "Serie e riordino",
+"pa_o": "Il percorso",
+"pa_t": "Dal file al pezzo, in tre passi.",
+"proc": "Processo e materiale",
+"q7_set": "I calcolatori per settore",
+"qc_an": "Analisi",
+"qc_an_v": "nel vostro browser, nessun server",
+"qc_conf": "Conferma",
+"qc_conf_v": "una persona, entro 24 ore lavorative",
+"qc_file": "File",
+"qc_pro": "Processo",
+"qta": "Quantità",
+"s6o": "Il calcolatore",
+"s6p": "Caricate l'STL o inserite i dati a mano; lo STEP mandatecelo per mail. Il file non viene caricato su nessun server: l'analisi avviene nel vostro browser.",
+"s7_1alt": "Tavola tecnica: cella di automazione con rulliera, presa a pettine e carter a griglia, parti additive in rosso",
+"s7_2alt": "Tavola tecnica di un'autopompa su telaio a tre assi, parti additive in rosso",
+"s7_3alt": "Tavola tecnica: unità di processo da banco con trasporto fiale, parti additive in rosso",
+"s7_tav1": "Tav. 01 · da CAD",
+"s7_tav2": "Tav. 02 · da CAD",
+"s7_tav3": "Tav. 03 · da CAD",
+"s_o": "Per settore",
+"s_p": "Scegliete il settore: il calcolo è lo stesso, cambiano l'elenco dei materiali e il pezzo d'esempio.",
+"s_t": "Il calcolatore con i materiali e l'esempio del vostro comparto",
+"salta": "Vai al contenuto",
+"scrivi": "Scriveteci",
+"surich": "Per questo materiale la fascia si prepara su richiesta: chiedete la quotazione.",
+"titolo": "Preventivo · Due Pi Greco",
+"top_c": "Contatti",
+"torna": "Home",
+"trasp": "Sul prezzo reale incide anche la saturazione della camera della macchina. La fascia è indicativa e non vincolante: la conferma è di una persona, entro 24 ore lavorative.",
+"vai": "Apri il calcolatore",
+"vol": "Volume cm³"
+},
+"de": {
+"c_anno": "Jahr",
+"c_de": "DE: Entwurf, Korrektur ausstehend",
+"c_doc": "Dokument",
+"c_note": "Hinweis",
+"c_rev": "Revision",
+"co1": "Werkzeug",
+"co1a": "keines: gefertigt wird bei Auftragserteilung",
+"co1b": "vor dem ersten Teil zu bezahlen und zu amortisieren",
+"co2": "Varianten",
+"co2a": "die Variante ist eine Datei, in Tagen in Produktion",
+"co2b": "ein neues Werkzeug für jede Variante",
+"co3": "Stückkosten",
+"co3a": "stabil von Nr. 1 bis Nr. 50",
+"co3b": "sinken mit der Menge, nach der Amortisation",
+"co4": "Ersatzteile",
+"co4a": "digitales Lager, identische Nachbestellung",
+"co4b": "Regal, Mindestmengen, Werkzeug aufbewahren",
+"co5": "Geometrie",
+"co5a": "Kanäle und Funktionen im Körper, keine Entformung",
+"co5b": "Entformungs- und Kernvorgaben",
+"co6": "Große Stückzahlen",
+"co6a": "ab Stückzahlen, bei denen sich ein Werkzeug rechnet, lohnt es sich nicht",
+"co6b": "dann kommt wieder das Werkzeug zum Zug, und wir helfen Ihnen beim Umstieg",
+"co_h1": "Punkt",
+"co_h2": "Additive Serie",
+"co_h3": "Werkzeug",
+"co_nota": "Das strukturelle Metallteil bleibt Metall: wenn nötig, leiten wir es an unser Netz qualifizierter Partner weiter.",
+"co_o": "Der Vergleich",
+"co_s": "Wo Additiv gewinnt, und wo nicht. Die Zeile, die uns nicht passt, schreiben wir trotzdem.",
+"co_t": "Additiv oder Werkzeug: der ehrliche Vergleich.",
+"compila": "Volumen und Abmessungen eingeben oder STL laden.",
+"cta": "Bestätigung anfordern (24 Arbeitsstunden)",
+"cta_file": "STEP oder STL senden",
+"cta_req": "Angebot anfordern",
+"cta_scheda": "PDF-Blatt anfordern",
+"cta_tecnico": "Mit einem Techniker sprechen",
+"da": "ab",
+"demo_d": "Die Parameter dieser Demo sind Beispielwerte: Die Spanne ist kein Angebot.",
+"drop": "STL-Datei hierher ziehen oder klicken",
+"err_stl": "Datei nicht erkannt oder zu groß: von Hand eingeben oder per E-Mail senden.",
+"es_btn": "Mit einem Beispiel testen: Gehäuse, 182 × 124 × 58 mm",
+"es_ok": "Beispiel geladen: Gehäuse, ca. 214 cm³",
+"f7_bric": "Sie sind hier",
+"f_f": "Spanne pro Stück",
+"f_q": "Stückzahl",
+"fascia_k": "Richtwert, pro Stück",
+"file_ok": "im Browser gelesen",
+"fine_p": "Wir sagen Ihnen auch, wann es sich nicht lohnt.",
+"fine_t": "Schicken Sie uns die STEP-Datei eines Bauteils.",
+"h1": "Die Preisspanne, in einer Minute.",
+"lingua": "Sprache",
+"mail_sub": "Richiesta di conferma quotazione (preventivatore web)",
+"meta_d": "Richtpreis in einer Minute: Branche wählen, STL-Datei laden oder Maße eingeben, Bestätigung innerhalb von 24 Arbeitsstunden.",
+"nav_app": "Anwendungen",
+"nav_casi": "Referenzen",
+"nav_chiudi": "Schließen",
+"nav_cont": "Kontakt",
+"nav_fam": "Teilefamilien",
+"nav_home": "Start",
+"nav_mat": "Werkstoffe",
+"nav_menu": "Menü",
+"nav_prev": "Richtpreis",
+"nav_ris_faq": "Häufige Fragen",
+"nav_s1d": "Gehäuse, Formatteile, Vorrichtungen, Ersatzteile",
+"nav_s2d": "Aufbauten, Flotten, Lackierung in Karosseriequalität",
+"nav_s3d": "Formatteile, Dossier, Reinraum",
+"nav_schede": "PDF-Blätter",
+"nav_set": "Branchen",
+"nav_tec": "Technologien",
+"nav_tutti": "Alle Anwendungen",
+"o_p": "Schicken Sie uns die STEP-Datei oder die Baugruppe per Mail: Wir antworten mit der Spanne und, wenn nötig, mit dem, was sich additiv nicht lohnt.",
+"o_t": "Lieber schreiben?",
+"occ": "Richtpreis",
+"p_claim": "Industrielle additive Fertigung für kleine und mittlere Serien.",
+"p_contatti": "Kontakt",
+"p_espl": "Entdecken",
+"p_iva": "USt-IdNr.",
+"p_s1": "Maschinenbau und OEM",
+"p_s2": "Sonderfahrzeuge und Aufbauten",
+"p_s3": "Pharma und Prozessmaschinen",
+"p_settori": "Branchen",
+"pa1p": "Die Richtpreisspanne wird im Browser anhand der STL-Datei berechnet. Bestätigt wird sie von einer Person, innerhalb von 24 Arbeitsstunden.",
+"pa1t": "Schicken Sie uns die STEP-Datei",
+"pa2p": "Wir besprechen es an Ihrer Werkbank, validiert wird es von Ihnen: ein kurzer, aber echter Weg. Werkstoff und Oberfläche werden anhand Ihrer Zeichnung bestätigt.",
+"pa2t": "Das Erstmuster",
+"pa3p": "Gefertigt wird bei Auftragserteilung, mit rückverfolgbarer Charge. Die Nachbestellung kommt aus dem digitalen Lager, identisch zur vorigen Charge.",
+"pa3t": "Serie und Nachbestellung",
+"pa_o": "Der Weg",
+"pa_t": "Von der Datei zum Teil, in drei Schritten.",
+"proc": "Verfahren und Material",
+"q7_set": "Die Rechner je Branche",
+"qc_an": "Analyse",
+"qc_an_v": "in Ihrem Browser, kein Server",
+"qc_conf": "Bestätigung",
+"qc_conf_v": "eine Person, innerhalb von 24 Arbeitsstunden",
+"qc_file": "Datei",
+"qc_pro": "Verfahren",
+"qta": "Stückzahl",
+"s6o": "Der Rechner",
+"s6p": "Laden Sie die STL-Datei oder geben Sie die Daten von Hand ein; die STEP-Datei schicken Sie uns per E-Mail. Die Datei wird auf keinen Server hochgeladen: Die Analyse läuft in Ihrem Browser.",
+"s7_1alt": "Technische Zeichnung: Automationszelle mit Rollenbahn, Kammgreifer und Gitterschutz, additive Teile in Rot",
+"s7_2alt": "Technische Zeichnung eines Löschfahrzeugs auf Dreiachs-Fahrgestell, additive Teile in Rot",
+"s7_3alt": "Technische Zeichnung: Tisch-Prozesseinheit mit Vialtransport, additive Teile in Rot",
+"s7_tav1": "Taf. 01 · aus CAD",
+"s7_tav2": "Taf. 02 · aus CAD",
+"s7_tav3": "Taf. 03 · aus CAD",
+"s_o": "Je Branche",
+"s_p": "Wählen Sie Ihre Branche: Die Berechnung bleibt gleich, es ändern sich die Werkstoffliste und das Beispielteil.",
+"s_t": "Der Rechner mit den Werkstoffen und dem Beispiel Ihres Bereichs",
+"salta": "Zum Inhalt springen",
+"scrivi": "Schreiben Sie uns",
+"surich": "Für dieses Material erstellen wir die Spanne auf Anfrage.",
+"titolo": "Richtpreis · Due Pi Greco",
+"top_c": "Kontakt",
+"torna": "Start",
+"trasp": "Der reale Preis hängt auch von der Auslastung der Baukammer ab. Die Spanne ist unverbindlich: Die Bestätigung kommt von einer Person, innerhalb von 24 Arbeitsstunden.",
+"vai": "Rechner öffnen",
+"vol": "Volumen cm³"
+},
+"en": {
+"c_anno": "Year",
+"c_de": "DE: draft, under review",
+"c_doc": "Document",
+"c_note": "Note",
+"c_rev": "Revision",
+"co1": "Tooling",
+"co1a": "none: production starts when the order is signed",
+"co1b": "to be paid and amortised before the first part",
+"co2": "Variants",
+"co2a": "a variant is a file, in production within days",
+"co2b": "new tooling for every variant",
+"co3": "Cost per part",
+"co3a": "stable from part no. 1 to no. 50",
+"co3b": "falls with volume, after amortisation",
+"co4": "Spares",
+"co4a": "digital warehouse, identical reorders",
+"co4b": "shelves, minimum orders, a mould to keep",
+"co5": "Geometry",
+"co5a": "channels and functions inside the body, no draft",
+"co5b": "draft and core constraints",
+"co6": "High volumes",
+"co6a": "above moulding volumes it does not pay",
+"co6b": "the mould comes back, and we help you make the switch",
+"co_h1": "Item",
+"co_h2": "Additive series",
+"co_h3": "Mould",
+"co_nota": "A structural metal part stays metal: when needed, we route it to our network of qualified partners.",
+"co_o": "The comparison",
+"co_s": "Where additive wins, and where it does not. We also write down the row that goes against us.",
+"co_t": "Additive or mould: the honest comparison.",
+"compila": "Enter volume and dimensions, or load the STL.",
+"cta": "Request confirmation (24 working hours)",
+"cta_file": "Send STEP or STL",
+"cta_req": "Request a quote",
+"cta_scheda": "Request a sheet",
+"cta_tecnico": "Talk to an engineer",
+"da": "from",
+"demo_d": "The parameters of this demo are sample values: the range is not an offer.",
+"drop": "Drop your STL file here, or click to choose it",
+"err_stl": "File not recognized or too large: enter data manually, or email it to us.",
+"es_btn": "Try an example: housing, 182 × 124 × 58 mm",
+"es_ok": "Example loaded: housing, about 214 cm³",
+"f7_bric": "You are here",
+"f_f": "Range per part",
+"f_q": "Quantity",
+"fascia_k": "Indicatively, per part",
+"file_ok": "read in your browser",
+"fine_p": "We also tell you when it does not pay.",
+"fine_t": "Send us the STEP file of a component.",
+"h1": "The price range, in a minute.",
+"lingua": "Language",
+"mail_sub": "Richiesta di conferma quotazione (preventivatore web)",
+"meta_d": "Indicative quote in a minute: choose the sector, load the STL or enter the dimensions, confirmation within 24 working hours.",
+"nav_app": "Applications",
+"nav_casi": "Case studies",
+"nav_chiudi": "Close",
+"nav_cont": "Contact",
+"nav_fam": "Part families",
+"nav_home": "Home",
+"nav_mat": "Materials",
+"nav_menu": "Menu",
+"nav_prev": "Quote",
+"nav_ris_faq": "FAQ",
+"nav_s1d": "guards, format parts, fixtures, spares",
+"nav_s2d": "outfitting, fleets, body-shop finish",
+"nav_s3d": "format parts, dossier, cleanroom",
+"nav_schede": "PDF sheets",
+"nav_set": "Sectors",
+"nav_tec": "Technologies",
+"nav_tutti": "All applications",
+"o_p": "Send us the STEP file or the assembly by email: we reply with the range and, if needed, with what does not pay in additive.",
+"o_t": "Prefer to write?",
+"occ": "Indicative quote",
+"p_claim": "Industrial additive manufacturing for small and medium series.",
+"p_contatti": "Contact",
+"p_espl": "Explore",
+"p_iva": "VAT no.",
+"p_s1": "Industrial machinery and OEM",
+"p_s2": "Special vehicles and outfitting",
+"p_s3": "Pharma and process machinery",
+"p_settori": "Sectors",
+"pa1p": "The indicative price range is computed in the browser from the part's STL. A person confirms it within 24 working hours.",
+"pa1t": "Send us the STEP file",
+"pa2p": "We discuss it at your bench and you validate it: a short path, but a real one. Material and finish are confirmed on your drawing.",
+"pa2t": "The first article",
+"pa3p": "We produce when the order is signed, with a traced lot. Reorders come from the digital warehouse, identical to the previous lot.",
+"pa3t": "Series and reorders",
+"pa_o": "The path",
+"pa_t": "From file to part, in three steps.",
+"proc": "Process and material",
+"q7_set": "The calculators by sector",
+"qc_an": "Analysis",
+"qc_an_v": "in your browser, no server",
+"qc_conf": "Confirmation",
+"qc_conf_v": "a person, within 24 working hours",
+"qc_file": "File",
+"qc_pro": "Process",
+"qta": "Quantity",
+"s6o": "The calculator",
+"s6p": "Load the STL or enter the data manually; send us the STEP file by email. Your file is never uploaded to any server: the analysis runs in your browser.",
+"s7_1alt": "Technical drawing: automation cell with roller conveyor, comb gripper and mesh guard, additive parts in red",
+"s7_2alt": "Technical drawing of a fire engine on a three-axle chassis, additive parts in red",
+"s7_3alt": "Technical drawing: benchtop process unit with vial transport, additive parts in red",
+"s7_tav1": "Plate 01 · from CAD",
+"s7_tav2": "Plate 02 · from CAD",
+"s7_tav3": "Plate 03 · from CAD",
+"s_o": "By sector",
+"s_p": "Choose your sector: the calculation is the same; the list of materials and the example part change.",
+"s_t": "The calculator with the materials and the example of your field",
+"salta": "Skip to content",
+"scrivi": "Write to us",
+"surich": "For this material the range is prepared on request.",
+"titolo": "Quote · Due Pi Greco",
+"top_c": "Contact",
+"torna": "Home",
+"trasp": "The real price also depends on build-chamber saturation. The range is indicative and not binding: confirmation comes from a person, within 24 working hours.",
+"vai": "Open the calculator",
+"vol": "Volume cm³"
+}
+};
+</script>
+<script src="assets/r07.js"></script>
+<script src="assets/r07-quota.js" data-esempio="214 182 124 58" data-pezzo="carter" data-riga="Pagina: preventivo generale" data-sls="PA2200|TPU 90A|PA11" data-fdm="Nylon 12CF|Ultem 1010 CG|Ultem 9085"></script>
+<script>
+/* la striscia comune manda "Inviate STEP o STL" a preventivo.html: qui il calcolatore e' gia' in cima alla pagina */
+(function(){const a=$('.striscia a[href="preventivo.html"]');if(a)a.setAttribute('href','#quotazione');})();
+</script>
+<script>applica();</script>
+</body></html>

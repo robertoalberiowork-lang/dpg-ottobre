@@ -1,0 +1,1431 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Diciassette famiglie di applicazione della produzione additiva industriale: cambio formato, attrezzaggi, gripper, carter, contatto alimentare, trattamento acque, pannelli di grigliatura, allestimenti. Per ciascuna il problema, cosa facciamo, materiale e scheda PDF.">
+<meta name="theme-color" content="#0B0B0C">
+<title>Applicazioni · Due Pi Greco</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/stile-r07.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="assets/comune.js"></script>
+</head><body class="r07 p-applicazioni ">
+<!-- DPG-WEB · DPG-WEB · Applicazioni · Rev. 07. FILE GENERATO da _lavoro/r07/build_r07.py: si modifica _lavoro/r07/pagine/applicazioni.src.html.
+     Testi dal dizionario I18N in fondo (it, de, en; il de e' una bozza). Dati: solo quelli di 00_CONTENUTI_REV06.md. -->
+<a class="salta" href="#contenuto" data-i="salta">Vai al contenuto</a>
+
+<!-- BARRA (manuale 4.1): fissa, trasparente sopra la testata scura; .piena dopo 80 px. Il pannello telefono lo apre comune.js.
+     Parte comune a tutte le pagine (_lavoro/r07/parti/barra.html): la pagina corrente riceve aria-current dal build. -->
+<header class="topbar barra su-nero"><div class="barra-dentro">
+  <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+  <span class="targhetta">Demo · Rev. 07</span>
+  <nav class="nav" aria-label="Menu" data-i-aria="nav_menu">
+    <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a>
+    <div class="menu-voce corrente"><button type="button" class="menu-apri" aria-expanded="false" aria-controls="menu-app" data-i="nav_app">Applicazioni</button>
+      <div class="menu-sotto" id="menu-app">
+        <a href="settore-oem.html"><i>01</i><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a>
+        <a href="settore-vsp.html"><i>02</i><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a>
+        <a href="settore-phm.html"><i>03</i><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a>
+        <a class="menu-tutte" href="applicazioni.html" aria-current="page"><i>17</i><b data-i="nav_tutti">Tutte le applicazioni</b><span data-i="nav_fam">Famiglie di parti</span></a>
+      </div></div>
+    <a href="materiali.html" data-i="nav_mat">Materiali</a>
+    <a href="casi.html" data-i="nav_casi">Casi</a>
+    <a href="contatti.html" data-i="nav_cont">Contatti</a>
+  </nav>
+  <div class="lingue" role="group" aria-label="Lingua" data-i-aria="lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a class="btn btn--contorno btn--p btn-barra" href="preventivo.html" data-i="nav_prev">Preventivo</a>
+  <button type="button" class="menu-tasto" aria-expanded="false" aria-controls="menu-pannello" data-i="nav_menu">Menu</button>
+</div></header>
+
+<!-- PANNELLO TELEFONO: data-bp e' la larghezza da cui la barra torna intera (comune.js lo chiude oltre questa misura) -->
+<div class="menu-pannello" id="menu-pannello" role="dialog" aria-modal="true" aria-label="Menu" data-i-aria="nav_menu" data-bp="1080">
+  <div class="mp-testa"><a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+    <button type="button" class="menu-tasto" data-menu-chiudi data-i="nav_chiudi">Chiudi</button></div>
+  <ul class="mp-voci">
+    <li><a href="index.html" data-i="nav_home">Home</a></li>
+    <li><a href="tecnologie.html" data-i="nav_tec">Tecnologie</a></li>
+    <li><a href="applicazioni.html" data-i="nav_app" aria-current="page">Applicazioni</a></li>
+    <li><a href="materiali.html" data-i="nav_mat">Materiali</a></li>
+    <li><a href="casi.html" data-i="nav_casi">Casi</a></li>
+    <li><a href="contatti.html" data-i="nav_cont">Contatti</a></li>
+  </ul>
+  <a class="btn btn--primario mp-cta" href="preventivo.html" data-i="nav_prev">Preventivo</a>
+  <p class="etichetta mp-lab" data-i="nav_set">Settori</p>
+  <ul class="mp-settori">
+    <li><a href="settore-oem.html"><span class="solo-lettore">01 </span><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a></li>
+    <li><a href="settore-vsp.html"><span class="solo-lettore">02 </span><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a></li>
+    <li><a href="settore-phm.html"><span class="solo-lettore">03 </span><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a></li>
+  </ul>
+  <p class="etichetta mp-lab" data-i="top_c">Contatti</p>
+  <p class="mp-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><br><a href="tel:+390423715172">+39 0423 715172</a></p>
+  <p class="etichetta mp-lab" id="mp-lingua" data-i="lingua">Lingua</p>
+  <div class="mp-lingue" role="group" aria-labelledby="mp-lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<main id="contenuto" tabindex="-1">
+
+<!-- TESTATA · nero. Briciole, H1 (lo slogan della pagina), lead, una sola azione piena.
+     Sotto, la tavola d'insieme nella cornice smussata della home: tre famiglie, una per processo (SLS, SAF, FDM),
+     ciascuna e' un link alla sua card; il cartiglio dice che sono rese da CAD.
+     Poi i conteggi per settore (prima un indice laterale): numeri gia' scritti nell'HTML, ricalcolati dallo script;
+     ogni voce filtra la griglia e ci porta (data-f invariati: tutti, oem, vsp, phm, h2o, dev). -->
+<section class="testata su-nero" id="testata" aria-labelledby="h-titolo">
+  <div class="griglia testata-testa">
+    <div class="testata-titolo rivela">
+      <nav class="briciole" aria-label="Sei qui" data-i-aria="ap7_bric"><a href="index.html" data-i="torna">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i="occ">Applicazioni</span></nav>
+      <h1 id="h-titolo" data-i="h1">Dove l'additive lavora già in serie.</h1>
+    </div>
+    <div class="testata-lato rivela r2">
+      <p class="lead" data-i="intro_a">Diciassette famiglie di parti, dal cambio formato ai pannelli di grigliatura. Per ciascuna: il problema che costa oggi, cosa produciamo e in che lotti, materiale e finiture, i settori.</p>
+      <div class="testata-azioni">
+        <a class="btn btn--primario btn--g" href="preventivo.html" data-i="cta_file">Inviate STEP o STL</a>
+        <a class="link" href="#famiglie"><span data-i="nav_fam">Famiglie di parti</span> <span class="freccia" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="cornice rivela r3">
+    <figure class="cornice-dentro">
+      <div class="insieme">
+        <a class="ins-vista" href="#tam"><img src="assets/app_tam.webp" width="1200" height="800" alt="Tavola: tamburo a vuoto e rullo nel loro telaio, parti additive in rosso" data-i-alt="fam_tam_alt" fetchpriority="high" decoding="async"><span class="etichetta ins-tav">A06 · <span data-i="fam_tam_t">Tamburi e rulli</span></span></a>
+        <a class="ins-vista" href="#h2o"><img src="assets/app_h2o.webp" width="1200" height="800" alt="Tavola: componenti in polipropilene per il trattamento acque, parti additive in rosso" data-i-alt="fam_h2o_alt" decoding="async"><span class="etichetta ins-tav">A07 · <span data-i="fam_h2o_t">Trattamento acque</span></span></a>
+        <a class="ins-vista" href="#ant"><img src="assets/app_ant.webp" width="1200" height="800" alt="Tavola: autopompa antincendio, parti additive in rosso" data-i-alt="fam_ant_alt" decoding="async"><span class="etichetta ins-tav">A11 · <span data-i="fam_ant_t">Mezzi antincendio</span></span></a>
+      </div>
+      <figcaption>
+        <dl class="cartiglio">
+          <div><dt data-i="cg_tav">Tavola</dt><dd class="mono">A06 · A07 · A11</dd></div>
+          <div><dt data-i="cg_sog">Soggetto</dt><dd data-i="ap7_sog">Tre delle diciassette famiglie, in rosso le parti additive</dd></div>
+          <div><dt data-i="cg_pro">Processo</dt><dd>SLS · SAF · FDM</dd></div>
+          <div><dt data-i="cg_resa">Resa</dt><dd data-i="cg_resa_v">Da CAD, non fotografia</dd></div>
+        </dl>
+      </figcaption>
+    </figure>
+  </div>
+  <p class="griglia conta-testa"><span class="etichetta" id="conta-t" data-i="ind_t">Per settore</span></p>
+  <ul class="griglia dati-testata settori-conta" aria-labelledby="conta-t">
+    <li class="rivela"><a href="#famiglie" data-f="tutti" aria-current="true"><strong class="conta">17</strong><span data-i="set_tutti">Tutte</span></a></li>
+    <li class="rivela r2"><a href="#famiglie" data-f="oem"><strong class="conta">09</strong><span data-i="set_oem">Macchine e OEM</span></a></li>
+    <li class="rivela r3"><a href="#famiglie" data-f="vsp"><strong class="conta">05</strong><span data-i="set_vsp">Mezzi speciali</span></a></li>
+    <li class="rivela r4"><a href="#famiglie" data-f="phm"><strong class="conta">04</strong><span data-i="set_phm">Pharma</span></a></li>
+    <li class="rivela r2"><a href="#famiglie" data-f="h2o"><strong class="conta">02</strong><span data-i="set_h2o">Acque e fluidi</span></a></li>
+    <li class="rivela r3"><a href="#famiglie" data-f="dev"><strong class="conta">04</strong><span data-i="set_dev">Sviluppo prodotto</span></a></li>
+  </ul>
+</section>
+
+<!-- LE FAMIGLIE · carta. Testata della sezione, filtri fermi sotto la barra (nascosti senza JavaScript), diciassette card.
+     Ogni card e' una tavola col cartiglio (codice, processo e materiale), poi i settori, il titolo, una riga,
+     le schede PDF con lingua e peso (data-mb, scritto dal build) e, chiusi, il problema, cosa facciamo e i vantaggi.
+     Le card sono figlie dirette della griglia (l'attributo hidden del filtro cade sull'elemento della griglia) e
+     usano subgrid: titoli, righe PDF e dettagli della stessa fila stanno alla stessa altezza.
+     Le schede in Rev. 00 (bozza nel pie' di pagina del PDF) lo dicono accanto al peso. -->
+<section class="sezione su-carta" id="famiglie" aria-labelledby="h-fam">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="s_o">Le famiglie</p><h2 id="h-fam" data-i="s_t">Scegliete per settore, o guardatele tutte</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="intro_b">Dove la scheda PDF esiste la scaricate qui; dove manca, la chiedete con una mail.</p>
+  </div>
+  <div class="filtri-barra">
+    <div class="griglia">
+      <div class="filtri" role="group" aria-label="Per settore" data-i-aria="ind_t">
+        <button type="button" data-f="tutti" aria-pressed="true"><span data-i="set_tutti">Tutte</span><span class="conta">17</span></button>
+        <button type="button" data-f="oem" aria-pressed="false"><span data-i="set_oem">Macchine e OEM</span><span class="conta">9</span></button>
+        <button type="button" data-f="vsp" aria-pressed="false"><span data-i="set_vsp">Mezzi speciali</span><span class="conta">5</span></button>
+        <button type="button" data-f="phm" aria-pressed="false"><span data-i="set_phm">Pharma</span><span class="conta">4</span></button>
+        <button type="button" data-f="h2o" aria-pressed="false"><span data-i="set_h2o">Acque e fluidi</span><span class="conta">2</span></button>
+        <button type="button" data-f="dev" aria-pressed="false"><span data-i="set_dev">Sviluppo prodotto</span><span class="conta">4</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="griglia" aria-live="polite"><p class="filtri-esito nessuna" hidden><span data-i="vuoto">Nessuna famiglia per questo filtro.</span></p></div>
+
+  <div class="griglia carte famiglie">
+
+<!-- A01 · scheda DPG-APP-EOAT -->
+<article class="famiglia rivela" id="att" data-set="oem phm" aria-labelledby="f-att-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_att.webp" width="1200" height="800" alt="Tavola: dita di presa e nidi porta-pezzo su pallet, parti additive in rosso" data-i-alt="fam_att_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A01 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F1</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a><span aria-hidden="true"> · </span><a href="settore-phm.html" data-i="set_phm">Pharma</a></p>
+  <h3 id="f-att-t" data-i="fam_att_t">Attrezzaggi di macchina</h3>
+  <p class="fam-riga" data-i="fam_att_p">Dita di presa, nidi porta-pezzo e pallet in PA12: al costo di un file, riordinati identici per tutta la vita della macchina.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Attrezzaggi_Macchina.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.7">0,7</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="att_prob">Ogni macchina custom porta decine di attrezzi dedicati, fresati dall'alluminio o dal POM: il costo si nasconde nelle ore di officina e nel ritardo che sposta il collaudo.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="att_fac">Dita di presa, nidi porta-pezzo, pallet e fixture in PA2200 sinterizzato, dedicati alla commessa, in lotti da 1 a 50, riordinati identici dal file per tutta la vita della macchina.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="att_v1">Canali nel corpo</li><li data-i="att_v2">Circa un terzo del peso</li><li data-i="att_v3">Riordino identico</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A02 · scheda DPG-APP-FMT -->
+<article class="famiglia rivela r2" id="frm" data-set="oem phm" aria-labelledby="f-frm-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_frm.webp" width="1200" height="800" alt="Tavola: set di cambio formato con coclea, stella e guide, parti additive in rosso" data-i-alt="fam_frm_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A02 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F3</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a><span aria-hidden="true"> · </span><a href="settore-phm.html" data-i="set_phm">Pharma</a></p>
+  <h3 id="f-frm-t" data-i="fam_frm_t">Cambio formato</h3>
+  <p class="fam-riga" data-i="fam_frm_p">Coclee, stelle, guide e tazze: un set per ogni prodotto del vostro cliente, senza fresare il POM.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Cambio_Formato.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.8">0,8</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="frm_prob">Il set formato oggi nasce fresato dal pieno in POM o PA6: ore macchina per ogni stella, una coclea che è un lavoro a sé, e a ogni nuovo flacone del cliente si ricomincia.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="frm_fac">Stelle, coclee, tazze, piastre e guide di formato in PA2200: un set per ogni prodotto del vostro cliente, da 1 a 50 set, prodotti insieme nello stesso lotto alla firma dell'ordine.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="frm_v1">Set in un lotto</li><li data-i="frm_v2">Passo variabile</li><li data-i="frm_v3">Nessun riattrezzaggio</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A03 · stessa scheda DPG-APP-EOAT di A01 -->
+<article class="famiglia rivela r3" id="eoat" data-set="oem phm" aria-labelledby="f-eoat-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_eoat.webp" width="1200" height="800" alt="Tavola: corpo pinza con dita a formato sopra un pallet, parti additive in rosso" data-i-alt="fam_eoat_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A03 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200, TPU&nbsp;90A · F0–F1</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a><span aria-hidden="true"> · </span><a href="settore-phm.html" data-i="set_phm">Pharma</a></p>
+  <h3 id="f-eoat-t" data-i="fam_eoat_t">Gripper ed EOAT</h3>
+  <p class="fam-riga" data-i="fam_eoat_p">Corpi pinza con il canale del vuoto dentro e dita a formato: il monoblocco pesa circa un terzo dell'alluminio.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Attrezzaggi_Macchina.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.7">0,7</span>&nbsp;MB</span></a></li>
+    <li class="fam-nota" data-i="a7_condivisa">scheda condivisa con Attrezzaggi di macchina</li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="eoat_prob">Il fine-braccio tradizionale è un assieme di piastre lavorate, raccordi e viteria: ogni geometria di presa nuova è un ciclo di officina, e ogni grammo in punta limita il robot.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="eoat_fac">Corpi pinza monoblocco con il canale del vuoto dentro e dita a formato in PA2200, interfacce cedevoli in TPU 90A: la nuova geometria di presa entra in produzione in giorni, in lotti da 1 a 50.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="eoat_v1">Pinza monoblocco</li><li data-i="eoat_v2">Vuoto nel corpo</li><li data-i="eoat_v3">Interfacce cedevoli</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A04 · DPG-APP-RIC (IT) e DPG-APP-SPR (EN, Rev. 00 bozza) -->
+<article class="famiglia rivela" id="car" data-set="oem" aria-labelledby="f-car-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_car.webp" width="1200" height="800" alt="Tavola della famiglia Carter e ricambi, parti additive in rosso" data-i-alt="fam_car_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A04 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F2</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a></p>
+  <h3 id="f-car-t" data-i="fam_car_t">Carter e ricambi</h3>
+  <p class="fam-riga" data-i="fam_car_p">Carter, guide e rack da dieci a cinquecento l'anno, e i ricambi delle serie fuori produzione, dal file o dal rilievo 3D.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Carter_e_Ricambi.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.7">0,7</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DuePiGreco_Spares_From_The_Part.pdf" type="application/pdf" hreflang="en"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="pdf_l_en">in inglese</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="0.7">0,7</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="car_prob">A cento pezzi l'anno il carter ha tre strade, tutte storte: uno stampo che si ripaga in dieci anni, una lamiera che non si adatta all'elettronica, una fresatura che costa più della scheda che protegge.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="car_fac">Carter e coperchi con clip, torrette e passacavi già nella geometria, in PA2200, da dieci a cinquecento l'anno; i ricambi delle serie fuori produzione dal file o dal rilievo 3D.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="car_v1">Clip e torrette</li><li data-i="car_v2">Costo stabile</li><li data-i="car_v3">Reverse engineering</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A05 · scheda DPG-APP-ALI -->
+<article class="famiglia rivela r2" id="ali" data-set="oem" aria-labelledby="f-ali-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_ali.webp" width="1200" height="800" alt="Tavola: distributore con imbuto, condotto e scivolo, parti additive in rosso" data-i-alt="fam_ali_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A05 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F1</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a></p>
+  <h3 id="f-ali-t" data-i="fam_ali_t">Contatto alimentare</h3>
+  <p class="fam-riga" data-i="fam_ali_p">Condotti e imbuti per caffè, vending e food equipment in PA2200, con la dichiarazione del produttore per il contatto alimentare, senza stampo.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Contatto_Alimentare.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="1.7">1,7</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="ali_prob">Il condotto latte oggi è tre stampati incollati o un tubo piegato con i suoi raccordi, e l'imbuto ha uno stampo che si ripaga solo se il restyling aspetta.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="ali_fac">Condotti, imbuti e convogliatori in un pezzo solo, in PA2200 con dichiarazione del produttore per il contatto alimentare (Reg. (UE) 10/2011) a livello di materiale, con la migrazione da verificare sul pezzo finito, in serie da 100 a 1.000 pezzi l'anno con le loro varianti.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="ali_v1">Canale interno liscio</li><li data-i="ali_v2">Reg. (UE) 10/2011, per il produttore</li><li data-i="ali_v3">Nessuna giunzione</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A06 · scheda DPG-APP-CIL -->
+<article class="famiglia rivela r3" id="tam" data-set="oem" aria-labelledby="f-tam-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_tam.webp" width="1200" height="800" alt="Tavola: tamburo a vuoto e rullo nel loro telaio, parti additive in rosso" data-i-alt="fam_tam_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A06 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F1</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a></p>
+  <h3 id="f-tam-t" data-i="fam_tam_t">Tamburi e rulli</h3>
+  <p class="fam-riga" data-i="fam_tam_p">Tamburi a vuoto, rulli di dosaggio e rotori con i canali già dentro: da 1 a 50 pezzi, fino a 700 mm in un pezzo.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Tamburi_e_Rulli.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="1.5">1,5</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="tam_prob">Oggi il tamburo a vuoto è un tornito con decine di fori profondi, tappati e raccordati, oppure un assieme di dischi e distanziali che perde dove non deve.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="tam_fac">Tamburi a vuoto, rulli aspiranti e rotori di dosaggio in PA2200 con i canali interni già nel corpo: da 1 a 50 pezzi, fino a 700 mm in un pezzo, senza foratura profonda né incollaggi.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="tam_v1">Canali di ogni sezione</li><li data-i="tam_v2">Fino a 700 mm</li><li data-i="tam_v3">Leggero sull'albero</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A07 · DPG-SET-H2O in IT, DE, FR; EN Rev. 00 bozza. L'id h2o e' anche un valore di filtro: resta, materiali.html ci punta -->
+<article class="famiglia rivela" id="h2o" data-set="h2o" aria-labelledby="f-h2o-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_h2o.webp" width="1200" height="800" alt="Tavola: componenti in polipropilene per il trattamento acque, parti additive in rosso" data-i-alt="fam_h2o_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A07 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SAF · PP · F0</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><span data-i="set_h2o">Acque e fluidi</span></p>
+  <h3 id="f-h2o-t" data-i="fam_h2o_t">Trattamento acque</h3>
+  <p class="fam-riga" data-i="fam_h2o_p">Crepine, ugelli di controlavaggio, diffusori e distributori in polipropilene: un pezzo unico dove oggi ne incollate tre.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Trattamento_Acque.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.8">0,8</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DuePiGreco_Wassertechnik.pdf" type="application/pdf" hreflang="de"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="pdf_l_de">in tedesco</span> · <span data-mb="0.8">0,8</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DuePiGreco_Traitement_des_Eaux.pdf" type="application/pdf" hreflang="fr"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">FR</span><span class="solo-lettore" data-i="pdf_l_fr">in francese</span> · <span data-mb="0.8">0,8</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DuePiGreco_Water_Treatment.pdf" type="application/pdf" hreflang="en"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="pdf_l_en">in inglese</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="0.9">0,9</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="h2o_prob">La crepina che montate oggi è un assieme di corpo, ghiera e filetto incollati o saldati: ogni giunzione è un punto di perdita che aspetta, e lo stampo per la variante giusta non si ripaga mai.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="h2o_fac">Crepine, ugelli di controlavaggio, diffusori e distributori in polipropilene sinterizzato, con slot da 2 mm e filetto nello stesso pezzo: su disegno, senza stampo, in serie ricorrente a lotto tracciato.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="h2o_v1">Pezzo unico</li><li data-i="h2o_v2">Slot da 2 mm</li><li data-i="h2o_v3">Chimica del PP</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A08 · nessuna scheda dedicata (DuePiGreco_Grande_Formato_e_Serie.pdf e' di A14): la camera SLS in Tecnologie e la mail -->
+<article class="famiglia rivela r2" id="gfs" data-set="oem vsp dev" aria-labelledby="f-gfs-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_gfs.webp" width="1200" height="800" alt="Tavola della famiglia Grande formato e serie, parti additive in rosso" data-i-alt="fam_gfs_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A08 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F3</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a><span aria-hidden="true"> · </span><a href="settore-vsp.html" data-i="set_vsp">Mezzi speciali</a><span aria-hidden="true"> · </span><span data-i="set_dev">Sviluppo prodotto</span></p>
+  <h3 id="f-gfs-t" data-i="fam_gfs_t">Grande formato e serie</h3>
+  <p class="fam-riga" data-i="fam_gfs_p">Camera 700 × 380 × 580 mm: il pezzo da 600 mm in un pezzo solo, o la serie intera in una macchinata.</p>
+  <ul class="fam-pdf">
+    <li><a href="tecnologie.html#sls"><span class="link"><span data-i="vedi_sls">La camera SLS, in Tecnologie</span> <span class="freccia" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="mailto:info@duepigreco3d.it?subject=Richiesta%20scheda:%20Grande%20formato%20e%20serie"><span class="link"><span data-i="chiedi">Chiedete la scheda</span> <span class="freccia" aria-hidden="true">↗</span></span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="gfs_prob">Sopra i 380 mm il pezzo si taglia e si incolla, o cambia fornitore; e la serie da cinquanta a cinquecento pezzi sulle macchine da prototipo diventa un mese di calendario.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="gfs_fac">Camera 700 × 380 × 580 mm: il corpo da 600 mm entra intero, oppure la serie intera annidata in una macchinata, in PA2200 con finitura da F0 a F3.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="gfs_v1">Fino a 700 mm</li><li data-i="gfs_v2">Nessuna sezionatura</li><li data-i="gfs_v3">Serie in una macchinata</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A09 · DPG-APP-VAL IT e DE, Rev. 00 bozza nel pie' di pagina del PDF -->
+<article class="famiglia rivela r3" id="val" data-set="dev" aria-labelledby="f-val-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_val.webp" width="1200" height="800" alt="Tavola: kit di validazione in vista esplosa, parti additive in rosso" data-i-alt="fam_val_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A09 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200, PA11 · FDM · Nylon&nbsp;12CF</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><span data-i="set_dev">Sviluppo prodotto</span></p>
+  <h3 id="f-val-t" data-i="fam_val_t">Kit di validazione</h3>
+  <p class="fam-riga" data-i="fam_val_p">Ogni iterazione, un kit completo: collettori, condotti, carter e staffe calcolati e prodotti come un solo lotto.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DPG_Scheda_VAL_IT.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="0.3">0,3</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DPG_Scheda_VAL_DE.pdf" type="application/pdf" hreflang="de"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="pdf_l_de">in tedesco</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="1.6">1,6</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="val_prob">L'officina interna è piena quando serve, lo stampo prima della serie non ha senso, e il service generico tratta ogni parte dell'assieme come un ordine a sé: dieci offerte, dieci consegne, dieci qualità diverse.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="val_fac">Il kit di validazione, collettori, condotti, carter e staffe, quotato e prodotto come un solo lotto, annidato nella camera da 700 × 380 × 580 mm: alla prossima iterazione si riordina identico, o modificato dove la prova lo chiede.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="val_v1">Un ordine, un lotto</li><li data-i="val_v2">Riordino identico</li><li data-i="val_v3">Materiali per la prova</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A10 · scheda di settore DPG-SET-VSP -->
+<article class="famiglia rivela" id="all" data-set="vsp" aria-labelledby="f-all-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_all.webp" width="1200" height="800" alt="Tavola: allestimento di un&#x27;autopompa con le parti additive in rosso" data-i-alt="fam_all_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A10 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA11, PA2200 · F2</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-vsp.html" data-i="set_vsp">Mezzi speciali</a></p>
+  <h3 id="f-all-t" data-i="fam_all_t">Allestimenti veicolo</h3>
+  <p class="fam-riga" data-i="fam_all_p">Plance, coperture elettronica, supporti fanali e cornici: costo per pezzo stabile dal primo all'ultimo veicolo della commessa.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DPG_Scheda_Settore_Mezzi_Speciali.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="1.5">1,5</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="all_prob">Un allestimento vive in serie da decine di veicoli, ogni commessa ha le sue varianti e la flotta resta in servizio per vent'anni: su numeri così lo stampo non si ammortizza mai.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="all_fac">Plance, coperture elettronica, supporti fanali e cornici in PA11 o PA2200, verniciati a liquido 2K nel colore del cliente: costo per pezzo stabile dal primo all'ultimo veicolo della commessa.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="all_v1">Serie da allestimento</li><li data-i="all_v2">Varianti per ente</li><li data-i="all_v3">Finitura da carrozzeria</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A11 · DPG-APP-ANTINCENDIO, Rev. 00 bozza nel pie' di pagina del PDF -->
+<article class="famiglia rivela r2" id="ant" data-set="vsp" aria-labelledby="f-ant-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_ant.webp" width="1200" height="800" alt="Tavola: autopompa antincendio, parti additive in rosso" data-i-alt="fam_ant_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A11 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA12 · FDM · Ultem&nbsp;9085 · F2</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-vsp.html" data-i="set_vsp">Mezzi speciali</a></p>
+  <h3 id="f-ant-t" data-i="fam_ant_t">Mezzi antincendio</h3>
+  <p class="fam-riga" data-i="fam_ant_p">Monitor, testa della torre faro, segnalatori, presa idrica: la distinta additive di un'autopompa, letta sul modello CAD.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DPG_Scheda_Applicazione_Antincendio.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="2.2">2,2</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="ant_prob">Il camion è di serie, l'allestimento no: torre faro, segnalatori, presa idrica e carter vivono in serie da decine di pezzi, dove nessuno stampo si ammortizza.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="ant_fac">La distinta additive letta sul modello CAD dell'allestimento: basi, cornici e carter in PA12 con finitura 2K, Ultem 9085 dove il capitolato chiede il fuoco a livello di materiale, ogni componente ricambio digitale a vita flotta.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="ant_v1">Distinta dal CAD</li><li data-i="ant_v2">Capitolato fuoco</li><li data-i="ant_v3">Ricambi a vita flotta</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A12 · pack DPG-SET-PHM (Rev. 01) e scheda di settore IT e DE (Rev. 00 bozza). L'id phm e' anche un valore di filtro -->
+<article class="famiglia rivela r3" id="phm" data-set="phm" aria-labelledby="f-phm-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_phm.webp" width="1200" height="800" alt="Tavola: stella di formato e guide per il trasporto fiale, parti additive in rosso" data-i-alt="fam_phm_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A12 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F1–F3</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-phm.html" data-i="set_phm">Pharma</a></p>
+  <h3 id="f-phm-t" data-i="fam_phm_t">Parti a formato pharma</h3>
+  <p class="fam-riga" data-i="fam_phm_p">Stelle, coclee e guide per il trasporto fiale, con il dossier del materiale e la finitura fino al grado cleanroom.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DPG_Pack_Pharma_Machinery.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pack">Pack PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="3.6">3,6</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DPG_Scheda_PHM_IT.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="0.3">0,3</span>&nbsp;MB</span></a></li>
+    <li><a href="schede/DPG_Scheda_PHM_DE.pdf" type="application/pdf" hreflang="de"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="pdf_l_de">in tedesco</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="1.0">1,0</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="phm_prob">Ogni prodotto e ogni contenitore chiedono le loro stelle, guide e centratori: serie piccole per definizione, un attrezzaggio dedicato per variante, e ogni pezzo che entra in linea deve arrivare con le sue carte.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="phm_fac">Stelle, coclee e guide per il trasporto fiale in PA2200, con il dossier del materiale, la finitura da F1 al grado cleanroom e lotto e job riportati su ogni pezzo: il set di formato si riordina identico dal file.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="phm_v1">Variante in giorni</li><li data-i="phm_v2">Dossier del materiale</li><li data-i="phm_v3">Lotto tracciato</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A13 · DPG-APP-RIC, condivisa con A04 -->
+<article class="famiglia rivela" id="str" data-set="oem dev" aria-labelledby="f-str-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_str.webp" width="1200" height="800" alt="Resa da CAD per la famiglia Strumenti in piccola serie" data-i-alt="fam_str_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A13 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · F0–F2</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a><span aria-hidden="true"> · </span><span data-i="set_dev">Sviluppo prodotto</span></p>
+  <h3 id="f-str-t" data-i="fam_str_t">Strumenti in piccola serie</h3>
+  <p class="fam-riga" data-i="fam_str_p">Carter con clip e torrette, guide scheda, rack porta-campione: da dieci a cinquecento l'anno, dove lo stampo non si ripaga.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Carter_e_Ricambi.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="0.7">0,7</span>&nbsp;MB</span></a></li>
+    <li class="fam-nota" data-i="cond_str">scheda condivisa con Carter e ricambi</li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="str_prob">Lo strumento prodotto in decine o centinaia l'anno sta dove lo stampo non si ripaga e la fresatura dal pieno costa come il gruppo che serve; e la serie speciale, con il guscio diverso, non la fa nessuno.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="str_fac">Carter con clip e torrette, guide scheda e rack porta-campione in PA2200, con la maglia e le sedi che servono, in un lotto solo, da dieci a cinquecento l'anno, finitura scelta per la funzione.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="str_v1">Clip e passacavi</li><li data-i="str_v2">Nessun minimo</li><li data-i="str_v3">Finitura a scelta</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A14 · scheda DPG-SET-SRV -->
+<article class="famiglia rivela r2" id="srv" data-set="dev" aria-labelledby="f-srv-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_srv.webp" width="1200" height="800" alt="Resa da CAD per la famiglia Formato e serie per i service" data-i-alt="fam_srv_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A14 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200 · SAF · PP</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><span data-i="set_dev">Sviluppo prodotto</span></p>
+  <h3 id="f-srv-t" data-i="fam_srv_t">Formato e serie per i service</h3>
+  <p class="fam-riga" data-i="fam_srv_p">Camera 700 × 380 × 580 mm e serie da 1 a 500 pezzi per service, modellerie e studi: lavoriamo dietro di voi, il vostro cliente resta vostro.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Grande_Formato_e_Serie.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="1.5">1,5</span>&nbsp;MB</span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="srv_prob">Il vostro parco copre il prototipo; poi arriva il corpo lungo mezzo metro o la richiesta di trecento pezzi in poliammide, e restano due strade: dire di no, o un portale dove siete un ordine fra mille.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="srv_fac">Camera 700 × 380 × 580 mm per la poliammide, una macchina dedicata al polipropilene, con la capacità verificata sulla commessa, e serie da 1 a 500 pezzi, con la risposta tecnica scritta prima del pezzo: lavoriamo dietro di voi, il vostro cliente resta vostro.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="srv_v1">Fornitura neutra</li><li data-i="srv_v2">Da 1 a 500 pezzi</li><li data-i="srv_v3">Verifica sul file</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A15 · scheda di settore DPG-SET-VSP, condivisa con A10 -->
+<article class="famiglia rivela r3" id="int" data-set="vsp" aria-labelledby="f-int-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_int.webp" width="1200" height="800" alt="Resa da CAD per la famiglia Interni e condotti consolidati" data-i-alt="fam_int_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A15 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA2200, PA11 · F2</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-vsp.html" data-i="set_vsp">Mezzi speciali</a></p>
+  <h3 id="f-int-t" data-i="fam_int_t">Interni e condotti consolidati</h3>
+  <p class="fam-riga" data-i="fam_int_p">Plance, coperture elettronica, staffe strumentazione e condotti d'aria ottimizzati nella portata: gruppi multipezzo che diventano monoblocco.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DPG_Scheda_Settore_Mezzi_Speciali.pdf" type="application/pdf" hreflang="it"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="pdf_l_it">in italiano</span> · <span data-mb="1.5">1,5</span>&nbsp;MB</span></a></li>
+    <li class="fam-nota" data-i="cond_int">scheda di settore, condivisa con Allestimenti veicolo</li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="int_prob">Plancia, coperture elettronica e condotti d'aria di cabina sono gruppi multipezzo: più codici a distinta, più assemblaggio e più punti di guasto, su serie da decine di veicoli.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="int_fac">Plance, coperture elettronica, staffe strumentazione e condotti d'aria ottimizzati nella portata, in PA2200 o PA11 con finitura 2K: gruppi multipezzo che diventano monoblocco, pronti al montaggio.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="int_v1">Meno assemblaggio</li><li data-i="int_v2">Portata ottimizzata</li><li data-i="int_v3">Pronti al montaggio</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A16 · nessuna scheda: la mail -->
+<article class="famiglia rivela" id="mot" data-set="vsp" aria-labelledby="f-mot-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img"><img src="assets/app_mot.webp" width="1200" height="800" alt="Tavola della famiglia Motorsport, parti additive in rosso" data-i-alt="fam_mot_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A16 · <span data-i="fam_tav">da CAD</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SLS · PA11, PA12 · FDM · Nylon&nbsp;12CF</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><a href="settore-vsp.html" data-i="set_vsp">Mezzi speciali</a></p>
+  <h3 id="f-mot-t" data-i="fam_mot_t">Motorsport</h3>
+  <p class="fam-riga" data-i="fam_mot_p">Condotto di aspirazione turbo, griglie intercooler, convogliatori e supporti fanali in PA11, PA12 e Nylon 12CF, montati su un'auto da rally in campionato.</p>
+  <ul class="fam-pdf">
+    <li><a href="mailto:info@duepigreco3d.it?subject=Richiesta%20scheda:%20Motorsport"><span class="link"><span data-i="chiedi">Chiedete la scheda</span> <span class="freccia" aria-hidden="true">↗</span></span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="mot_prob">Ricambi e miglioramenti di una vettura in campionato sono pezzi in pochi esemplari che devono reggere la corsa: su numeri così nessuno stampo si ammortizza.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="mot_fac">Condotto di aspirazione turbo ottimizzato nella portata, griglie intercooler, convogliatori e supporti fanali in PA11, PA12 e Nylon 12CF, montati su un'auto da rally in campionato.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="mot_v1">Urto a freddo</li><li data-i="mot_v2">Portata ottimizzata</li><li data-i="mot_v3">Rigidità a peso minimo</li></ol>
+    </div>
+  </details>
+</article>
+
+<!-- A17 · disegno della scheda DPG-APP-SCR senza scritte; scheda EN Rev. 00 bozza, in italiano la mail -->
+<article class="famiglia rivela r2" id="scr" data-set="h2o oem" aria-labelledby="f-scr-t">
+  <figure class="fam-tav su-nero">
+    <div class="fam-img fam-img--disegno"><img src="assets/app_scr_disegno.svg" width="1040" height="700" alt="Tavola della scheda DPG-APP-SCR, non fotografia: pannello di grigliatura in polipropilene sinterizzato, pianta, sezione A-A e dettaglio B del foro conico." data-i-alt="scr_alt" loading="lazy" decoding="async"></div>
+    <figcaption><dl class="fam-cartiglio">
+      <div><dt data-i="lab_tav">Tav.</dt><dd>A17 · <span data-i="fam_tav_scr">disegno</span></dd></div>
+      <div><dt data-i="lab_proc">Processo</dt><dd>SAF · PP · F0</dd></div>
+    </dl></figcaption>
+  </figure>
+  <p class="etichetta fam-settori"><span class="solo-lettore" data-i="nav_set">Settori</span><span data-i="set_h2o">Acque e fluidi</span><span aria-hidden="true"> · </span><a href="settore-oem.html" data-i="set_oem">Macchine e OEM</a></p>
+  <h3 id="f-scr-t" data-i="fam_scr_t">Pannelli di grigliatura</h3>
+  <p class="fam-riga" data-i="scr_p">Pannelli forati e fessurati in polipropilene: fori da 2 mm, cerniere integrate, pezzo unico fino a circa 30 cm.</p>
+  <ul class="fam-pdf">
+    <li><a href="schede/DuePiGreco_Screen_Panels.pdf" type="application/pdf" hreflang="en"><span class="link"><span data-i="pdf">Scheda PDF</span> <span class="freccia" aria-hidden="true">↓</span></span><span class="meta"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="pdf_l_en">in inglese</span> · <span class="bozza" data-i="bozza">bozza</span> · <span data-mb="1.2">1,2</span>&nbsp;MB</span></a></li>
+    <li><a href="mailto:info@duepigreco3d.it?subject=Richiesta%20scheda:%20Pannelli%20di%20grigliatura"><span class="link"><span data-i="chiedi">Chiedete la scheda</span> <span class="freccia" aria-hidden="true">↗</span></span></a></li>
+  </ul>
+  <details class="fam-dettaglio">
+    <summary><span data-i="lab_dett">Problema, soluzione, vantaggi</span></summary>
+    <div class="fam-dentro">
+      <dl class="fam-righe"><dt class="etichetta" data-i="lab_prob">Il problema</dt><dd data-i="scr_prob">Il pannello di grigliatura oggi è un telaio da saldare con un inserto da montare, o uno stampo per ogni taglia: la variante per il singolo impianto non si ripaga.</dd><dt class="etichetta" data-i="lab_fac">Cosa facciamo</dt><dd data-i="scr_fac">Pannelli forati e fessurati per griglie a nastro, tamburi e griglie a gradini in polipropilene sinterizzato: fori esagonali o conici da 2 mm, occhielli e cerniere integrati, pezzo unico fino a circa 30 cm, in serie ricorrente con riordino identico dal file.</dd></dl>
+      <p class="etichetta" data-i="lab_vant">Vantaggi</p>
+      <ol class="fam-vant"><li data-i="scr_v1">Fori da 2 mm</li><li data-i="scr_v2">Cerniere integrate</li><li data-i="scr_v3">Serie ricorrente</li></ol>
+          <div class="rovescio"><span class="etichetta" data-i="fam_lim">Il limite</span><p data-i="scr_lim">Sotto i 2 mm no; sopra i 90 °C no; prese d'acqua potabile chiuse; dove l'usura è il problema il polietilene UHMW resiste di più.</p></div>
+    </div>
+  </details>
+</article>
+
+  </div>
+  <!-- righello del telefono (r07.js): una tacca per card visibile, quella in vista diventa un quadrato rosso -->
+  <div class="righello griglia" aria-hidden="true"><span class="tacche"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="etichetta conta-carte">1 / 17</span></div>
+  <p class="griglia sez-nota rivela"><span data-i="nota_schede">Le schede materiale DPG-MAT si ricevono con l'offerta; il certificato del produttore del materiale, dove il capitolato lo chiede. Le schede segnate come bozza sono in attesa di verifica tecnica.</span></p>
+</section>
+
+<!-- I SETTORI · nero. Il mosaico della home (manuale 4.5): OEM su 8 colonne per due righe, VSP e PHM impilati su 4.
+     Righe e didascalie della home (s7_*); la vecchia riga s3p si ritira (dichiarazioni senza perimetro). -->
+<section class="settori su-nero" id="settori" aria-labelledby="h-settori">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="sez_o">I settori</p><h2 id="h-settori" data-i="sez_t">Le tre pagine di settore</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="s7_lead">Ogni settore ha la sua pagina, scritta nel vocabolario dei vostri capitolati: il conto economico, le parti, i materiali, un caso, e quando non conviene.</p>
+  </div>
+  <div class="griglia mosaico">
+    <a class="tessera tessera--a rivela" href="settore-oem.html">
+      <span class="tessera-img"><img src="assets/tav_oem_banda.webp" width="1500" height="1000" alt="Tavola tecnica: cella di automazione con rulliera, presa a pettine e carter a griglia, parti additive in rosso" data-i-alt="s7_1alt" loading="lazy" decoding="async"></span>
+      <span class="tessera-tav etichetta" data-i="s7_tav1">Tav. 01 · da CAD</span><span class="tessera-freccia" aria-hidden="true">↗</span>
+      <div class="tessera-testo"><span class="etichetta">01</span><h3 data-i="p_s1">Macchine industriali e OEM</h3><span class="tessera-riga" data-i="s7_1p">Carter, formati, attrezzaggi e ricambi, in lotti da uno a cinquanta.</span></div>
+    </a>
+    <a class="tessera rivela r2" href="settore-vsp.html">
+      <span class="tessera-img"><img src="assets/tav_vsp_hero.webp" width="1500" height="1000" alt="Tavola tecnica di un&#x27;autopompa su telaio a tre assi, parti additive in rosso" data-i-alt="s7_2alt" loading="lazy" decoding="async"></span>
+      <span class="tessera-tav etichetta" data-i="s7_tav2">Tav. 02 · da CAD</span><span class="tessera-freccia" aria-hidden="true">↗</span>
+      <div class="tessera-testo"><span class="etichetta">02</span><h3 data-i="p_s2">Mezzi speciali e allestimenti</h3><span class="tessera-riga" data-i="s7_2p">Decine di esemplari, ricambi di flotta, finitura da carrozzeria.</span></div>
+    </a>
+    <a class="tessera rivela r3" href="settore-phm.html">
+      <span class="tessera-img"><img src="assets/tav_phm_hero.webp" width="1500" height="1000" alt="Tavola tecnica: unità di processo da banco con trasporto fiale, parti additive in rosso" data-i-alt="s7_3alt" loading="lazy" decoding="async"></span>
+      <span class="tessera-tav etichetta" data-i="s7_tav3">Tav. 03 · da CAD</span><span class="tessera-freccia" aria-hidden="true">↗</span>
+      <div class="tessera-testo"><span class="etichetta">03</span><h3 data-i="p_s3">Pharma e macchine di processo</h3><span class="tessera-riga" data-i="s7_3p">Parti a formato, dossier del materiale, finitura fino al grado cleanroom.</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- IL ROVESCIO · panna, l'ultima sezione chiara prima della striscia nera. Testo approvato (00_CONTENUTI par. 5),
+     diviso nelle sue tre frasi: sotto la scala da tavolo, sopra i volumi da stampo, il metallo ai partner. -->
+<section class="sezione sezione--panna su-carta" id="rovescio" aria-labelledby="h-rov">
+  <div class="griglia">
+    <div class="rov-testa rivela"><p class="occhiello" data-i="rov_t">Il rovescio</p><h2 id="h-rov" data-i="rov_h2">Dove serve un'altra strada.</h2></div>
+    <ol class="rov-voci">
+      <li class="rivela"><span class="etichetta">01</span><p data-i="rov_p1">Sotto la scala delle macchine da tavolo il pezzo ve lo fate in casa, e fate bene.</p></li>
+      <li class="rivela r2"><span class="etichetta">02</span><p data-i="rov_p2">Sopra i volumi da stampo torna lo stampo, e vi aiutiamo a fare il passaggio.</p></li>
+      <li class="rivela r3"><span class="etichetta">03</span><p data-i="rov_p3">Lo strutturale in metallo resta in metallo: lo instradiamo alla nostra rete di partner qualificati.</p></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+
+
+<!-- STRISCIA FINALE (manuale 4.12) · nero, la cornice smussata della testata: chiude ogni pagina con le tre chiamate all'azione.
+     Parte comune (_lavoro/r07/parti/striscia.html); una pagina la toglie con "striscia": false nei META. -->
+<section class="striscia su-nero" id="contatti-rapidi" aria-labelledby="h-fine">
+  <div class="cornice cornice--fine rivela">
+    <div class="cornice-dentro striscia-dentro">
+      <h2 id="h-fine" data-i="fine_t">Mandateci lo STEP di un componente.</h2>
+      <p class="lead" data-i="fine_p">Vi diciamo anche quando non conviene.</p>
+      <div class="striscia-azioni">
+        <a class="btn btn--primario btn--g" href="preventivo.html" data-i="cta_file">Inviate STEP o STL</a>
+        <a class="btn btn--contorno btn--g" href="mailto:info@duepigreco3d.it?subject=Parlare%20con%20un%20tecnico" data-i="cta_tecnico">Parlate con un tecnico</a>
+        <a class="btn btn--contorno btn--g" href="casi.html#schede" data-i="cta_scheda">Richiedete una scheda</a>
+      </div>
+      <p class="striscia-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PIEDE (manuale 4.13) · secondo nero. Parte comune (_lavoro/r07/parti/piede.html); il build scrive il codice del documento -->
+<footer class="piede su-nero" id="contatti">
+  <div class="griglia piede-alto">
+    <div class="piede-marchio">
+      <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+      <p data-i="p_claim">Produzione additiva industriale per serie piccole e medie.</p>
+      <address class="piede-sedi">Via delle Industrie 18/20, Ponzano Veneto (TV)<br>Via Roma 55, Resana (TV)</address>
+    </div>
+    <nav class="piede-col piede-col--prima" aria-labelledby="pc1"><h2 class="etichetta piede-tit" id="pc1" data-i="p_settori">Settori</h2>
+      <a href="settore-oem.html" data-i="p_s1">Macchine industriali e OEM</a><a href="settore-vsp.html" data-i="p_s2">Mezzi speciali e allestimenti</a><a href="settore-phm.html" data-i="p_s3">Pharma e macchine di processo</a></nav>
+    <nav class="piede-col" aria-labelledby="pc2"><h2 class="etichetta piede-tit" id="pc2" data-i="p_espl">Esplora</h2>
+      <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a><a href="applicazioni.html" data-i="nav_app">Applicazioni</a><a href="materiali.html" data-i="nav_mat">Materiali</a>
+      <a href="casi.html" data-i="nav_casi">Casi</a><a href="casi.html#schede" data-i="nav_schede">Schede PDF</a><a href="faq.html" data-i="nav_ris_faq">Domande frequenti</a><a href="preventivo.html" data-i="nav_prev">Preventivo</a></nav>
+    <div class="piede-col"><h2 class="etichetta piede-tit" data-i="p_contatti">Contatti</h2>
+      <a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a>
+      <a href="https://duepigreco3d.it">duepigreco3d.it</a><a href="contatti.html" data-i="nav_cont">Contatti</a></div>
+  </div>
+  <div class="griglia piede-legale">
+    <p>Due Pi Greco S.r.l. · <span data-i="p_iva">P.IVA</span> <span class="mono">04499050286</span></p>
+    <dl class="iscrizioni">
+      <div><dt data-i="c_doc">Documento</dt><dd>DPG-WEB · Applicazioni</dd></div>
+      <div><dt data-i="c_rev">Revisione</dt><dd>Rev. 07 · demo</dd></div>
+      <div><dt data-i="c_anno">Anno</dt><dd>2026</dd></div>
+      <div><dt data-i="c_note">Note</dt><dd data-i="c_de">DE: bozza da rileggere</dd></div>
+    </dl>
+  </div>
+</footer>
+
+<script>
+const I18N={
+"it": {
+"a7_condivisa": "scheda condivisa con Attrezzaggi di macchina",
+"ali_fac": "Condotti, imbuti e convogliatori in un pezzo solo, in PA2200 con dichiarazione del produttore per il contatto alimentare (Reg. (UE) 10/2011) a livello di materiale, con la migrazione da verificare sul pezzo finito, in serie da 100 a 1.000 pezzi l'anno con le loro varianti.",
+"ali_prob": "Il condotto latte oggi è tre stampati incollati o un tubo piegato con i suoi raccordi, e l'imbuto ha uno stampo che si ripaga solo se il restyling aspetta.",
+"ali_v1": "Canale interno liscio",
+"ali_v2": "Reg. (UE) 10/2011, per il produttore",
+"ali_v3": "Nessuna giunzione",
+"all_fac": "Plance, coperture elettronica, supporti fanali e cornici in PA11 o PA2200, verniciati a liquido 2K nel colore del cliente: costo per pezzo stabile dal primo all'ultimo veicolo della commessa.",
+"all_prob": "Un allestimento vive in serie da decine di veicoli, ogni commessa ha le sue varianti e la flotta resta in servizio per vent'anni: su numeri così lo stampo non si ammortizza mai.",
+"all_v1": "Serie da allestimento",
+"all_v2": "Varianti per ente",
+"all_v3": "Finitura da carrozzeria",
+"ant_fac": "La distinta additive letta sul modello CAD dell'allestimento: basi, cornici e carter in PA12 con finitura 2K, Ultem 9085 dove il capitolato chiede il fuoco a livello di materiale, ogni componente ricambio digitale a vita flotta.",
+"ant_prob": "Il camion è di serie, l'allestimento no: torre faro, segnalatori, presa idrica e carter vivono in serie da decine di pezzi, dove nessuno stampo si ammortizza.",
+"ant_v1": "Distinta dal CAD",
+"ant_v2": "Capitolato fuoco",
+"ant_v3": "Ricambi a vita flotta",
+"ap7_bric": "Sei qui",
+"ap7_sog": "Tre delle diciassette famiglie, in rosso le parti additive",
+"att_fac": "Dita di presa, nidi porta-pezzo, pallet e fixture in PA2200 sinterizzato, dedicati alla commessa, in lotti da 1 a 50, riordinati identici dal file per tutta la vita della macchina.",
+"att_prob": "Ogni macchina custom porta decine di attrezzi dedicati, fresati dall'alluminio o dal POM: il costo si nasconde nelle ore di officina e nel ritardo che sposta il collaudo.",
+"att_v1": "Canali nel corpo",
+"att_v2": "Circa un terzo del peso",
+"att_v3": "Riordino identico",
+"bozza": "bozza",
+"c_anno": "Anno",
+"c_de": "DE: bozza da rileggere",
+"c_doc": "Documento",
+"c_note": "Note",
+"c_rev": "Revisione",
+"car_fac": "Carter e coperchi con clip, torrette e passacavi già nella geometria, in PA2200, da dieci a cinquecento l'anno; i ricambi delle serie fuori produzione dal file o dal rilievo 3D.",
+"car_prob": "A cento pezzi l'anno il carter ha tre strade, tutte storte: uno stampo che si ripaga in dieci anni, una lamiera che non si adatta all'elettronica, una fresatura che costa più della scheda che protegge.",
+"car_v1": "Clip e torrette",
+"car_v2": "Costo stabile",
+"car_v3": "Reverse engineering",
+"cg_pro": "Processo",
+"cg_resa": "Resa",
+"cg_resa_v": "Da CAD, non fotografia",
+"cg_sog": "Soggetto",
+"cg_tav": "Tavola",
+"chiedi": "Chiedete la scheda",
+"cond_int": "scheda di settore, condivisa con Allestimenti veicolo",
+"cond_str": "scheda condivisa con Carter e ricambi",
+"cta_file": "Inviate STEP o STL",
+"cta_scheda": "Richiedete una scheda",
+"cta_tecnico": "Parlate con un tecnico",
+"eoat_fac": "Corpi pinza monoblocco con il canale del vuoto dentro e dita a formato in PA2200, interfacce cedevoli in TPU 90A: la nuova geometria di presa entra in produzione in giorni, in lotti da 1 a 50.",
+"eoat_prob": "Il fine-braccio tradizionale è un assieme di piastre lavorate, raccordi e viteria: ogni geometria di presa nuova è un ciclo di officina, e ogni grammo in punta limita il robot.",
+"eoat_v1": "Pinza monoblocco",
+"eoat_v2": "Vuoto nel corpo",
+"eoat_v3": "Interfacce cedevoli",
+"fam_ali_alt": "Tavola: distributore con imbuto, condotto e scivolo, parti additive in rosso",
+"fam_ali_p": "Condotti e imbuti per caffè, vending e food equipment in PA2200, con la dichiarazione del produttore per il contatto alimentare, senza stampo.",
+"fam_ali_t": "Contatto alimentare",
+"fam_all_alt": "Tavola: allestimento di un'autopompa con le parti additive in rosso",
+"fam_all_p": "Plance, coperture elettronica, supporti fanali e cornici: costo per pezzo stabile dal primo all'ultimo veicolo della commessa.",
+"fam_all_t": "Allestimenti veicolo",
+"fam_ant_alt": "Tavola: autopompa antincendio, parti additive in rosso",
+"fam_ant_p": "Monitor, testa della torre faro, segnalatori, presa idrica: la distinta additive di un'autopompa, letta sul modello CAD.",
+"fam_ant_t": "Mezzi antincendio",
+"fam_att_alt": "Tavola: dita di presa e nidi porta-pezzo su pallet, parti additive in rosso",
+"fam_att_p": "Dita di presa, nidi porta-pezzo e pallet in PA12: al costo di un file, riordinati identici per tutta la vita della macchina.",
+"fam_att_t": "Attrezzaggi di macchina",
+"fam_car_alt": "Tavola della famiglia Carter e ricambi, parti additive in rosso",
+"fam_car_p": "Carter, guide e rack da dieci a cinquecento l'anno, e i ricambi delle serie fuori produzione, dal file o dal rilievo 3D.",
+"fam_car_t": "Carter e ricambi",
+"fam_eoat_alt": "Tavola: corpo pinza con dita a formato sopra un pallet, parti additive in rosso",
+"fam_eoat_p": "Corpi pinza con il canale del vuoto dentro e dita a formato: il monoblocco pesa circa un terzo dell'alluminio.",
+"fam_eoat_t": "Gripper ed EOAT",
+"fam_frm_alt": "Tavola: set di cambio formato con coclea, stella e guide, parti additive in rosso",
+"fam_frm_p": "Coclee, stelle, guide e tazze: un set per ogni prodotto del vostro cliente, senza fresare il POM.",
+"fam_frm_t": "Cambio formato",
+"fam_gfs_alt": "Tavola della famiglia Grande formato e serie, parti additive in rosso",
+"fam_gfs_p": "Camera 700 × 380 × 580 mm: il pezzo da 600 mm in un pezzo solo, o la serie intera in una macchinata.",
+"fam_gfs_t": "Grande formato e serie",
+"fam_h2o_alt": "Tavola: componenti in polipropilene per il trattamento acque, parti additive in rosso",
+"fam_h2o_p": "Crepine, ugelli di controlavaggio, diffusori e distributori in polipropilene: un pezzo unico dove oggi ne incollate tre.",
+"fam_h2o_t": "Trattamento acque",
+"fam_int_alt": "Resa da CAD per la famiglia Interni e condotti consolidati",
+"fam_int_p": "Plance, coperture elettronica, staffe strumentazione e condotti d'aria ottimizzati nella portata: gruppi multipezzo che diventano monoblocco.",
+"fam_int_t": "Interni e condotti consolidati",
+"fam_lim": "Il limite",
+"fam_mot_alt": "Tavola della famiglia Motorsport, parti additive in rosso",
+"fam_mot_p": "Condotto di aspirazione turbo, griglie intercooler, convogliatori e supporti fanali in PA11, PA12 e Nylon 12CF, montati su un'auto da rally in campionato.",
+"fam_mot_t": "Motorsport",
+"fam_phm_alt": "Tavola: stella di formato e guide per il trasporto fiale, parti additive in rosso",
+"fam_phm_p": "Stelle, coclee e guide per il trasporto fiale, con il dossier del materiale e la finitura fino al grado cleanroom.",
+"fam_phm_t": "Parti a formato pharma",
+"fam_scr_t": "Pannelli di grigliatura",
+"fam_srv_alt": "Resa da CAD per la famiglia Formato e serie per i service",
+"fam_srv_p": "Camera 700 × 380 × 580 mm e serie da 1 a 500 pezzi per service, modellerie e studi: lavoriamo dietro di voi, il vostro cliente resta vostro.",
+"fam_srv_t": "Formato e serie per i service",
+"fam_str_alt": "Resa da CAD per la famiglia Strumenti in piccola serie",
+"fam_str_p": "Carter con clip e torrette, guide scheda, rack porta-campione: da dieci a cinquecento l'anno, dove lo stampo non si ripaga.",
+"fam_str_t": "Strumenti in piccola serie",
+"fam_tam_alt": "Tavola: tamburo a vuoto e rullo nel loro telaio, parti additive in rosso",
+"fam_tam_p": "Tamburi a vuoto, rulli di dosaggio e rotori con i canali già dentro: da 1 a 50 pezzi, fino a 700 mm in un pezzo.",
+"fam_tam_t": "Tamburi e rulli",
+"fam_tav": "da CAD",
+"fam_tav_scr": "disegno",
+"fam_val_alt": "Tavola: kit di validazione in vista esplosa, parti additive in rosso",
+"fam_val_p": "Ogni iterazione, un kit completo: collettori, condotti, carter e staffe calcolati e prodotti come un solo lotto.",
+"fam_val_t": "Kit di validazione",
+"fine_p": "Vi diciamo anche quando non conviene.",
+"fine_t": "Mandateci lo STEP di un componente.",
+"frm_fac": "Stelle, coclee, tazze, piastre e guide di formato in PA2200: un set per ogni prodotto del vostro cliente, da 1 a 50 set, prodotti insieme nello stesso lotto alla firma dell'ordine.",
+"frm_prob": "Il set formato oggi nasce fresato dal pieno in POM o PA6: ore macchina per ogni stella, una coclea che è un lavoro a sé, e a ogni nuovo flacone del cliente si ricomincia.",
+"frm_v1": "Set in un lotto",
+"frm_v2": "Passo variabile",
+"frm_v3": "Nessun riattrezzaggio",
+"gfs_fac": "Camera 700 × 380 × 580 mm: il corpo da 600 mm entra intero, oppure la serie intera annidata in una macchinata, in PA2200 con finitura da F0 a F3.",
+"gfs_prob": "Sopra i 380 mm il pezzo si taglia e si incolla, o cambia fornitore; e la serie da cinquanta a cinquecento pezzi sulle macchine da prototipo diventa un mese di calendario.",
+"gfs_v1": "Fino a 700 mm",
+"gfs_v2": "Nessuna sezionatura",
+"gfs_v3": "Serie in una macchinata",
+"h1": "Dove l'additive lavora già in serie.",
+"h2o_fac": "Crepine, ugelli di controlavaggio, diffusori e distributori in polipropilene sinterizzato, con slot da 2 mm e filetto nello stesso pezzo: su disegno, senza stampo, in serie ricorrente a lotto tracciato.",
+"h2o_prob": "La crepina che montate oggi è un assieme di corpo, ghiera e filetto incollati o saldati: ogni giunzione è un punto di perdita che aspetta, e lo stampo per la variante giusta non si ripaga mai.",
+"h2o_v1": "Pezzo unico",
+"h2o_v2": "Slot da 2 mm",
+"h2o_v3": "Chimica del PP",
+"ind_t": "Per settore",
+"int_fac": "Plance, coperture elettronica, staffe strumentazione e condotti d'aria ottimizzati nella portata, in PA2200 o PA11 con finitura 2K: gruppi multipezzo che diventano monoblocco, pronti al montaggio.",
+"int_prob": "Plancia, coperture elettronica e condotti d'aria di cabina sono gruppi multipezzo: più codici a distinta, più assemblaggio e più punti di guasto, su serie da decine di veicoli.",
+"int_v1": "Meno assemblaggio",
+"int_v2": "Portata ottimizzata",
+"int_v3": "Pronti al montaggio",
+"intro_a": "Diciassette famiglie di parti, dal cambio formato ai pannelli di grigliatura. Per ciascuna: il problema che costa oggi, cosa produciamo e in che lotti, materiale e finiture, i settori.",
+"intro_b": "Dove la scheda PDF esiste la scaricate qui; dove manca, la chiedete con una mail.",
+"lab_dett": "Problema, soluzione, vantaggi",
+"lab_fac": "Cosa facciamo",
+"lab_prob": "Il problema",
+"lab_proc": "Processo",
+"lab_tav": "Tav.",
+"lab_vant": "Vantaggi",
+"lingua": "Lingua",
+"meta_d": "Diciassette famiglie di applicazione della produzione additiva industriale: cambio formato, attrezzaggi, gripper, carter, contatto alimentare, trattamento acque, pannelli di grigliatura, allestimenti. Per ciascuna il problema, cosa facciamo, materiale e scheda PDF.",
+"mot_fac": "Condotto di aspirazione turbo ottimizzato nella portata, griglie intercooler, convogliatori e supporti fanali in PA11, PA12 e Nylon 12CF, montati su un'auto da rally in campionato.",
+"mot_prob": "Ricambi e miglioramenti di una vettura in campionato sono pezzi in pochi esemplari che devono reggere la corsa: su numeri così nessuno stampo si ammortizza.",
+"mot_v1": "Urto a freddo",
+"mot_v2": "Portata ottimizzata",
+"mot_v3": "Rigidità a peso minimo",
+"nav_app": "Applicazioni",
+"nav_casi": "Casi",
+"nav_chiudi": "Chiudi",
+"nav_cont": "Contatti",
+"nav_fam": "Famiglie di parti",
+"nav_home": "Home",
+"nav_mat": "Materiali",
+"nav_menu": "Menu",
+"nav_prev": "Preventivo",
+"nav_ris_faq": "Domande frequenti",
+"nav_s1d": "carter, formati, attrezzaggi, ricambi",
+"nav_s2d": "allestimenti, flotte, finitura da carrozzeria",
+"nav_s3d": "parti a formato, dossier, cleanroom",
+"nav_schede": "Schede PDF",
+"nav_set": "Settori",
+"nav_tec": "Tecnologie",
+"nav_tutti": "Tutte le applicazioni",
+"nota_schede": "Le schede materiale DPG-MAT si ricevono con l'offerta; il certificato del produttore del materiale, dove il capitolato lo chiede. Le schede segnate come bozza sono in attesa di verifica tecnica.",
+"occ": "Applicazioni",
+"p_claim": "Produzione additiva industriale per serie piccole e medie.",
+"p_contatti": "Contatti",
+"p_espl": "Esplora",
+"p_iva": "P.IVA",
+"p_s1": "Macchine industriali e OEM",
+"p_s2": "Mezzi speciali e allestimenti",
+"p_s3": "Pharma e macchine di processo",
+"p_settori": "Settori",
+"pack": "Pack PDF",
+"pdf": "Scheda PDF",
+"pdf_l_de": "in tedesco",
+"pdf_l_en": "in inglese",
+"pdf_l_fr": "in francese",
+"pdf_l_it": "in italiano",
+"phm_fac": "Stelle, coclee e guide per il trasporto fiale in PA2200, con il dossier del materiale, la finitura da F1 al grado cleanroom e lotto e job riportati su ogni pezzo: il set di formato si riordina identico dal file.",
+"phm_prob": "Ogni prodotto e ogni contenitore chiedono le loro stelle, guide e centratori: serie piccole per definizione, un attrezzaggio dedicato per variante, e ogni pezzo che entra in linea deve arrivare con le sue carte.",
+"phm_v1": "Variante in giorni",
+"phm_v2": "Dossier del materiale",
+"phm_v3": "Lotto tracciato",
+"rov_h2": "Dove serve un'altra strada.",
+"rov_p1": "Sotto la scala delle macchine da tavolo il pezzo ve lo fate in casa, e fate bene.",
+"rov_p2": "Sopra i volumi da stampo torna lo stampo, e vi aiutiamo a fare il passaggio.",
+"rov_p3": "Lo strutturale in metallo resta in metallo: lo instradiamo alla nostra rete di partner qualificati.",
+"rov_t": "Il rovescio",
+"s7_1alt": "Tavola tecnica: cella di automazione con rulliera, presa a pettine e carter a griglia, parti additive in rosso",
+"s7_1p": "Carter, formati, attrezzaggi e ricambi, in lotti da uno a cinquanta.",
+"s7_2alt": "Tavola tecnica di un'autopompa su telaio a tre assi, parti additive in rosso",
+"s7_2p": "Decine di esemplari, ricambi di flotta, finitura da carrozzeria.",
+"s7_3alt": "Tavola tecnica: unità di processo da banco con trasporto fiale, parti additive in rosso",
+"s7_3p": "Parti a formato, dossier del materiale, finitura fino al grado cleanroom.",
+"s7_lead": "Ogni settore ha la sua pagina, scritta nel vocabolario dei vostri capitolati: il conto economico, le parti, i materiali, un caso, e quando non conviene.",
+"s7_tav1": "Tav. 01 · da CAD",
+"s7_tav2": "Tav. 02 · da CAD",
+"s7_tav3": "Tav. 03 · da CAD",
+"s_o": "Le famiglie",
+"s_t": "Scegliete per settore, o guardatele tutte",
+"salta": "Vai al contenuto",
+"scr_alt": "Tavola della scheda DPG-APP-SCR, non fotografia: pannello di grigliatura in polipropilene sinterizzato, pianta, sezione A-A e dettaglio B del foro conico.",
+"scr_fac": "Pannelli forati e fessurati per griglie a nastro, tamburi e griglie a gradini in polipropilene sinterizzato: fori esagonali o conici da 2 mm, occhielli e cerniere integrati, pezzo unico fino a circa 30 cm, in serie ricorrente con riordino identico dal file.",
+"scr_lim": "Sotto i 2 mm no; sopra i 90 °C no; prese d'acqua potabile chiuse; dove l'usura è il problema il polietilene UHMW resiste di più.",
+"scr_p": "Pannelli forati e fessurati in polipropilene: fori da 2 mm, cerniere integrate, pezzo unico fino a circa 30 cm.",
+"scr_prob": "Il pannello di grigliatura oggi è un telaio da saldare con un inserto da montare, o uno stampo per ogni taglia: la variante per il singolo impianto non si ripaga.",
+"scr_v1": "Fori da 2 mm",
+"scr_v2": "Cerniere integrate",
+"scr_v3": "Serie ricorrente",
+"set_dev": "Sviluppo prodotto",
+"set_h2o": "Acque e fluidi",
+"set_oem": "Macchine e OEM",
+"set_phm": "Pharma",
+"set_tutti": "Tutte",
+"set_vsp": "Mezzi speciali",
+"sez_o": "I settori",
+"sez_t": "Le tre pagine di settore",
+"srv_fac": "Camera 700 × 380 × 580 mm per la poliammide, una macchina dedicata al polipropilene, con la capacità verificata sulla commessa, e serie da 1 a 500 pezzi, con la risposta tecnica scritta prima del pezzo: lavoriamo dietro di voi, il vostro cliente resta vostro.",
+"srv_prob": "Il vostro parco copre il prototipo; poi arriva il corpo lungo mezzo metro o la richiesta di trecento pezzi in poliammide, e restano due strade: dire di no, o un portale dove siete un ordine fra mille.",
+"srv_v1": "Fornitura neutra",
+"srv_v2": "Da 1 a 500 pezzi",
+"srv_v3": "Verifica sul file",
+"str_fac": "Carter con clip e torrette, guide scheda e rack porta-campione in PA2200, con la maglia e le sedi che servono, in un lotto solo, da dieci a cinquecento l'anno, finitura scelta per la funzione.",
+"str_prob": "Lo strumento prodotto in decine o centinaia l'anno sta dove lo stampo non si ripaga e la fresatura dal pieno costa come il gruppo che serve; e la serie speciale, con il guscio diverso, non la fa nessuno.",
+"str_v1": "Clip e passacavi",
+"str_v2": "Nessun minimo",
+"str_v3": "Finitura a scelta",
+"tam_fac": "Tamburi a vuoto, rulli aspiranti e rotori di dosaggio in PA2200 con i canali interni già nel corpo: da 1 a 50 pezzi, fino a 700 mm in un pezzo, senza foratura profonda né incollaggi.",
+"tam_prob": "Oggi il tamburo a vuoto è un tornito con decine di fori profondi, tappati e raccordati, oppure un assieme di dischi e distanziali che perde dove non deve.",
+"tam_v1": "Canali di ogni sezione",
+"tam_v2": "Fino a 700 mm",
+"tam_v3": "Leggero sull'albero",
+"titolo": "Applicazioni · Due Pi Greco",
+"top_c": "Contatti",
+"torna": "Home",
+"val_fac": "Il kit di validazione, collettori, condotti, carter e staffe, quotato e prodotto come un solo lotto, annidato nella camera da 700 × 380 × 580 mm: alla prossima iterazione si riordina identico, o modificato dove la prova lo chiede.",
+"val_prob": "L'officina interna è piena quando serve, lo stampo prima della serie non ha senso, e il service generico tratta ogni parte dell'assieme come un ordine a sé: dieci offerte, dieci consegne, dieci qualità diverse.",
+"val_v1": "Un ordine, un lotto",
+"val_v2": "Riordino identico",
+"val_v3": "Materiali per la prova",
+"vedi_sls": "La camera SLS, in Tecnologie",
+"vuoto": "Nessuna famiglia per questo filtro."
+},
+"de": {
+"a7_condivisa": "gemeinsames Blatt mit Maschinenvorrichtungen",
+"ali_fac": "Leitungen, Trichter und Förderkanäle aus einem Stück, aus PA2200 mit Herstellererklärung für den Lebensmittelkontakt (VO (EU) 10/2011) auf Werkstoffebene, Migration am Fertigteil zu prüfen, in Serien von 100 bis 1.000 Stück pro Jahr mit ihren Varianten.",
+"ali_prob": "Die Milchleitung ist heute drei verklebte Spritzgussteile oder ein gebogenes Rohr mit Fittings, und der Trichter hat ein Werkzeug, das sich nur rechnet, wenn das Restyling wartet.",
+"ali_v1": "Glatter Innenkanal",
+"ali_v2": "VO (EU) 10/2011, laut Hersteller",
+"ali_v3": "Keine Fügestelle",
+"all_fac": "Armaturenbretter, Elektronikabdeckungen, Scheinwerferhalter und Rahmen aus PA11 oder PA2200, 2K-nasslackiert in der Kundenfarbe: stabile Stückkosten vom ersten bis zum letzten Fahrzeug des Auftrags.",
+"all_prob": "Ein Aufbau lebt in Serien von Dutzenden Fahrzeugen, jeder Auftrag hat seine Varianten, und die Flotte bleibt zwanzig Jahre im Dienst: bei solchen Stückzahlen amortisiert sich kein Werkzeug.",
+"all_v1": "Serie für Aufbauten",
+"all_v2": "Varianten je Betreiber",
+"all_v3": "Karosserie-Finish",
+"ant_fac": "Die additive Stückliste, am CAD-Modell des Aufbaus gelesen: Sockel, Rahmen und Abdeckungen aus PA12 mit 2K-Finish, Ultem 9085, wo das Lastenheft Anforderungen an das Brandverhalten auf Werkstoffebene stellt, jedes Bauteil ein digitales Ersatzteil über die Flottenlaufzeit.",
+"ant_prob": "Der Lkw ist Serie, der Aufbau nicht: Lichtmast, Signalgeber, Wasseranschluss und Abdeckungen leben in Serien von Dutzenden Stück, wo sich kein Werkzeug amortisiert.",
+"ant_v1": "Stückliste aus dem CAD",
+"ant_v2": "Lastenheft Brandverhalten",
+"ant_v3": "Ersatzteile über Flottenlaufzeit",
+"ap7_bric": "Sie sind hier",
+"ap7_sog": "Drei der siebzehn Familien, additive Teile in Rot",
+"att_fac": "Greiffinger, Werkstücknester, Paletten und Fixtures aus gesintertem PA2200, dem Auftrag zugeordnet, in Losen von 1 bis 50, identisch aus der Datei nachbestellt über die ganze Lebensdauer der Maschine.",
+"att_prob": "Jede Sondermaschine trägt Dutzende dedizierte Vorrichtungen, aus Aluminium oder POM gefräst: die Kosten verstecken sich in Werkstattstunden und in der Verzögerung, die die Abnahme verschiebt.",
+"att_v1": "Kanäle im Körper",
+"att_v2": "Etwa ein Drittel des Gewichts",
+"att_v3": "Identische Nachbestellung",
+"bozza": "Entwurf",
+"c_anno": "Jahr",
+"c_de": "DE: Entwurf, Korrektur ausstehend",
+"c_doc": "Dokument",
+"c_note": "Hinweis",
+"c_rev": "Revision",
+"car_fac": "Gehäuse und Deckel mit Clips, Domen und Kabeldurchführungen bereits in der Geometrie, aus PA2200, zehn bis fünfhundert pro Jahr; die Ersatzteile ausgelaufener Serien aus der Datei oder dem 3D-Scan.",
+"car_prob": "Bei hundert Stück im Jahr hat das Gehäuse drei Wege, alle schief: ein Werkzeug, das sich in zehn Jahren amortisiert, ein Blech, das nicht zur Elektronik passt, oder ein Fräsen, das mehr kostet als die Platine, die es schützt.",
+"car_v1": "Clips und Dome",
+"car_v2": "Stabile Stückkosten",
+"car_v3": "Reverse Engineering",
+"cg_pro": "Verfahren",
+"cg_resa": "Darstellung",
+"cg_resa_v": "Aus CAD, kein Foto",
+"cg_sog": "Gegenstand",
+"cg_tav": "Tafel",
+"chiedi": "Anwendungsblatt anfordern",
+"cond_int": "Branchenblatt, gemeinsam mit Fahrzeugaufbauten",
+"cond_str": "gemeinsames Blatt mit Gehäuse und Ersatzteile",
+"cta_file": "STEP oder STL senden",
+"cta_scheda": "PDF-Blatt anfordern",
+"cta_tecnico": "Mit einem Techniker sprechen",
+"eoat_fac": "Monoblock-Greiferkörper mit innenliegendem Vakuumkanal und Formatfinger aus PA2200, nachgiebige Kontaktflächen aus TPU 90A: Die neue Greifgeometrie geht in Tagen in Produktion, in Losen von 1 bis 50.",
+"eoat_prob": "Der klassische Endeffektor ist eine Baugruppe aus bearbeiteten Platten, Anschlüssen und Schrauben: jede neue Greifgeometrie ist ein Werkstattzyklus, und jedes Gramm an der Spitze bremst den Roboter.",
+"eoat_v1": "Greifer als Monoblock",
+"eoat_v2": "Vakuum im Körper",
+"eoat_v3": "Nachgiebige Flächen",
+"fam_ali_alt": "Tafel: Automat mit Trichter, Leitung und Rutsche, additive Teile in Rot",
+"fam_ali_p": "Leitungen und Trichter für Kaffee, Vending und Food Equipment aus PA2200, mit Herstellererklärung für den Lebensmittelkontakt, ohne Werkzeug.",
+"fam_ali_t": "Lebensmittelkontakt",
+"fam_all_alt": "Tafel: Aufbau eines Löschfahrzeugs mit den additiven Teilen in Rot",
+"fam_all_p": "Armaturenbretter, Elektronikabdeckungen, Scheinwerferhalter und Rahmen: stabile Stückkosten vom ersten bis zum letzten Fahrzeug.",
+"fam_all_t": "Fahrzeugaufbauten",
+"fam_ant_alt": "Tafel: Löschfahrzeug, additive Teile in Rot",
+"fam_ant_p": "Monitor, Lichtmastkopf, Signalgeber, Wasseranschluss: die additive Stückliste eines Löschfahrzeugs, aus dem CAD-Modell gelesen.",
+"fam_ant_t": "Feuerwehrfahrzeuge",
+"fam_att_alt": "Tafel: Greiffinger und Werkstücknester auf einer Palette, additive Teile in Rot",
+"fam_att_p": "Greiffinger, Werkstücknester und Paletten aus PA12: zum Preis einer Datei, identisch nachbestellt über die ganze Lebensdauer der Maschine.",
+"fam_att_t": "Maschinenvorrichtungen",
+"fam_car_alt": "Tafel der Familie Gehäuse und Ersatzteile, additive Teile in Rot",
+"fam_car_p": "Gehäuse, Führungen und Racks von zehn bis fünfhundert pro Jahr, und die Ersatzteile ausgelaufener Serien, aus der Datei oder dem 3D-Scan.",
+"fam_car_t": "Gehäuse und Ersatzteile",
+"fam_eoat_alt": "Tafel: Greiferkörper mit Formatfingern über einer Palette, additive Teile in Rot",
+"fam_eoat_p": "Greiferkörper mit innenliegendem Vakuumkanal und Formatfinger: Der Monoblock wiegt etwa ein Drittel einer Ausführung aus Aluminium.",
+"fam_eoat_t": "Greifer und EOAT",
+"fam_frm_alt": "Tafel: Formatsatz mit Schnecke, Stern und Führungen, additive Teile in Rot",
+"fam_frm_p": "Schnecken, Sterne, Führungen und Becher: ein Satz für jedes Produkt Ihres Kunden, ohne POM zu fräsen.",
+"fam_frm_t": "Formatwechsel",
+"fam_gfs_alt": "Tafel der Familie Großformat und Serie, additive Teile in Rot",
+"fam_gfs_p": "Bauraum 700 × 380 × 580 mm: das 600-mm-Teil aus einem Stück, oder die ganze Serie in einem Job.",
+"fam_gfs_t": "Großformat und Serie",
+"fam_h2o_alt": "Tafel: Bauteile aus Polypropylen für die Wassertechnik, additive Teile in Rot",
+"fam_h2o_p": "Filterdüsen, Rückspüldüsen, Diffusoren und Verteiler aus Polypropylen: ein Stück, wo Sie heute drei verkleben.",
+"fam_h2o_t": "Wassertechnik",
+"fam_int_alt": "CAD-Darstellung für die Familie Konsolidierte Innenteile und Kanäle",
+"fam_int_p": "Armaturenträger, Elektronikabdeckungen, Halterungen und strömungsoptimierte Luftkanäle: Baugruppen werden zum Monoblock.",
+"fam_int_t": "Konsolidierte Innenteile und Kanäle",
+"fam_lim": "Die Grenze",
+"fam_mot_alt": "Tafel der Familie Motorsport, additive Teile in Rot",
+"fam_mot_p": "Turbo-Ansaugkanal, Ladeluftkühler-Gitter, Leitbleche und Scheinwerferhalter aus PA11, PA12 und Nylon 12CF, montiert an einem Rallyefahrzeug im Meisterschaftseinsatz.",
+"fam_mot_t": "Motorsport",
+"fam_phm_alt": "Tafel: Formatstern und Führungen für den Vialtransport, additive Teile in Rot",
+"fam_phm_p": "Sterne, Schnecken und Führungen für den Vialtransport, mit Werkstoffdossier und Oberfläche bis zum Reinraum-Grad.",
+"fam_phm_t": "Pharma-Formatteile",
+"fam_scr_t": "Siebplatten und Siebelemente",
+"fam_srv_alt": "CAD-Darstellung für die Familie Format und Serie für Dienstleister",
+"fam_srv_p": "Bauraum 700 × 380 × 580 mm und Serien von 1 bis 500 Teilen für Dienstleister, Modellbauer und Büros: Wir arbeiten hinter Ihnen, Ihr Kunde bleibt Ihrer.",
+"fam_srv_t": "Format und Serie für Dienstleister",
+"fam_str_alt": "CAD-Darstellung für die Familie Geräte in Kleinserie",
+"fam_str_p": "Gehäuse mit Clips und Domen, Kartenführungen, Probenracks: zehn bis fünfhundert pro Jahr, wo sich das Werkzeug nicht rechnet.",
+"fam_str_t": "Geräte in Kleinserie",
+"fam_tam_alt": "Tafel: Vakuumtrommel und Walze in ihrem Gestell, additive Teile in Rot",
+"fam_tam_p": "Vakuumtrommeln, Dosierwalzen und Rotoren mit innenliegenden Kanälen: 1 bis 50 Stück, bis 700 mm aus einem Stück.",
+"fam_tam_t": "Trommeln und Walzen",
+"fam_tav": "aus CAD",
+"fam_tav_scr": "Zeichnung",
+"fam_val_alt": "Tafel: Validierungs-Kit in Explosionsansicht, additive Teile in Rot",
+"fam_val_p": "Jede Iteration, ein komplettes Kit: Krümmer, Leitungen, Gehäuse und Halter als ein einziges Los kalkuliert und gefertigt.",
+"fam_val_t": "Validierungs-Kits",
+"fine_p": "Wir sagen Ihnen auch, wann es sich nicht lohnt.",
+"fine_t": "Schicken Sie uns die STEP-Datei eines Bauteils.",
+"frm_fac": "Sterne, Schnecken, Becher, Platten und Formatführungen aus PA2200: ein Satz für jedes Produkt Ihres Kunden, 1 bis 50 Sätze, gemeinsam im selben Los gefertigt, bei Auftragsunterzeichnung.",
+"frm_prob": "Der Formatsatz entsteht heute aus dem Vollen gefräst in POM oder PA6: Maschinenstunden für jeden Stern, eine Schnecke als eigene Arbeit, und bei jeder neuen Flasche des Kunden beginnt es von vorn.",
+"frm_v1": "Satz in einem Los",
+"frm_v2": "Variable Steigung",
+"frm_v3": "Kein Umrüsten",
+"gfs_fac": "Bauraum 700 × 380 × 580 mm: das 600-mm-Teil passt am Stück hinein, oder die ganze Serie verschachtelt in einem Job, aus PA2200 mit Oberfläche von F0 bis F3.",
+"gfs_prob": "Über 380 mm wird das Teil geteilt und verklebt, oder der Lieferant wechselt; und die Serie von fünfzig bis fünfhundert Stück wird auf Prototypenmaschinen zu einem Monat Kalender.",
+"gfs_v1": "Bis 700 mm",
+"gfs_v2": "Keine Teilung",
+"gfs_v3": "Serie in einem Job",
+"h1": "Wo additive Fertigung schon in Serie läuft.",
+"h2o_fac": "Filterdüsen, Rückspüldüsen, Diffusoren und Verteiler aus gesintertem Polypropylen, mit Schlitzen ab 2 mm und Gewinde im selben Teil: nach Zeichnung, ohne Werkzeug, in wiederkehrender Serie mit rückverfolgbarem Los.",
+"h2o_prob": "Die Filterdüse, die Sie heute montieren, ist eine Baugruppe aus Körper, Ring und Gewinde, verklebt oder verschweißt: jede Fügestelle ist eine wartende Leckstelle, und das Werkzeug für die richtige Variante rechnet sich nie.",
+"h2o_v1": "Ein Stück",
+"h2o_v2": "Schlitz ab 2 mm",
+"h2o_v3": "Chemie des PP",
+"ind_t": "Nach Branche",
+"int_fac": "Armaturenträger, Elektronikabdeckungen, Instrumentenhalter und strömungsoptimierte Luftkanäle aus PA2200 oder PA11 mit 2K-Finish: mehrteilige Baugruppen werden zum Monoblock, montagefertig.",
+"int_prob": "Armaturenträger, Abdeckungen und Luftkanäle der Kabine sind mehrteilige Baugruppen: mehr Stücklistenpositionen, mehr Montage und mehr Fehlerstellen, in Serien von Dutzenden Fahrzeugen.",
+"int_v1": "Weniger Montage",
+"int_v2": "Optimierter Durchsatz",
+"int_v3": "Montagefertig",
+"intro_a": "Siebzehn Teilefamilien, vom Formatwechsel bis zu den Siebplatten. Für jede: das Problem, das heute kostet, was wir fertigen und in welchen Losen, Werkstoff und Oberflächen, die Branchen.",
+"intro_b": "Wo das PDF-Blatt existiert, laden Sie es hier herunter; wo es fehlt, fordern Sie es per Mail an.",
+"lab_dett": "Problem, Lösung, Vorteile",
+"lab_fac": "Was wir tun",
+"lab_prob": "Das Problem",
+"lab_proc": "Verfahren",
+"lab_tav": "Taf.",
+"lab_vant": "Vorteile",
+"lingua": "Sprache",
+"meta_d": "Siebzehn Anwendungsfamilien der industriellen additiven Fertigung: Formatwechsel, Vorrichtungen, Greifer, Gehäuse, Lebensmittelkontakt, Wassertechnik, Siebplatten, Aufbauten. Für jede: das Problem, was wir tun, Werkstoff und PDF-Blatt.",
+"mot_fac": "Strömungsoptimierter Turbo-Ansaugkanal, Ladeluftkühler-Gitter, Leitbleche und Scheinwerferhalter aus PA11, PA12 und Nylon 12CF, montiert an einem Rallyefahrzeug im Meisterschaftseinsatz.",
+"mot_prob": "Ersatz- und Verbesserungsteile eines Fahrzeugs im Meisterschaftseinsatz sind Teile in wenigen Exemplaren, die das Rennen aushalten müssen: Bei solchen Stückzahlen amortisiert sich kein Werkzeug.",
+"mot_v1": "Kälteschlagzähigkeit",
+"mot_v2": "Optimierter Durchsatz",
+"mot_v3": "Steif bei minimalem Gewicht",
+"nav_app": "Anwendungen",
+"nav_casi": "Referenzen",
+"nav_chiudi": "Schließen",
+"nav_cont": "Kontakt",
+"nav_fam": "Teilefamilien",
+"nav_home": "Start",
+"nav_mat": "Werkstoffe",
+"nav_menu": "Menü",
+"nav_prev": "Richtpreis",
+"nav_ris_faq": "Häufige Fragen",
+"nav_s1d": "Gehäuse, Formatteile, Vorrichtungen, Ersatzteile",
+"nav_s2d": "Aufbauten, Flotten, Lackierung in Karosseriequalität",
+"nav_s3d": "Formatteile, Dossier, Reinraum",
+"nav_schede": "PDF-Blätter",
+"nav_set": "Branchen",
+"nav_tec": "Technologien",
+"nav_tutti": "Alle Anwendungen",
+"nota_schede": "Die Werkstoffblätter DPG-MAT erhalten Sie mit dem Angebot; das Zertifikat des Werkstoffherstellers, wo das Lastenheft es verlangt. Die als Entwurf gekennzeichneten Blätter warten noch auf die technische Prüfung.",
+"occ": "Anwendungen",
+"p_claim": "Industrielle additive Fertigung für kleine und mittlere Serien.",
+"p_contatti": "Kontakt",
+"p_espl": "Entdecken",
+"p_iva": "USt-IdNr.",
+"p_s1": "Maschinenbau und OEM",
+"p_s2": "Sonderfahrzeuge und Aufbauten",
+"p_s3": "Pharma und Prozessmaschinen",
+"p_settori": "Branchen",
+"pack": "PDF-Pack",
+"pdf": "PDF-Blatt",
+"pdf_l_de": "auf Deutsch",
+"pdf_l_en": "auf Englisch",
+"pdf_l_fr": "auf Französisch",
+"pdf_l_it": "auf Italienisch",
+"phm_fac": "Sterne, Schnecken und Führungen für den Vialtransport aus PA2200, mit Werkstoffdossier, Oberfläche von F1 bis zum Reinraum-Grad und Charge und Job auf jedem Teil: Der Formatsatz wird identisch aus der Datei nachbestellt.",
+"phm_prob": "Jedes Produkt und jeder Behälter verlangt seine Sterne, Führungen und Zentrierungen: Kleinserien per Definition, eine dedizierte Vorrichtung je Variante, und jedes Teil, das in die Linie geht, muss mit seinen Papieren kommen.",
+"phm_v1": "Variante in Tagen",
+"phm_v2": "Werkstoffdossier",
+"phm_v3": "Rückverfolgbares Los",
+"rov_h2": "Wo ein anderer Weg passt.",
+"rov_p1": "Unterhalb der Größenordnung von Tischgeräten fertigen Sie das Teil selbst, und das zu Recht.",
+"rov_p2": "Ab Stückzahlen, bei denen sich ein Werkzeug rechnet, kommt wieder das Werkzeug zum Zug, und wir helfen Ihnen beim Umstieg.",
+"rov_p3": "Strukturteile aus Metall bleiben aus Metall: Wir leiten sie an unser Netzwerk qualifizierter Partner weiter.",
+"rov_t": "Die Kehrseite",
+"s7_1alt": "Technische Zeichnung: Automationszelle mit Rollenbahn, Kammgreifer und Gitterschutz, additive Teile in Rot",
+"s7_1p": "Gehäuse, Formatteile, Vorrichtungen und Ersatzteile, in Losen von eins bis fünfzig.",
+"s7_2alt": "Technische Zeichnung eines Löschfahrzeugs auf Dreiachs-Fahrgestell, additive Teile in Rot",
+"s7_2p": "Dutzende Fahrzeuge, Flottenersatzteile, Lackierung in Karosseriequalität.",
+"s7_3alt": "Technische Zeichnung: Tisch-Prozesseinheit mit Vialtransport, additive Teile in Rot",
+"s7_3p": "Formatteile, Werkstoffdossier, Oberfläche bis zum Reinraum-Grad.",
+"s7_lead": "Jede Branche hat ihre eigene Seite, im Vokabular Ihrer Lastenhefte: die Wirtschaftlichkeitsrechnung, die Teile, die Werkstoffe, ein Fallbeispiel und wann es sich nicht lohnt.",
+"s7_tav1": "Taf. 01 · aus CAD",
+"s7_tav2": "Taf. 02 · aus CAD",
+"s7_tav3": "Taf. 03 · aus CAD",
+"s_o": "Die Familien",
+"s_t": "Nach Branche wählen, oder alle ansehen",
+"salta": "Zum Inhalt springen",
+"scr_alt": "Zeichnung des Blatts DPG-APP-SCR, keine Fotografie: Siebplatte aus gesintertem Polypropylen, Draufsicht, Schnitt A-A und Detail B der konischen Öffnung.",
+"scr_fac": "Gelochte und geschlitzte Platten für Bandrechen, Trommeln und Stufenrechen aus gesintertem Polypropylen: sechseckige oder konische Öffnungen ab 2 mm, Ösen und Scharniere integriert, ein Stück bis etwa 30 cm, in wiederkehrender Serie mit identischer Nachbestellung aus der Datei.",
+"scr_lim": "Unter 2 mm nicht; über 90 °C nicht; Trinkwasserentnahmen ausgeschlossen; wo Verschleiß das Problem ist, hält UHMW-Polyethylen länger.",
+"scr_p": "Gelochte und geschlitzte Platten aus Polypropylen: Öffnungen ab 2 mm, Scharniere integriert, ein Stück bis etwa 30 cm.",
+"scr_prob": "Die Siebplatte ist heute ein zu schweißender Rahmen mit einem zu montierenden Einsatz, oder ein Werkzeug je Größe: Die Variante für die einzelne Anlage rechnet sich nicht.",
+"scr_v1": "Öffnungen ab 2 mm",
+"scr_v2": "Scharniere integriert",
+"scr_v3": "Wiederkehrende Serie",
+"set_dev": "Produkt­entwicklung",
+"set_h2o": "Wasser und Fluide",
+"set_oem": "Maschinenbau und OEM",
+"set_phm": "Pharma",
+"set_tutti": "Alle",
+"set_vsp": "Sonderfahrzeuge",
+"sez_o": "Die Branchen",
+"sez_t": "Die drei Branchenseiten",
+"srv_fac": "Bauraum 700 × 380 × 580 mm für Polyamid, eine eigene Maschine für Polypropylen, Kapazität je Auftrag geprüft, und Serien von 1 bis 500 Teilen, mit schriftlicher technischer Antwort vor dem Teil: Wir arbeiten hinter Ihnen, Ihr Kunde bleibt Ihrer.",
+"srv_prob": "Ihr Maschinenpark deckt den Prototyp ab; dann kommt das halbmeterlange Teil oder die Anfrage nach dreihundert Teilen in Polyamid, und es bleiben zwei Wege: absagen, oder ein Portal, auf dem Sie ein Auftrag unter tausend sind.",
+"srv_v1": "Neutrale Lieferung",
+"srv_v2": "1 bis 500 Teile",
+"srv_v3": "Prüfung an der Datei",
+"str_fac": "Gehäuse mit Clips und Domen, Kartenführungen und Probenracks aus PA2200, mit dem Raster und den Aufnahmen, die gebraucht werden, in einem Los, zehn bis fünfhundert pro Jahr, Oberfläche nach Funktion gewählt.",
+"str_prob": "Das Gerät in Dutzenden oder Hunderten pro Jahr liegt dort, wo sich das Werkzeug nicht rechnet und das Fräsen aus dem Vollen so viel kostet wie die Baugruppe, die es bedient; und die Sonderserie mit anderem Gehäuse macht niemand.",
+"str_v1": "Clips und Durchführungen",
+"str_v2": "Keine Mindestmenge",
+"str_v3": "Oberfläche nach Wahl",
+"tam_fac": "Vakuumtrommeln, Saugwalzen und Dosierrotoren aus PA2200 mit den Innenkanälen bereits im Körper: 1 bis 50 Stück, bis 700 mm aus einem Stück, ohne Tiefbohren und ohne Verkleben.",
+"tam_prob": "Die Vakuumtrommel ist heute ein Drehteil mit Dutzenden tiefer, verschlossener und verschraubter Bohrungen, oder eine Baugruppe aus Scheiben und Distanzstücken, die dort undicht ist, wo sie es nicht sein darf.",
+"tam_v1": "Kanäle jeder Form",
+"tam_v2": "Bis 700 mm",
+"tam_v3": "Leicht auf der Welle",
+"titolo": "Anwendungen · Due Pi Greco",
+"top_c": "Kontakt",
+"torna": "Start",
+"val_fac": "Das Validierungs-Kit, Krümmer, Leitungen, Gehäuse und Halter, als ein einziges Los kalkuliert und gefertigt, verschachtelt im Bauraum 700 × 380 × 580 mm: Bei der nächsten Iteration wird es identisch nachbestellt, oder geändert, wo die Erprobung es verlangt.",
+"val_prob": "Die eigene Werkstatt ist voll, wenn man sie braucht, das Werkzeug vor der Serie ergibt keinen Sinn, und der generische Dienstleister behandelt jedes Teil der Baugruppe als eigenen Auftrag: zehn Angebote, zehn Lieferungen, zehn Qualitäten.",
+"val_v1": "Ein Auftrag, ein Los",
+"val_v2": "Identische Nachbestellung",
+"val_v3": "Werkstoffe für den Test",
+"vedi_sls": "Der SLS-Bauraum, unter Technologien",
+"vuoto": "Keine Familie für diesen Filter."
+},
+"en": {
+"a7_condivisa": "sheet shared with Machine fixtures",
+"ali_fac": "Ducts, funnels and conveyors in one piece, in PA2200 with the producer's declaration for food contact (Reg. (EU) 10/2011) at material level, with migration to be verified on the finished part, in series of 100 to 1,000 parts a year with their variants.",
+"ali_prob": "Today the milk duct is three glued mouldings or a bent tube with its fittings, and the funnel has a mould that only pays back if the restyling waits.",
+"ali_v1": "Smooth inner channel",
+"ali_v2": "Reg. (EU) 10/2011, per the producer",
+"ali_v3": "No joint",
+"all_fac": "Dashboards, electronics covers, lamp brackets and frames in PA11 or PA2200, 2K liquid-painted in the customer's colour: stable cost per part from the first to the last vehicle of the order.",
+"all_prob": "An outfit lives in series of dozens of vehicles, every order has its variants and the fleet stays in service for twenty years: on numbers like these a mould never pays back.",
+"all_v1": "Outfitting series",
+"all_v2": "Variants per operator",
+"all_v3": "Body-shop finish",
+"ant_fac": "The additive bill of materials read on the CAD model of the outfit: bases, frames and covers in PA12 with 2K finish, Ultem 9085 where the specification asks for fire behaviour at material level, every component a digital spare for the life of the fleet.",
+"ant_prob": "The truck is series-built, the outfit is not: light mast, beacons, water inlet and covers live in series of dozens of parts, where no mould pays back.",
+"ant_v1": "BOM from the CAD",
+"ant_v2": "Fire specification",
+"ant_v3": "Spares for fleet life",
+"ap7_bric": "You are here",
+"ap7_sog": "Three of the seventeen families, additive parts in red",
+"att_fac": "Gripper fingers, part nests, pallets and fixtures in sintered PA2200, dedicated to the order, in lots of 1 to 50, reordered identically from the file for the whole life of the machine.",
+"att_prob": "Every custom machine carries dozens of dedicated tools, milled from aluminium or POM: the cost hides in workshop hours and in the delay that pushes back commissioning.",
+"att_v1": "Channels in the body",
+"att_v2": "About a third of the weight",
+"att_v3": "Identical reorder",
+"bozza": "draft",
+"c_anno": "Year",
+"c_de": "DE: draft, under review",
+"c_doc": "Document",
+"c_note": "Note",
+"c_rev": "Revision",
+"car_fac": "Guards and covers with clips, bosses and cable passages already in the geometry, in PA2200, ten to five hundred a year; spares for discontinued series from the file or from a 3D scan.",
+"car_prob": "At a hundred parts a year the guard has three roads, all crooked: a mould that pays back in ten years, sheet metal that does not fit the electronics, or milling that costs more than the board it protects.",
+"car_v1": "Clips and bosses",
+"car_v2": "Stable cost",
+"car_v3": "Reverse engineering",
+"cg_pro": "Process",
+"cg_resa": "Rendering",
+"cg_resa_v": "From CAD, not a photograph",
+"cg_sog": "Subject",
+"cg_tav": "Plate",
+"chiedi": "Ask for the sheet",
+"cond_int": "sector sheet, shared with Vehicle outfitting",
+"cond_str": "sheet shared with Guards and spares",
+"cta_file": "Send STEP or STL",
+"cta_scheda": "Request a sheet",
+"cta_tecnico": "Talk to an engineer",
+"eoat_fac": "Monoblock gripper bodies with the vacuum channel inside and format fingers in PA2200, compliant interfaces in TPU 90A: the new gripping geometry goes into production in days, in lots of 1 to 50.",
+"eoat_prob": "The traditional end-of-arm tool is an assembly of machined plates, fittings and screws: every new gripping geometry is a workshop cycle, and every gram at the tip limits the robot.",
+"eoat_v1": "Monoblock gripper",
+"eoat_v2": "Vacuum in the body",
+"eoat_v3": "Compliant interfaces",
+"fam_ali_alt": "Plate: vending unit with funnel, duct and chute, additive parts in red",
+"fam_ali_p": "Ducts and funnels for coffee, vending and food equipment in PA2200, with the producer's declaration for food contact, without a mould.",
+"fam_ali_t": "Food contact",
+"fam_all_alt": "Plate: fire-engine outfitting with the additive parts in red",
+"fam_all_p": "Dashboards, electronics covers, lamp brackets and frames: stable cost per part from the first to the last vehicle of the order.",
+"fam_all_t": "Vehicle outfitting",
+"fam_ant_alt": "Plate: fire engine, additive parts in red",
+"fam_ant_p": "Monitor, light-mast head, beacons, water inlet: the additive bill of materials of a fire engine, read on the CAD model.",
+"fam_ant_t": "Fire-fighting vehicles",
+"fam_att_alt": "Plate: gripper fingers and part nests on a pallet, additive parts in red",
+"fam_att_p": "Gripper fingers, part nests and pallets in PA12: at the cost of a file, reordered identically for the whole life of the machine.",
+"fam_att_t": "Machine fixtures",
+"fam_car_alt": "Plate of the Guards and spares family, additive parts in red",
+"fam_car_p": "Guards, guides and racks from ten to five hundred a year, and spares for discontinued series, from the file or a 3D scan.",
+"fam_car_t": "Guards and spares",
+"fam_eoat_alt": "Plate: gripper body with format fingers above a pallet, additive parts in red",
+"fam_eoat_p": "Gripper bodies with the vacuum channel inside and format fingers: the monoblock weighs about a third as much as an aluminium one.",
+"fam_eoat_t": "Grippers and EOAT",
+"fam_frm_alt": "Plate: format-change set with feed screw, star wheel and guides, additive parts in red",
+"fam_frm_p": "Feed screws, star wheels, guides and cups: one set for every product of your customer, without milling POM.",
+"fam_frm_t": "Format change",
+"fam_gfs_alt": "Plate of the Large format and series family, additive parts in red",
+"fam_gfs_p": "Build chamber 700 × 380 × 580 mm: the 600 mm part in one piece, or the whole series in one build.",
+"fam_gfs_t": "Large format and series",
+"fam_h2o_alt": "Plate: polypropylene components for water treatment, additive parts in red",
+"fam_h2o_p": "Strainers, backwash nozzles, diffusers and distributors in polypropylene: one piece where today you glue three.",
+"fam_h2o_t": "Water treatment",
+"fam_int_alt": "CAD rendering for the Consolidated interiors and ducts family",
+"fam_int_p": "Dash panels, electronics covers, instrument brackets and flow-optimized air ducts: multi-part assemblies become monoblocks.",
+"fam_int_t": "Consolidated interiors and ducts",
+"fam_lim": "The limit",
+"fam_mot_alt": "Plate of the Motorsport family, additive parts in red",
+"fam_mot_p": "Turbo intake duct, intercooler grilles, air guides and headlight mounts in PA11, PA12 and Nylon 12CF, fitted on a championship rally car.",
+"fam_mot_t": "Motorsport",
+"fam_phm_alt": "Plate: format star wheel and guides for vial transport, additive parts in red",
+"fam_phm_p": "Star wheels, feed screws and guides for vial transport, with the material dossier and finish up to cleanroom grade.",
+"fam_phm_t": "Pharma format parts",
+"fam_scr_t": "Screen panels",
+"fam_srv_alt": "CAD rendering for the Format and series for service bureaus family",
+"fam_srv_p": "A 700 × 380 × 580 mm chamber and series of 1 to 500 parts for service bureaus, model shops and studios: we work behind you, your customer stays yours.",
+"fam_srv_t": "Format and series for service bureaus",
+"fam_str_alt": "CAD rendering for the Instruments in small series family",
+"fam_str_p": "Covers with clips and bosses, card guides, sample racks: ten to five hundred a year, where the mould does not pay for itself.",
+"fam_str_t": "Instruments in small series",
+"fam_tam_alt": "Plate: vacuum drum and roller in their frame, additive parts in red",
+"fam_tam_p": "Vacuum drums, dosing rollers and rotors with the channels already inside: 1 to 50 parts, up to 700 mm in one piece.",
+"fam_tam_t": "Drums and rollers",
+"fam_tav": "from CAD",
+"fam_tav_scr": "drawing",
+"fam_val_alt": "Plate: validation kit in exploded view, additive parts in red",
+"fam_val_p": "Every iteration, a complete kit: manifolds, ducts, housings and brackets quoted and built as one single lot.",
+"fam_val_t": "Validation kits",
+"fine_p": "We also tell you when it does not pay.",
+"fine_t": "Send us the STEP file of a component.",
+"frm_fac": "Star wheels, feed screws, cups, plates and format guides in PA2200: one set for every product of your customer, 1 to 50 sets, built together in the same lot when the order is signed.",
+"frm_prob": "Today the format set is milled from solid POM or PA6: machine hours for every star wheel, a feed screw that is a job of its own, and every new bottle of your customer starts it over.",
+"frm_v1": "Set in one lot",
+"frm_v2": "Variable pitch",
+"frm_v3": "No retooling",
+"gfs_fac": "A 700 × 380 × 580 mm chamber: the 600 mm body goes in whole, or the entire series nested in one build, in PA2200 with finish from F0 to F3.",
+"gfs_prob": "Above 380 mm the part gets cut and glued, or the supplier changes; and the series of fifty to five hundred parts becomes a month of calendar on prototype machines.",
+"gfs_v1": "Up to 700 mm",
+"gfs_v2": "No sectioning",
+"gfs_v3": "Series in one build",
+"h1": "Where additive already works in series.",
+"h2o_fac": "Strainers, backwash nozzles, diffusers and distributors in sintered polypropylene, with slots from 2 mm and the thread in the same piece: to drawing, without a mould, in recurring series with a traced lot.",
+"h2o_prob": "The strainer you fit today is an assembly of body, ring and thread, glued or welded: every joint is a leak waiting to happen, and the mould for the right variant never pays back.",
+"h2o_v1": "One piece",
+"h2o_v2": "Slots from 2 mm",
+"h2o_v3": "PP chemistry",
+"ind_t": "By sector",
+"int_fac": "Dash panels, electronics covers, instrument brackets and flow-optimized air ducts in PA2200 or PA11 with 2K finish: multi-part assemblies become monoblocks, ready for assembly.",
+"int_prob": "Dash panel, covers and cab air ducts are multi-part assemblies: more BOM codes, more assembly and more failure points, on series of dozens of vehicles.",
+"int_v1": "Less assembly",
+"int_v2": "Optimized flow",
+"int_v3": "Ready for assembly",
+"intro_a": "Seventeen part families, from format change to screen panels. For each: the problem that costs you today, what we make and in which lots, material and finishes, the sectors.",
+"intro_b": "Where the PDF sheet exists you download it here; where it is missing, you ask for it by email.",
+"lab_dett": "Problem, solution, advantages",
+"lab_fac": "What we do",
+"lab_prob": "The problem",
+"lab_proc": "Process",
+"lab_tav": "Plate",
+"lab_vant": "Advantages",
+"lingua": "Language",
+"meta_d": "Seventeen application families of industrial additive manufacturing: format change, fixtures, grippers, guards, food contact, water treatment, screen panels, vehicle outfitting. For each: the problem, what we do, material and PDF sheet.",
+"mot_fac": "Flow-optimized turbo intake duct, intercooler grilles, air guides and headlight mounts in PA11, PA12 and Nylon 12CF, fitted on a championship rally car.",
+"mot_prob": "Spares and upgrades for a car competing in a championship are parts made in a few units that must survive the race: on numbers like these no mould pays back.",
+"mot_v1": "Cold impact",
+"mot_v2": "Optimized flow",
+"mot_v3": "Stiffness at minimum weight",
+"nav_app": "Applications",
+"nav_casi": "Case studies",
+"nav_chiudi": "Close",
+"nav_cont": "Contact",
+"nav_fam": "Part families",
+"nav_home": "Home",
+"nav_mat": "Materials",
+"nav_menu": "Menu",
+"nav_prev": "Quote",
+"nav_ris_faq": "FAQ",
+"nav_s1d": "guards, format parts, fixtures, spares",
+"nav_s2d": "outfitting, fleets, body-shop finish",
+"nav_s3d": "format parts, dossier, cleanroom",
+"nav_schede": "PDF sheets",
+"nav_set": "Sectors",
+"nav_tec": "Technologies",
+"nav_tutti": "All applications",
+"nota_schede": "The DPG-MAT material sheets come with the quote; the material maker's certificate where the specification requires it. Sheets marked as draft are awaiting technical review.",
+"occ": "Applications",
+"p_claim": "Industrial additive manufacturing for small and medium series.",
+"p_contatti": "Contact",
+"p_espl": "Explore",
+"p_iva": "VAT no.",
+"p_s1": "Industrial machinery and OEM",
+"p_s2": "Special vehicles and outfitting",
+"p_s3": "Pharma and process machinery",
+"p_settori": "Sectors",
+"pack": "PDF pack",
+"pdf": "PDF sheet",
+"pdf_l_de": "in German",
+"pdf_l_en": "in English",
+"pdf_l_fr": "in French",
+"pdf_l_it": "in Italian",
+"phm_fac": "Star wheels, feed screws and guides for vial transport in PA2200, with the material dossier, finish from F1 to cleanroom grade and lot and job marked on every part: the format set is reordered identically from the file.",
+"phm_prob": "Every product and every container asks for its own star wheels, guides and centring parts: small series by definition, a dedicated tool for each variant, and every part entering the line must come with its papers.",
+"phm_v1": "Variant in days",
+"phm_v2": "Material dossier",
+"phm_v3": "Traced lot",
+"rov_h2": "Where another route fits.",
+"rov_p1": "Below the scale of desktop machines you make the part in-house, and rightly so.",
+"rov_p2": "Above mould volumes the mould comes back, and we help you make the switch.",
+"rov_p3": "Structural metal stays metal: we route it to our network of qualified partners.",
+"rov_t": "The flip side",
+"s7_1alt": "Technical drawing: automation cell with roller conveyor, comb gripper and mesh guard, additive parts in red",
+"s7_1p": "Guards, format parts, fixtures and spares, in lots of one to fifty.",
+"s7_2alt": "Technical drawing of a fire engine on a three-axle chassis, additive parts in red",
+"s7_2p": "Dozens of units, fleet spares, body-shop grade finishing.",
+"s7_3alt": "Technical drawing: benchtop process unit with vial transport, additive parts in red",
+"s7_3p": "Format parts, material dossier, finish up to cleanroom grade.",
+"s7_lead": "Each sector has its own page, written in the vocabulary of your specifications: the business case, the parts, the materials, a case study, and when it does not pay.",
+"s7_tav1": "Plate 01 · from CAD",
+"s7_tav2": "Plate 02 · from CAD",
+"s7_tav3": "Plate 03 · from CAD",
+"s_o": "The families",
+"s_t": "Choose by sector, or see them all",
+"salta": "Skip to content",
+"scr_alt": "Drawing from sheet DPG-APP-SCR, not a photograph: screen panel in sintered polypropylene, plan view, section A-A and detail B of the tapered hole.",
+"scr_fac": "Perforated and slotted panels for band screens, drums and step screens in sintered polypropylene: hexagonal or tapered openings from 2 mm, eyelets and hinges integrated, one piece up to about 30 cm, in recurring series with identical reorder from the file.",
+"scr_lim": "Not below 2 mm; not above 90 °C; drinking-water intakes excluded; where wear is the problem, UHMW polyethylene lasts longer.",
+"scr_p": "Perforated and slotted panels in polypropylene: openings from 2 mm, integrated hinges, one piece up to about 30 cm.",
+"scr_prob": "Today the screen panel is a frame to weld with an insert to fit, or a mould for every size: the variant for a single plant does not pay for itself.",
+"scr_v1": "Openings from 2 mm",
+"scr_v2": "Integrated hinges",
+"scr_v3": "Recurring series",
+"set_dev": "Product development",
+"set_h2o": "Water and fluids",
+"set_oem": "Machinery and OEM",
+"set_phm": "Pharma",
+"set_tutti": "All",
+"set_vsp": "Special vehicles",
+"sez_o": "The sectors",
+"sez_t": "The three sector pages",
+"srv_fac": "A 700 × 380 × 580 mm chamber for polyamide, a dedicated polypropylene machine, with capacity checked per order, and series of 1 to 500 parts, with the technical answer in writing before the part: we work behind you, your customer stays yours.",
+"srv_prob": "Your machine park covers the prototype; then comes the half-metre body or the request for three hundred parts in polyamide, and two roads remain: say no, or a portal where you are one order among a thousand.",
+"srv_v1": "Neutral supply",
+"srv_v2": "1 to 500 parts",
+"srv_v3": "Check on the file",
+"str_fac": "Covers with clips and bosses, card guides and sample racks in PA2200, with the mesh and the seats you need, in one lot, ten to five hundred a year, finish chosen for the function.",
+"str_prob": "An instrument made in dozens or hundreds a year sits where the mould does not pay for itself and milling from solid costs as much as the assembly it serves; and the special series, with the different shell, nobody makes.",
+"str_v1": "Clips and cable passages",
+"str_v2": "No minimum",
+"str_v3": "Finish of your choice",
+"tam_fac": "Vacuum drums, suction rollers and dosing rotors in PA2200 with the internal channels already in the body: 1 to 50 parts, up to 700 mm in one piece, with no deep drilling and no gluing.",
+"tam_prob": "Today the vacuum drum is a turned part with dozens of deep holes, plugged and fitted, or an assembly of discs and spacers that leaks where it should not.",
+"tam_v1": "Channels of any section",
+"tam_v2": "Up to 700 mm",
+"tam_v3": "Light on the shaft",
+"titolo": "Applications · Due Pi Greco",
+"top_c": "Contact",
+"torna": "Home",
+"val_fac": "The validation kit, manifolds, ducts, housings and brackets, quoted and built as one single lot, nested in the 700 × 380 × 580 mm chamber: at the next iteration it is reordered identically, or changed where the test asks for it.",
+"val_prob": "The in-house workshop is full when you need it, a mould before the series makes no sense, and the generic bureau treats every part of your assembly as its own order: ten quotes, ten deliveries, ten different qualities.",
+"val_v1": "One order, one lot",
+"val_v2": "Identical reorder",
+"val_v3": "Materials for the test",
+"vedi_sls": "The SLS chamber, under Technologies",
+"vuoto": "No family for this filter."
+}
+};
+</script>
+<script src="assets/r07.js"></script>
+<script>
+/* FILTRI PER SETTORE (DPG_filtri di r07.js): ogni card dichiara in data-set i suoi settori; il conteggio sta sul bottone
+   e, a due cifre, nei numeri della testata. Il filtro scelto va nell'indirizzo (#oem); all'apertura si rilegge da li'.
+   I numeri della testata filtrano e portano alla griglia. #h2o e #phm sono sia filtri sia id di card: il browser scende
+   alla card; per #oem, #vsp, #dev, #tutti (nessun id) si scende alla griglia. */
+(function(){
+  const testa=[...$$('.settori-conta [data-f]')],fila=$('.famiglie');
+  const vai=()=>{const s=document.getElementById('famiglie');if(s)s.scrollIntoView();};
+  /* dopo ogni filtro: la voce della testata si accende; sul telefono la fila delle card torna alla prima */
+  const scegli=DPG_filtri('.famiglia[data-set]',{bottoni:'.filtri [data-f], .settori-conta [data-f]',vuoto:'.nessuna',
+    dopo:f=>{testa.forEach(a=>{if(a.dataset.f===f)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
+      if(fila&&fila.scrollLeft)fila.scrollLeft=0;}});
+  testa.forEach(a=>{const c=a.querySelector('.conta');if(c)c.textContent=c.textContent.padStart(2,'0');
+    a.addEventListener('click',e=>{e.preventDefault();vai();});});
+  const h=location.hash.slice(1);
+  if(h&&testa.some(a=>a.dataset.f===h)&&!document.getElementById(h))requestAnimationFrame(vai);
+  /* un link verso una famiglia nascosta dal filtro (le tre vedute della testata): prima si torna a "Tutte" */
+  $$('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const el=document.getElementById(a.getAttribute('href').slice(1));
+    if(el&&el.classList.contains('famiglia')&&el.hidden)scegli('tutti',true);}));
+  /* stampa: i dettagli delle card si aprono tutti, poi tornano com'erano */
+  let aperti=[];
+  addEventListener('beforeprint',()=>{const dd=[...$$('.fam-dettaglio')];aperti=dd.map(d=>d.open);dd.forEach(d=>d.open=true);});
+  addEventListener('afterprint',()=>{$$('.fam-dettaglio').forEach((d,i)=>{d.open=!!aperti[i];});});
+})();
+</script>
+<script>applica();</script>
+</body></html>

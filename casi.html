@@ -1,0 +1,809 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cinque casi di produzione additiva in serie, raccontati senza nomi, e la biblioteca delle schede PDF di settore e di applicazione in italiano, tedesco, francese e inglese.">
+<meta name="theme-color" content="#0B0B0C">
+<title>Casi e schede · Due Pi Greco</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/stile-r07.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="assets/comune.js"></script>
+</head><body class="r07 p-casi ">
+<!-- DPG-WEB · DPG-WEB · Casi e schede · Rev. 07. FILE GENERATO da _lavoro/r07/build_r07.py: si modifica _lavoro/r07/pagine/casi.src.html.
+     Testi dal dizionario I18N in fondo (it, de, en; il de e' una bozza). Dati: solo quelli di 00_CONTENUTI_REV06.md. -->
+<a class="salta" href="#contenuto" data-i="salta">Vai al contenuto</a>
+
+<!-- BARRA (manuale 4.1): fissa, trasparente sopra la testata scura; .piena dopo 80 px. Il pannello telefono lo apre comune.js.
+     Parte comune a tutte le pagine (_lavoro/r07/parti/barra.html): la pagina corrente riceve aria-current dal build. -->
+<header class="topbar barra su-nero"><div class="barra-dentro">
+  <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+  <span class="targhetta">Demo · Rev. 07</span>
+  <nav class="nav" aria-label="Menu" data-i-aria="nav_menu">
+    <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a>
+    <div class="menu-voce"><button type="button" class="menu-apri" aria-expanded="false" aria-controls="menu-app" data-i="nav_app">Applicazioni</button>
+      <div class="menu-sotto" id="menu-app">
+        <a href="settore-oem.html"><i>01</i><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a>
+        <a href="settore-vsp.html"><i>02</i><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a>
+        <a href="settore-phm.html"><i>03</i><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a>
+        <a class="menu-tutte" href="applicazioni.html"><i>17</i><b data-i="nav_tutti">Tutte le applicazioni</b><span data-i="nav_fam">Famiglie di parti</span></a>
+      </div></div>
+    <a href="materiali.html" data-i="nav_mat">Materiali</a>
+    <a href="casi.html" data-i="nav_casi" aria-current="page">Casi</a>
+    <a href="contatti.html" data-i="nav_cont">Contatti</a>
+  </nav>
+  <div class="lingue" role="group" aria-label="Lingua" data-i-aria="lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a class="btn btn--contorno btn--p btn-barra" href="preventivo.html" data-i="nav_prev">Preventivo</a>
+  <button type="button" class="menu-tasto" aria-expanded="false" aria-controls="menu-pannello" data-i="nav_menu">Menu</button>
+</div></header>
+
+<!-- PANNELLO TELEFONO: data-bp e' la larghezza da cui la barra torna intera (comune.js lo chiude oltre questa misura) -->
+<div class="menu-pannello" id="menu-pannello" role="dialog" aria-modal="true" aria-label="Menu" data-i-aria="nav_menu" data-bp="1080">
+  <div class="mp-testa"><a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+    <button type="button" class="menu-tasto" data-menu-chiudi data-i="nav_chiudi">Chiudi</button></div>
+  <ul class="mp-voci">
+    <li><a href="index.html" data-i="nav_home">Home</a></li>
+    <li><a href="tecnologie.html" data-i="nav_tec">Tecnologie</a></li>
+    <li><a href="applicazioni.html" data-i="nav_app">Applicazioni</a></li>
+    <li><a href="materiali.html" data-i="nav_mat">Materiali</a></li>
+    <li><a href="casi.html" data-i="nav_casi" aria-current="page">Casi</a></li>
+    <li><a href="contatti.html" data-i="nav_cont">Contatti</a></li>
+  </ul>
+  <a class="btn btn--primario mp-cta" href="preventivo.html" data-i="nav_prev">Preventivo</a>
+  <p class="etichetta mp-lab" data-i="nav_set">Settori</p>
+  <ul class="mp-settori">
+    <li><a href="settore-oem.html"><span class="solo-lettore">01 </span><b data-i="p_s1">Macchine industriali e OEM</b><span data-i="nav_s1d">carter, formati, attrezzaggi, ricambi</span></a></li>
+    <li><a href="settore-vsp.html"><span class="solo-lettore">02 </span><b data-i="p_s2">Mezzi speciali e allestimenti</b><span data-i="nav_s2d">allestimenti, flotte, finitura da carrozzeria</span></a></li>
+    <li><a href="settore-phm.html"><span class="solo-lettore">03 </span><b data-i="p_s3">Pharma e macchine di processo</b><span data-i="nav_s3d">parti a formato, dossier, cleanroom</span></a></li>
+  </ul>
+  <p class="etichetta mp-lab" data-i="top_c">Contatti</p>
+  <p class="mp-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><br><a href="tel:+390423715172">+39 0423 715172</a></p>
+  <p class="etichetta mp-lab" id="mp-lingua" data-i="lingua">Lingua</p>
+  <div class="mp-lingue" role="group" aria-labelledby="mp-lingua">
+    <button type="button" class="lang attiva" data-lang="it" lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="lang" data-lang="de" lang="de" aria-pressed="false">DE</button>
+    <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<main id="contenuto" tabindex="-1">
+
+<!-- TESTATA · nero. Briciole, H1 (lo slogan della pagina), lead e una sola azione (un link: nessun bottone pieno qui).
+     Sotto, in cornice, la distinta dei cinque casi come la distinta base di un disegno: le colonne stanno sulla griglia
+     della pagina (il materiale parte sotto la lead), il cartiglio chiude il foglio. Poi l'indice fermo sotto la barra. -->
+<section class="testata testata--con-indice su-nero" aria-labelledby="h-titolo">
+  <div class="griglia testata-testa">
+    <div class="testata-titolo rivela">
+      <nav class="briciole" aria-label="Sei qui" data-i-aria="cs7_bric"><a href="index.html" data-i="torna">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i="occ">Casi e schede</span></nav>
+      <h1 id="h-titolo" data-i="h1">Forniture in produzione, e le schede per capirle.</h1>
+    </div>
+    <div class="testata-lato rivela r2">
+      <p class="lead" data-i="intro">Cinque casi in produzione, raccontati senza nomi: un cliente lo citiamo solo con il suo consenso scritto.</p>
+      <p class="cs-intro-b" data-i="cs7_intro_b">Sotto, la biblioteca delle schede di settore e di applicazione: per ogni PDF il codice, il titolo, la lingua, la revisione e il peso.</p>
+      <div class="testata-azioni">
+        <a class="link" href="#schede"><span data-i="bib_t">La biblioteca delle schede</span> <span class="freccia" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cornice rivela r3">
+    <figure class="cornice-dentro distinta-foglio" aria-labelledby="dst-cap">
+      <p class="solo-lettore" id="dst-cap" data-i="cs7_dst_cap">Distinta dei cinque casi: settore, materiale e processo, tipo di fornitura</p>
+      <div class="dst-testa" aria-hidden="true"><span class="dst-n" data-i="cs7_dst_n">N. · Settore</span><span class="dst-tit" data-i="cs7_dst_caso">Caso</span><span class="dst-mat" data-i="d_mat">Materiale e processo</span><span class="dst-tipo" data-i="d_tipo">Tipo di fornitura</span></div>
+      <ol class="distinta">
+        <li><a class="dst-riga" href="#caso-01"><span class="dst-n"><span class="mono">01</span><span class="etichetta" data-i="set_oem">Macchine e OEM</span></span><span class="dst-tit" data-i="c0_t">Filtrazione industriale: pannelli in serie ricorrente</span><span class="dst-mat" data-i="c0_mat">Polipropilene · SAF</span><span class="dst-tipo" data-i="c0_tipo">serie ricorrente</span></a></li>
+        <li><a class="dst-riga" href="#caso-02"><span class="dst-n"><span class="mono">02</span><span class="etichetta" data-i="set_oem">Macchine e OEM</span></span><span class="dst-tit" data-i="c1_t">Forni professionali: cassetti e profili in lotti piccoli</span><span class="dst-mat" data-i="c1_mat">PA2200 · SLS</span><span class="dst-tipo" data-i="c1_tipo">lotti piccoli</span></a></li>
+        <li><a class="dst-riga" href="#caso-03"><span class="dst-n"><span class="mono">03</span><span class="etichetta" data-i="set_vsp">Mezzi speciali</span></span><span class="dst-tit" data-i="c2_t">La finitura, presa sul serio</span><span class="dst-mat" data-i="c2_mat">smalto 2K</span><span class="dst-tipo" data-i="c2_tipo">specifica di verniciatura</span></a></li>
+        <li><a class="dst-riga" href="#caso-04"><span class="dst-n"><span class="mono">04</span><span class="etichetta" data-i="set_vsp">Mezzi speciali</span></span><span class="dst-tit" data-i="c3_t">In gara, in campionato</span><span class="dst-mat" data-i="c3_mat">PA11, PA12 · SLS; Nylon 12CF · FDM</span><span class="dst-tipo" data-i="c3_tipo">ricambi e migliorie</span></a></li>
+        <li><a class="dst-riga" href="#caso-05"><span class="dst-n"><span class="mono">05</span><span class="etichetta" data-i="set_dev">Sviluppo prodotto</span></span><span class="dst-tit" data-i="c4_t">Un kit di validazione da 17 componenti</span><span class="dst-mat" data-i="c4_mat">PA11, PA12 · SLS; Nylon 12CF · FDM</span><span class="dst-tipo" data-i="c4_tipo">un solo lotto</span></a></li>
+      </ol>
+      <figcaption>
+        <dl class="cartiglio dst-cartiglio">
+          <div><dt data-i="cs7_cg_dst">Distinta</dt><dd class="mono" data-i="cs7_cg_dst_v">CASI 01–05</dd></div>
+          <div><dt data-i="cs7_cg_sog">Soggetto</dt><dd data-i="cs7_cg_sog_v">Forniture in produzione, raccontate senza nomi</dd></div>
+          <div><dt data-i="cs7_cg_tav">Tavole</dt><dd data-i="cs7_cg_tav_v">Di riferimento, non i pezzi dei clienti</dd></div>
+        </dl>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- INDICE · fratello delle sezioni (non dentro la testata): cosi' resta fermo sotto la barra per tutta la pagina -->
+<nav class="indice" aria-label="In questa pagina" data-i-aria="cs7_ind">
+  <div class="indice-dentro">
+    <a href="#casi"><i>01</i><span data-i="s_o">I casi</span></a>
+    <a href="#leggere"><i>02</i><span data-i="leggi_o">Come leggere una scheda</span></a>
+    <a href="#schede-settore"><i>03</i><span data-i="bib_g1">Schede di settore</span></a>
+    <a href="#schede-applicazione"><i>04</i><span data-i="bib_g2">Schede applicazione</span></a>
+    <a href="#schede-estero"><i>05</i><span data-i="bib_g3">Schede per il mercato estero</span></a>
+  </div>
+</nav>
+
+<!-- I CASI · panna. Le tavole nere stanno sul foglio chiaro come disegni; il cartiglio di ogni caso e' sulla carta.
+     Filtri: DPG_filtri di r07.js, stessi data-f (tutti oem vsp dev) e data-set della Rev. 06. Le card sono articoli, non link.
+     Tavole: c0 e c3 quelle della home, c4 la tavola della famiglia Kit di validazione; c1 e c2 non hanno una tavola:
+     il riquadro porta il dato del caso scritto in grande, senza etichetta "Tavola" (e' testo, non un disegno). -->
+<section class="sezione sezione--panna su-carta" id="casi" aria-labelledby="h-casi">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="s_o">I casi</p><h2 id="h-casi" data-i="cs7_h2">Cinque casi, per settore.</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="cs7_lead">Ogni caso dice il settore, il materiale e il tipo di fornitura. Le tavole sono di riferimento, non i pezzi dei clienti.</p>
+  </div>
+  <div class="griglia">
+    <div class="filtri cs-filtri rivela" role="group" aria-labelledby="cs-filtri-et">
+      <span class="etichetta cs-filtri-et" id="cs-filtri-et" data-i="s_t">Filtrate per settore</span>
+      <button type="button" class="filtro" data-f="tutti" aria-pressed="true"><span data-i="set_tutti">Tutte</span><span class="n conta"></span></button>
+      <button type="button" class="filtro" data-f="oem" aria-pressed="false"><span data-i="set_oem">Macchine e OEM</span><span class="n conta"></span></button>
+      <button type="button" class="filtro" data-f="vsp" aria-pressed="false"><span data-i="set_vsp">Mezzi speciali</span><span class="n conta"></span></button>
+      <button type="button" class="filtro" data-f="dev" aria-pressed="false"><span data-i="set_dev">Sviluppo prodotto</span><span class="n conta"></span></button>
+    </div>
+    <p class="solo-lettore" id="casi-esito" aria-live="polite"></p>
+  </div>
+
+  <div class="griglia casi-elenco">
+    <article class="caso caso--pagina rivela" id="caso-01" data-set="oem" aria-labelledby="cs1-t">
+      <div class="caso-fig su-nero"><img src="assets/app_scr_disegno.svg" width="1040" height="700" alt="Tavola di riferimento: pannello forato per griglia, in polipropilene" data-i-alt="c7_1alt" loading="lazy" decoding="async"><span class="etichetta caso-tav" data-i="c7_rif">Tavola di riferimento, non il pezzo reale</span></div>
+      <div class="caso-cartiglio">
+        <div class="cc-sx"><span class="mono"><span data-i="c7_caso">CASO</span> 01</span><span class="etichetta"><span class="solo-lettore"><span data-i="d_set">Settore</span>: </span><span data-i="set_oem">Macchine e OEM</span></span></div>
+        <div class="cc-dx">
+          <h3 id="cs1-t" data-i="c0_t">Filtrazione industriale: pannelli in serie ricorrente</h3>
+          <p class="caso-testo" data-i="c0_p">Per un costruttore di sistemi di filtrazione industriale produciamo in continuativo pannelli tecnici in polipropilene SAF: serie ricorrente, riordino a magazzino digitale, lotto tracciato. Non un prototipo: una fornitura.</p>
+          <dl class="scheda caso-dati"><div><dt data-i="d_mat">Materiale e processo</dt><dd data-i="c0_mat">Polipropilene · SAF</dd></div><div><dt data-i="d_tipo">Tipo di fornitura</dt><dd data-i="c0_tipo">serie ricorrente</dd></div></dl>
+          <a class="link" href="settore-oem.html"><span data-i="vai">Vai al settore</span> <span class="freccia" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="caso caso--pagina rivela r2" id="caso-02" data-set="oem" aria-labelledby="cs2-t">
+      <div class="caso-fig caso-fig--cifra su-nero" aria-hidden="true"><span class="etichetta caso-tav" data-i="cs7_c1_cifra_l">Parete dei cassetti, PA2200</span><span class="cifra cifra--quota"><span data-i="cs7_c1_cifra">2,5</span><small>mm</small></span></div>
+      <div class="caso-cartiglio">
+        <div class="cc-sx"><span class="mono"><span data-i="c7_caso">CASO</span> 02</span><span class="etichetta"><span class="solo-lettore"><span data-i="d_set">Settore</span>: </span><span data-i="set_oem">Macchine e OEM</span></span></div>
+        <div class="cc-dx">
+          <h3 id="cs2-t" data-i="c1_t">Forni professionali: cassetti e profili in lotti piccoli</h3>
+          <p class="caso-testo" data-i="c1_p">Per un costruttore di forni professionali produciamo in serie ricorrente cassetti e profili raccogligocce in PA2200: componenti a contatto con il prodotto, pareti da 2,5 mm, riordinati in lotti piccoli, lotto tracciato.</p>
+          <dl class="scheda caso-dati"><div><dt data-i="d_mat">Materiale e processo</dt><dd data-i="c1_mat">PA2200 · SLS</dd></div><div><dt data-i="d_tipo">Tipo di fornitura</dt><dd data-i="c1_tipo">lotti piccoli</dd></div></dl>
+          <a class="link" href="settore-oem.html"><span data-i="vai">Vai al settore</span> <span class="freccia" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="caso caso--pagina rivela" id="caso-03" data-set="vsp" aria-labelledby="cs3-t">
+      <div class="caso-fig caso-fig--cifra su-nero" aria-hidden="true"><span class="etichetta caso-tav" data-i="cs7_c2_cifra_l">Smalto 2K, nero opaco stabile agli UV</span><span class="cifra">2K</span></div>
+      <div class="caso-cartiglio">
+        <div class="cc-sx"><span class="mono"><span data-i="c7_caso">CASO</span> 03</span><span class="etichetta"><span class="solo-lettore"><span data-i="d_set">Settore</span>: </span><span data-i="set_vsp">Mezzi speciali</span></span></div>
+        <div class="cc-dx">
+          <h3 id="cs3-t" data-i="c2_t">La finitura, presa sul serio</h3>
+          <p class="caso-testo" data-i="c2_p">A un costruttore storico di mezzi speciali che chiedeva garanzie sulla verniciatura abbiamo risposto con la specifica completa dello smalto 2K: adesione diretta senza primer, barriera anticorrosiva, resistenza a oli e carburanti, nero opaco stabile agli UV.</p>
+          <dl class="scheda caso-dati"><div><dt data-i="d_mat">Materiale e processo</dt><dd data-i="c2_mat">smalto 2K</dd></div><div><dt data-i="d_tipo">Tipo di fornitura</dt><dd data-i="c2_tipo">specifica di verniciatura</dd></div></dl>
+          <a class="link" href="settore-vsp.html"><span data-i="vai">Vai al settore</span> <span class="freccia" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="caso caso--pagina rivela r2" id="caso-04" data-set="vsp" aria-labelledby="cs4-t">
+      <div class="caso-fig caso-fig--resa su-nero"><img src="assets/app_mot.webp" width="1200" height="800" alt="Tavola della famiglia Motorsport, parti additive in rosso" data-i-alt="c7_2alt" loading="lazy" decoding="async"><span class="etichetta caso-tav" data-i="c7_rif">Tavola di riferimento, non il pezzo reale</span></div>
+      <div class="caso-cartiglio">
+        <div class="cc-sx"><span class="mono"><span data-i="c7_caso">CASO</span> 04</span><span class="etichetta"><span class="solo-lettore"><span data-i="d_set">Settore</span>: </span><span data-i="set_vsp">Mezzi speciali</span></span></div>
+        <div class="cc-dx">
+          <h3 id="cs4-t" data-i="c3_t">In gara, in campionato</h3>
+          <p class="caso-testo" data-i="c3_p">Su un'auto da rally in campionato produciamo ricambistica e miglioramenti che reggono la corsa: condotto di aspirazione turbo ottimizzato nella portata, griglie intercooler, convogliatori e supporti fanali.</p>
+          <dl class="scheda caso-dati"><div><dt data-i="d_mat">Materiale e processo</dt><dd data-i="c3_mat">PA11, PA12 · SLS; Nylon 12CF · FDM</dd></div><div><dt data-i="d_tipo">Tipo di fornitura</dt><dd data-i="c3_tipo">ricambi e migliorie</dd></div></dl>
+          <a class="link" href="settore-vsp.html"><span data-i="vai">Vai al settore</span> <span class="freccia" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="caso caso--pagina caso--largo rivela" id="caso-05" data-set="dev" aria-labelledby="cs5-t">
+      <div class="caso-fig caso-fig--val su-nero"><img src="assets/app_val.webp" width="1200" height="800" alt="Tavola della famiglia Kit di validazione: assieme in vista esplosa, parti additive in rosso" data-i-alt="cs7_c4_alt" loading="lazy" decoding="async"><span class="etichetta caso-tav" data-i="c7_rif">Tavola di riferimento, non il pezzo reale</span></div>
+      <div class="caso-cartiglio">
+        <div class="cc-sx"><span class="mono"><span data-i="c7_caso">CASO</span> 05</span><span class="etichetta"><span class="solo-lettore"><span data-i="d_set">Settore</span>: </span><span data-i="set_dev">Sviluppo prodotto</span></span></div>
+        <div class="cc-dx">
+          <h3 id="cs5-t" data-i="c4_t">Un kit di validazione da 17 componenti</h3>
+          <p class="caso-testo" data-i="c4_p">Per un costruttore tedesco di motori abbiamo prodotto un kit di validazione completo da 17 componenti (collettori, condotti acqua e aria, carter e staffe) in un unico lotto.</p>
+          <dl class="scheda caso-dati"><div><dt data-i="d_mat">Materiale e processo</dt><dd data-i="c4_mat">PA11, PA12 · SLS; Nylon 12CF · FDM</dd></div><div><dt data-i="d_tipo">Tipo di fornitura</dt><dd data-i="c4_tipo">un solo lotto</dd></div></dl>
+          <a class="link" href="applicazioni.html#val"><span data-i="cs7_vai_fam">Vai alla famiglia di parti</span> <span class="freccia" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- LA BIBLIOTECA DELLE SCHEDE · carta, l'ultima sezione prima della striscia nera.
+     Prima "come leggere una scheda" (#leggere), poi i tre gruppi come il registro dei disegni di un ufficio tecnico:
+     testa del gruppo ferma a sinistra su 4 colonne, registro a destra su 8. Una riga per codice, un link per file
+     (lingua, revisione, peso letto dal file dal build). I titoli sono quelli di copertina, nella lingua della scheda, fuori dal
+     dizionario. Le bozze si dicono con il tratteggio sotto la revisione, non con il rosso. Tutti i 21 PDF di sito/schede. -->
+<section class="sezione su-carta" id="schede" aria-labelledby="h-schede">
+  <div class="griglia testa-split">
+    <div class="ts-titolo rivela"><p class="occhiello" data-i="bib_o">La biblioteca</p><h2 id="h-schede" data-i="bib_t">La biblioteca delle schede</h2></div>
+    <p class="lead ts-lead rivela r2" data-i="bib_p">Tre gruppi: schede di settore, schede applicazione, schede per il mercato estero. Il titolo è quello stampato in copertina, nella lingua della scheda; ogni sigla di lingua apre il PDF corrispondente.</p>
+  </div>
+
+  <div class="griglia leggere" id="leggere">
+    <div class="leggi-lato rivela"><p class="occhiello" data-i="leggi_o">Come leggere una scheda</p><h3 data-i="leggi_t">Cosa c'è in una scheda</h3></div>
+    <ol class="leggi">
+      <li class="rivela"><span class="etichetta">01 / 02</span><h4 data-i="leggi_1t">Copertina</h4><p data-i="leggi_1p">La tavola del pezzo e il titolo della scheda.</p></li>
+      <li class="rivela r2"><span class="etichetta">02 / 02</span><h4 data-i="leggi_2t">Pagina 2</h4><p data-i="leggi_2p">Il conto economico, i segnali, i materiali, il caso, il rovescio e l'invito.</p></li>
+    </ol>
+  </div>
+
+  <!-- gruppo 1 · schede di settore: sei codici, dieci file -->
+  <section class="griglia bib-gruppo" id="schede-settore" aria-labelledby="h-g1">
+    <div class="bg-lato rivela">
+      <span class="etichetta">01 / 03</span>
+      <h3 id="h-g1" data-i="bib_g1">Schede di settore</h3>
+      <p data-i="bib_g1p">Sei codici, dieci file: una scheda per settore, alcune anche in tedesco e in francese.</p>
+    </div>
+    <div class="bg-elenco rivela r2">
+      <div class="registro-testa" aria-hidden="true"><span data-i="cs7_reg_cod">Codice</span><span data-i="cs7_reg_tit">Titolo in copertina</span><span data-i="lingua">Lingua</span><span data-i="c_rev">Revisione</span><span data-i="cs7_reg_peso">Peso</span><span></span></div>
+      <ol class="registro registro--multi">
+        <li><span class="reg-cod">DPG-SET-OEM</span><span class="reg-tit"><b id="rt-set-oem" lang="it">La vostra produzione è già una serie piccola.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Scheda_Settore_OEM.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-oem"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="1.5">1,5</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+            <li><a href="schede/DPG_Scheda_OEM_DE.pdf" hreflang="de" type="application/pdf" aria-describedby="rt-set-oem"><span class="reg-lng"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="cs7_lng_de">PDF in tedesco</span></span><span class="reg-rev bozza" data-i="bib_bozza_de">Rev. 01 · bozza DE</span><span class="reg-peso"><span data-mb="1.5">1,5</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-VSP</span><span class="reg-tit"><b id="rt-set-vsp" lang="it">Decine di esemplari, non migliaia.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Scheda_Settore_Mezzi_Speciali.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-vsp"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="1.5">1,5</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-PHM</span><span class="reg-tit"><b id="rt-set-phm" lang="it">Dove la domanda è: potete dimostrarlo?</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Scheda_PHM_IT.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-phm"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev reg-nota" data-i="bib_senza_tav">senza tavola</span><span class="reg-peso"><span data-mb="0.3">0,3</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+            <li><a href="schede/DPG_Scheda_PHM_DE.pdf" hreflang="de" type="application/pdf" aria-describedby="rt-set-phm"><span class="reg-lng"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="cs7_lng_de">PDF in tedesco</span></span><span class="reg-rev bozza" data-i="bib_bozza_de">Rev. 01 · bozza DE</span><span class="reg-peso"><span data-mb="1.0">1,0</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-PHM pack</span><span class="reg-tit"><b id="rt-set-pack" lang="it">Pack settore Pharma machinery</b><small data-i="bib_pack_p">Pack di cinque schede: settore, EOAT, parti a formato, PA2200, PP.</small></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Pack_Pharma_Machinery.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-pack"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="3.6">3,6</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-H2O</span><span class="reg-tit"><b id="rt-set-h2o" lang="it">Un pezzo unico, dove oggi ne incollate tre.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Trattamento_Acque.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-h2o"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.8">0,8</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+            <li><a href="schede/DuePiGreco_Wassertechnik.pdf" hreflang="de" type="application/pdf" aria-describedby="rt-set-h2o"><span class="reg-lng"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="cs7_lng_de">PDF in tedesco</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.8">0,8</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+            <li><a href="schede/DuePiGreco_Traitement_des_Eaux.pdf" hreflang="fr" type="application/pdf" aria-describedby="rt-set-h2o"><span class="reg-lng"><span aria-hidden="true">FR</span><span class="solo-lettore" data-i="cs7_lng_fr">PDF in francese</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.8">0,8</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-SRV</span><span class="reg-tit"><b id="rt-set-srv" lang="it">Il formato e la serie che non avete in casa.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Grande_Formato_e_Serie.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-set-srv"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="1.5">1,5</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- gruppo 2 · schede applicazione: sette codici, otto file -->
+  <section class="griglia bib-gruppo" id="schede-applicazione" aria-labelledby="h-g2">
+    <div class="bg-lato rivela">
+      <span class="etichetta">02 / 03</span>
+      <h3 id="h-g2" data-i="bib_g2">Schede applicazione</h3>
+      <p data-i="bib_g2p">Sette schede, una per famiglia di parti, in italiano; il kit di validazione anche in tedesco.</p>
+    </div>
+    <div class="bg-elenco rivela r2">
+      <div class="registro-testa" aria-hidden="true"><span data-i="cs7_reg_cod">Codice</span><span data-i="cs7_reg_tit">Titolo in copertina</span><span data-i="lingua">Lingua</span><span data-i="c_rev">Revisione</span><span data-i="cs7_reg_peso">Peso</span><span></span></div>
+      <ol class="registro registro--multi">
+        <li><span class="reg-cod">DPG-APP-EOAT</span><span class="reg-tit"><b id="rt-app-eoat" lang="it">Dita, nidi e pallet al costo di un file.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Attrezzaggi_Macchina.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-eoat"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.7">0,7</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-FMT</span><span class="reg-tit"><b id="rt-app-fmt" lang="it">Un set formato per ogni cliente, senza fresare il POM.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Cambio_Formato.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-fmt"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.8">0,8</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-RIC</span><span class="reg-tit"><b id="rt-app-ric" lang="it">Carter, guide e rack da dieci a cinquecento l'anno.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Carter_e_Ricambi.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-ric"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="0.7">0,7</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-ALI</span><span class="reg-tit"><b id="rt-app-ali" lang="it">Condotti e imbuti a contatto alimentare, senza stampo.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Contatto_Alimentare.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-ali"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="1.7">1,7</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-CIL</span><span class="reg-tit"><b id="rt-app-cil" lang="it">Tamburi, rulli e rotori con i canali già dentro.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Tamburi_e_Rulli.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-cil"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="1.5">1,5</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-ANTINCENDIO</span><span class="reg-tit"><b id="rt-app-ant" lang="it">Autopompa antincendio: la distinta additive</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Scheda_Applicazione_Antincendio.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-ant"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev">Rev. 01</span><span class="reg-peso"><span data-mb="2.2">2,2</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-VAL</span><span class="reg-tit"><b id="rt-app-val" lang="it">Ogni iterazione, un kit completo.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DPG_Scheda_VAL_IT.pdf" hreflang="it" type="application/pdf" aria-describedby="rt-app-val"><span class="reg-lng"><span aria-hidden="true">IT</span><span class="solo-lettore" data-i="cs7_lng_it">PDF in italiano</span></span><span class="reg-rev"></span><span class="reg-peso"><span data-mb="0.3">0,3</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+            <li><a href="schede/DPG_Scheda_VAL_DE.pdf" hreflang="de" type="application/pdf" aria-describedby="rt-app-val"><span class="reg-lng"><span aria-hidden="true">DE</span><span class="solo-lettore" data-i="cs7_lng_de">PDF in tedesco</span></span><span class="reg-rev bozza" data-i="bib_bozza_de">Rev. 01 · bozza DE</span><span class="reg-peso"><span data-mb="1.6">1,6</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- gruppo 3 · schede per il mercato estero: inglese, Rev. 00, tutte bozze (lo dice la targhetta del gruppo e ogni riga) -->
+  <section class="griglia bib-gruppo" id="schede-estero" aria-labelledby="h-g3">
+    <div class="bg-lato rivela">
+      <span class="etichetta">03 / 03</span>
+      <h3 id="h-g3" data-i="bib_g3">Schede per il mercato estero</h3>
+      <span class="etichetta bg-bozza" data-i="bib_g3b">inglese · Rev. 00 · bozza</span>
+      <p data-i="bib_g3p">Tre schede in inglese, Rev. 00: bozze in attesa di verifica tecnica.</p>
+    </div>
+    <div class="bg-elenco rivela r2">
+      <div class="registro-testa" aria-hidden="true"><span data-i="cs7_reg_cod">Codice</span><span data-i="cs7_reg_tit">Titolo in copertina</span><span data-i="lingua">Lingua</span><span data-i="c_rev">Revisione</span><span data-i="cs7_reg_peso">Peso</span><span></span></div>
+      <ol class="registro registro--multi">
+        <li><span class="reg-cod">DPG-APP-SCR</span><span class="reg-tit"><b id="rt-en-scr" lang="en">Screen panels, without the mould.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Screen_Panels.pdf" hreflang="en" type="application/pdf" aria-describedby="rt-en-scr"><span class="reg-lng"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="cs7_lng_en">PDF in inglese</span></span><span class="reg-rev bozza" data-i="bib_bozza">Rev. 00 · bozza</span><span class="reg-peso"><span data-mb="1.2">1,2</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-SET-H2O</span><span class="reg-tit"><b id="rt-en-h2o" lang="en">One piece, where today you glue three.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Water_Treatment.pdf" hreflang="en" type="application/pdf" aria-describedby="rt-en-h2o"><span class="reg-lng"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="cs7_lng_en">PDF in inglese</span></span><span class="reg-rev bozza" data-i="bib_bozza">Rev. 00 · bozza</span><span class="reg-peso"><span data-mb="0.9">0,9</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+        <li><span class="reg-cod">DPG-APP-SPR</span><span class="reg-tit"><b id="rt-en-spr" lang="en">The spare nobody makes any more.</b></span>
+          <ul class="reg-file">
+            <li><a href="schede/DuePiGreco_Spares_From_The_Part.pdf" hreflang="en" type="application/pdf" aria-describedby="rt-en-spr"><span class="reg-lng"><span aria-hidden="true">EN</span><span class="solo-lettore" data-i="cs7_lng_en">PDF in inglese</span></span><span class="reg-rev bozza" data-i="bib_bozza">Rev. 00 · bozza</span><span class="reg-peso"><span data-mb="0.7">0,7</span>&nbsp;MB</span><span class="freccia" aria-hidden="true">↓</span></a></li>
+          </ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- chiusura: la nota fissa del par. 9 sotto il registro (rovescio, pannello panna) e, a sinistra sotto le teste dei
+       gruppi, la richiesta della scheda che manca (riquadro, bottone a contorno: il rosso pieno resta nella striscia) -->
+  <div class="griglia bib-chiusa">
+    <div class="rovescio rivela"><span class="etichetta" data-i="c_note">Note</span><p data-i="bib_nota">Le schede materiale DPG-MAT si ricevono con l'offerta; il certificato del produttore del materiale, dove il capitolato lo chiede. Le schede in inglese sono bozze in attesa di verifica tecnica.</p></div>
+    <div class="riquadro bib-manca rivela r2">
+      <p data-i="bib_manca">La famiglia di parti che cercate non ha ancora la sua scheda? Chiedetela: l'oggetto della mail è già compilato.</p>
+      <a class="btn btn--contorno" href="mailto:info@duepigreco3d.it?subject=Richiesta%20scheda" data-i="chiedi_scheda">Chiedete la scheda</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+
+<!-- STRISCIA FINALE (manuale 4.12) · nero, la cornice smussata della testata: chiude ogni pagina con le tre chiamate all'azione.
+     Parte comune (_lavoro/r07/parti/striscia.html); una pagina la toglie con "striscia": false nei META. -->
+<section class="striscia su-nero" id="contatti-rapidi" aria-labelledby="h-fine">
+  <div class="cornice cornice--fine rivela">
+    <div class="cornice-dentro striscia-dentro">
+      <h2 id="h-fine" data-i="fine_t">Mandateci lo STEP di un componente.</h2>
+      <p class="lead" data-i="fine_p">Vi diciamo anche quando non conviene.</p>
+      <div class="striscia-azioni">
+        <a class="btn btn--primario btn--g" href="preventivo.html" data-i="cta_file">Inviate STEP o STL</a>
+        <a class="btn btn--contorno btn--g" href="mailto:info@duepigreco3d.it?subject=Parlare%20con%20un%20tecnico" data-i="cta_tecnico">Parlate con un tecnico</a>
+        <a class="btn btn--contorno btn--g" href="#schede" data-i="cta_scheda">Richiedete una scheda</a>
+      </div>
+      <p class="striscia-contatti"><a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PIEDE (manuale 4.13) · secondo nero. Parte comune (_lavoro/r07/parti/piede.html); il build scrive il codice del documento -->
+<footer class="piede su-nero" id="contatti">
+  <div class="griglia piede-alto">
+    <div class="piede-marchio">
+      <a class="marchio" href="index.html" aria-label="Due Pi Greco, home"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 1002" role="img" aria-label="Due Pi Greco"><title>Due Pi Greco</title><g transform="translate(0.000000,1002.000000) scale(0.100000,-0.100000)" fill-rule="evenodd"><path class="dpg-nero" fill="#0B0B0C" d="M2185 8777 c-3 -7 -4 -120 -3 -252 l3 -240 2850 -5 c1568 -3 2851 -6 2853 -8 1 -1 1 -1634 0 -3629 l-3 -3628 -3630 0 -3630 0 -3 2839 c-1 2078 -5 2843 -13 2852 -12 15 -448 21 -483 8 -15 -6 -16 -288 -16 -3105 l0 -3099 26 -10 c41 -16 8226 -13 8247 3 16 11 17 274 15 4147 l-3 4135 -3103 3 c-2502 2 -3104 0 -3107 -11z"/><path class="dpg-rosso" fill="#ED1B24" d="M555 9234 c-11 -2 -47 -9 -80 -16 -166 -31 -303 -146 -351 -294 -23 -73 -32 -335 -12 -352 12 -9 69 -12 224 -10 l209 3 11 90 c15 114 27 146 67 176 31 23 38 24 199 24 l168 0 37 -38 38 -37 0 -124 c0 -192 8 -187 -415 -291 -325 -80 -374 -100 -451 -182 -89 -95 -94 -120 -94 -483 l0 -315 715 0 715 0 0 190 0 190 -490 5 -490 5 -3 35 c-4 47 34 120 74 142 17 10 69 27 115 38 110 27 253 63 379 97 335 91 429 226 417 596 -8 225 -38 320 -133 414 -115 112 -211 136 -564 139 -146 1 -274 1 -285 -2z M2289 6883 c-23 -38 -72 -113 -108 -168 -35 -55 -82 -127 -103 -159 -21 -33 -38 -67 -38 -77 0 -11 27 -34 73 -63 257 -160 309 -192 325 -201 9 -6 36 -23 60 -38 23 -15 59 -37 80 -48 20 -11 51 -29 67 -39 17 -10 41 -25 55 -33 14 -7 84 -47 155 -89 127 -73 263 -148 316 -175 15 -7 32 -20 39 -28 13 -16 13 -19 -20 -140 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -176 -3 -19 -10 -41 -14 -47 -3 -6 -10 -30 -15 -54 -5 -24 -26 -106 -46 -183 -21 -77 -41 -156 -45 -175 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -25 -98 -45 -175 -21 -77 -41 -156 -45 -175 -9 -38 -56 -215 -91 -345 -11 -44 -25 -96 -29 -115 -5 -19 -18 -71 -30 -115 -12 -44 -26 -96 -30 -115 -4 -19 -15 -62 -24 -95 -23 -86 -21 -103 12 -111 15 -4 70 -18 122 -32 52 -13 111 -28 130 -32 19 -4 71 -18 115 -31 44 -12 98 -23 119 -23 43 -1 43 -2 79 139 9 33 21 80 28 105 6 25 15 61 19 80 4 19 18 71 30 115 12 44 26 96 30 115 4 19 22 87 38 150 87 330 105 398 112 431 3 19 10 41 14 47 3 6 10 30 15 54 5 24 25 106 46 183 20 77 41 156 45 175 4 19 22 87 38 150 85 321 105 398 112 430 4 19 18 71 30 115 12 44 26 96 30 115 4 19 25 98 45 175 21 77 41 156 46 175 54 232 56 234 127 204 127 -55 332 -106 422 -107 78 0 206 30 369 89 114 41 119 41 127 7 3 -16 10 -41 15 -58 5 -16 23 -84 39 -150 38 -144 81 -309 122 -465 16 -63 34 -131 38 -150 4 -19 24 -98 45 -175 50 -193 89 -340 140 -540 24 -93 58 -224 75 -290 18 -66 36 -136 40 -155 4 -19 18 -71 30 -115 12 -44 26 -96 30 -115 4 -19 18 -71 30 -115 12 -44 25 -96 30 -115 4 -19 24 -96 43 -170 48 -181 73 -279 81 -314 7 -27 9 -28 54 -23 26 3 72 13 102 22 53 15 294 79 335 89 11 3 32 7 48 11 32 6 34 23 11 104 -22 81 -40 147 -59 221 -9 36 -22 88 -29 115 -8 28 -20 77 -29 110 -52 199 -65 251 -92 355 -10 36 -23 88 -30 115 -7 28 -19 70 -26 95 -6 25 -15 61 -19 80 -7 35 -52 204 -92 350 -11 41 -24 91 -28 110 -4 19 -24 98 -45 175 -20 77 -41 156 -45 175 -4 19 -18 71 -30 115 -12 44 -25 96 -30 115 -7 32 -31 124 -112 430 -16 63 -34 131 -38 150 -14 65 -32 135 -45 175 -25 74 -28 121 -10 139 9 9 20 16 25 16 5 0 44 20 86 45 41 25 78 45 81 45 3 0 39 20 80 45 40 25 76 45 79 45 7 0 583 348 717 433 53 34 97 68 97 76 0 8 -20 44 -43 80 -24 37 -64 98 -89 136 -129 201 -160 246 -172 251 -8 3 -60 -24 -117 -60 -148 -93 -623 -378 -694 -417 -33 -18 -73 -40 -90 -50 -16 -10 -50 -29 -75 -42 -25 -14 -74 -41 -110 -61 -184 -102 -527 -265 -660 -313 -158 -59 -207 -53 -459 54 -79 34 -460 223 -541 270 -19 11 -71 39 -115 63 -94 51 -313 176 -430 247 -114 67 -357 217 -422 260 -46 29 -89 53 -97 53 -7 0 -33 -30 -57 -67z"/></g></svg></span><b>DUE PI GRECO</b></a>
+      <p data-i="p_claim">Produzione additiva industriale per serie piccole e medie.</p>
+      <address class="piede-sedi">Via delle Industrie 18/20, Ponzano Veneto (TV)<br>Via Roma 55, Resana (TV)</address>
+    </div>
+    <nav class="piede-col piede-col--prima" aria-labelledby="pc1"><h2 class="etichetta piede-tit" id="pc1" data-i="p_settori">Settori</h2>
+      <a href="settore-oem.html" data-i="p_s1">Macchine industriali e OEM</a><a href="settore-vsp.html" data-i="p_s2">Mezzi speciali e allestimenti</a><a href="settore-phm.html" data-i="p_s3">Pharma e macchine di processo</a></nav>
+    <nav class="piede-col" aria-labelledby="pc2"><h2 class="etichetta piede-tit" id="pc2" data-i="p_espl">Esplora</h2>
+      <a href="tecnologie.html" data-i="nav_tec">Tecnologie</a><a href="applicazioni.html" data-i="nav_app">Applicazioni</a><a href="materiali.html" data-i="nav_mat">Materiali</a>
+      <a href="casi.html" data-i="nav_casi">Casi</a><a href="casi.html#schede" data-i="nav_schede">Schede PDF</a><a href="faq.html" data-i="nav_ris_faq">Domande frequenti</a><a href="preventivo.html" data-i="nav_prev">Preventivo</a></nav>
+    <div class="piede-col"><h2 class="etichetta piede-tit" data-i="p_contatti">Contatti</h2>
+      <a href="mailto:info@duepigreco3d.it">info@duepigreco3d.it</a><a href="tel:+390423715172">+39 0423 715172</a>
+      <a href="https://duepigreco3d.it">duepigreco3d.it</a><a href="contatti.html" data-i="nav_cont">Contatti</a></div>
+  </div>
+  <div class="griglia piede-legale">
+    <p>Due Pi Greco S.r.l. · <span data-i="p_iva">P.IVA</span> <span class="mono">04499050286</span></p>
+    <dl class="iscrizioni">
+      <div><dt data-i="c_doc">Documento</dt><dd>DPG-WEB · Casi e schede</dd></div>
+      <div><dt data-i="c_rev">Revisione</dt><dd>Rev. 07 · demo</dd></div>
+      <div><dt data-i="c_anno">Anno</dt><dd>2026</dd></div>
+      <div><dt data-i="c_note">Note</dt><dd data-i="c_de">DE: bozza da rileggere</dd></div>
+    </dl>
+  </div>
+</footer>
+
+<script>
+const I18N={
+"it": {
+"bib_bozza": "Rev. 00 · bozza",
+"bib_bozza_de": "Rev. 01 · bozza DE",
+"bib_g1": "Schede di settore",
+"bib_g1p": "Sei codici, dieci file: una scheda per settore, alcune anche in tedesco e in francese.",
+"bib_g2": "Schede applicazione",
+"bib_g2p": "Sette schede, una per famiglia di parti, in italiano; il kit di validazione anche in tedesco.",
+"bib_g3": "Schede per il mercato estero",
+"bib_g3b": "inglese · Rev. 00 · bozza",
+"bib_g3p": "Tre schede in inglese, Rev. 00: bozze in attesa di verifica tecnica.",
+"bib_manca": "La famiglia di parti che cercate non ha ancora la sua scheda? Chiedetela: l'oggetto della mail è già compilato.",
+"bib_nota": "Le schede materiale DPG-MAT si ricevono con l'offerta; il certificato del produttore del materiale, dove il capitolato lo chiede. Le schede in inglese sono bozze in attesa di verifica tecnica.",
+"bib_o": "La biblioteca",
+"bib_p": "Tre gruppi: schede di settore, schede applicazione, schede per il mercato estero. Il titolo è quello stampato in copertina, nella lingua della scheda; ogni sigla di lingua apre il PDF corrispondente.",
+"bib_pack_p": "Pack di cinque schede: settore, EOAT, parti a formato, PA2200, PP.",
+"bib_senza_tav": "senza tavola",
+"bib_t": "La biblioteca delle schede",
+"c0_mat": "Polipropilene · SAF",
+"c0_p": "Per un costruttore di sistemi di filtrazione industriale produciamo in continuativo pannelli tecnici in polipropilene SAF: serie ricorrente, riordino a magazzino digitale, lotto tracciato. Non un prototipo: una fornitura.",
+"c0_t": "Filtrazione industriale: pannelli in serie ricorrente",
+"c0_tipo": "serie ricorrente",
+"c1_mat": "PA2200 · SLS",
+"c1_p": "Per un costruttore di forni professionali produciamo in serie ricorrente cassetti e profili raccogligocce in PA2200: componenti a contatto con il prodotto, pareti da 2,5 mm, riordinati in lotti piccoli, lotto tracciato.",
+"c1_t": "Forni professionali: cassetti e profili in lotti piccoli",
+"c1_tipo": "lotti piccoli",
+"c2_mat": "smalto 2K",
+"c2_p": "A un costruttore storico di mezzi speciali che chiedeva garanzie sulla verniciatura abbiamo risposto con la specifica completa dello smalto 2K: adesione diretta senza primer, barriera anticorrosiva, resistenza a oli e carburanti, nero opaco stabile agli UV.",
+"c2_t": "La finitura, presa sul serio",
+"c2_tipo": "specifica di verniciatura",
+"c3_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c3_p": "Su un'auto da rally in campionato produciamo ricambistica e miglioramenti che reggono la corsa: condotto di aspirazione turbo ottimizzato nella portata, griglie intercooler, convogliatori e supporti fanali.",
+"c3_t": "In gara, in campionato",
+"c3_tipo": "ricambi e migliorie",
+"c4_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c4_p": "Per un costruttore tedesco di motori abbiamo prodotto un kit di validazione completo da 17 componenti (collettori, condotti acqua e aria, carter e staffe) in un unico lotto.",
+"c4_t": "Un kit di validazione da 17 componenti",
+"c4_tipo": "un solo lotto",
+"c7_1alt": "Tavola di riferimento: pannello forato per griglia, in polipropilene",
+"c7_2alt": "Tavola della famiglia Motorsport, parti additive in rosso",
+"c7_caso": "CASO",
+"c7_rif": "Tavola di riferimento, non il pezzo reale",
+"c_anno": "Anno",
+"c_de": "DE: bozza da rileggere",
+"c_doc": "Documento",
+"c_note": "Note",
+"c_rev": "Revisione",
+"chiedi_scheda": "Chiedete la scheda",
+"cs7_bric": "Sei qui",
+"cs7_c1_cifra": "2,5",
+"cs7_c1_cifra_l": "Parete dei cassetti, PA2200",
+"cs7_c2_cifra_l": "Smalto 2K, nero opaco stabile agli UV",
+"cs7_c4_alt": "Tavola della famiglia Kit di validazione: assieme in vista esplosa, parti additive in rosso",
+"cs7_cg_dst": "Distinta",
+"cs7_cg_dst_v": "CASI 01–05",
+"cs7_cg_sog": "Soggetto",
+"cs7_cg_sog_v": "Forniture in produzione, raccontate senza nomi",
+"cs7_cg_tav": "Tavole",
+"cs7_cg_tav_v": "Di riferimento, non i pezzi dei clienti",
+"cs7_dst_cap": "Distinta dei cinque casi: settore, materiale e processo, tipo di fornitura",
+"cs7_dst_caso": "Caso",
+"cs7_dst_n": "N. · Settore",
+"cs7_esito": "Casi visibili: {n}",
+"cs7_h2": "Cinque casi, per settore.",
+"cs7_ind": "In questa pagina",
+"cs7_intro_b": "Sotto, la biblioteca delle schede di settore e di applicazione: per ogni PDF il codice, il titolo, la lingua, la revisione e il peso.",
+"cs7_lead": "Ogni caso dice il settore, il materiale e il tipo di fornitura. Le tavole sono di riferimento, non i pezzi dei clienti.",
+"cs7_lng_de": "PDF in tedesco",
+"cs7_lng_en": "PDF in inglese",
+"cs7_lng_fr": "PDF in francese",
+"cs7_lng_it": "PDF in italiano",
+"cs7_reg_cod": "Codice",
+"cs7_reg_peso": "Peso",
+"cs7_reg_tit": "Titolo in copertina",
+"cs7_vai_fam": "Vai alla famiglia di parti",
+"cta_file": "Inviate STEP o STL",
+"cta_scheda": "Richiedete una scheda",
+"cta_tecnico": "Parlate con un tecnico",
+"d_mat": "Materiale e processo",
+"d_set": "Settore",
+"d_tipo": "Tipo di fornitura",
+"fine_p": "Vi diciamo anche quando non conviene.",
+"fine_t": "Mandateci lo STEP di un componente.",
+"h1": "Forniture in produzione, e le schede per capirle.",
+"intro": "Cinque casi in produzione, raccontati senza nomi: un cliente lo citiamo solo con il suo consenso scritto.",
+"leggi_1p": "La tavola del pezzo e il titolo della scheda.",
+"leggi_1t": "Copertina",
+"leggi_2p": "Il conto economico, i segnali, i materiali, il caso, il rovescio e l'invito.",
+"leggi_2t": "Pagina 2",
+"leggi_o": "Come leggere una scheda",
+"leggi_t": "Cosa c'è in una scheda",
+"lingua": "Lingua",
+"meta_d": "Cinque casi di produzione additiva in serie, raccontati senza nomi, e la biblioteca delle schede PDF di settore e di applicazione in italiano, tedesco, francese e inglese.",
+"nav_app": "Applicazioni",
+"nav_casi": "Casi",
+"nav_chiudi": "Chiudi",
+"nav_cont": "Contatti",
+"nav_fam": "Famiglie di parti",
+"nav_home": "Home",
+"nav_mat": "Materiali",
+"nav_menu": "Menu",
+"nav_prev": "Preventivo",
+"nav_ris_faq": "Domande frequenti",
+"nav_s1d": "carter, formati, attrezzaggi, ricambi",
+"nav_s2d": "allestimenti, flotte, finitura da carrozzeria",
+"nav_s3d": "parti a formato, dossier, cleanroom",
+"nav_schede": "Schede PDF",
+"nav_set": "Settori",
+"nav_tec": "Tecnologie",
+"nav_tutti": "Tutte le applicazioni",
+"occ": "Casi e schede",
+"p_claim": "Produzione additiva industriale per serie piccole e medie.",
+"p_contatti": "Contatti",
+"p_espl": "Esplora",
+"p_iva": "P.IVA",
+"p_s1": "Macchine industriali e OEM",
+"p_s2": "Mezzi speciali e allestimenti",
+"p_s3": "Pharma e macchine di processo",
+"p_settori": "Settori",
+"s_o": "I casi",
+"s_t": "Filtrate per settore",
+"salta": "Vai al contenuto",
+"set_dev": "Sviluppo prodotto",
+"set_oem": "Macchine e OEM",
+"set_tutti": "Tutte",
+"set_vsp": "Mezzi speciali",
+"titolo": "Casi e schede · Due Pi Greco",
+"top_c": "Contatti",
+"torna": "Home",
+"vai": "Vai al settore"
+},
+"de": {
+"bib_bozza": "Rev. 00 · Entwurf",
+"bib_bozza_de": "Rev. 01 · Entwurf DE",
+"bib_g1": "Branchenblätter",
+"bib_g1p": "Sechs Codes, zehn Dateien: ein Blatt je Branche, einige auch auf Deutsch und Französisch.",
+"bib_g2": "Anwendungsblätter",
+"bib_g2p": "Sieben Blätter, eines je Teilefamilie, auf Italienisch; das Validierungs-Kit auch auf Deutsch.",
+"bib_g3": "Blätter für den Auslandsmarkt",
+"bib_g3b": "Englisch · Rev. 00 · Entwurf",
+"bib_g3p": "Drei Blätter auf Englisch, Rev. 00: Entwürfe, die auf die technische Prüfung warten.",
+"bib_manca": "Die gesuchte Teilefamilie hat noch kein eigenes Blatt? Fragen Sie danach: Der Betreff der E-Mail ist bereits ausgefüllt.",
+"bib_nota": "Die Werkstoffblätter DPG-MAT erhalten Sie mit dem Angebot; das Zertifikat des Werkstoffherstellers, wo das Lastenheft es verlangt. Die englischen Blätter sind Entwürfe und warten auf die technische Prüfung.",
+"bib_o": "Die Bibliothek",
+"bib_p": "Drei Gruppen: Branchenblätter, Anwendungsblätter, Blätter für den Auslandsmarkt. Der Titel ist der auf der Titelseite gedruckte, in der Sprache des Blattes; jedes Sprachkürzel öffnet das entsprechende PDF.",
+"bib_pack_p": "Paket aus fünf Blättern: Branche, EOAT, Formatteile, PA2200, PP.",
+"bib_senza_tav": "ohne Zeichnung",
+"bib_t": "Die Bibliothek der PDF-Blätter",
+"c0_mat": "Polypropylen · SAF",
+"c0_p": "Für einen Hersteller industrieller Filtrationssysteme fertigen wir laufend technische Paneele aus Polypropylen im SAF-Verfahren: wiederkehrende Serie, Nachbestellung aus dem digitalen Lager, rückverfolgbare Charge. Kein Prototyp, sondern eine Serienlieferung.",
+"c0_t": "Industrielle Filtration: Paneele in wiederkehrender Serie",
+"c0_tipo": "wiederkehrende Serie",
+"c1_mat": "PA2200 · SLS",
+"c1_p": "Für einen Hersteller professioneller Öfen fertigen wir in wiederkehrender Serie Schubladen und Tropfprofile aus PA2200: Bauteile mit Produktkontakt, 2,5 mm Wandstärke, in kleinen Losen nachbestellt, mit rückverfolgbarer Charge.",
+"c1_t": "Professionelle Öfen: Schubladen und Profile in kleinen Losen",
+"c1_tipo": "kleine Lose",
+"c2_mat": "2K-Lack",
+"c2_p": "Einem traditionsreichen Sonderfahrzeugbauer, der Garantien zur Lackierung verlangte, haben wir mit der vollständigen Spezifikation des 2K-Lacks geantwortet: direkte Haftung ohne Grundierung, Korrosionsbarriere, Beständigkeit gegen Öle und Kraftstoffe, UV-stabiles Mattschwarz.",
+"c2_t": "Die Oberfläche, ernst genommen",
+"c2_tipo": "Lackspezifikation",
+"c3_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c3_p": "Für ein Rallyefahrzeug im Meisterschaftseinsatz fertigen wir Ersatz- und Verbesserungsteile, die dem Rennen standhalten: strömungsoptimierter Turbo-Ansaugkanal, Ladeluftkühler-Gitter, Leitbleche und Scheinwerferhalter.",
+"c3_t": "Im Rennen, im Meisterschaftseinsatz",
+"c3_tipo": "Ersatz- und Verbesserungsteile",
+"c4_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c4_p": "Für einen deutschen Motorenhersteller haben wir ein komplettes Validierungs-Kit mit 17 Komponenten (Krümmer, Wasser- und Luftleitungen, Gehäuse und Halter) in einem einzigen Los gefertigt.",
+"c4_t": "Ein Validierungs-Kit mit 17 Komponenten",
+"c4_tipo": "ein einziges Los",
+"c7_1alt": "Referenzzeichnung: gelochtes Siebpaneel aus Polypropylen",
+"c7_2alt": "Tafel der Familie Motorsport, additive Teile in Rot",
+"c7_caso": "FALL",
+"c7_rif": "Referenzzeichnung, nicht das reale Teil",
+"c_anno": "Jahr",
+"c_de": "DE: Entwurf, Korrektur ausstehend",
+"c_doc": "Dokument",
+"c_note": "Hinweis",
+"c_rev": "Revision",
+"chiedi_scheda": "Anwendungsblatt anfordern",
+"cs7_bric": "Sie sind hier",
+"cs7_c1_cifra": "2,5",
+"cs7_c1_cifra_l": "Wandstärke der Schubladen, PA2200",
+"cs7_c2_cifra_l": "2K-Lack, UV-stabiles Mattschwarz",
+"cs7_c4_alt": "Tafel der Familie Validierungs-Kits: Baugruppe in Explosionsansicht, additive Teile in Rot",
+"cs7_cg_dst": "Stückliste",
+"cs7_cg_dst_v": "FÄLLE 01–05",
+"cs7_cg_sog": "Gegenstand",
+"cs7_cg_sog_v": "Serienlieferungen in Produktion, ohne Namen erzählt",
+"cs7_cg_tav": "Tafeln",
+"cs7_cg_tav_v": "Referenzzeichnungen, nicht die Teile der Kunden",
+"cs7_dst_cap": "Stückliste der fünf Fallbeispiele: Branche, Werkstoff und Verfahren, Art der Lieferung",
+"cs7_dst_caso": "Fallbeispiel",
+"cs7_dst_n": "Nr. · Branche",
+"cs7_esito": "Sichtbare Fallbeispiele: {n}",
+"cs7_h2": "Fünf Fallbeispiele, nach Branche.",
+"cs7_ind": "Auf dieser Seite",
+"cs7_intro_b": "Darunter die Bibliothek der Branchen- und Anwendungsblätter: für jedes PDF Code, Titel, Sprache, Revision und Dateigröße.",
+"cs7_lead": "Jedes Fallbeispiel nennt Branche, Werkstoff und Art der Lieferung. Die Tafeln sind Referenzzeichnungen, nicht die Teile der Kunden.",
+"cs7_lng_de": "PDF auf Deutsch",
+"cs7_lng_en": "PDF auf Englisch",
+"cs7_lng_fr": "PDF auf Französisch",
+"cs7_lng_it": "PDF auf Italienisch",
+"cs7_reg_cod": "Code",
+"cs7_reg_peso": "Größe",
+"cs7_reg_tit": "Titel auf der Titelseite",
+"cs7_vai_fam": "Zur Teilefamilie",
+"cta_file": "STEP oder STL senden",
+"cta_scheda": "PDF-Blatt anfordern",
+"cta_tecnico": "Mit einem Techniker sprechen",
+"d_mat": "Werkstoff und Verfahren",
+"d_set": "Branche",
+"d_tipo": "Art der Lieferung",
+"fine_p": "Wir sagen Ihnen auch, wann es sich nicht lohnt.",
+"fine_t": "Schicken Sie uns die STEP-Datei eines Bauteils.",
+"h1": "Serienlieferungen in Produktion und die Blätter, die sie erklären.",
+"intro": "Fünf Fälle in Produktion, ohne Namen erzählt: Einen Kunden nennen wir nur mit seiner schriftlichen Zustimmung.",
+"leggi_1p": "Die Zeichnung des Teils und der Titel des Blattes.",
+"leggi_1t": "Titelseite",
+"leggi_2p": "Die Wirtschaftlichkeitsrechnung, die Signale, die Werkstoffe, das Fallbeispiel, die Kehrseite und die Einladung.",
+"leggi_2t": "Seite 2",
+"leggi_o": "So lesen Sie ein Blatt",
+"leggi_t": "Was in einem Blatt steht",
+"lingua": "Sprache",
+"meta_d": "Fünf Fälle additiver Serienfertigung, ohne Namen erzählt, und die Bibliothek der Branchen- und Anwendungsblätter als PDF auf Italienisch, Deutsch, Französisch und Englisch.",
+"nav_app": "Anwendungen",
+"nav_casi": "Referenzen",
+"nav_chiudi": "Schließen",
+"nav_cont": "Kontakt",
+"nav_fam": "Teilefamilien",
+"nav_home": "Start",
+"nav_mat": "Werkstoffe",
+"nav_menu": "Menü",
+"nav_prev": "Richtpreis",
+"nav_ris_faq": "Häufige Fragen",
+"nav_s1d": "Gehäuse, Formatteile, Vorrichtungen, Ersatzteile",
+"nav_s2d": "Aufbauten, Flotten, Lackierung in Karosseriequalität",
+"nav_s3d": "Formatteile, Dossier, Reinraum",
+"nav_schede": "PDF-Blätter",
+"nav_set": "Branchen",
+"nav_tec": "Technologien",
+"nav_tutti": "Alle Anwendungen",
+"occ": "Referenzen und PDF-Blätter",
+"p_claim": "Industrielle additive Fertigung für kleine und mittlere Serien.",
+"p_contatti": "Kontakt",
+"p_espl": "Entdecken",
+"p_iva": "USt-IdNr.",
+"p_s1": "Maschinenbau und OEM",
+"p_s2": "Sonderfahrzeuge und Aufbauten",
+"p_s3": "Pharma und Prozessmaschinen",
+"p_settori": "Branchen",
+"s_o": "Die Fälle",
+"s_t": "Nach Branche filtern",
+"salta": "Zum Inhalt springen",
+"set_dev": "Produktentwicklung",
+"set_oem": "Maschinenbau und OEM",
+"set_tutti": "Alle",
+"set_vsp": "Sonderfahrzeuge",
+"titolo": "Referenzen und PDF-Blätter · Due Pi Greco",
+"top_c": "Kontakt",
+"torna": "Start",
+"vai": "Zur Branche"
+},
+"en": {
+"bib_bozza": "Rev. 00 · draft",
+"bib_bozza_de": "Rev. 01 · DE draft",
+"bib_g1": "Sector sheets",
+"bib_g1p": "Six codes, ten files: one sheet per sector, some also in German and French.",
+"bib_g2": "Application sheets",
+"bib_g2p": "Seven sheets, one per part family, in Italian; the validation kit also in German.",
+"bib_g3": "Sheets for export markets",
+"bib_g3b": "English · Rev. 00 · draft",
+"bib_g3p": "Three sheets in English, Rev. 00: drafts awaiting technical review.",
+"bib_manca": "The part family you are looking for has no sheet yet? Ask for it: the e-mail subject is already filled in.",
+"bib_nota": "The DPG-MAT material sheets come with the offer; the material maker's certificate where the specification requires it. The English sheets are drafts awaiting technical review.",
+"bib_o": "The library",
+"bib_p": "Three groups: sector sheets, application sheets, sheets for export markets. The title is the one printed on the cover, in the language of the sheet; each language code opens the matching PDF.",
+"bib_pack_p": "Pack of five sheets: sector, EOAT, format parts, PA2200, PP.",
+"bib_senza_tav": "no drawing",
+"bib_t": "The sheet library",
+"c0_mat": "Polypropylene · SAF",
+"c0_p": "For a manufacturer of industrial filtration systems we produce technical panels in SAF polypropylene on an ongoing basis: a recurring series, reorders from the digital warehouse, lot traceability. Not a prototype: a series supply.",
+"c0_t": "Industrial filtration: panels in a recurring series",
+"c0_tipo": "recurring series",
+"c1_mat": "PA2200 · SLS",
+"c1_p": "For a maker of professional ovens we produce drawers and drip profiles in PA2200 as a recurring series: components in contact with the product, 2.5 mm walls, reordered in small lots with lot traceability.",
+"c1_t": "Professional ovens: drawers and profiles in small lots",
+"c1_tipo": "small lots",
+"c2_mat": "2K enamel",
+"c2_p": "To a long-established special-vehicle builder asking for guarantees on the paint, we answered with the complete specification of the 2K enamel: direct adhesion without primer, anti-corrosion barrier, resistance to oils and fuels, UV-stable matt black.",
+"c2_t": "Finishing, taken seriously",
+"c2_tipo": "paint specification",
+"c3_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c3_p": "On a championship rally car we produce spares and upgrades that survive the race: a flow-optimized turbo intake duct, intercooler grilles, air guides and headlight mounts.",
+"c3_t": "Racing in a championship",
+"c3_tipo": "spares and upgrades",
+"c4_mat": "PA11, PA12 · SLS; Nylon 12CF · FDM",
+"c4_p": "For a German engine maker we produced a complete 17-component validation kit (manifolds, water and air ducts, housings and brackets) as one single lot.",
+"c4_t": "A 17-component validation kit",
+"c4_tipo": "one single lot",
+"c7_1alt": "Reference drawing: perforated screen panel in polypropylene",
+"c7_2alt": "Plate of the Motorsport family, additive parts in red",
+"c7_caso": "CASE",
+"c7_rif": "Reference drawing, not the actual part",
+"c_anno": "Year",
+"c_de": "DE: draft, under review",
+"c_doc": "Document",
+"c_note": "Note",
+"c_rev": "Revision",
+"chiedi_scheda": "Ask for the sheet",
+"cs7_bric": "You are here",
+"cs7_c1_cifra": "2.5",
+"cs7_c1_cifra_l": "Drawer wall, PA2200",
+"cs7_c2_cifra_l": "2K enamel, UV-stable matt black",
+"cs7_c4_alt": "Plate of the validation kit family: exploded assembly, additive parts in red",
+"cs7_cg_dst": "Bill",
+"cs7_cg_dst_v": "CASES 01–05",
+"cs7_cg_sog": "Subject",
+"cs7_cg_sog_v": "Production supply, told without names",
+"cs7_cg_tav": "Plates",
+"cs7_cg_tav_v": "Reference drawings, not the customers' parts",
+"cs7_dst_cap": "Bill of the five case studies: sector, material and process, type of supply",
+"cs7_dst_caso": "Case study",
+"cs7_dst_n": "No. · Sector",
+"cs7_esito": "Case studies shown: {n}",
+"cs7_h2": "Five case studies, by sector.",
+"cs7_ind": "On this page",
+"cs7_intro_b": "Below, the library of sector and application sheets: for each PDF the code, title, language, revision and file size.",
+"cs7_lead": "Each case gives the sector, the material and the type of supply. The plates are reference drawings, not the customers' parts.",
+"cs7_lng_de": "PDF in German",
+"cs7_lng_en": "PDF in English",
+"cs7_lng_fr": "PDF in French",
+"cs7_lng_it": "PDF in Italian",
+"cs7_reg_cod": "Code",
+"cs7_reg_peso": "Size",
+"cs7_reg_tit": "Cover title",
+"cs7_vai_fam": "Go to the part family",
+"cta_file": "Send STEP or STL",
+"cta_scheda": "Request a sheet",
+"cta_tecnico": "Talk to an engineer",
+"d_mat": "Material and process",
+"d_set": "Sector",
+"d_tipo": "Type of supply",
+"fine_p": "We also tell you when it does not pay.",
+"fine_t": "Send us the STEP file of a component.",
+"h1": "Production supply, and the sheets that explain it.",
+"intro": "Five cases in production, told without names: we name a customer only with their written consent.",
+"leggi_1p": "The drawing of the part and the title of the sheet.",
+"leggi_1t": "Cover",
+"leggi_2p": "The business case, the signals, the materials, the case study, the flip side and the invitation.",
+"leggi_2t": "Page 2",
+"leggi_o": "How to read a sheet",
+"leggi_t": "What a sheet contains",
+"lingua": "Language",
+"meta_d": "Five additive series-production cases, told without names, and the library of sector and application PDF sheets in Italian, German, French and English.",
+"nav_app": "Applications",
+"nav_casi": "Case studies",
+"nav_chiudi": "Close",
+"nav_cont": "Contact",
+"nav_fam": "Part families",
+"nav_home": "Home",
+"nav_mat": "Materials",
+"nav_menu": "Menu",
+"nav_prev": "Quote",
+"nav_ris_faq": "FAQ",
+"nav_s1d": "guards, format parts, fixtures, spares",
+"nav_s2d": "outfitting, fleets, body-shop finish",
+"nav_s3d": "format parts, dossier, cleanroom",
+"nav_schede": "PDF sheets",
+"nav_set": "Sectors",
+"nav_tec": "Technologies",
+"nav_tutti": "All applications",
+"occ": "Case studies and sheets",
+"p_claim": "Industrial additive manufacturing for small and medium series.",
+"p_contatti": "Contact",
+"p_espl": "Explore",
+"p_iva": "VAT no.",
+"p_s1": "Industrial machinery and OEM",
+"p_s2": "Special vehicles and outfitting",
+"p_s3": "Pharma and process machinery",
+"p_settori": "Sectors",
+"s_o": "The cases",
+"s_t": "Filter by sector",
+"salta": "Skip to content",
+"set_dev": "Product development",
+"set_oem": "Machinery and OEM",
+"set_tutti": "All",
+"set_vsp": "Special vehicles",
+"titolo": "Case studies and sheets · Due Pi Greco",
+"top_c": "Contact",
+"torna": "Home",
+"vai": "Go to the sector"
+}
+};
+</script>
+<script src="assets/r07.js"></script>
+<script>
+/* casi: filtri per settore con DPG_filtri di r07.js (data-set sulle card, data-f sui bottoni, numero in .conta; il filtro
+   scelto va nell'indirizzo, #oem #vsp #dev). Una riga della distinta che porta a un caso nascosto dal filtro rimette "Tutte". */
+const casiScegli=DPG_filtri('.casi-elenco .caso',{bottoni:'.filtri [data-f]',dopo:(f,n)=>{const e=$('#casi-esito');if(e)e.textContent=t('cs7_esito').replace('{n}',n);}});
+$$('.distinta a[href^="#caso-"]').forEach(a=>a.addEventListener('click',()=>{
+  const c=document.getElementById(a.getAttribute('href').slice(1));
+  if(c&&c.hidden)casiScegli('tutti',true);
+}));
+</script>
+<script>applica();</script>
+</body></html>

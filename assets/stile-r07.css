@@ -1,0 +1,2262 @@
+/* DPG-WEB · Rev. 07 · FILE GENERATO da _lavoro/r07/build_r07.py: non modificarlo qui.
+   Sorgenti in _lavoro/r07/css/: 01_nucleo.css, 10_interne.css, 20_finiture.css, 20_quota.css, 30_applicazioni.css, 30_casi.css, 30_contatti.css, 30_faq.css, 30_materiali.css, 30_preventivo.css, 30_settore.css, 30_tecnologie.css */
+/* ===== 01_nucleo.css ===== */
+/* =====================================================================
+   DPG-WEB · Rev. 07 · la home rifatta con qualita' grafica alta (12/10/2026)
+   Stessa identita' della collana (nero, carta, rosso; Archivo, Source Serif 4, IBM Plex Mono; le tavole),
+   misure nuove ricavate dal manuale _lavoro/MANUALE_GRAFICO_HOME_R07.md (fonti: hadrian.co, anduril.com,
+   vastspace.com, ta.parts, markforged.com e altri, misurati sul CSS vero).
+   Il file e' autonomo: la pagina che lo usa carica solo fonts.css, questo file e comune.js.
+   Tutto vale sotto body.r07, cosi' le altre pagine non cambiano finche' non passano alla Rev. 07.
+   ===================================================================== */
+
+/* ---------- 1. token ---------- */
+:root{
+  /* identita' */
+  --nero:#0B0B0C; --carta:#FAF9F7; --rosso:#E63329; --rosso-scuro:#C92A21; --grafite:#4A4A4D; --panna:#F1EFEB;
+  /* superfici su nero */
+  --n0:#0B0B0C; --n1:#131315; --n2:#1B1B1E; --n3:#26262A;
+  /* superfici su carta */
+  --c0:#FAF9F7; --c1:#F1EFEB; --c2:#E7E4DE;
+  /* caratteri */
+  --disp:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --mono:'IBM Plex Mono',ui-monospace,'Cascadia Mono',Consolas,monospace;
+  /* scala tipografica fluida: valori a 390 e a 1440 px nel manuale, par. 2.1 */
+  --f-h1:clamp(2.75rem,1.6rem + 4.6vw,5.5rem);         /* 44 > 88 */
+  --f-h2:clamp(2rem,1.2rem + 3.2vw,3.75rem);           /* 32 > 60 */
+  --f-h3:clamp(1.25rem,1rem + 1.1vw,1.75rem);          /* 20 > 28 */
+  --f-numero:clamp(3rem,1.9rem + 4.5vw,5.5rem);        /* 48 > 88 */
+  --f-lead:clamp(1.25rem,1.05rem + .8vw,1.625rem);     /* 20 > 26 */
+  --f-corpo:clamp(1rem,.93rem + .3vw,1.125rem);        /* 16 > 18 */
+  --f-piccolo:clamp(.875rem,.84rem + .15vw,.9375rem);  /* 14 > 15 */
+  /* spaziature: solo questa scala */
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:40px; --s6:64px; --s7:96px; --s8:144px; --s9:240px;
+  --sez:clamp(4.5rem,2.6rem + 7.8vw,9rem);             /* 72 > 144 */
+  --testa-corpo:clamp(40px,5.5vw,96px);
+  /* griglia */
+  --lato:clamp(16px,4.2vw,64px); --gap:clamp(16px,1.4vw,24px); --gap-card:clamp(16px,2.2vw,32px);
+  --barra:88px;
+  /* movimento */
+  --e-uscita:cubic-bezier(.16,1,.3,1); --e-vast:cubic-bezier(.62,.05,.01,.99);
+}
+
+/* inchiostri: la gerarchia e' l'opacita' di un solo colore (manuale 2.5) */
+.su-nero{--i1:rgba(250,249,247,.94);--i2:rgba(250,249,247,.70);--i3:rgba(250,249,247,.52);
+  --filo:rgba(250,249,247,.12);--filo-forte:rgba(250,249,247,.24);background:var(--n0);color:var(--i2)}
+.su-carta{--i1:#0B0B0C;--i2:#4A4A4D;--i3:rgba(11,11,12,.6);
+  --filo:rgba(11,11,12,.12);--filo-forte:rgba(11,11,12,.22);background:var(--c0);color:var(--i2)}
+
+/* ---------- 2. base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body.r07{margin:0;background:var(--n0);font-family:var(--serif);font-size:var(--f-corpo);line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body.r07.menu-aperto{overflow:hidden}
+/* regole di base a peso zero (:where): ogni componente le sovrascrive senza forzature */
+:where(.r07) img{display:block;max-width:100%;height:auto}
+:where(.r07) :where(h1,h2,h3){font-family:var(--disp);color:var(--i1);margin:0;text-wrap:balance}
+:where(.r07) h1{font-size:var(--f-h1);font-weight:600;line-height:.94;letter-spacing:-.03em}
+:where(.r07) h2{font-size:var(--f-h2);font-weight:600;line-height:1;letter-spacing:-.025em;max-width:16ch}
+:where(.r07) h3{font-size:var(--f-h3);font-weight:600;line-height:1.1;letter-spacing:-.015em}
+:where(.r07) p{margin:0;text-wrap:pretty}
+:where(.r07) a{color:inherit}
+.r07 :focus-visible{outline:2px solid var(--rosso);outline-offset:4px}
+.r07 .lead{font-family:var(--serif);font-size:var(--f-lead);line-height:1.35;letter-spacing:-.01em;color:var(--i2);max-width:34ch}
+.r07 .occhiello{font-family:var(--disp);font-size:var(--f-piccolo);font-weight:500;line-height:1.3;color:var(--i2);margin:0 0 var(--s3)}
+.r07 .etichetta{font-family:var(--disp);font-size:.75rem;font-weight:500;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.r07 .mono{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.02em;line-height:1.2}
+/* tedesco: parole composte lunghe (Chargenrückverfolgung) vanno a capo con il trattino invece di uscire dalla colonna */
+.r07:lang(de) :where(h1,h2,h3,.lead,.tessera-riga,.nomi span,.scheda dd,.tabella td,.tabella th,.rovescio p,.cartiglio dd){-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}
+/* salto al contenuto: invisibile finche' non riceve il fuoco da tastiera */
+.salta{position:absolute;left:16px;top:-120px;z-index:300;padding:14px 18px;background:var(--carta);color:var(--nero);
+  font:600 1rem/1 var(--disp);text-decoration:none;border-radius:2px}
+.salta:focus{top:16px}
+main:focus{outline:0}
+.solo-lettore{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* griglia a 12 colonne su tutta la larghezza (8 su tablet, 4 su telefono) */
+.griglia{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);
+  padding-inline:var(--lato);max-width:1920px;margin-inline:auto}
+@media (max-width:1199px){.griglia{grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media (max-width:767px){.griglia{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* bottoni e link (manuale 2.9): un solo bottone pieno rosso per schermata */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:56px;padding:0 32px;border-radius:2px;
+  font:600 1rem/1 var(--disp);letter-spacing:0;text-decoration:none;white-space:nowrap;cursor:pointer;border:1px solid transparent;
+  transition:background-color .2s ease-out,color .2s ease-out,border-color .2s ease-out}
+/* il pieno e' il rosso scuro: testo carta su #C92A21 ha contrasto 5,2:1 (sul rosso #E63329 sarebbe 4,0:1, sotto la soglia AA) */
+.btn--primario{background:var(--rosso-scuro);color:var(--carta)}
+.btn--primario:hover{background:#A8231B}
+.btn--contorno{background:transparent;color:var(--i1);border-color:currentColor}
+.su-nero .btn--contorno:hover{background:var(--carta);color:var(--nero);border-color:var(--carta)}
+.su-carta .btn--contorno:hover{background:var(--nero);color:var(--carta);border-color:var(--nero)}
+.btn--g{height:64px;padding:0 36px}
+.btn--p{height:40px;padding:0 20px;font-size:.9375rem}
+.freccia{display:inline-block;transition:transform .2s ease-out}
+.link{font:500 1rem/1.2 var(--disp);color:var(--i1);text-decoration:underline 1px;text-underline-offset:6px;
+  text-decoration-color:var(--filo-forte);transition:text-decoration-color .2s ease-out}
+.link:hover{text-decoration-color:var(--rosso)}
+.link:hover .freccia{transform:translate(2px,-2px)}
+
+/* comparsa dei blocchi (manuale 2.8): 1 s in uscita esponenziale, 24 px. Solo con JavaScript attivo (html.js):
+   senza script i blocchi restano visibili */
+.js .rivela{opacity:0;transform:translateY(24px);transition:opacity 1s var(--e-uscita),transform 1s var(--e-uscita)}
+.js .rivela.in{opacity:1;transform:none}
+.rivela.in.r2{transition-delay:80ms}.rivela.in.r3{transition-delay:160ms}.rivela.in.r4{transition-delay:240ms}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .r07 *,.r07 *::before,.r07 *::after{transition:none!important;animation:none!important}
+  .js .rivela{opacity:1;transform:none}
+}
+
+/* =====================================================================
+   3. BARRA (manuale 4.1): fissa, trasparente sopra la hero, piena dopo 80 px di scorrimento
+   La classe topbar resta perche' comune.js cerca ".topbar .menu-tasto" per il pannello telefono.
+   ===================================================================== */
+.barra{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--barra);color:var(--i1);
+  --i1:rgba(250,249,247,.94);--i2:rgba(250,249,247,.70);--i3:rgba(250,249,247,.52);--filo:rgba(250,249,247,.12);
+  background:transparent;transition:height .3s var(--e-uscita),background-color .3s var(--e-uscita),box-shadow .3s var(--e-uscita)}
+.barra.piena{height:64px;background:rgba(11,11,12,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--filo)}
+.barra-dentro{height:100%;display:flex;align-items:center;gap:var(--s5);padding-inline:var(--lato);max-width:1920px;margin-inline:auto}
+.marchio{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--i1);flex:none}
+.marchio .logo{line-height:0}
+.marchio .logo svg{height:28px;width:auto;display:block}
+.marchio .logo .dpg-nero{fill:var(--carta)}
+.marchio .logo .dpg-rosso{fill:var(--rosso)}
+.marchio b{font:700 .9375rem/1 var(--disp);letter-spacing:.06em}
+.targhetta{font:500 .6875rem/1 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3);
+  border:1px solid var(--filo);padding:5px 8px;border-radius:2px;flex:none}
+.nav{display:flex;align-items:center;gap:32px;margin-left:auto}
+.nav>a,.nav .menu-apri{font:400 .9375rem/1.2 var(--disp);letter-spacing:-.01em;color:var(--i1);opacity:.62;text-decoration:none;
+  background:none;border:0;padding:8px 0;cursor:pointer;transition:opacity .2s ease-out}
+.nav>a:hover,.nav .menu-apri:hover,.nav .menu-voce.aperta .menu-apri{opacity:1}
+.nav>a[aria-current="page"],.nav .menu-voce.corrente .menu-apri{opacity:1;text-decoration:underline 1px;text-underline-offset:6px}
+.menu-sotto a[aria-current="page"]{background:var(--n3)}
+.btn-barra[aria-current="page"]{background:var(--carta);color:var(--nero);border-color:var(--carta)}
+.nav .menu-apri::after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1px solid currentColor;
+  border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .2s ease-out}
+.nav .menu-voce.aperta .menu-apri::after{transform:translateY(0) rotate(-135deg)}
+.menu-voce{position:relative}
+.menu-sotto{position:absolute;top:calc(100% + 18px);left:-24px;min-width:380px;padding:12px;background:var(--n2);
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease-out,transform .2s ease-out,visibility .2s;
+  box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.menu-voce.aperta .menu-sotto{opacity:1;visibility:visible;transform:none}
+.menu-sotto a{display:grid;grid-template-columns:28px 1fr;gap:2px 12px;padding:14px 12px;text-decoration:none;color:var(--i1);border-radius:2px;transition:background-color .2s ease-out}
+.menu-sotto a:hover,.menu-sotto a:focus-visible{background:var(--n3)}
+.menu-sotto i{grid-row:1/3;font:500 .75rem/1.6 var(--mono);font-style:normal;color:#FF7A70}   /* rosso schiarito: sul fondo n2 il rosso pieno non arriva a 4,5:1 */
+.menu-sotto b{font:600 1rem/1.3 var(--disp);letter-spacing:-.01em}
+.menu-sotto span{font:400 .875rem/1.4 var(--disp);color:var(--i3)}
+.menu-sotto .menu-tutte{margin-top:6px;box-shadow:inset 0 1px 0 var(--filo);border-radius:0 0 2px 2px}
+.lingue{display:flex;gap:2px;flex:none}
+.lang{font:500 .75rem/1 var(--disp);letter-spacing:.04em;color:var(--i3);background:none;border:0;padding:8px 6px;cursor:pointer;transition:color .2s ease-out;
+  min-width:32px;min-height:44px}   /* bersaglio di 44 px in altezza anche se la scritta e' piccola */
+.lang:hover{color:var(--i1)}
+.lang.attiva{color:var(--i1);text-decoration:underline 1px;text-underline-offset:5px}
+.menu-tasto{display:none;font:600 .9375rem/1 var(--disp);color:var(--i1);background:none;border:1px solid var(--filo-forte,rgba(250,249,247,.24));
+  border-radius:2px;height:44px;padding:0 18px;cursor:pointer}
+
+/* pannello telefono (aperto da comune.js) */
+.menu-pannello{position:fixed;inset:0;z-index:200;background:var(--n0);color:var(--i1);overflow-y:auto;
+  --i1:rgba(250,249,247,.94);--i2:rgba(250,249,247,.70);--i3:rgba(250,249,247,.52);--filo:rgba(250,249,247,.12);--filo-forte:rgba(250,249,247,.24);
+  padding:0 var(--lato) 48px;opacity:0;visibility:hidden;transition:opacity .3s var(--e-uscita),visibility .3s}
+/* in apertura la visibilita' scatta subito (0s): solo cosi' comune.js puo' dare il fuoco al tasto Chiudi nello stesso istante */
+.menu-pannello.aperto{opacity:1;visibility:visible;transition:opacity .3s var(--e-uscita),visibility 0s}
+.mp-testa{display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;background:var(--n0)}
+.mp-testa .marchio .logo svg{height:24px}
+.mp-testa .menu-tasto{display:inline-flex;align-items:center}
+.mp-voci{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:20px}
+.mp-voci a{font:600 2rem/1.1 var(--disp);letter-spacing:-.025em;color:var(--i1);text-decoration:none}
+.mp-voci a[aria-current="page"]{text-decoration:underline 2px;text-decoration-color:var(--rosso);text-underline-offset:8px}
+.mp-cta{width:100%;margin-top:40px}
+.mp-lab{margin:48px 0 16px}
+.mp-settori{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.mp-settori a{display:block;text-decoration:none;color:var(--i1);font:500 1.0625rem/1.3 var(--disp)}
+.mp-settori span{display:block;font:400 .875rem/1.4 var(--disp);color:var(--i3);margin-top:2px}
+.mp-contatti{font:400 1.0625rem/1.7 var(--disp)}
+.mp-contatti a{text-decoration:none}
+.mp-lingue{display:flex;gap:8px}
+.mp-lingue .lang{font-size:.875rem;padding:10px 12px;border:1px solid var(--filo);border-radius:2px;min-width:48px}
+
+/* soglie della barra misurate sul tedesco, la lingua con le voci piu' lunghe (data-bp="1080" sul pannello per comune.js) */
+@media (max-width:1319px){.nav{gap:24px}.targhetta{display:none}}
+@media (max-width:1079px){
+  :root{--barra:64px}
+  .barra .nav,.barra .lingue,.barra .btn-barra{display:none}
+  .menu-tasto{display:inline-flex;align-items:center;margin-left:auto}
+  .marchio .logo svg{height:24px}
+}
+@media (min-width:1080px){.menu-pannello{display:none}}
+
+/* =====================================================================
+   4. HERO (manuale 4.2): titolo su 7 colonne, lato su 4, tavola esplosa in cornice smussata quasi a tutta larghezza
+   ===================================================================== */
+.hero{padding-top:calc(var(--barra) + clamp(48px,7vw,104px));padding-bottom:0;overflow:hidden}
+.hero-testa{row-gap:var(--s5);align-items:start}
+.hero-titolo{grid-column:1/span 7}
+.hero-titolo h1{max-width:none}
+/* la lead parte all'altezza delle maiuscole dell'H1 (sotto l'occhiello), non dal fondo del titolo */
+.hero-lato{grid-column:8/span 5;padding-top:calc(var(--f-piccolo) * 1.3 + var(--s3) + .12em)}
+.hero-lato .lead{max-width:32ch}
+.hero-azioni{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:32px}
+
+/* la cornice smussata: due livelli con clip-path, il primo disegna il filo, il secondo il fondo */
+.cornice{--smusso:72px;margin:clamp(40px,5vw,72px) 24px 0;padding:1px;background:var(--filo-forte);   /* padding e non margine interno: il margine verticale scapperebbe e il filo in basso sparirebbe */
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--smusso)),calc(100% - var(--smusso)) 100%,var(--smusso) 100%,0 calc(100% - var(--smusso)))}
+.cornice-dentro{margin:0;background:var(--n0);display:block;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--smusso) + .4px),calc(100% - var(--smusso) + .4px) 100%,calc(var(--smusso) - .4px) 100%,0 calc(100% - var(--smusso) + .4px))}
+/* taglio 2:1 della tavola 2400 x 1600: si toglie il nero vuoto sopra e sotto (finestra da y 294 a y 1494) */
+.tavola{position:relative;aspect-ratio:2/1;overflow:hidden;background:var(--n0)}
+.tavola img{width:100%;height:100%;object-fit:cover;object-position:50% 73.5%}
+
+/* richiami: dischi numerati sulla tavola, uno attivo alla volta, scheda accanto */
+.richiamo{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);z-index:2;
+  width:28px;height:28px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--carta);color:var(--nero);font:600 .75rem/28px var(--disp);text-align:center;
+  box-shadow:0 0 0 6px rgba(250,249,247,.16);transition:background-color .2s ease-out,color .2s ease-out,box-shadow .2s ease-out}
+.richiamo:hover,.richiamo:focus-visible,.richiamo.attivo{z-index:3;background:var(--rosso);color:var(--carta);box-shadow:0 0 0 7px rgba(230,51,41,.26)}
+.richiamo:focus-visible{outline-offset:8px}
+.pop{position:absolute;top:50%;left:calc(100% + 18px);transform:translate(4px,-50%);width:max-content;max-width:280px;
+  padding:14px 18px 16px;background:var(--n2);text-align:left;pointer-events:none;
+  opacity:0;visibility:hidden;transition:opacity .2s ease-out,transform .2s ease-out,visibility .2s}
+.richiamo[data-lato="sx"] .pop{left:auto;right:calc(100% + 18px);transform:translate(-4px,-50%)}
+.richiamo:hover .pop,.richiamo:focus-visible .pop,.richiamo.attivo .pop{opacity:1;visibility:visible;transform:translate(0,-50%)}
+.pop b{display:block;font:600 1rem/1.25 var(--disp);color:var(--i1);letter-spacing:-.01em}
+.pop span{display:block;margin-top:4px;font:400 .875rem/1.4 var(--disp);color:var(--i2)}
+
+/* lista dei richiami: serve solo al telefono (vedi sotto), sul desktop le schede si aprono sulla tavola */
+.richiami-lista{display:none}
+
+/* cartiglio: la didascalia della tavola come il riquadro delle iscrizioni di un disegno.
+   margin:0 perche' il dl ha un margine di serie che allargava il fondo grigio sotto lo smusso */
+.cartiglio{display:grid;grid-template-columns:2fr 5fr 3fr 3fr;margin:0;border-top:1px solid var(--filo-forte)}
+.cartiglio>div{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:72px;padding:16px 24px;border-left:1px solid var(--filo-forte)}
+.cartiglio>div:first-child{border-left:0;padding-left:calc(var(--smusso) + 16px)}
+.cartiglio>div:last-child{padding-right:calc(var(--smusso) + 16px)}
+.cartiglio dt{font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.cartiglio dd{margin:0;font:500 .9375rem/1.35 var(--disp);color:var(--i1)}
+.cartiglio dd.mono{font:500 .8125rem/1.35 var(--mono);letter-spacing:.02em}
+
+/* =====================================================================
+   5. DATI CHIAVE (manuale 4.3): quattro cifre grandi, filo sopra ciascuna, nessun riquadro
+   ===================================================================== */
+.dati{padding:var(--s7) 0 var(--sez)}
+.dati ul{list-style:none;margin-block:0;row-gap:var(--s5)}
+.dati li{grid-column:span 3;border-top:1px solid var(--filo);padding-top:var(--s4)}
+.dati strong{display:block;font:600 var(--f-numero)/.9 var(--disp);letter-spacing:-.035em;color:var(--i1);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dati strong small{font-size:.38em;font-weight:500;letter-spacing:0;margin-left:.12em;color:var(--i2)}
+.dati p{margin-top:var(--s3);font:400 .9375rem/1.4 var(--disp);color:var(--i2);max-width:24ch}
+
+/* ---------- hero e dati: tablet e telefono ---------- */
+@media (max-width:1199px){
+  .hero-titolo{grid-column:1/-1}
+  .hero-lato{grid-column:1/span 6;padding-top:0}
+  .dati li{grid-column:span 4}
+}
+@media (max-width:767px){
+  .hero{padding-top:calc(var(--barra) + 40px)}
+  .hero-lato{grid-column:1/-1}
+  .hero-azioni{flex-direction:column;align-items:stretch;gap:20px}
+  .hero-azioni .btn{width:100%;height:56px}
+  .hero-azioni .link{align-self:flex-start}
+  .cornice{--smusso:32px;margin:40px var(--lato) 0}
+  /* taglio 4:3 della tavola 2400 x 1600 (x da 170 a 2170, y da 100 a 1600): entrano tutti e quattro i richiami.
+     L'immagine e' larga 2400/2000 = 120 % della finestra e spostata di 170/2000 e 100/2000 della larghezza. */
+  .tavola{aspect-ratio:4/3}
+  .tavola img{position:absolute;left:-8.5%;top:0;margin-top:-5%;width:120%;max-width:none;height:auto;object-fit:fill}
+  .richiamo{left:var(--xm);top:var(--ym);width:24px;height:24px;font-size:.6875rem;line-height:24px;box-shadow:0 0 0 4px rgba(250,249,247,.16)}
+  .richiamo.attivo{box-shadow:0 0 0 5px rgba(230,51,41,.3)}
+  .pop{display:none}
+  .richiami-lista{display:grid;gap:12px;list-style:none;margin:0;padding:18px 16px 20px;border-top:1px solid var(--filo-forte)}
+  .richiami-lista li{display:grid;grid-template-columns:24px 1fr;column-gap:12px;align-items:baseline;
+    font:400 .875rem/1.4 var(--disp);color:var(--i2)}
+  .richiami-lista b{font-weight:600;color:var(--i1)}
+  .rl-n{width:22px;height:22px;border-radius:50%;background:var(--carta);color:var(--nero);font:600 .6875rem/22px var(--disp);text-align:center;
+    transition:background-color .2s ease-out,color .2s ease-out}
+  .richiami-lista li.attivo .rl-n{background:var(--rosso);color:var(--carta)}
+  .cartiglio{grid-template-columns:1fr 1fr}
+  .cartiglio>div{min-height:0;padding:14px 16px}
+  .cartiglio>div:nth-child(2){grid-column:1/-1;order:-1;border-left:0;border-bottom:1px solid var(--filo-forte);padding-left:16px}
+  .cartiglio>div:first-child{padding-left:16px}
+  .cartiglio>div:nth-child(3){border-left:1px solid var(--filo-forte)}
+  .cartiglio>div:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--filo-forte);padding:14px 16px 14px calc(var(--smusso) + 8px)}
+  .dati{padding-top:var(--s6)}
+  .dati li{grid-column:span 2}
+  .dati p{font-size:.875rem}
+}
+
+/* =====================================================================
+   6. TESTA DI SEZIONE A DUE COLONNE (riusata dai blocchi successivi)
+   titolo su 6 colonne a sinistra, lead su 5 a destra allineata in alto; distanza dal corpo 40 > 96 px
+   ===================================================================== */
+.testa-split{align-items:start;row-gap:var(--s4);margin-bottom:var(--testa-corpo)}
+.ts-titolo{grid-column:1/span 6}
+.ts-lead{grid-column:8/span 5;padding-top:calc(var(--f-piccolo) * 1.3 + var(--s3))}   /* la lead parte all'altezza del titolo, non dell'occhiello */
+@media (max-width:1199px){.ts-titolo{grid-column:1/span 6}.ts-lead{grid-column:1/span 6;padding-top:0}}
+@media (max-width:767px){.ts-titolo,.ts-lead{grid-column:1/-1}}
+
+/* =====================================================================
+   7. VANTAGGI (manuale 4.4): quattro voci 2 x 2 senza fili ne' fondi, il rovescio in un pannello panna
+   ===================================================================== */
+.vantaggi{padding-block:var(--sez)}
+.voci{list-style:none;margin:0;row-gap:var(--s7)}
+.voce{grid-column:1/span 5;display:flex;flex-direction:column}
+.voce:nth-child(even){grid-column:8/span 5}
+.voce .conta{display:block;margin-bottom:var(--s4)}
+.voce h3{max-width:21ch}
+.voce>p{margin:var(--s3) 0 var(--s4);font-size:var(--f-corpo);line-height:1.6;color:var(--i2);max-width:44ch}
+.rovescio{margin-top:var(--s4);padding:20px 24px 22px;background:var(--c1);max-width:46ch}
+.voce .rovescio{margin-top:auto}   /* i due pannelli della stessa riga partono alla stessa altezza */
+.rovescio .etichetta{color:var(--grafite);display:block;margin-bottom:8px}
+.rovescio p{font-family:var(--serif);font-size:1rem;line-height:1.5;color:var(--i1)}
+@media (max-width:1199px){.voce{grid-column:1/span 4}.voce:nth-child(even){grid-column:5/span 4}}
+@media (max-width:767px){
+  .voci{row-gap:var(--s6)}
+  .voce,.voce:nth-child(even){grid-column:1/-1}
+  .rovescio{padding:16px 20px 18px}
+}
+
+/* =====================================================================
+   8. SETTORI (manuale 4.5): mosaico 8 + 4 colonne, tessere-immagine con il testo in basso su un velo
+   ===================================================================== */
+.settori{padding-block:var(--sez)}
+.mosaico{row-gap:var(--gap)}
+/* la tessera e' un foglio: il disegno intero in alto (le tavole hanno gia' il nero pagina come fondo),
+   il testo sotto sul nero, un filo sottile come bordo del foglio. Nessun testo sopra il disegno. */
+.tessera{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--n0);text-decoration:none;color:var(--i1);
+  grid-column:9/span 4;aspect-ratio:1/1;box-shadow:inset 0 0 0 1px var(--filo);transition:box-shadow .2s ease-out}
+.tessera--a{grid-column:1/span 8;grid-row:1/span 2;aspect-ratio:auto}
+.tessera-img{position:relative;flex:1 1 auto;min-height:0;overflow:hidden}
+.tessera img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 60%;transition:transform .65s var(--e-vast);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 78%,transparent 100%)}   /* il bordo della resa sfuma nel nero del foglio */
+.tessera-tav,.tessera-freccia{position:absolute;z-index:2}
+.tessera-tav{top:20px;left:24px}
+.tessera-freccia{top:16px;right:22px;font:400 1.25rem/1 var(--disp);color:var(--i2);transition:transform .2s ease-out,color .2s ease-out}
+.tessera-testo{position:relative;z-index:2;padding:0 24px 24px;display:flex;flex-direction:column;gap:8px}
+.tessera:hover{box-shadow:inset 0 0 0 1px var(--filo-forte)}
+.tessera-testo .etichetta{color:var(--i3)}
+.tessera h3{display:inline;align-self:flex-start;padding-bottom:4px;
+  background:linear-gradient(var(--rosso),var(--rosso)) 0 100%/0 2px no-repeat;transition:background-size .4s var(--e-uscita)}
+.tessera--a h3{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.5rem);line-height:1.05;letter-spacing:-.02em;max-width:18ch}   /* sotto l'H2 della sezione: un gradino piu' piccolo */
+.tessera-riga{font:400 var(--f-piccolo)/1.4 var(--disp);color:var(--i2);max-width:44ch}
+.tessera--a .tessera-riga{font-size:1.0625rem}
+.tessera:hover img,.tessera:focus-visible img{transform:scale(1.03)}
+.tessera:hover .tessera-freccia,.tessera:focus-visible .tessera-freccia{color:var(--i1);transform:translate(2px,-2px)}
+.tessera:hover h3,.tessera:focus-visible h3{background-size:100% 2px}
+.tessera:focus-visible{outline-offset:-4px}
+@media (max-width:1199px){
+  .tessera--a{grid-column:1/-1;grid-row:auto}
+  .tessera--a .tessera-img{flex:none;aspect-ratio:16/9}
+  .tessera{grid-column:span 4}
+}
+@media (max-width:767px){
+  .tessera,.tessera--a{grid-column:1/-1;aspect-ratio:auto}
+  .tessera-img,.tessera--a .tessera-img{flex:none;aspect-ratio:4/3}
+  .tessera-tav{top:14px;left:16px}.tessera-freccia{top:12px;right:16px}
+  .tessera-testo{padding:0 16px 18px}
+  .tessera--a h3,.tessera h3{font-size:1.375rem}
+}
+
+/* =====================================================================
+   9. APPLICAZIONI (manuale 4.6): tre card per riga senza scatola; tutta la card e' un link al PDF
+   immagine 3:2 su nero, titolo, 18 parole al massimo, riga "Scheda PDF" con lingua e peso
+   ===================================================================== */
+.applicazioni{padding-block:var(--sez)}
+.ts-lead .lead+.ts-link{display:inline-block;margin-top:var(--s4)}
+.carte{list-style:none;margin:0;row-gap:clamp(48px,5vw,72px);column-gap:var(--gap-card)}
+.carte>li{grid-column:span 4;display:flex}
+.app{display:flex;flex-direction:column;width:100%;text-decoration:none;color:var(--i2)}
+.app figure{margin:0;aspect-ratio:3/2;overflow:hidden;background:var(--nero)}
+.app img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--e-vast)}
+.app h3{margin-top:var(--s4);max-width:20ch}
+.app>p{margin-top:12px;font-family:var(--serif);font-size:1.0625rem;line-height:1.55;color:var(--i2);max-width:36ch}
+.scarica{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-top:auto;padding-top:20px}
+.scarica .meta{font:400 var(--f-piccolo)/1.2 var(--disp);color:var(--i3)}
+/* nota sotto il testo (scheda condivisa): sta sopra la riga del PDF, cosi' le righe PDF della stessa fila restano allineate */
+.app-nota{display:block;margin-top:10px;font:400 .8125rem/1.4 var(--disp);color:var(--i3)}
+.app:hover img,.app:focus-visible img{transform:scale(1.03)}
+.app:hover .link,.app:focus-visible .link{text-decoration-color:var(--rosso)}
+.app:hover .freccia,.app:focus-visible .freccia{transform:translateY(2px)}
+.app:focus-visible{outline-offset:6px}
+.righello{display:none}
+/* telefono: fila che scorre con aggancio, si vede un pezzo della card successiva; sotto il righello */
+@media (max-width:767px){
+  .carte{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--lato);
+    padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .carte::-webkit-scrollbar{display:none}
+  .carte>li{flex:0 0 84vw;scroll-snap-align:start}
+  .carte .app:focus-visible{outline-offset:-2px}   /* nella fila che scorre il contorno esterno verrebbe tagliato */
+  .righello{display:flex;align-items:center;gap:16px;margin-top:var(--s5)}
+  .tacche{display:flex;align-items:center;gap:12px}
+  .tacche i{display:block;width:1px;height:18px;background:var(--filo-forte);transition:all .3s var(--e-uscita)}
+  .tacche i.attiva{width:8px;height:8px;background:var(--rosso)}
+}
+
+/* =====================================================================
+   10. PROCESSI (manuale 4.7): tre colonne; tavola 4:3, sigla gigante, nome, codici mono, una frase, link.
+   La scheda dati: sopra la tavola al passaggio del mouse (hover:hover), sotto il testo sugli schermi touch.
+   ===================================================================== */
+.processi{padding-block:calc(var(--sez) * 1.5)}   /* il blocco vetrina respira piu' degli altri */
+.tre-processi{column-gap:var(--gap-card);row-gap:var(--s6)}
+.processo{grid-column:span 4;display:flex;flex-direction:column}
+/* nel codice la sigla (h3) apre l'articolo; a schermo la tavola sta sopra */
+.proc-fig{order:-1;position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--n0);box-shadow:inset 0 0 0 1px var(--filo)}
+.proc-fig img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--e-vast)}
+.sigla{margin-top:var(--s5);font:700 clamp(3.5rem,2rem + 5vw,6rem)/.9 var(--disp);letter-spacing:-.04em;color:var(--i1)}
+.proc-nome{margin-top:12px;font:400 var(--f-piccolo)/1.4 var(--disp);color:var(--i2)}
+.proc-codici{margin-top:20px;color:var(--i3)}
+.proc-frase{margin-top:var(--s3);font-size:var(--f-corpo);line-height:1.55;color:var(--i2);max-width:38ch}
+.processo .link{margin-top:var(--s4);align-self:flex-start}
+/* scheda dati: etichetta a destra spenta, valore a sinistra pieno (vastspace.com), niente fili */
+.scheda{margin:0;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:8px;align-content:center;align-items:baseline}
+.scheda>div{display:contents}
+.scheda dt{font:500 .6875rem/1.45 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3);text-align:right}
+.scheda dd{margin:0;font:400 .9375rem/1.35 var(--disp);color:var(--i1)}
+@media (hover:hover){
+  .proc-fig .scheda{position:absolute;inset:0;padding:32px;background:rgba(11,11,12,.88);opacity:0;transition:opacity .2s ease-out}
+  .processo:hover .proc-fig .scheda,.processo:focus-within .proc-fig .scheda{opacity:1}
+  .processo:hover .proc-fig img{transform:scale(1.03)}
+}
+@media (hover:none){
+  .proc-fig{overflow:visible;aspect-ratio:auto;box-shadow:none;display:flex;flex-direction:column;background:transparent}
+  .proc-fig img{aspect-ratio:4/3;box-shadow:inset 0 0 0 1px var(--filo)}
+  .proc-fig .scheda{order:2;margin-top:var(--s4);grid-template-columns:max-content 1fr}
+  .proc-fig .scheda dt{text-align:left}
+}
+/* nota di contesto sulle tolleranze, sotto le tre colonne */
+.proc-nota{margin-top:var(--s6);font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.proc-nota span{grid-column:1/span 8}
+@media (max-width:1199px) and (min-width:768px){.processo:last-child{grid-column:1/span 4}}
+@media (max-width:767px){.processo{grid-column:1/-1}.sigla{font-size:3.5rem}.proc-nota span{grid-column:1/-1}}
+
+/* =====================================================================
+   11. QUALITA' E PARTNER (manuale 4.8): metodo a sinistra su 5 colonne, muro dei nomi a destra su 6
+   ===================================================================== */
+.qualita{padding-block:var(--sez)}
+.metodo{grid-column:1/span 5;display:flex;flex-direction:column;align-items:flex-start}
+.metodo-testo{margin:var(--s4) 0 var(--s4);font-size:var(--f-corpo);line-height:1.6;color:var(--i2);max-width:46ch}
+.nomi{grid-column:7/span 6;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--gap-card);row-gap:var(--s5);align-content:start;padding-top:calc(var(--f-piccolo) * 1.3 + var(--s3))}
+.nomi li{display:flex;flex-direction:column;gap:6px}
+.nomi strong{font:500 clamp(1.375rem,1rem + 1.2vw,2rem)/1.1 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+.nomi span{font:400 var(--f-piccolo)/1.4 var(--disp);color:var(--i3);max-width:28ch}
+@media (max-width:1199px){.metodo{grid-column:1/-1}.nomi{grid-column:1/-1;margin-top:var(--s6);padding-top:0}}
+@media (max-width:767px){.nomi{row-gap:var(--s4)}.nomi strong{font-size:1.25rem}}
+
+/* =====================================================================
+   12. MATERIALI (manuale 4.9, versione tipografica): panna, selettore a schede, codice attivo in filigrana
+   ===================================================================== */
+.materiali{position:relative;overflow:hidden;padding-block:var(--sez);background:var(--c1)}
+.materiali>*:not(.fantasma){position:relative;z-index:1}
+.fantasma{position:absolute;left:var(--lato);bottom:-.12em;z-index:0;pointer-events:none;white-space:nowrap;
+  font:700 min(22vw,340px)/.8 var(--disp);letter-spacing:-.04em;color:var(--c2);transition:opacity .4s ease-out}
+.selettore{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px;margin-bottom:var(--s6)}
+.selettore button{height:44px;padding:0 16px;background:none;border:0;border-radius:2px;cursor:pointer;color:var(--i3);
+  display:inline-flex;align-items:center;gap:8px;transition:color .2s ease-out,background-color .2s ease-out}
+.selettore button::before{content:"";width:8px;height:8px;background:transparent;transition:background-color .3s var(--e-vast)}
+.selettore button:hover{color:var(--i1)}
+.selettore button[aria-selected="true"]{color:var(--i1);background:rgba(11,11,12,.05)}
+.selettore button[aria-selected="true"]::before{background:var(--rosso)}
+.materiale{align-items:start;row-gap:var(--s5)}
+.materiale[hidden]{display:none}
+.mat-sx{grid-column:1/span 6}
+.mat-nome{font:700 clamp(3rem,2rem + 4vw,5.5rem)/.9 var(--disp);letter-spacing:-.035em;color:var(--i1)}
+.mat-esteso{margin-top:12px;font:400 var(--f-piccolo)/1.4 var(--disp);color:var(--i2)}
+.mat-sx .lead{margin-top:var(--s4);max-width:30ch}
+.mat-sx .rovescio{background:var(--c0)}
+.mat-scheda{grid-column:8/span 5;align-content:start;row-gap:14px;padding-top:12px}
+.mat-scheda dd{color:var(--nero);font-size:1rem}
+.mat-nota{margin-top:var(--s6);font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.mat-nota span{grid-column:1/span 8}
+@media (max-width:1199px){.mat-sx{grid-column:1/-1}.mat-scheda{grid-column:1/-1;grid-template-columns:max-content 1fr}.mat-scheda dt{text-align:left}}
+@media (max-width:767px){
+  .selettore{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--lato));padding-inline:var(--lato);
+    -webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
+  .selettore::-webkit-scrollbar{display:none}
+  .selettore button{flex:none}
+  .selettore button:focus-visible{outline-offset:-2px}
+  .fantasma{font-size:24vw;bottom:-.08em}
+  .mat-nota span{grid-column:1/-1}
+}
+
+/* =====================================================================
+   13. CASI (manuale 4.10): due cornici affiancate, tavola 4:3 e cartiglio 3 + 9
+   ===================================================================== */
+.casi{padding-block:var(--sez)}
+.due-casi{row-gap:var(--s5);column-gap:var(--gap-card)}
+.caso{grid-column:span 6;display:flex;flex-direction:column;text-decoration:none;color:var(--i2);
+  border:1px solid var(--filo-forte);transition:border-color .2s ease-out}
+.caso:hover,.caso:focus-visible{border-color:rgba(250,249,247,.48)}
+.caso-fig{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--n0)}
+.caso-fig img{width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .65s var(--e-vast)}
+.caso-fig--resa img{object-fit:cover;padding:0}   /* la resa ha il suo fondo grigio: riempie la finestra invece di galleggiare nel nero */
+.caso:hover .caso-fig img{transform:scale(1.03)}
+.r07 .caso-tav{position:absolute;top:20px;left:24px;padding:6px 10px;background:rgba(11,11,12,.78);text-transform:none;letter-spacing:0;font-size:.8125rem;color:var(--i2)}
+.caso-cartiglio{flex:1 1 auto;display:grid;grid-template-columns:3fr 9fr;border-top:1px solid var(--filo-forte)}
+.cc-sx{display:flex;flex-direction:column;gap:8px;padding:24px 28px;border-right:1px solid var(--filo-forte)}
+.cc-sx .mono{color:var(--i1)}
+.cc-dx{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:24px 28px}
+.caso-testo{font:400 clamp(1.125rem,1rem + .45vw,1.375rem)/1.4 var(--serif);letter-spacing:-.005em;color:var(--i1);max-width:40ch}
+@media (max-width:767px){
+  .caso{grid-column:1/-1}
+  .caso-cartiglio{grid-template-columns:1fr}
+  .cc-sx{border-right:0;border-bottom:1px solid var(--filo-forte);padding:16px 20px;flex-direction:row;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+  .cc-dx{padding:18px 20px 22px}
+  .r07 .caso-tav{top:12px;left:12px}
+}
+
+/* =====================================================================
+   14. PERCORSO (manuale 4.11): colonna fissa a sinistra, passi a destra con un solo filo e un indicatore rosso
+   ===================================================================== */
+.percorso{padding-block:var(--sez)}
+.perc-lato{grid-column:1/span 4;align-self:start;position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
+.perc-testo{margin:var(--s4) 0 var(--s5);font-size:var(--f-corpo);line-height:1.6;color:var(--i2);max-width:36ch}
+.passi-colonna{grid-column:6/span 7;position:relative}   /* riferimento dell'indicatore, che sta fuori dalla lista */
+.passi{list-style:none;margin:0;padding:0 0 0 40px;border-left:1px solid var(--filo);display:grid;row-gap:var(--s7)}
+.passo{display:grid;grid-template-columns:auto 1fr;column-gap:32px;align-items:start}
+.numerale{font:600 clamp(4rem,3rem + 4vw,7.5rem)/.85 var(--disp);letter-spacing:-.04em;color:var(--i1);min-width:.62em}
+.passo h3{margin-top:.15em}
+.passo p{margin-top:var(--s3);font-size:var(--f-corpo);line-height:1.6;color:var(--i2);max-width:44ch}
+.passo .passo-file{margin-top:var(--s3);color:var(--i3)}
+.indicatore{position:absolute;left:-5px;top:0;width:10px;height:10px;background:var(--rosso);transition:top .65s var(--e-vast)}
+@media (max-width:1199px){.perc-lato{grid-column:1/-1;position:static;margin-bottom:var(--s6)}.passi-colonna{grid-column:1/-1}}
+@media (max-width:767px){
+  .perc-lato{align-items:stretch}
+  .perc-lato .btn{width:100%}
+  .passi{padding-left:0;border-left:0;row-gap:var(--s6)}
+  .indicatore{display:none}
+  .passo{column-gap:20px}
+  .numerale{font-size:3.5rem}
+}
+
+/* =====================================================================
+   15. STRISCIA FINALE (manuale 4.12): la cornice smussata della hero, titolo grande, tre bottoni, contatti in chiaro
+   ===================================================================== */
+.striscia{padding-block:var(--sez)}
+.cornice--fine{margin:0 24px}
+.striscia-dentro{padding:clamp(40px,6vw,96px)}
+.striscia h2{font-size:var(--f-h1);line-height:.94;letter-spacing:-.03em;max-width:15ch}
+.striscia .lead{margin-top:var(--s4)}
+.striscia-azioni{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+.striscia-contatti{display:flex;flex-wrap:wrap;gap:12px 48px;margin-top:64px}
+.striscia-contatti a{font:500 clamp(1.375rem,1rem + 1.6vw,2rem)/1.2 var(--disp);letter-spacing:-.015em;color:var(--i1);text-decoration:underline 1px;
+  text-underline-offset:8px;text-decoration-color:var(--rosso);transition:text-decoration-thickness .2s ease-out}
+.striscia-contatti a:hover{text-decoration-thickness:2px}
+@media (max-width:767px){
+  .cornice--fine{--smusso:32px;margin:0 var(--lato)}
+  .striscia-dentro{padding:40px 20px 56px}
+  .striscia-azioni{flex-direction:column}
+  .striscia-azioni .btn{width:100%;height:56px}
+  .striscia-contatti{flex-direction:column;margin-top:48px}
+}
+
+/* =====================================================================
+   16. PIEDE (manuale 4.13): secondo nero, colonne di link senza fili, riga legale con il cartiglio
+   ===================================================================== */
+.piede{background:var(--n1);padding:96px 0 40px}
+.piede-alto{row-gap:var(--s6)}
+.piede-marchio{grid-column:1/span 4;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.piede-marchio p,.piede-sedi{font:400 var(--f-piccolo)/1.5 var(--disp);font-style:normal;color:var(--i2);max-width:30ch}
+.piede-col{grid-column:span 2;display:flex;flex-direction:column;gap:12px}
+.piede-col--prima{grid-column:7/span 2}
+.piede-col .piede-tit{margin:0 0 12px}
+.piede-col a{font:400 1rem/1.35 var(--disp);color:var(--i2);text-decoration:none;transition:color .2s ease-out}
+.piede-col a:hover{color:var(--i1)}
+.piede-legale{margin-top:96px;padding-top:24px;row-gap:var(--s4);align-items:start}
+.piede-legale::before{content:"";grid-column:1/-1;height:1px;background:var(--filo);margin-top:-24px}
+.piede-legale>p{grid-column:1/span 4;font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.piede-legale .mono{font-size:.75rem}
+.iscrizioni{grid-column:7/span 6;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 24px;margin:0}
+.iscrizioni dt{font:500 .6875rem/1.3 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.iscrizioni dd{margin:4px 0 0;font:400 .8125rem/1.4 var(--disp);color:var(--i2)}
+@media (max-width:1199px){.piede-marchio{grid-column:1/-1}.piede-col,.piede-col--prima{grid-column:span 2}.iscrizioni{grid-column:1/-1;justify-content:start}}
+@media (max-width:767px){
+  .piede{padding-top:64px}
+  .piede-legale>p{grid-column:1/-1}
+  .iscrizioni{grid-template-columns:1fr 1fr}
+}
+
+/* =====================================================================
+   17. STAMPA: niente barra ne' comandi, tutti i blocchi visibili, inchiostro nero su bianco
+   ===================================================================== */
+@media print{
+  .barra,.menu-pannello,.salta,.richiamo,.righello,.selettore,.indicatore,.fantasma,.hero-azioni,.striscia-azioni{display:none!important}
+  .js .rivela{opacity:1!important;transform:none!important}
+  .materiale[hidden]{display:grid!important;margin-top:24px}
+  .su-nero,.su-carta,.materiali,.piede{--i1:#000;--i2:#222;--i3:#444;--filo:#bbb;--filo-forte:#888;background:#fff!important;color:#222}
+  .hero{padding-top:0}
+  .carte{display:grid!important}
+  section{break-inside:avoid-page}
+}
+
+/* ===== 10_interne.css ===== */
+/* =====================================================================
+   18. PAGINE INTERNE · i componenti comuni che la home non ha (12/10/2026)
+   Stesso linguaggio della home: griglia 12/8/4, fili sottili invece di scatole, cifre grandi, mono solo per codici,
+   un solo rosso pieno per schermata. Ogni pagina interna apre con .testata e, se e' lunga, con .indice.
+   ===================================================================== */
+
+/* ---------- 18.1 TESTATA: la hero delle pagine interne (nero) ----------
+   briciole + H1 a sinistra su 7 colonne, lead e azioni a destra su 5; sotto, a scelta, una tavola in cornice
+   o una riga di dati chiave (.dati della home). Piu' bassa della hero di home: si arriva gia' orientati. */
+.testata{padding-top:calc(var(--barra) + clamp(40px,5.5vw,88px));padding-bottom:clamp(56px,6vw,96px);overflow:hidden}
+.testata--con-indice{padding-bottom:0}
+.testata-testa{row-gap:var(--s5);align-items:start}
+.testata-titolo{grid-column:1/span 7}
+.testata h1{font-size:clamp(2.5rem,1.5rem + 4vw,4.75rem);line-height:.96;letter-spacing:-.03em;max-width:16ch}
+.testata-lato{grid-column:8/span 5;padding-top:calc(var(--f-piccolo) * 1.3 + var(--s3) + .1em)}
+.testata-lato .lead{max-width:34ch}
+.testata-azioni{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:32px}
+.testata .cornice{margin-top:clamp(40px,5vw,72px)}
+.testata .dati-testata{margin-top:clamp(48px,5vw,80px)}
+.dati-testata{list-style:none;margin-block:0;row-gap:var(--s5)}
+.dati-testata li{grid-column:span 3;border-top:1px solid var(--filo);padding-top:var(--s4)}
+.dati-testata strong{display:block;font:600 clamp(2.25rem,1.5rem + 2.6vw,3.75rem)/.95 var(--disp);letter-spacing:-.03em;color:var(--i1);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dati-testata strong small{font-size:.42em;font-weight:500;letter-spacing:0;margin-left:.12em;color:var(--i2)}
+.dati-testata p{margin-top:12px;font:400 .9375rem/1.4 var(--disp);color:var(--i2);max-width:26ch}
+
+/* briciole: dove sono, in una riga sopra l'H1 (al posto dell'occhiello) */
+.briciole{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 var(--s3);font:500 var(--f-piccolo)/1.3 var(--disp);color:var(--i3)}
+.briciole a{color:var(--i2);text-decoration:none;transition:color .2s ease-out}
+.briciole a:hover{color:var(--i1)}
+.briciole span[aria-hidden]{color:var(--i3)}
+.briciole [aria-current]{color:var(--i1)}
+
+@media (max-width:1199px){.testata-titolo{grid-column:1/-1}.testata-lato{grid-column:1/span 6;padding-top:0}.dati-testata li{grid-column:span 4}}
+@media (max-width:767px){
+  .testata{padding-top:calc(var(--barra) + 32px);padding-bottom:56px}
+  .testata--con-indice{padding-bottom:0}
+  .testata-lato{grid-column:1/-1}
+  .testata-azioni{flex-direction:column;align-items:stretch;gap:20px}
+  .testata-azioni .btn{width:100%;height:56px}
+  .testata-azioni .link{align-self:flex-start}
+  .dati-testata li{grid-column:span 2}
+  .dati-testata p{font-size:.875rem}
+}
+
+/* ---------- 18.2 INDICE: la navigazione dentro la pagina, ferma sotto la barra ----------
+   righe mono numerate, la voce della sezione visibile si accende (r07.js); su telefono scorre in orizzontale */
+.indice{position:sticky;top:64px;z-index:50;margin-top:clamp(48px,5vw,80px);background:rgba(11,11,12,.92);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--filo);border-bottom:1px solid var(--filo);
+  --i1:rgba(250,249,247,.94);--i2:rgba(250,249,247,.70);--i3:rgba(250,249,247,.52)}
+.indice-dentro{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;padding-inline:var(--lato);max-width:1920px;margin-inline:auto}
+.indice-dentro::-webkit-scrollbar{display:none}
+.indice a{flex:none;display:flex;align-items:center;gap:10px;height:56px;padding:0 22px;text-decoration:none;color:var(--i2);
+  font:500 .9375rem/1 var(--disp);letter-spacing:-.005em;border-right:1px solid var(--filo);position:relative;transition:color .2s ease-out,background-color .2s ease-out}
+.indice a:first-child{padding-left:0}
+.indice a i{font:500 .6875rem/1 var(--mono);font-style:normal;color:var(--i3);letter-spacing:.02em}
+.indice a:hover{color:var(--i1)}
+.indice a.attiva{color:var(--i1)}
+.indice a.attiva i{color:#FF7A70}
+.indice a::after{content:"";position:absolute;left:22px;right:22px;bottom:-1px;height:2px;background:var(--rosso);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--e-uscita)}
+.indice a:first-child::after{left:0}
+.indice a.attiva::after{transform:scaleX(1)}
+.indice a:focus-visible{outline-offset:-4px}
+html:has(.indice){scroll-padding-top:136px}
+@media (max-width:767px){.indice a{height:52px;padding:0 16px;font-size:.875rem}.indice a::after{left:16px;right:16px}}
+
+/* ---------- 18.3 SEZIONE generica: ritmo e testata gia' in 6. (testa-split); qui le varianti ---------- */
+.sezione{padding-block:var(--sez)}
+.sezione--panna{background:var(--c1)}
+.sezione--stretta{padding-block:calc(var(--sez) * .66)}
+.sez-nota{margin-top:var(--s6);font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.sez-nota>span{grid-column:1/span 8}
+@media (max-width:767px){.sez-nota{font-size:.875rem}.sez-nota>span{grid-column:1/-1}}
+
+/* ---------- 18.4 TABELLA: dati come un riquadro di disegno, fili orizzontali, numeri allineati ----------
+   <div class="tabella-scorre griglia"><table class="tabella">...</table></div>; prima colonna ferma su telefono */
+.tabella-scorre{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabella-scorre>.tabella{grid-column:1/-1}
+.tabella{width:100%;border-collapse:collapse;font:400 .9375rem/1.4 var(--disp);color:var(--i1);font-variant-numeric:tabular-nums}
+.tabella caption{caption-side:bottom;text-align:left;padding-top:16px;font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.tabella th,.tabella td{padding:16px 20px 16px 0;text-align:left;vertical-align:baseline;border-bottom:1px solid var(--filo)}
+.tabella thead th{padding-top:0;font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3);border-bottom:1px solid var(--filo-forte);white-space:nowrap}
+.tabella tbody th{font-weight:600;color:var(--i1);white-space:nowrap}
+.tabella td{color:var(--i2)}
+.tabella .num{font-family:var(--mono);font-size:.8125rem;letter-spacing:.01em;color:var(--i1);white-space:nowrap}
+.tabella .limite{color:var(--i3)}
+.tabella tbody tr{transition:background-color .2s ease-out}
+.tabella tbody tr:hover{background:rgba(127,127,127,.06)}
+@media (max-width:767px){
+  .tabella-scorre>.tabella{min-width:640px}
+  .tabella tbody th{position:sticky;left:0;z-index:1;background:inherit}
+  .su-carta .tabella tbody th{background:var(--c0)}
+  .sezione--panna .tabella tbody th{background:var(--c1)}
+  .su-nero .tabella tbody th{background:var(--n0)}
+}
+
+/* ---------- 18.5 FILTRI: bottoni a interruttore con il conteggio, come il selettore dei materiali ---------- */
+.filtri{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px;margin-bottom:var(--s6)}
+.filtri button{height:44px;padding:0 16px;background:none;border:0;border-radius:2px;cursor:pointer;color:var(--i3);
+  display:inline-flex;align-items:center;gap:10px;font:500 .9375rem/1 var(--disp);transition:color .2s ease-out,background-color .2s ease-out}
+.filtri button::before{content:"";width:8px;height:8px;background:transparent;box-shadow:inset 0 0 0 1px currentColor;transition:background-color .3s var(--e-vast),box-shadow .3s var(--e-vast)}
+.filtri button:hover{color:var(--i1)}
+.filtri button[aria-pressed="true"]{color:var(--i1);background:rgba(127,127,127,.08)}
+.filtri button[aria-pressed="true"]::before{background:var(--rosso);box-shadow:none}
+.filtri .conta{font:500 .6875rem/1 var(--mono);color:var(--i3)}
+.filtri-esito{grid-column:1/-1;margin:-40px 0 var(--s5);font:400 var(--f-piccolo)/1.4 var(--disp);color:var(--i3)}
+@media (max-width:767px){
+  .filtri{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--lato));padding-inline:var(--lato);
+    -webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
+  .filtri::-webkit-scrollbar{display:none}
+  .filtri button{flex:none}
+  .filtri button:focus-visible{outline-offset:-2px}
+}
+
+/* ---------- 18.6 DOMANDE: elenco a fisarmonica (details/summary), numero mono, croce che ruota ---------- */
+.domande{list-style:none;margin:0;padding:0;border-top:1px solid var(--filo-forte)}
+.domanda{border-bottom:1px solid var(--filo)}
+.domanda summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:56px 1fr 32px;align-items:baseline;gap:0 16px;padding:28px 0;
+  font:600 var(--f-h3)/1.2 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+.domanda summary::-webkit-details-marker{display:none}
+.domanda summary i{font:500 .75rem/1 var(--mono);font-style:normal;color:var(--i3);letter-spacing:.02em}
+.domanda summary b{font-weight:600}
+.domanda summary::after{content:"";justify-self:end;width:16px;height:16px;align-self:center;
+  background:linear-gradient(currentColor,currentColor) center/16px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 16px no-repeat;
+  transition:transform .35s var(--e-uscita)}
+.domanda[open] summary::after{transform:rotate(45deg)}
+.domanda summary:hover b{text-decoration:underline 1px;text-decoration-color:var(--rosso);text-underline-offset:6px}
+.domanda summary:focus-visible{outline-offset:2px}
+.risposta{padding:0 48px 32px 72px;max-width:calc(68ch + 72px)}
+.risposta p{font-family:var(--serif);font-size:var(--f-corpo);line-height:1.65;color:var(--i2)}
+.risposta p+p{margin-top:12px}
+.risposta a{color:var(--i1);text-underline-offset:4px;text-decoration-color:var(--rosso)}
+@media (max-width:767px){
+  .domanda summary{grid-template-columns:36px 1fr 24px;gap:0 8px;padding:22px 0;font-size:1.125rem}
+  .risposta{padding:0 0 24px 44px}
+}
+
+/* ---------- 18.7 MODULO: campi a filo, niente scatole; etichetta piccola sopra, linea che diventa rossa al fuoco ---------- */
+.modulo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px var(--gap-card)}
+.campo{display:flex;flex-direction:column;gap:8px}
+.campo--largo{grid-column:1/-1}
+.campo label,.campo .campo-et{font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.campo input,.campo select,.campo textarea{font:400 1.125rem/1.4 var(--disp);color:var(--i1);background:transparent;border:0;border-bottom:1px solid var(--filo-forte);
+  border-radius:0;padding:10px 0 12px;width:100%;transition:border-color .2s ease-out,box-shadow .2s ease-out;-webkit-appearance:none;appearance:none}
+.campo select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:28px;cursor:pointer}
+.campo textarea{min-height:140px;resize:vertical;line-height:1.55}
+.campo input::placeholder,.campo textarea::placeholder{color:var(--i3)}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:0;border-bottom-color:var(--rosso);box-shadow:0 1px 0 var(--rosso)}
+/* sulla carta la linea del campo deve vedersi (contrasto non testuale 3:1): piu' scura del filo */
+.su-carta .campo :is(input,select,textarea){border-bottom-color:rgba(11,11,12,.45)}
+.su-carta .campo :is(input,select,textarea):focus{border-bottom-color:var(--rosso)}
+.campo [aria-invalid="true"]{border-bottom-color:var(--rosso-scuro)}
+.campo .aiuto{font:400 .8125rem/1.45 var(--disp);color:var(--i3)}
+.modulo-piede{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:8px}
+.modulo-piede p{font:400 .8125rem/1.5 var(--disp);color:var(--i3);max-width:52ch}
+@media (max-width:767px){.modulo{grid-template-columns:1fr;gap:28px}.modulo-piede .btn{width:100%}}
+
+/* ---------- 18.8 REGISTRO: elenco dei PDF come il registro dei disegni di un ufficio tecnico ----------
+   ogni riga e' un link: codice mono | titolo e riga | lingua | revisione | peso | freccia */
+.registro{list-style:none;margin:0;padding:0;border-top:1px solid var(--filo-forte)}
+.registro a{display:grid;grid-template-columns:minmax(120px,2fr) minmax(0,6fr) 1fr 1.4fr 1fr 24px;align-items:baseline;gap:8px 24px;
+  padding:22px 0;border-bottom:1px solid var(--filo);text-decoration:none;color:var(--i2);transition:background-color .2s ease-out,padding .3s var(--e-uscita)}
+.registro a:hover{background:rgba(127,127,127,.06);padding-inline:12px}
+.registro .reg-cod{font:500 .75rem/1.3 var(--mono);letter-spacing:.02em;color:var(--i3)}
+.registro .reg-tit{font:600 1.125rem/1.3 var(--disp);letter-spacing:-.01em;color:var(--i1)}
+.registro .reg-tit small{display:block;margin-top:4px;font:400 .9375rem/1.4 var(--serif);letter-spacing:0;color:var(--i2)}
+.registro .reg-dato{font:400 .875rem/1.3 var(--disp);color:var(--i2);white-space:nowrap}
+.registro .reg-bozza{color:var(--rosso-scuro)}
+.su-nero .registro .reg-bozza{color:#FF7A70}
+.registro .freccia{justify-self:end;color:var(--i1)}
+.registro a:hover .freccia{transform:translateY(2px)}
+.registro-testa{display:grid;grid-template-columns:minmax(120px,2fr) minmax(0,6fr) 1fr 1.4fr 1fr 24px;gap:8px 24px;padding-bottom:12px;
+  font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+@media (max-width:899px){
+  .registro-testa{display:none}
+  .registro a{grid-template-columns:1fr auto;gap:6px 16px;padding:20px 0}
+  .registro a:hover{padding-inline:0}
+  .registro .reg-cod{grid-column:1/-1}
+  .registro .reg-tit{grid-column:1/2}
+  .registro .freccia{grid-column:2;grid-row:2}
+  .registro .reg-dato{grid-row:auto;font-size:.8125rem;color:var(--i3)}
+  .registro .reg-dati{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 16px}
+}
+.reg-dati{display:contents}
+
+/* ---------- 18.9 PASSI corti (riuso del percorso della home senza colonna ferma) e FASCIA dei nomi ---------- */
+.fascia-nomi .nomi{grid-column:1/-1;grid-template-columns:repeat(5,minmax(0,1fr));padding-top:0}
+@media (max-width:1199px){.fascia-nomi .nomi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:767px){.fascia-nomi .nomi{grid-template-columns:1fr 1fr}}
+
+/* ---------- 18.10 RIQUADRO tecnico: un blocco di testo con filo a sinistra e etichetta (nota di metodo, avvertenza) ---------- */
+.riquadro{padding:4px 0 4px 24px;border-left:2px solid var(--rosso)}
+.riquadro .etichetta{display:block;margin-bottom:8px}
+.riquadro p{font-family:var(--serif);font-size:1.0625rem;line-height:1.55;color:var(--i1);max-width:56ch}
+
+@media print{.indice{display:none!important}.domanda .risposta{display:block}}
+
+/* ===== 20_finiture.css ===== */
+/* =====================================================================
+   20. VISUALIZZATORE DELLE FINITURE (.f3d): parte comune parti/finiture.html, usata da tecnologie e dalle pagine di settore.
+   La tavola della pagina: cornice smussata quasi a tutta larghezza, linguette dei campi in alto, scena 2/3 e pannello 1/3,
+   cartiglio in fondo (pezzo, processo, resa). Fondo nero obbligato: sfondo e luci del 3D sono cotti in finiture3d.js.
+   Rossi: il quadrato della linguetta attiva e le parti rosse della resa. Mono: solo il processo nel cartiglio.
+   Stati dagli script: .attivo, [aria-pressed], [aria-selected], .esclusa/[disabled], [hidden], scena .carica .viva .toccato .senza-3d
+   ===================================================================== */
+.f3d-cornice{margin:0 24px}
+.f3d{position:relative;color:var(--i2)}
+
+/* linguette dei campi: come il selettore dei materiali (quadrato rosso sull'attiva), dentro la cornice */
+.f3d-campi{display:flex;flex-wrap:wrap;gap:4px;padding:12px 16px;border-bottom:1px solid var(--filo-forte)}
+.f3d-campo{height:44px;padding:0 16px;background:none;border:0;border-radius:2px;cursor:pointer;color:var(--i3);
+  display:inline-flex;align-items:center;gap:10px;font:500 .9375rem/1 var(--disp);letter-spacing:-.005em;white-space:nowrap;
+  transition:color .2s ease-out,background-color .2s ease-out}
+.f3d-campo::before{content:"";width:8px;height:8px;flex:none;box-shadow:inset 0 0 0 1px currentColor;transition:background-color .3s var(--e-vast),box-shadow .3s var(--e-vast)}
+.f3d-campo:hover{color:var(--i1)}
+.f3d-campo[aria-selected="true"]{color:var(--i1);background:rgba(250,249,247,.06)}
+.f3d-campo[aria-selected="true"]::before{background:var(--rosso);box-shadow:none}
+.f3d-campo:focus-visible{outline-offset:-2px}
+
+/* corpo: scena a sinistra (3:2 come i poster), pannello a destra; la riga e' alta quanto il piu' alto dei due */
+.f3d-corpo{display:grid;grid-template-columns:minmax(0,2fr) minmax(320px,1fr)}
+.f3d-scena{position:relative;aspect-ratio:3/2;min-height:100%;background:var(--n0);cursor:grab;overflow:hidden}
+.f3d-scena:active{cursor:grabbing}
+.f3d-scena canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+/* il poster resta finche' il 3D non e' vivo; un filo di ingrandimento toglie il resto di cattura sul bordo alto */
+.f3d-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.025);transition:opacity .5s ease-out}
+.f3d-scena.viva .f3d-poster,.f3d-scena.viva .f3d-avvia{opacity:0;pointer-events:none}
+/* reperi d'angolo: la scena e' un foglio da disegno */
+.f3d-scena::after{content:"";position:absolute;inset:16px;pointer-events:none;--r:var(--filo-forte);
+  background:linear-gradient(var(--r),var(--r)) top left/16px 1px no-repeat,linear-gradient(var(--r),var(--r)) top left/1px 16px no-repeat,
+    linear-gradient(var(--r),var(--r)) top right/16px 1px no-repeat,linear-gradient(var(--r),var(--r)) top right/1px 16px no-repeat,
+    linear-gradient(var(--r),var(--r)) bottom left/16px 1px no-repeat,linear-gradient(var(--r),var(--r)) bottom left/1px 16px no-repeat,
+    linear-gradient(var(--r),var(--r)) bottom right/16px 1px no-repeat,linear-gradient(var(--r),var(--r)) bottom right/1px 16px no-repeat}
+.f3d-avvia{position:absolute;right:32px;bottom:32px;z-index:2;background:rgba(11,11,12,.72);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background-color .2s ease-out,color .2s ease-out,border-color .2s ease-out,opacity .5s ease-out}
+.f3d-avvia span[aria-hidden]{font-size:1.125rem;line-height:1}
+.f3d-scena.carica:not(.viva) .f3d-avvia [data-i]::after{content:" …"}
+.f3d-hint{position:absolute;left:32px;bottom:32px;z-index:2;pointer-events:none;transition:opacity .6s ease-out}
+.f3d-scena:not(.viva) .f3d-hint,.f3d-scena.toccato .f3d-hint{opacity:0}
+.f3d-no3d{display:none;position:absolute;left:32px;right:32px;bottom:32px;z-index:2;font:400 .9375rem/1.45 var(--disp);color:var(--i2);max-width:44ch}
+.f3d-scena.senza-3d .f3d-no3d{display:block}
+.f3d-scena.senza-3d .f3d-hint,.f3d-scena.senza-3d .f3d-avvia{display:none}
+
+/* pannello: secondo nero, un solo filo (sopra il testo della finitura); niente scatole sui pezzi */
+.f3d-pann{display:flex;flex-direction:column;padding:28px 28px 32px;background:var(--n1);border-left:1px solid var(--filo-forte);min-width:0}
+.f3d-lab{margin:0 0 12px}
+.f3d-lab~.f3d-lab{margin-top:28px}
+.f3d-pezzi{display:flex;flex-direction:column;gap:2px;margin-inline:-12px}
+.f3d-pz{all:unset;box-sizing:border-box;position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:3px;
+  padding:11px 12px 12px 34px;border-radius:2px;cursor:pointer;transition:background-color .2s ease-out}
+.f3d-pz[hidden]{display:none}
+.f3d-pz::before{content:"";position:absolute;left:12px;top:17px;width:8px;height:8px;box-shadow:inset 0 0 0 1px var(--i3);transition:background-color .2s ease-out,box-shadow .2s ease-out}
+.f3d-pz b{font:600 1rem/1.25 var(--disp);letter-spacing:-.01em;color:var(--i2);transition:color .2s ease-out}
+.f3d-pz span{grid-column:1;font:400 .875rem/1.4 var(--disp);color:var(--i3)}
+.f3d-pz i{grid-row:1;grid-column:2;align-self:baseline;font:500 .6875rem/1.2 var(--disp);font-style:normal;letter-spacing:.04em;text-transform:uppercase;color:var(--i3);white-space:nowrap}
+.f3d-pz:hover{background:rgba(250,249,247,.04)}
+.f3d-pz:hover b,.f3d-pz.attivo b{color:var(--i1)}
+.f3d-pz.attivo{background:rgba(250,249,247,.06)}
+.f3d-pz.attivo::before{background:var(--carta);box-shadow:none}
+.f3d-pz:focus-visible,.f3d-f:focus-visible{outline:2px solid var(--rosso);outline-offset:-2px}
+
+.f3d-fins{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.f3d-fins li{display:flex}
+.f3d-f{all:unset;box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:52px;padding:10px 14px;border:1px solid var(--filo-forte);border-radius:2px;
+  cursor:pointer;transition:border-color .2s ease-out,background-color .2s ease-out,opacity .2s ease-out}
+.f3d-f b{font:500 .875rem/1.25 var(--disp);letter-spacing:-.005em;color:var(--i2)}
+.f3d-f:hover{border-color:rgba(250,249,247,.48)}
+.f3d-f.attivo{border-color:var(--carta);background:var(--n3)}
+.f3d-f.attivo b{color:var(--i1)}
+.f3d-f.esclusa,.f3d-f[disabled]{opacity:.32;cursor:not-allowed}
+.f3d-f.esclusa:hover{border-color:var(--filo-forte)}
+
+.f3d-ral{margin-top:20px}
+.f3d-ral[hidden]{display:none}
+.f3d-ral .etichetta{display:block}
+.f3d-ral div{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.f3d-sw{width:32px;height:32px;padding:0;border:1px solid rgba(250,249,247,.2);border-radius:0;cursor:pointer}
+.f3d-sw[aria-pressed="true"]{outline:2px solid var(--carta);outline-offset:3px}
+.f3d-sw:focus-visible{outline:2px solid var(--rosso);outline-offset:3px}
+
+.f3d-testo{margin-top:auto;padding-top:24px}
+.f3d-testo::before{content:"";display:block;height:1px;background:var(--filo-forte);margin:4px 0 20px}
+.f3d-testo .tagf{display:block}
+.f3d-testo h3{margin:8px 0 10px;font:600 1.25rem/1.2 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+.f3d-testo p{font:400 1rem/1.55 var(--serif);color:var(--i2);max-width:44ch}
+.f3d-saf{margin-top:14px;font:400 .8125rem/1.5 var(--disp);color:var(--i3)}
+.f3d-saf[hidden]{display:none}
+
+/* cartiglio: tre celle, la prima e l'ultima lontane dallo smusso (regole di base in 01_nucleo, .cartiglio) */
+.cartiglio.f3d-cartiglio{grid-template-columns:5fr 3fr 4fr}
+
+/* tablet: scena sopra, pannello sotto a due colonne (pezzi | finiture e testo) */
+@media (max-width:1199px){
+  .f3d-corpo{grid-template-columns:1fr}
+  .f3d-scena{aspect-ratio:16/10;min-height:0}
+  .f3d-pann{border-left:0;border-top:1px solid var(--filo-forte);display:grid;grid-template-columns:1fr 1fr;column-gap:40px;align-items:start}
+  .f3d-pann>.f3d-lab:first-child,.f3d-pezzi{grid-column:1}
+  .f3d-pann>.f3d-lab:first-child{grid-row:1}.f3d-pezzi{grid-row:2/6}
+  .f3d-pann>.f3d-lab~.f3d-lab,.f3d-fins,.f3d-ral,.f3d-testo,.f3d-saf{grid-column:2}
+  .f3d-lab~.f3d-lab{margin-top:0}
+  .f3d-testo{margin-top:0}
+}
+/* telefono: tutto in colonna; le linguette scorrono dentro la cornice */
+@media (max-width:767px){
+  .f3d-cornice{--smusso:32px;margin:0 var(--lato)}
+  .f3d-campi{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:8px;
+    -webkit-mask-image:linear-gradient(to right,#000 80%,transparent);mask-image:linear-gradient(to right,#000 80%,transparent)}
+  .f3d-campi::-webkit-scrollbar{display:none}
+  .f3d-campo{flex:none;padding:0 14px}
+  .f3d-scena{aspect-ratio:4/3}
+  .f3d-scena::after{inset:10px}
+  .f3d-avvia{right:16px;bottom:16px;height:40px;padding:0 14px;font-size:.875rem}
+  .f3d-hint{left:16px;bottom:18px}
+  .f3d-no3d{left:16px;right:16px;bottom:16px}
+  .f3d-pann{display:flex;padding:22px 16px 26px}
+  .f3d-lab~.f3d-lab{margin-top:24px}
+  .f3d-pezzi{margin-inline:-8px}
+  .f3d-pz{padding:11px 8px 12px 28px}
+  .f3d-pz::before{left:8px}
+  .f3d-f{min-height:48px;padding:10px 12px}
+  .f3d-f b{font-size:.8125rem}
+  .f3d-testo{margin-top:24px;padding-top:0}
+  .cartiglio.f3d-cartiglio{grid-template-columns:1fr 1fr}
+  .cartiglio.f3d-cartiglio>div:first-child{grid-column:1/-1;order:0;padding:14px 16px;border-left:0;border-bottom:1px solid var(--filo-forte)}
+  .cartiglio.f3d-cartiglio>div:nth-child(2){grid-column:auto;order:0;border-left:0;border-bottom:0;padding:14px 12px 14px calc(var(--smusso) + 4px)}
+  .cartiglio.f3d-cartiglio>div:last-child{grid-column:auto;border-top:0;border-left:1px solid var(--filo-forte);padding:14px calc(var(--smusso) + 4px) 14px 14px}
+}
+@media print{.f3d-scena canvas,.f3d-avvia,.f3d-hint,.f3d-campi{display:none!important}}
+
+/* ===== 20_quota.css ===== */
+/* =====================================================================
+   20. PREVENTIVATORE (parti/quota.html, assets/r07-quota.js) · la fascia di prezzo calcolata nel browser
+   Una tavola: la cornice smussata della home, i dati a sinistra (colonne 1-6), la fascia a destra (colonne 8-12),
+   un filo verticale a meta' della colonna 7 che scende fino al cartiglio e incontra il suo terzo filo nello stesso punto.
+   Le colonne interne sono quelle della pagina: il margine interno compensa i 24 px della cornice.
+   Comune a preventivo.html e alle pagine di settore: tutto sotto .quota.
+   ===================================================================== */
+.quota{color-scheme:dark;
+  --q-pad:max(24px,calc(var(--lato) - 25px));
+  /* posizione del filo verticale, misurata dal bordo interno della cornice: meta' della colonna 7 */
+  --q-x:calc(var(--q-pad) + 6.5 * ((100% - 2 * var(--q-pad) - 11 * var(--gap)) / 12) + 6 * var(--gap))}
+.quota-calc{max-width:none;padding-inline:var(--q-pad);row-gap:0;align-items:stretch}
+.quota-dati{grid-column:1/span 6;min-width:0;padding-block:clamp(40px,4.4vw,64px)}
+.quota-esito{grid-column:8/span 5;min-width:0;position:relative;display:flex;flex-direction:column;padding-block:clamp(40px,4.4vw,64px)}
+/* il filo fra dati e fascia: dal bordo alto della cornice al cartiglio. 10 % della colonna 8-12 + 0,6 gap = mezza colonna + un gap */
+.quota-esito::before{content:"";position:absolute;top:0;bottom:0;left:calc(-10% - .6 * var(--gap));width:1px;background:var(--filo-forte)}
+
+/* ---------- il file: zona tratteggiata, come il contorno di un pezzo ancora da disegnare ---------- */
+.quota-drop{position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px;min-height:176px;padding:28px 72px 28px 32px;
+  border:1px dashed var(--filo-forte);background:var(--n1);cursor:pointer;transition:border-color .2s ease-out,background-color .2s ease-out}
+.quota-drop:hover,.quota-drop.sopra{border-color:var(--rosso);background:var(--n2)}
+.quota-drop:focus-visible{border-color:var(--rosso);outline-offset:6px}
+.quota-drop-testo{font:500 1.1875rem/1.35 var(--disp);letter-spacing:-.01em;color:var(--i1);max-width:30ch}
+.quota-ok{font:400 .9375rem/1.45 var(--disp);color:var(--i2);max-width:44ch}
+.quota-ok:empty{display:none}
+.quota-ok[data-tipo="err"]{color:#FF7A70}   /* rosso schiarito: su n1 il rosso pieno non arriva a 4,5:1 */
+.quota-drop .freccia{position:absolute;top:26px;right:30px;font:400 1.5rem/1 var(--disp);color:var(--i2)}
+.quota-drop:hover .freccia,.quota-drop.sopra .freccia{transform:translateY(3px);color:var(--i1)}
+.quota-es{margin-top:18px}
+.quota button.link{background:none;border:0;padding:0;cursor:pointer;text-align:left;font-size:.9375rem;line-height:1.5}
+
+/* ---------- misure e quantita': i campi del sito (linea sotto, rossa al fuoco), cifre grandi e incolonnate ---------- */
+.quota-campi{display:grid;grid-template-columns:1.35fr repeat(3,minmax(0,1fr)) 1.1fr;gap:28px 20px;align-items:end;margin-top:var(--s5)}
+.quota .campo label,.quota .campo .campo-et{white-space:nowrap}
+.quota .campo input{font:500 1.625rem/1.15 var(--disp);letter-spacing:-.015em;font-variant-numeric:tabular-nums;padding:6px 0 10px;min-width:0}
+.quota .campo input[type=number]{-moz-appearance:textfield;appearance:textfield}
+.quota .campo input::-webkit-outer-spin-button,.quota .campo input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+
+/* ---------- processo e materiale: due interruttori (quadrato rosso su quello scelto) e la tendina dei materiali ---------- */
+.quota-proc{margin-top:var(--s5)}
+.quota-proc-riga{display:flex;align-items:flex-end;gap:12px 28px}
+.quota-tec{display:flex;gap:4px;flex:none}
+.quota-tec .tec{height:48px;padding:0 18px;display:inline-flex;align-items:center;gap:10px;background:none;border:0;border-radius:2px;cursor:pointer;
+  font:500 .8125rem/1 var(--mono);letter-spacing:.04em;color:var(--i3);transition:color .2s ease-out,background-color .2s ease-out}
+.quota-tec .tec::before{content:"";width:8px;height:8px;box-shadow:inset 0 0 0 1px currentColor;transition:background-color .3s var(--e-vast),box-shadow .3s var(--e-vast)}
+.quota-tec .tec:hover{color:var(--i1)}
+.quota-tec .tec[aria-pressed="true"]{color:var(--i1);background:rgba(250,249,247,.07)}
+.quota-tec .tec[aria-pressed="true"]::before{background:var(--rosso);box-shadow:none}
+.quota-proc-riga select{flex:1 1 auto;min-width:0;font:500 1.125rem/1.4 var(--disp);height:48px;padding-top:0;padding-bottom:0}
+.quota select option{background:var(--n2);color:var(--carta)}
+
+/* ---------- la fascia: etichetta, cifra grande, quantita'; tabella a righe di specifica; bottone e avvertenza in fondo ---------- */
+.quota-fascia{display:flex;flex-direction:column}
+.quota-v{margin-top:18px;font:600 clamp(2.75rem,1.2rem + 3.6vw,4.5rem)/.95 var(--disp);letter-spacing:-.035em;color:var(--i1);
+  font-variant-numeric:tabular-nums;min-height:.95em}
+/* senza dati la cifra e' un segno da riempire, come una quota ancora vuota sul disegno (il punto resta per chi legge con la sintesi) */
+.quota-v.vuota{position:relative;color:transparent}
+.quota-v.vuota::after{content:"";position:absolute;left:0;top:52%;width:64px;height:2px;background:var(--filo-forte)}
+.quota-u{margin-top:14px;font:400 .9375rem/1.45 var(--disp);color:var(--i2);min-height:1.45em;max-width:40ch}
+.quota-tab{width:100%;margin-top:var(--s5);border-collapse:collapse;font:400 .9375rem/1.3 var(--disp);color:var(--i2)}
+.quota-tab th{padding:0 0 12px;text-align:left;font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3);
+  border-bottom:1px solid var(--filo-forte)}
+.quota-tab td{padding:14px 0;border-bottom:1px solid var(--filo)}
+.quota-tab .num{text-align:right}
+.quota-tab td.num{font:500 .875rem/1.3 var(--mono);letter-spacing:.01em;color:var(--i1);font-variant-numeric:tabular-nums;white-space:nowrap}
+.quota-azione{margin-top:auto;padding-top:var(--s5);min-width:0}
+.quota-cta{width:100%;white-space:normal;text-align:center;line-height:1.25}
+.quota-cta[aria-disabled="true"]{opacity:.4;cursor:default}
+.quota-cta[aria-disabled="true"]:hover{background:var(--rosso-scuro)}
+.quota .quota-demo{max-width:none;margin-top:var(--s3);background:var(--n2);padding:18px 22px 20px}
+.quota .quota-demo .etichetta{color:var(--i3)}
+.quota .quota-demo p{font-size:.9375rem;line-height:1.5;color:var(--i2)}
+
+/* ---------- cartiglio: quello della home, con le colonne rifatte perche' il terzo filo cada sul filo della fascia ---------- */
+.quota .quota-cartiglio{grid-template-columns:calc(var(--q-x) * .38) calc(var(--q-x) * .62) minmax(0,4fr) minmax(0,5fr)}
+
+/* nota propria della pagina, subito dopo la cornice (es. la qualifica consigliata sulla pagina pharma) */
+.quota-nota{margin:var(--s4) 24px 0;padding-inline:calc(var(--q-pad) + 1px);font:400 .8125rem/1.5 var(--disp);color:var(--i3);max-width:calc(68ch + 2 * var(--q-pad))}
+
+/* ---------- tablet: dati sopra, fascia sotto su due colonne (cifra e bottone | tabella) ---------- */
+@media (max-width:1199px){
+  .quota-dati{grid-column:1/-1;padding-bottom:var(--s5)}
+  .quota-esito{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap-card);align-items:start;
+    padding-top:var(--s5);grid-template-areas:"fascia tab" "azione tab"}
+  .quota-esito::before{top:0;bottom:auto;left:calc(-1 * var(--q-pad));right:calc(-1 * var(--q-pad));width:auto;height:1px}
+  .quota-fascia{grid-area:fascia}
+  .quota-tab{grid-area:tab;margin-top:0}
+  .quota-azione{grid-area:azione;margin-top:0}
+  .quota .quota-cartiglio{grid-template-columns:2fr 5fr 3fr 3fr}
+}
+/* ---------- telefono: una colonna; X Y Z su una riga, volume e quantita' larghi; bottoni a tutta larghezza ---------- */
+@media (max-width:767px){
+  .quota{--q-pad:16px}
+  .quota-dati{padding:28px 0 32px}
+  .quota-esito{display:flex;padding:32px 0 36px}
+  .quota-drop{min-height:136px;padding:22px 52px 22px 20px}
+  .quota-drop-testo{font-size:1.0625rem}
+  .quota-drop .freccia{top:20px;right:20px;font-size:1.25rem}
+  .quota-campi{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 16px}
+  .quota-vol,.quota-qta{grid-column:1/-1}
+  .quota .campo input{font-size:1.5rem}
+  .quota-proc-riga{flex-direction:column;align-items:stretch}
+  .quota-tec .tec{flex:1 1 0;justify-content:center}
+  .quota-tab{margin-top:var(--s4)}
+  .quota-azione{padding-top:var(--s4)}
+  .quota-cta{height:auto;min-height:56px;padding:14px 20px}
+  .quota .quota-demo{padding:16px 18px 18px}
+  .quota .quota-cartiglio{grid-template-columns:1fr 1fr}
+  .quota-nota{margin-inline:var(--lato)}
+}
+
+/* ===== 30_applicazioni.css ===== */
+/* =====================================================================
+   30. APPLICAZIONI (.p-applicazioni): testata con la tavola d'insieme e i conteggi per settore, diciassette famiglie
+   come tavole col cartiglio (cornice smussata della home in piccolo), filtri fermi sotto la barra, settori, rovescio
+   ===================================================================== */
+
+/* ---------- testata: tre vedute affiancate nella cornice, separate da un filo, ciascuna col suo codice ---------- */
+.p-applicazioni .testata h1{max-width:13ch}
+.p-applicazioni .insieme{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.p-applicazioni .ins-vista{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:var(--n0);color:var(--i1);text-decoration:none}
+.p-applicazioni .ins-vista+.ins-vista::before{content:"";position:absolute;z-index:2;left:0;top:0;bottom:0;width:1px;background:var(--filo-forte)}
+.p-applicazioni .ins-vista img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--e-vast)}
+.p-applicazioni .ins-tav{position:absolute;z-index:2;top:20px;left:24px;transition:color .2s ease-out}
+.p-applicazioni .ins-vista:hover img,.p-applicazioni .ins-vista:focus-visible img{transform:scale(1.03)}
+.p-applicazioni .ins-vista:hover .ins-tav,.p-applicazioni .ins-vista:focus-visible .ins-tav{color:var(--i1)}
+.p-applicazioni .ins-vista:focus-visible{outline-offset:-4px}
+.p-applicazioni .testata .cartiglio{grid-template-columns:3fr 6fr 3fr 3fr}
+
+/* conteggi per settore: la riga dei dati della home, ma ogni cifra filtra la griglia (filo rosso al passaggio,
+   filo pieno sulla voce attiva) */
+.p-applicazioni .conta-testa{margin:clamp(56px,6vw,96px) auto 0}
+.p-applicazioni .conta-testa .etichetta{grid-column:1/-1}
+.p-applicazioni .testata .settori-conta{margin-top:var(--s4)}
+.p-applicazioni .settori-conta li{grid-column:span 2;border-top:0;padding-top:0}
+.p-applicazioni .settori-conta a{position:relative;display:flex;flex-direction:column;gap:14px;height:100%;padding-top:var(--s4);
+  border-top:1px solid var(--filo);text-decoration:none;color:var(--i2);transition:border-color .2s ease-out}
+.p-applicazioni .settori-conta a::before{content:"";position:absolute;left:0;top:-1px;width:100%;height:1px;background:var(--rosso);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e-uscita)}
+.p-applicazioni .settori-conta a:hover::before,.p-applicazioni .settori-conta a:focus-visible::before{transform:scaleX(1)}
+.p-applicazioni .settori-conta a[aria-current="true"]{border-top-color:var(--i1)}
+.p-applicazioni .settori-conta strong{transition:color .2s ease-out}
+.p-applicazioni .settori-conta a:not([aria-current]) strong{color:var(--i2)}
+.p-applicazioni .settori-conta a:hover strong{color:var(--i1)}
+.p-applicazioni .settori-conta span{font:400 .9375rem/1.35 var(--disp);color:var(--i2);max-width:18ch;-webkit-hyphens:auto;hyphens:auto}
+.p-applicazioni .settori-conta a:hover span,.p-applicazioni .settori-conta a[aria-current="true"] span{color:var(--i1)}
+
+/* ---------- famiglie: filtri fermi sotto la barra (64 px), su carta velata come la barra su nero ---------- */
+.p-applicazioni .filtri-barra{position:sticky;top:64px;z-index:40;margin-bottom:clamp(40px,4.5vw,72px);
+  background:rgba(250,249,247,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-top:1px solid var(--filo);border-bottom:1px solid var(--filo)}
+.p-applicazioni .filtri-barra .filtri{margin-bottom:0;padding-block:8px}
+/* il quadrato del filtro attivo in nero: il rosso della schermata resta alle tavole */
+.p-applicazioni .filtri button[aria-pressed="true"]::before{background:var(--i1)}
+.p-applicazioni .filtri-esito{margin:0 0 var(--s5)}
+html:not(.js) .p-applicazioni .filtri-barra{display:none}
+
+/* la griglia: tre card per fila; ogni card occupa sei righe in subgrid (tavola, settori, titolo, riga, schede, dettagli),
+   cosi' nella stessa fila titoli, righe PDF e dettagli partono alla stessa altezza */
+.p-applicazioni .famiglie{column-gap:var(--gap-card);row-gap:0;align-items:start}
+.p-applicazioni .famiglia{grid-column:span 4;grid-row:span 6;display:grid;grid-template-rows:subgrid;row-gap:0;
+  padding-bottom:clamp(64px,6.5vw,104px);scroll-margin-top:156px;min-width:0}
+.p-applicazioni .famiglia[hidden]{display:none}
+@supports not (grid-template-rows:subgrid){.p-applicazioni .famiglia{display:flex;flex-direction:column;grid-row:auto}.p-applicazioni .fam-pdf{margin-top:auto}}
+
+/* la tavola: fondo nero, smusso in basso come la cornice della home, cartiglio a due caselle */
+.p-applicazioni .fam-tav{--smusso:20px;margin:0;display:flex;flex-direction:column;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--smusso)),calc(100% - var(--smusso)) 100%,var(--smusso) 100%,0 calc(100% - var(--smusso)))}
+.p-applicazioni .fam-img{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--n0)}
+.p-applicazioni .fam-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--e-vast)}
+.p-applicazioni .fam-img--disegno img{object-fit:contain;padding:5% 7%}
+.p-applicazioni .famiglia:hover .fam-img img{transform:scale(1.03)}
+.p-applicazioni .fam-cartiglio{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);margin:0;border-top:1px solid var(--filo-forte)}
+.p-applicazioni .fam-cartiglio>div{display:flex;flex-direction:column;gap:4px;padding:13px 18px 15px;min-width:0}
+.p-applicazioni .fam-cartiglio>div:first-child{padding-left:calc(var(--smusso) + 4px)}
+.p-applicazioni .fam-cartiglio>div+div{border-left:1px solid var(--filo-forte);padding-right:calc(var(--smusso) + 4px)}
+.p-applicazioni .fam-cartiglio dt{font:500 .6875rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-applicazioni .fam-cartiglio dd{margin:0;font:500 .875rem/1.35 var(--disp);color:var(--i1)}
+.p-applicazioni .fam-cartiglio>div:first-child dd{white-space:nowrap}
+
+/* testo della card: settori come occhiello, titolo, una riga, le schede, i dettagli chiusi */
+.p-applicazioni .fam-settori{margin-top:var(--s4);color:var(--i3);line-height:1.5}
+.p-applicazioni .fam-settori a{color:var(--i1);text-decoration:none;transition:color .2s ease-out}
+.p-applicazioni .fam-settori a:hover{text-decoration:underline 1px;text-decoration-color:var(--rosso);text-underline-offset:4px}
+.p-applicazioni .famiglia h3{margin-top:10px;max-width:20ch}
+.p-applicazioni .fam-riga{margin-top:12px;font:400 1.0625rem/1.55 var(--serif);color:var(--i2);max-width:36ch}
+.p-applicazioni .fam-pdf{list-style:none;margin:0;padding:24px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.p-applicazioni .fam-pdf a{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;text-decoration:none;color:var(--i1)}
+.p-applicazioni .fam-pdf .meta{font:400 var(--f-piccolo)/1.2 var(--disp);color:var(--i3);white-space:nowrap}
+.p-applicazioni .fam-pdf .bozza{font-weight:600;color:var(--i1)}
+.p-applicazioni .fam-pdf a:hover .link,.p-applicazioni .fam-pdf a:focus-visible .link{text-decoration-color:var(--rosso)}
+.p-applicazioni .fam-pdf a[type]:hover .freccia{transform:translateY(2px)}
+.p-applicazioni .fam-pdf a:not([type]):hover .freccia{transform:translate(2px,-2px)}
+.p-applicazioni .fam-nota{font:400 .8125rem/1.4 var(--disp);color:var(--i3);margin-top:-4px}
+
+.p-applicazioni .fam-dettaglio{margin-top:20px;border-top:1px solid var(--filo)}
+.p-applicazioni .fam-dettaglio summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:48px;font:500 .9375rem/1.3 var(--disp);color:var(--i1)}
+.p-applicazioni .fam-dettaglio summary::-webkit-details-marker{display:none}
+.p-applicazioni .fam-dettaglio summary::after{content:"";flex:none;width:12px;height:12px;
+  background:linear-gradient(currentColor,currentColor) center/12px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 12px no-repeat;
+  transition:transform .35s var(--e-uscita)}
+.p-applicazioni .fam-dettaglio[open] summary::after{transform:rotate(45deg)}
+.p-applicazioni .fam-dettaglio summary:hover span{text-decoration:underline 1px;text-decoration-color:var(--rosso);text-underline-offset:5px}
+.p-applicazioni .fam-dettaglio summary:focus-visible{outline-offset:2px}
+.p-applicazioni .fam-dentro{padding:4px 0 8px}
+.p-applicazioni .fam-righe{margin:0}
+.p-applicazioni .fam-righe dt{display:block;margin-top:18px}
+.p-applicazioni .fam-righe dt:first-child{margin-top:8px}
+.p-applicazioni .fam-righe dd{margin:6px 0 0;font:400 1rem/1.55 var(--serif);color:var(--i2);max-width:44ch}
+.p-applicazioni .fam-dentro>.etichetta{display:block;margin-top:22px}
+.p-applicazioni .fam-vant{list-style:none;margin:10px 0 0;padding:0;counter-reset:vant}
+.p-applicazioni .fam-vant li{counter-increment:vant;display:grid;grid-template-columns:32px 1fr;align-items:baseline;padding:10px 0;
+  border-top:1px solid var(--filo);font:500 .9375rem/1.35 var(--disp);color:var(--i1)}
+.p-applicazioni .fam-vant li::before{content:"0" counter(vant);font:500 .6875rem/1 var(--disp);letter-spacing:.04em;color:var(--i3)}
+.p-applicazioni .fam-dentro .rovescio{margin-top:var(--s4)}
+.p-applicazioni #famiglie .sez-nota{margin-top:0}
+
+/* ---------- rovescio: titolo a sinistra, le tre frasi a destra come righe di un elenco ---------- */
+.p-applicazioni .rov-testa{grid-column:1/span 5}
+.p-applicazioni .rov-testa h2{max-width:14ch}
+.p-applicazioni .rov-voci{grid-column:7/span 6;list-style:none;margin:0;padding:calc(var(--f-piccolo) * 1.3 + var(--s3)) 0 0}
+.p-applicazioni .rov-voci li{display:grid;grid-template-columns:56px 1fr;align-items:baseline;padding:22px 0 26px;border-top:1px solid var(--filo-forte)}
+.p-applicazioni .rov-voci li:last-child{border-bottom:1px solid var(--filo)}
+.p-applicazioni .rov-voci p{font:400 clamp(1.125rem,1rem + .45vw,1.375rem)/1.4 var(--serif);letter-spacing:-.005em;color:var(--i1);max-width:38ch}
+
+/* ---------- tablet ---------- */
+@media (max-width:1199px){
+  .p-applicazioni .testata .cartiglio{grid-template-columns:3fr 5fr 3fr 3fr}
+  .p-applicazioni .settori-conta{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .p-applicazioni .settori-conta li{grid-column:span 1}
+  .p-applicazioni .famiglia{grid-column:span 4}
+  .p-applicazioni .fam-cartiglio{grid-template-columns:auto minmax(0,1fr)}
+  .p-applicazioni .rov-testa{grid-column:1/-1}
+  .p-applicazioni .rov-testa h2{max-width:16ch}
+  .p-applicazioni .rov-voci{grid-column:1/-1;padding-top:var(--s6)}
+}
+
+/* ---------- telefono: tavola d'insieme 1 + 2; le card in fila che scorre con aggancio e il righello della home
+   (si vede un pezzo della card successiva); i filtri scorrono anche loro e non restano fermi ---------- */
+@media (max-width:767px){
+  .p-applicazioni .testata h1{max-width:none}
+  .p-applicazioni .insieme{grid-template-columns:1fr 1fr}
+  .p-applicazioni .ins-vista:first-child{grid-column:1/-1}
+  .p-applicazioni .ins-vista+.ins-vista{border-top:1px solid var(--filo-forte)}
+  .p-applicazioni .ins-vista:nth-child(2)::before{display:none}
+  .p-applicazioni .ins-tav{top:12px;left:14px;font-size:.6875rem}
+  .p-applicazioni .ins-vista+.ins-vista .ins-tav{top:10px;left:10px;font-size:.625rem;letter-spacing:.03em}
+  .p-applicazioni .testata .cartiglio{grid-template-columns:1fr 1fr}
+  .p-applicazioni .conta-testa{margin-top:56px}
+  .p-applicazioni .settori-conta{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s5)}
+  .p-applicazioni .settori-conta a{gap:8px;padding-top:var(--s3)}
+  .p-applicazioni .settori-conta span{font-size:.875rem;line-height:1.3}
+  .p-applicazioni .filtri-barra{position:static;margin-bottom:var(--s5);background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .p-applicazioni .filtri-barra .filtri{padding-block:6px}
+  /* nella fila che scorre ogni card ha la sua altezza: niente vuoto fra la riga del PDF e i dettagli nelle card corte */
+  .p-applicazioni .famiglie{align-items:flex-start}
+  .p-applicazioni .famiglia{flex:0 0 84vw;scroll-snap-align:start;display:flex;flex-direction:column;padding-bottom:0;scroll-margin-top:96px}
+  .p-applicazioni .fam-dettaglio{margin-top:0}
+  .p-applicazioni #famiglie .sez-nota{margin-top:var(--s5)}
+  .p-applicazioni .fam-tav{--smusso:16px}
+  .p-applicazioni .fam-cartiglio>div{padding:11px 14px 13px}
+  .p-applicazioni .fam-cartiglio>div:first-child{padding-left:calc(var(--smusso) + 2px)}
+  .p-applicazioni .fam-cartiglio>div+div{padding-right:calc(var(--smusso) + 2px)}
+  .p-applicazioni .fam-settori{margin-top:20px}
+  .p-applicazioni .famiglia h3{font-size:1.375rem}
+  .p-applicazioni .fam-riga{font-size:1.0625rem}
+  .p-applicazioni .fam-pdf{gap:0;padding:14px 0 20px}
+  .p-applicazioni .fam-pdf a{min-height:40px;align-items:center}
+  /* piu' lingue della stessa scheda: dalla seconda in poi solo freccia, lingua e peso, in fila; "Scheda PDF" resta per chi legge
+     con lo schermo. Le card restano basse e la fila che scorre non lascia vuoti sotto le card corte. */
+  .p-applicazioni .fam-pdf:has(li+li){flex-direction:row;flex-wrap:wrap;column-gap:20px}
+  .p-applicazioni .fam-pdf:has(li+li) li:first-child{flex-basis:100%}
+  .p-applicazioni .fam-pdf li+li .link>span:first-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .p-applicazioni .fam-pdf li+li a{gap:6px}
+  .p-applicazioni .fam-nota{margin:2px 0 0}
+  .p-applicazioni .rov-voci li{grid-template-columns:40px 1fr;padding:18px 0 22px}
+}
+
+@media print{
+  .p-applicazioni .filtri-barra{display:none!important}
+  .p-applicazioni .famiglia[hidden]{display:grid!important}
+  .p-applicazioni .fam-tav{clip-path:none}
+}
+
+/* ===== 30_casi.css ===== */
+/* =====================================================================
+   30. CASI E SCHEDE (.p-casi): testata con la distinta dei casi in cornice, cinque casi su panna con le tavole nere,
+   la biblioteca dei PDF come registro dei disegni (teste dei gruppi ferme a sinistra su 4 colonne, registro su 8)
+   ===================================================================== */
+
+/* ---------- TESTATA ---------- */
+.p-casi .cs-intro-b{margin-top:var(--s4);font:400 var(--f-piccolo)/1.5 var(--disp);color:var(--i3);max-width:46ch}
+
+/* la distinta: un foglio di disegno senza disegno, distinta base sopra e cartiglio sotto. Righe e cartiglio stanno sulla
+   griglia della pagina: il riquadro parte a 25 px dal bordo (margine 24 + filo), il contenuto a var(--lato) */
+.p-casi .distinta-foglio{--pi:calc(var(--lato) - 25px)}
+.p-casi .dst-testa,.p-casi .dst-riga{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);padding-inline:var(--pi)}
+.p-casi .dst-n{grid-column:1/span 2}
+.p-casi .dst-tit{grid-column:3/span 5}
+.p-casi .dst-mat{grid-column:8/span 3}
+.p-casi .dst-tipo{grid-column:11/span 2}
+.p-casi .dst-testa{padding-top:26px;padding-bottom:14px;border-bottom:1px solid var(--filo-forte);
+  font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-casi .distinta{list-style:none;margin:0;padding:0}
+.p-casi .dst-riga{align-items:baseline;padding-block:22px;border-bottom:1px solid var(--filo);text-decoration:none;color:var(--i2);
+  transition:background-color .2s ease-out}
+.p-casi .distinta li:last-child .dst-riga{border-bottom:0}
+.p-casi .dst-riga .dst-n{display:flex;align-items:baseline;gap:16px}
+.p-casi .dst-riga .mono{font-size:.8125rem;color:var(--i1)}
+.p-casi .dst-riga .etichetta{color:var(--i3)}
+.p-casi .dst-riga .dst-tit{font:600 1.1875rem/1.3 var(--disp);letter-spacing:-.01em;color:var(--i1);
+  text-decoration:underline 1px transparent;text-underline-offset:6px;transition:text-decoration-color .2s ease-out}
+.p-casi .dst-riga .dst-mat,.p-casi .dst-riga .dst-tipo{font:400 .9375rem/1.4 var(--disp);color:var(--i2)}
+.p-casi .dst-riga:hover{background:rgba(250,249,247,.03)}
+.p-casi .dst-riga:hover .dst-tit,.p-casi .dst-riga:focus-visible .dst-tit{text-decoration-color:var(--rosso)}
+.p-casi .dst-riga:focus-visible{outline-offset:-2px}
+
+/* cartiglio del foglio: stesse colonne della distinta; il filo sta 16 px prima della colonna, il testo sulla colonna */
+.p-casi .dst-cartiglio{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);padding-inline:var(--pi)}
+.p-casi .dst-cartiglio>div{margin-left:-16px;padding:16px 16px 16px 16px}
+.p-casi .dst-cartiglio>div:nth-child(1){grid-column:1/span 2;margin-left:calc(-1 * var(--pi));padding-left:calc(var(--smusso) + 16px)}
+.p-casi .dst-cartiglio>div:nth-child(2){grid-column:3/span 5}
+.p-casi .dst-cartiglio>div:nth-child(3){grid-column:8/span 5;margin-right:calc(-1 * var(--pi));padding-right:calc(var(--smusso) + 16px)}
+
+/* ---------- I CASI ---------- */
+.p-casi .cs-filtri{align-items:center;margin-bottom:var(--s5)}
+.p-casi .cs-filtri-et{margin-right:var(--s3)}
+.p-casi .filtri .conta{font:500 .8125rem/1 var(--disp);font-variant-numeric:tabular-nums}   /* in Archivo: il mono resta ai codici */
+.p-casi .casi-elenco{row-gap:var(--s6);column-gap:var(--gap-card)}
+.p-casi .caso--pagina{grid-column:span 6}
+.p-casi .caso[hidden]{display:none}
+/* le card sono articoli, non link: niente bordo che si accende ne' tavola che si ingrandisce */
+.p-casi .caso:hover{border-color:var(--filo-forte)}
+.p-casi .caso:hover .caso-fig img{transform:none}
+.p-casi .caso-fig--val img{object-fit:cover;padding:0}   /* fondo della tavola = nero pagina: il taglio 4:3 toglie solo vuoto ai lati */
+/* il dato del caso al posto della tavola (c1, c2): cifra grande sul nero, nessuna etichetta "Tavola" */
+.p-casi .caso-fig--cifra{display:flex;align-items:center;justify-content:center}
+.p-casi .cifra{font:700 clamp(5rem,2rem + 9vw,10rem)/.85 var(--disp);letter-spacing:-.05em;color:var(--i1);white-space:nowrap;
+  font-variant-numeric:tabular-nums;margin-top:.12em}
+.p-casi .cifra small{font-size:.26em;font-weight:500;letter-spacing:0;margin-left:.18em;color:var(--i2)}
+/* la quota sotto lo spessore: linea di misura con i due riscontri, come sul disegno del caso 01 */
+.p-casi .cifra--quota{position:relative;padding-bottom:.3em}
+.p-casi .cifra--quota::before{content:"";position:absolute;left:0;right:0;bottom:.07em;height:1px;background:var(--i3)}
+.p-casi .cifra--quota::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.14em;border-left:1px solid var(--i3);border-right:1px solid var(--i3)}
+/* cartiglio del caso: sigla e settore a sinistra su un quarto, il caso intero a destra */
+.p-casi .caso-cartiglio{grid-template-columns:1fr 3fr}
+.p-casi .cc-sx{padding:24px}
+.p-casi .cc-dx{gap:0;padding:24px 28px 28px}
+.p-casi .cc-dx h3{font-size:clamp(1.25rem,1rem + .6vw,1.5rem);line-height:1.15;letter-spacing:-.015em;max-width:24ch}
+.p-casi .caso--pagina .caso-testo{margin-top:var(--s3);font:400 var(--f-corpo)/1.6 var(--serif);letter-spacing:0;color:var(--i2);max-width:48ch}
+.p-casi .caso-dati{width:100%;margin:var(--s4) 0 var(--s4);padding-top:var(--s3);border-top:1px solid var(--filo);
+  grid-template-columns:max-content 1fr;column-gap:20px;row-gap:10px}
+.p-casi .caso-dati dt{text-align:left}
+.p-casi .caso-dati dd{text-wrap:balance}   /* "PA11, PA12 · SLS; Nylon 12CF · FDM" va a capo sul punto e virgola, non lascia "FDM" da solo */
+.p-casi .cc-dx .link{margin-top:auto}
+
+/* ---------- LA BIBLIOTECA ---------- */
+/* la lead della biblioteca e' lunga (due frasi, 33 parole): un gradino piu' piccola, riga piu' larga */
+.p-casi #schede .ts-lead{font-size:clamp(1.125rem,1rem + .45vw,1.375rem);line-height:1.45;max-width:40ch}
+/* come leggere una scheda: testa su 4 colonne, le due pagine su 4 + 4 sopra il registro */
+.p-casi .leggere{align-items:start;margin-bottom:var(--s7)}
+.p-casi .leggi-lato{grid-column:1/span 4;border-top:1px solid var(--filo-forte);padding-top:var(--s4)}   /* stesso filo delle due pagine: la riga si legge come una testata */
+.p-casi .leggi-lato h3{max-width:14ch}
+.p-casi .leggi{grid-column:5/span 8;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}
+.p-casi .leggi li{display:flex;flex-direction:column;border-top:1px solid var(--filo-forte);padding-top:var(--s4)}
+.p-casi .leggi h4{margin:var(--s3) 0 0;font:600 1.375rem/1.15 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+.p-casi .leggi p{margin-top:12px;font-size:var(--f-corpo);line-height:1.55;color:var(--i2);max-width:34ch}
+
+/* i tre gruppi: testa ferma a sinistra (sotto barra e indice), registro a destra */
+.p-casi .bib-gruppo{align-items:start}
+.p-casi .bib-gruppo+.bib-gruppo{margin-top:var(--s7)}
+.p-casi .bg-lato{grid-column:1/span 4;position:sticky;top:156px;display:flex;flex-direction:column;align-items:flex-start}
+.p-casi .bg-lato h3{margin-top:var(--s3);max-width:13ch}
+.p-casi .bg-lato p{margin-top:var(--s3);font:400 var(--f-piccolo)/1.5 var(--disp);color:var(--i2);max-width:30ch}
+.p-casi .bg-bozza{margin-top:var(--s3);padding:6px 9px;border:1px dashed var(--filo-forte);border-radius:2px;color:var(--i2)}
+.p-casi .bg-elenco{grid-column:5/span 8}
+
+/* registro a piu' file: una riga per codice, un link per file; le colonne dei file sono quelle della testa (subgrid) */
+.p-casi .bg-elenco{--reg:minmax(140px,2fr) minmax(0,5fr) 56px minmax(0,2fr) 64px 16px}
+.p-casi .bg-elenco .registro-testa{grid-template-columns:var(--reg);column-gap:20px}
+.p-casi .bg-elenco .registro-testa>span:nth-child(5){text-align:right}
+.p-casi .registro--multi>li{display:grid;grid-template-columns:var(--reg);column-gap:20px;align-items:first baseline;
+  padding:20px 0;border-bottom:1px solid var(--filo)}
+.p-casi .registro--multi .reg-cod{grid-column:1}
+.p-casi .registro--multi .reg-tit{grid-column:2}
+.p-casi .registro--multi .reg-tit b{font-weight:600}
+.p-casi .registro--multi .reg-tit small{font-size:.875rem}
+.p-casi .registro--multi .reg-file{grid-column:3/-1;display:grid;grid-template-columns:subgrid;row-gap:2px;list-style:none;margin:0;padding:0}
+.p-casi .registro--multi .reg-file li{grid-column:1/-1;display:grid;grid-template-columns:subgrid}
+.p-casi .registro--multi a{grid-column:1/-1;display:grid;grid-template-columns:subgrid;align-items:baseline;padding:6px 0;border-bottom:0;
+  margin-inline:-8px;padding-inline:8px}
+.p-casi .registro--multi a:hover{padding-inline:8px;background:rgba(127,127,127,.07)}
+.p-casi .reg-lng{font:600 .8125rem/1.35 var(--disp);letter-spacing:.06em;color:var(--i1)}
+.p-casi .reg-rev,.p-casi .reg-peso{font:400 .875rem/1.35 var(--disp);color:var(--i2)}
+.p-casi .reg-peso{white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right}
+.p-casi .reg-nota{color:var(--i3)}
+/* bozza: tratteggio sotto la revisione, in inchiostro, mai rosso */
+.p-casi .reg-rev.bozza{color:var(--i1);text-decoration:underline dashed 1px;text-decoration-color:var(--i2);text-underline-offset:5px}
+.p-casi .registro--multi .freccia{grid-column:auto;grid-row:auto;justify-self:end;color:var(--i1)}
+.p-casi .registro--multi a:hover .reg-lng{text-decoration:underline 1px var(--rosso);text-underline-offset:4px}
+
+/* chiusura: la nota sotto il registro, la scheda che manca sotto le teste dei gruppi */
+.p-casi .bib-chiusa{margin-top:var(--s7);align-items:start}
+.p-casi .bib-chiusa .rovescio{grid-column:5/span 8;grid-row:1;max-width:none;margin-top:0}
+.p-casi .bib-chiusa .rovescio p{max-width:68ch}
+.p-casi .bib-manca{grid-column:1/span 3;grid-row:1;display:flex;flex-direction:column;align-items:flex-start}
+.p-casi .bib-manca p{font-size:1rem;max-width:34ch}
+.p-casi .bib-manca .btn{margin-top:var(--s4)}
+
+/* ---------- TABLET ---------- */
+@media (max-width:1199px){
+  .p-casi .dst-testa,.p-casi .dst-riga,.p-casi .dst-cartiglio{grid-template-columns:repeat(8,minmax(0,1fr))}
+  .p-casi .dst-tit{grid-column:3/span 4}
+  .p-casi .dst-mat{grid-column:7/span 2}
+  .p-casi .dst-tipo{display:none}
+  .p-casi .dst-cartiglio>div:nth-child(2){grid-column:3/span 4}
+  .p-casi .dst-cartiglio>div:nth-child(3){grid-column:7/span 2}
+  .p-casi .leggi-lato{grid-column:1/-1;margin-bottom:var(--s5)}
+  .p-casi .leggi{grid-column:1/-1}
+  .p-casi .bg-lato{grid-column:1/-1;position:static;margin-bottom:var(--s5)}
+  .p-casi .bg-lato h3,.p-casi .leggi-lato h3{max-width:none}
+  .p-casi .bg-elenco{grid-column:1/-1}
+  .p-casi .bib-chiusa .rovescio{grid-column:1/-1;grid-row:auto}
+  .p-casi .bib-manca{grid-column:1/span 5;grid-row:auto;margin-top:var(--s6)}
+}
+@media (max-width:1199px) and (min-width:768px){
+  .p-casi .caso--pagina{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+  .p-casi .caso-cartiglio{border-top:0;border-left:1px solid var(--filo-forte);grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .p-casi .cc-sx{border-right:0;border-bottom:1px solid var(--filo-forte);flex-direction:row;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:16px 24px}
+}
+@media (max-width:899px){
+  .p-casi .registro--multi .reg-cod{grid-column:1}
+}
+
+/* ---------- DESKTOP: il quinto caso orizzontale, la tavola larga quanto le altre ---------- */
+@media (min-width:1200px){
+  .p-casi .caso--largo{grid-column:1/-1;display:grid;grid-template-columns:calc((100% - var(--gap-card)) / 2) 1fr}
+  .p-casi .caso--largo .caso-cartiglio{border-top:0;border-left:1px solid var(--filo-forte);
+    grid-template-columns:calc((100% - var(--gap-card)) / 4 + var(--gap-card)) 1fr}   /* il filo interno cade sotto quello delle card sopra */
+}
+
+/* ---------- TELEFONO ---------- */
+@media (max-width:767px){
+  .p-casi .testata--con-indice{padding-bottom:0}   /* il fondo della testata e' gia' il margine sopra l'indice */
+  .p-casi .distinta-foglio{--pi:16px}
+  .p-casi .dst-testa{display:none}
+  .p-casi .dst-riga{grid-template-columns:1fr;row-gap:6px;padding-block:16px}
+  .p-casi .dst-n,.p-casi .dst-tit{grid-column:1/-1}
+  .p-casi .dst-mat{display:none}
+  .p-casi .dst-riga .dst-tit{font-size:1.0625rem}
+  .p-casi .distinta li:first-child .dst-riga{padding-top:20px}
+  .p-casi .dst-cartiglio{grid-template-columns:1fr;column-gap:0;padding-inline:0}
+  .p-casi .dst-cartiglio>div,.p-casi .dst-cartiglio>div:nth-child(n){grid-column:1/-1;margin:0;padding:14px 16px;border-left:0;border-top:0;border-bottom:1px solid var(--filo-forte)}
+  .p-casi .dst-cartiglio>div:nth-child(2){order:-2}
+  .p-casi .dst-cartiglio>div:nth-child(3){order:-1}
+  .p-casi .dst-cartiglio>div:nth-child(1){border-bottom:0;padding:14px calc(var(--smusso) + 8px) 16px}
+
+  /* quattro filtri: su telefono vanno a capo invece di scorrere, cosi' si vedono tutti; l'etichetta sta sopra */
+  .p-casi .cs-filtri{flex-wrap:wrap;overflow:visible;margin-inline:0;padding-inline:0;-webkit-mask-image:none;mask-image:none}
+  .p-casi .cs-filtri-et{flex:0 0 100%;margin:0 0 8px}
+  .p-casi .cs-filtri button{padding:0 12px}
+  .p-casi .casi-elenco{row-gap:var(--s5)}
+  .p-casi .caso--pagina{grid-column:1/-1}
+  .p-casi .caso-cartiglio{grid-template-columns:minmax(0,1fr)}
+  .p-casi .cc-sx{padding:14px 20px}
+  .p-casi .cifra{font-size:clamp(4.5rem,24vw,6.5rem)}
+  .p-casi .cc-dx{padding:18px 20px 22px}
+  .p-casi .cc-dx h3{font-size:1.25rem}
+  .p-casi .caso--pagina .caso-testo{font-size:1rem}
+
+  .p-casi .leggi{grid-template-columns:1fr;row-gap:var(--s5)}
+  .p-casi .registro--multi>li{grid-template-columns:1fr;padding:20px 0 8px}
+  .p-casi .registro--multi .reg-cod,.p-casi .registro--multi .reg-tit{grid-column:1/-1}
+  .p-casi .registro--multi .reg-tit{margin-top:8px}
+  .p-casi .registro--multi .reg-file{grid-column:1/-1;display:block;margin-top:12px}
+  .p-casi .registro--multi .reg-file li{display:block}
+  .p-casi .registro--multi a{display:grid;grid-template-columns:32px minmax(0,1fr) auto 16px;column-gap:12px;align-items:center;
+    min-height:48px;margin:0;padding:0;border-top:1px solid var(--filo)}
+  .p-casi .registro--multi a:hover{padding:0}
+  .p-casi .bib-manca{grid-column:1/-1}
+  .p-casi .bib-manca .btn{width:100%}
+}
+
+@media print{
+  .p-casi .caso[hidden]{display:flex!important}
+  .p-casi .bg-lato{position:static}
+}
+
+/* ===== 30_contatti.css ===== */
+/* =====================================================================
+   30. CONTATTI (.p-contatti): testata col foglio delle tre vie in cornice, indice fermo, modulo con "Cosa mandare",
+   sedi su nero, qualita' e partner (il blocco della home)
+   ===================================================================== */
+
+/* ---------- testata: il foglio delle tre vie chiude la testata come la tavola chiude la hero della home ---------- */
+.p-contatti .testata h1{max-width:none}   /* tre righe sulle 7 colonne: "Mandateci un pezzo, / vi rispondiamo con / una persona." */
+
+/* il foglio: tre colonne uguali divise da fili, poi il cartiglio con le stesse colonne (i fili scendono dritti).
+   La prima e l'ultima colonna rientrano dello smusso, come le celle del cartiglio della home.
+   Le righe delle tre vie sono condivise (subgrid): titoli, testi e bottoni partono alla stessa altezza. */
+.p-contatti .ct-vie-elenco{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:auto auto 1fr auto auto}
+.p-contatti .ct-via{grid-row:span 5;display:grid;grid-template-rows:subgrid;row-gap:0;align-content:start;
+  padding:clamp(40px,4.4vw,64px) clamp(24px,2.8vw,40px) clamp(40px,4vw,56px);border-left:1px solid var(--filo-forte)}
+.p-contatti .ct-via:first-child{border-left:0;padding-left:calc(var(--smusso) + 16px)}
+.p-contatti .ct-via:last-child{padding-right:calc(var(--smusso) + 16px)}
+.p-contatti .ct-via>*{align-self:start}
+.p-contatti .ct-via .conta{display:block;margin-bottom:var(--s4)}
+.p-contatti .ct-via h3{max-width:17ch}
+.p-contatti .ct-via p{margin-top:var(--s3);font-size:var(--f-corpo);line-height:1.6;color:var(--i2);max-width:38ch}
+.p-contatti .ct-via .btn{justify-self:start;margin-top:var(--s5)}
+.p-contatti .ct-via .link{justify-self:start;margin-top:20px}
+
+/* cartiglio del foglio: tre celle sotto le tre vie (sedi, telefono, email), valori come link */
+.p-contatti .ct-cartiglio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.p-contatti .ct-cartiglio>div{min-height:88px;gap:6px;padding:20px clamp(24px,2.8vw,40px)}
+.p-contatti .ct-cartiglio>div:first-child{padding-left:calc(var(--smusso) + 16px)}
+.p-contatti .ct-cartiglio>div:last-child{padding-right:calc(var(--smusso) + 16px)}
+.p-contatti .ct-cartiglio dd a{font:500 1.0625rem/1.35 var(--disp);color:var(--i1);text-decoration:underline 1px;text-underline-offset:5px;
+  text-decoration-color:var(--filo-forte);transition:text-decoration-color .2s ease-out}
+.p-contatti .ct-cartiglio dd a:hover{text-decoration-color:var(--rosso)}
+
+/* ---------- modulo: campi su 7 colonne, "Cosa mandare" su 4 a destra ---------- */
+.p-contatti .ct-modulo{align-items:start;row-gap:var(--s6)}
+.p-contatti .ct-form{grid-column:1/span 7}
+.p-contatti .ct-mandare{grid-column:9/span 4}
+.p-contatti .modulo{row-gap:var(--s5)}
+/* filo dei campi piu' scuro di --filo-forte: il bordo di un campo deve arrivare a 3:1 sulla carta */
+.p-contatti .campo :is(input,select,textarea){border-bottom-color:rgba(11,11,12,.45)}
+.p-contatti .campo :is(input,select,textarea):hover{border-bottom-color:var(--i1)}
+.p-contatti .campo :is(input,select,textarea):focus{border-bottom-color:var(--rosso);box-shadow:0 1px 0 var(--rosso)}
+.p-contatti .campo select:invalid{color:var(--i3)}
+.p-contatti .campo option{color:var(--nero)}
+.p-contatti .campo [aria-invalid="true"]{border-bottom-color:var(--rosso-scuro);box-shadow:0 1px 0 var(--rosso-scuro)}
+.p-contatti .modulo-errore{grid-column:1/-1;padding:2px 0 2px 14px;border-left:2px solid var(--rosso-scuro);
+  font:500 .9375rem/1.4 var(--disp);color:var(--i1)}
+.p-contatti .modulo-errore:empty{display:none}
+.p-contatti .modulo-piede{margin-top:0}
+.p-contatti .modulo-piede p{max-width:40ch;font-size:.875rem}
+
+/* "Cosa mandare": pannello panna come il rovescio delle voci della home; trattino grigio al posto dei quadrati rossi */
+.p-contatti .ct-mandare{background:var(--c1);padding:clamp(28px,2.8vw,40px) clamp(24px,2.6vw,40px) clamp(32px,3vw,44px)}
+.p-contatti .ct-formati{margin-top:12px;color:var(--i3)}
+.p-contatti .ct-lista{list-style:none;margin:var(--s4) 0 0;padding:var(--s4) 0 0;border-top:1px solid var(--filo);display:grid;row-gap:12px}
+.p-contatti .ct-lista li{position:relative;padding-left:28px;font:400 1.0625rem/1.4 var(--disp);color:var(--i1)}
+.p-contatti .ct-lista li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--i3)}
+.p-contatti .ct-mandare-nota{margin-top:var(--s4);font:400 1rem/1.55 var(--serif);color:var(--i2);max-width:40ch}
+
+/* ---------- sedi: tre colonne con il filo sopra, come i dati chiave della home; il nome del luogo al posto della cifra ---------- */
+.p-contatti .ct-sedi-testa .ts-titolo{grid-column:1/span 10}
+.p-contatti .ct-sedi-testa h2{max-width:26ch}   /* due righe larghe sopra le tre colonne, invece di tre strette */
+.p-contatti .ct-sedi{list-style:none;margin-block:0;row-gap:var(--s6)}
+.p-contatti .ct-sede{grid-column:span 4;border-top:1px solid var(--filo);padding-top:var(--s4)}
+.p-contatti .ct-sede h3{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.5rem);line-height:1.05;letter-spacing:-.02em}
+.p-contatti .ct-prov{font-size:.5em;font-weight:500;letter-spacing:0;color:var(--i3);margin-left:.1em}
+.p-contatti .ct-sede address{font-style:normal;margin-top:var(--s5)}
+.p-contatti .ct-sede dl{margin:0;display:grid;row-gap:20px}
+.p-contatti .ct-sede dt{font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-contatti .ct-sede dd{margin:8px 0 0;font:400 clamp(1.125rem,1rem + .4vw,1.3125rem)/1.4 var(--disp);letter-spacing:-.005em;color:var(--i1)}
+.p-contatti .ct-sede dd a{color:var(--i1);text-decoration:underline 1px;text-underline-offset:5px;text-decoration-color:var(--filo-forte);
+  transition:text-decoration-color .2s ease-out}
+.p-contatti .ct-sede dd a:hover{text-decoration-color:var(--rosso)}
+
+/* ---------- tablet: le vie una sotto l'altra, titolo a sinistra e testo a destra; il cartiglio resta su tre celle ---------- */
+@media (max-width:1199px){
+  .p-contatti .ct-vie-elenco{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .p-contatti .ct-via,.p-contatti .ct-via:first-child,.p-contatti .ct-via:last-child{grid-row:auto;grid-template-rows:none;
+    grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--gap-card);border-left:0;border-top:1px solid var(--filo-forte);
+    padding:40px calc(var(--smusso) + 16px)}
+  .p-contatti .ct-via:first-child{border-top:0}
+  .p-contatti .ct-via .conta{grid-column:1;grid-row:1}
+  .p-contatti .ct-via h3{grid-column:1;grid-row:2}
+  .p-contatti .ct-via p{grid-column:2;grid-row:2;margin-top:0}
+  .p-contatti .ct-via .btn{grid-column:2;grid-row:3;margin-top:var(--s4)}
+  .p-contatti .ct-via .link{grid-column:2;grid-row:4}
+  .p-contatti .ct-cartiglio{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.3fr)}
+  .p-contatti .ct-cartiglio>div{padding-inline:24px}
+  .p-contatti .ct-form{grid-column:1/-1}
+  .p-contatti .ct-mandare{grid-column:1/span 6}
+  .p-contatti .ct-sedi-testa .ts-titolo{grid-column:1/-1}
+}
+
+/* ---------- telefono: foglio a una colonna, bottoni a tutta larghezza, cartiglio una cella per riga ---------- */
+@media (max-width:767px){
+  .p-contatti .ct-via,.p-contatti .ct-via:first-child,.p-contatti .ct-via:last-child{display:flex;flex-direction:column;padding:32px 20px 36px}
+  .p-contatti .ct-via .conta{margin-bottom:var(--s3)}
+  .p-contatti .ct-via p{margin-top:12px}
+  .p-contatti .ct-via .btn{width:100%;margin-top:var(--s4)}
+  .p-contatti .ct-via .link{align-self:flex-start}
+  .p-contatti .ct-cartiglio{grid-template-columns:minmax(0,1fr)}
+  .p-contatti .ct-cartiglio>div:nth-child(n){grid-column:auto;order:0;min-height:0;border-left:0;border-bottom:0;
+    border-top:1px solid var(--filo-forte);padding:16px 20px}
+  .p-contatti .ct-cartiglio>div:first-child{border-top:0}
+  /* l'ultima cella sta sopra lo smusso: il testo resta allineato alle altre e sale di quanto scende lo smusso */
+  .p-contatti .ct-cartiglio>div:last-child{padding:16px 20px calc(var(--smusso) + 4px)}
+  .p-contatti .ct-mandare{grid-column:1/-1}
+  .p-contatti .modulo-piede .btn{width:100%}
+  .p-contatti .ct-sede{grid-column:1/-1}
+  .p-contatti .ct-sedi{row-gap:var(--s5)}
+  .p-contatti .sez-nota{font-size:.875rem}
+}
+
+/* ===== 30_faq.css ===== */
+/* =====================================================================
+   30. DOMANDE FREQUENTI (.p-faq): testata con i quattro temi, domande con la colonna ferma, percorso su panna
+   ===================================================================== */
+
+/* i quattro temi in fondo alla testata: come i dati chiave della home, ma ognuno porta alla sua prima domanda */
+.p-faq .temi{list-style:none;margin:clamp(56px,6vw,96px) auto 0;row-gap:var(--s5)}
+.p-faq .temi li{grid-column:span 3}
+.p-faq .temi a{position:relative;display:flex;flex-direction:column;gap:10px;padding-top:var(--s4);border-top:1px solid var(--filo);
+  text-decoration:none;color:var(--i2);height:100%}
+.p-faq .temi a::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--rosso);transform:scaleX(0);
+  transform-origin:left;transition:transform .45s var(--e-uscita)}
+.p-faq .temi a:hover::before,.p-faq .temi a:focus-visible::before{transform:scaleX(1)}
+.p-faq .temi b{font:600 clamp(1.25rem,1rem + .9vw,1.75rem)/1.1 var(--disp);letter-spacing:-.02em;color:var(--i1)}
+.p-faq .temi a>span:last-child{font:400 .9375rem/1.4 var(--disp);color:var(--i2);max-width:28ch}
+
+/* domande: testata della sezione ferma a sinistra su 4 colonne, elenco a destra su 7 */
+.p-faq .dom-griglia{align-items:start}
+.p-faq .dom-lato{grid-column:1/span 4;position:sticky;top:120px}
+.p-faq .dom-lato h2{max-width:12ch}
+.p-faq .dom-scrivi{margin-top:var(--s6)}
+.p-faq .dom-scrivi p{font-size:1rem;margin-bottom:16px;max-width:36ch}
+.p-faq .dom-elenco{grid-column:6/span 7}
+.p-faq .domanda summary{grid-template-columns:48px 1fr 32px}
+.p-faq .risposta{padding-left:64px}
+
+@media (max-width:1199px){
+  .p-faq .temi li{grid-column:span 4}
+  .p-faq .dom-lato{grid-column:1/-1;position:static;margin-bottom:var(--s6)}
+  .p-faq .dom-lato h2{max-width:16ch}
+  .p-faq .dom-scrivi{margin-top:var(--s5)}
+  .p-faq .dom-elenco{grid-column:1/-1}
+}
+@media (max-width:767px){
+  .p-faq .temi li{grid-column:span 2}
+  .p-faq .temi b{font-size:1.125rem}
+  .p-faq .temi a>span:last-child{font-size:.875rem}
+  .p-faq .domanda summary{grid-template-columns:32px 1fr 24px}
+  .p-faq .risposta{padding-left:40px}
+}
+
+/* ===== 30_materiali.css ===== */
+/* =====================================================================
+   30. MATERIALI (.p-materiali): testata con la matrice filtrabile in cornice (la tavola della pagina, TAV 01, col suo
+   cartiglio), indice fermo, sette blocchi materiale su carta e panna alternati con il codice in filigrana,
+   tolleranze per tecnologia su panna con le tre tavole dei processi (Tav. 02-04)
+   ===================================================================== */
+
+/* ---------- testata ---------- */
+.p-materiali .testata-azioni .link{white-space:nowrap}
+/* 10_interne rimette 56 px sotto la testata al telefono anche con l'indice: qui la cornice si chiude sull'indice */
+.p-materiali .testata.testata--con-indice{padding-bottom:0}
+
+/* ---------- matrice in cornice ----------
+   il bordo interno del contenuto cade sul margine della griglia della pagina: cornice 24 px + filo 1 px + padding = --lato */
+.p-materiali .mx-cornice{margin-top:clamp(56px,6vw,96px)}
+.p-materiali .mx-corpo{--mx-pad:max(20px,calc(var(--lato) - 25px));padding:clamp(32px,3.6vw,56px) var(--mx-pad) clamp(16px,1.6vw,24px)}
+.p-materiali .mx-testa{margin-bottom:var(--s5)}
+.p-materiali .mx-testa .occhiello{margin-bottom:12px}
+.p-materiali .mx-testa h2{font-size:clamp(1.625rem,1.15rem + 1.6vw,2.5rem);line-height:1.04;letter-spacing:-.02em;max-width:24ch}
+
+/* filtri: due righe, l'etichetta della riga in una colonna sua; le righe che vanno a capo restano allineate ai bottoni */
+.p-materiali .mx-filtri{display:grid;gap:6px;margin:0 0 var(--s5);padding-bottom:var(--s4);border-bottom:1px solid var(--filo)}
+.p-materiali .mx-riga{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding-left:calc((100% + var(--gap)) / 12)}
+.p-materiali .mx-sep{position:absolute;left:0;top:0;height:44px;display:flex;align-items:center;margin:0}
+.p-materiali .mx-filtri button{padding:0 14px}
+.p-materiali .mx-filtri button[aria-pressed="true"]{background:rgba(250,249,247,.08)}
+
+/* tabella: 2 + 1 + 4 + 3 + 2 colonne della griglia, fili orizzontali, nessun quadratino rosso nelle liste */
+.p-materiali .mx-tab{table-layout:fixed;font-size:.9375rem}
+/* ogni colonna della tabella parte su una colonna della griglia: la tabella e' larga un gap in piu' (passo esatto =
+   (larghezza + gap) / 12) e ogni cella chiude con un gap; l'ultima colonna disegna il suo filo senza quel gap in piu' */
+.p-materiali .mx-tab{width:calc(100% + var(--gap));max-width:none;margin-right:calc(-1 * var(--gap))}
+.p-materiali .mx-tab .c-m{width:16.6667%}
+.p-materiali .mx-tab .c-p{width:8.3333%}
+.p-materiali .mx-tab .c-w{width:33.3333%}
+.p-materiali .mx-tab .c-l{width:25%}
+.p-materiali .mx-tab .c-d{width:16.6667%}
+.p-materiali .mx-tab th,.p-materiali .mx-tab td{padding:24px var(--gap) 26px 0}
+.p-materiali .mx-tab tr>:last-child{border-bottom:0;background:linear-gradient(var(--filo),var(--filo)) left bottom/calc(100% - var(--gap)) 1px no-repeat}
+.p-materiali .mx-tab thead tr>:last-child{background-image:linear-gradient(var(--filo-forte),var(--filo-forte))}
+.p-materiali .mx-tab thead th{padding-top:0;padding-bottom:14px;white-space:normal}
+.p-materiali .mx-tab tbody th{white-space:normal;font-weight:400}
+.p-materiali .mx-tab tbody th a{display:inline;font:600 1.25rem/1.15 var(--disp);letter-spacing:-.015em;color:var(--i1);text-decoration:none;
+  text-decoration-color:var(--rosso);text-underline-offset:5px}
+.p-materiali .mx-tab tbody th a:hover{text-decoration:underline 1px;text-decoration-color:var(--rosso)}
+.p-materiali .mx-tab tbody th small{display:block;margin-top:8px;font:400 var(--f-piccolo)/1.35 var(--disp);color:var(--i3)}
+.p-materiali .mx-tab .mono{color:var(--i2)}
+.p-materiali .mx-tab ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.p-materiali .mx-tab li{position:relative;padding-left:18px;font:400 .9375rem/1.45 var(--disp);color:var(--i2)}
+.p-materiali .mx-tab li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--i3)}
+.p-materiali .mx-lim{font:400 .9375rem/1.45 var(--disp);color:var(--i1)}
+.p-materiali .mx-link{display:flex;flex-wrap:wrap;gap:4px 14px}
+.p-materiali .mx-link a{font:400 .875rem/1.45 var(--disp);color:var(--i2);text-decoration:underline 1px;text-decoration-color:var(--filo-forte);
+  text-underline-offset:4px;transition:color .2s ease-out,text-decoration-color .2s ease-out}
+.p-materiali .mx-link a:hover{color:var(--i1);text-decoration-color:var(--rosso)}
+.p-materiali .mx-lab{display:none}
+.p-materiali .mx-tab tbody tr:last-child :is(th,td){border-bottom:0;background:none}
+.p-materiali .mx-tab tr[hidden]{display:none}
+.p-materiali .mx-nessuna{padding:24px 0;font:500 1.0625rem/1.4 var(--disp);color:var(--i1)}
+.p-materiali .mx-cartiglio{grid-template-columns:2fr 4fr 4fr 3fr}
+
+/* ---------- sezione dei materiali: testata, poi sette fasce piene (carta / panna) ---------- */
+.p-materiali .schede-mat{padding-bottom:0}
+.p-materiali .schede-mat>.testa-split{margin-bottom:0}
+/* sotto, piu' aria che sopra: e' la fascia dove affiora il codice in filigrana, che cosi' non passa sotto il testo */
+.p-materiali .mat-blocco,.p-materiali .mat-coda{position:relative;overflow:hidden;padding:max(72px,calc(var(--sez) * .85)) 0 max(88px,calc(var(--sez) * 1.15));background:var(--c0)}
+.p-materiali .schede-mat>.mat-blocco:first-of-type{padding-top:var(--testa-corpo)}
+.p-materiali .mat-blocco--panna{background:var(--c1)}
+.p-materiali :is(.mat-blocco,.mat-coda)>:not(.fantasma){position:relative;z-index:1}
+/* la filigrana va a sinistra sulla carta, a destra sulla panna: la colonna di blocchi alterna come le pagine di un catalogo */
+.p-materiali :is(.mat-blocco,.mat-coda)>.fantasma{font-size:min(19vw,280px);bottom:-.3em}
+.p-materiali .mat-blocco--panna>.fantasma{left:auto;right:var(--lato)}
+/* l'ultimo blocco e la nota: una sola fascia, il blocco non ha filigrana ne' fondo propri */
+.p-materiali .mat-coda{padding-top:0}
+.p-materiali .mat-coda>.mat-blocco{overflow:visible;padding-bottom:var(--s6);background:transparent}
+
+.p-materiali .mat-griglia{align-items:start;row-gap:var(--s6)}
+.p-materiali .mat-sx{grid-column:1/span 6}
+.p-materiali .mat-nome{margin:0}
+.p-materiali .mat-sx .rovescio{margin-top:var(--s5);background:var(--c1);max-width:48ch}
+.p-materiali .mat-blocco--panna .mat-sx .rovescio{background:var(--c0)}
+.p-materiali .mat-lab{margin-top:var(--s5);margin-bottom:12px}
+.p-materiali .mat-sx .lead{margin-top:0;font-size:clamp(1.1875rem,1rem + .6vw,1.5rem);line-height:1.4;max-width:36ch}
+
+.p-materiali .mat-dx{grid-column:8/span 5;display:flex;flex-direction:column;align-items:flex-start;padding-top:10px}
+.p-materiali .mat-tit{margin:0 0 14px;font:600 1rem/1.3 var(--disp);letter-spacing:-.005em;color:var(--i1)}
+.p-materiali .mat-tit--dove{margin-top:var(--s5)}
+/* scheda delle proprieta': righe con il filo, come un riquadro di disegno; la finitura e' l'ultima riga */
+.p-materiali .mat-prop{width:100%;margin:0;border-bottom:1px solid var(--filo)}
+.p-materiali .mat-prop>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:16px;align-items:baseline;
+  padding:12px 0 13px;border-top:1px solid var(--filo)}
+.p-materiali .mat-prop dt{font:500 .6875rem/1.45 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-materiali .mat-prop dd{margin:0;font:400 1rem/1.4 var(--disp);color:var(--i1);font-variant-numeric:tabular-nums}
+.p-materiali .mat-dove{display:flex;flex-wrap:wrap;gap:8px 20px}
+.p-materiali .mat-dove a,.p-materiali .mat-dove span{font:400 .9375rem/1.4 var(--disp)}
+.p-materiali .mat-dove a{color:var(--i1);text-decoration:underline 1px;text-decoration-color:var(--filo-forte);text-underline-offset:5px;
+  transition:text-decoration-color .2s ease-out}
+.p-materiali .mat-dove a:hover{text-decoration-color:var(--rosso)}
+.p-materiali .mat-dove span{color:var(--i2)}
+.p-materiali .mat-dx>.link{margin-top:var(--s5)}
+
+/* dichiarazioni con il loro perimetro: tutta la riga, due colonne che cadono sulle colonne 1-5 e 8-12 della griglia */
+.p-materiali .mat-dich{grid-column:1/-1}
+.p-materiali .mat-dich ul{list-style:none;margin:0;padding:0;column-count:2;column-gap:calc((100% - 11 * var(--gap)) / 6 + 3 * var(--gap))}
+.p-materiali .mat-dich li{break-inside:avoid;padding:14px 0 22px;border-top:1px solid var(--filo);
+  font:400 1.0625rem/1.55 var(--serif);color:var(--i1);max-width:62ch}
+
+/* la nota fissa sotto le card */
+.p-materiali .mat-chiusa .rovescio{grid-column:1/span 7;max-width:none;margin-top:0}
+
+/* ---------- tolleranze: tre processi, righe della scheda allineate fra le colonne ---------- */
+.p-materiali .toll-processi{row-gap:var(--s6)}
+.p-materiali .toll-processi .sigla{margin-top:var(--s5)}
+.p-materiali .proc-tav{position:absolute;top:16px;left:18px;z-index:2;padding:6px 10px;background:rgba(11,11,12,.78);
+  text-transform:none;letter-spacing:0;font-size:.8125rem;color:rgba(250,249,247,.72)}
+.p-materiali .proc-codici a{color:inherit;text-decoration:none;transition:color .2s ease-out}
+.p-materiali .proc-codici a:hover{color:var(--i1);text-decoration:underline 1px;text-decoration-color:var(--rosso);text-underline-offset:3px}
+.p-materiali .toll-scheda{margin:var(--s4) 0 0}
+.p-materiali .toll-scheda>div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);column-gap:16px;align-items:baseline;
+  padding:12px 0 13px;border-top:1px solid var(--filo)}
+.p-materiali .toll-scheda dt{font:500 .6875rem/1.45 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-materiali .toll-scheda dd{margin:0;font:400 .9375rem/1.4 var(--disp);color:var(--i1);font-variant-numeric:tabular-nums}
+.p-materiali .toll-processi .processo .link{justify-self:start}
+@supports (grid-template-rows:subgrid){
+  .p-materiali .toll-processi{grid-template-rows:repeat(10,auto);row-gap:0}
+  .p-materiali .toll-processi .processo{display:grid;grid-row:span 10;grid-template-rows:subgrid;row-gap:0}
+  .p-materiali .toll-scheda{display:contents}
+  .p-materiali .toll-scheda>div:first-child{margin-top:var(--s4)}
+  .p-materiali .toll-processi .processo .link{grid-row:10}
+}
+
+/* tedesco: le parole composte vanno a capo con il trattino anche nelle classi di questa pagina */
+.p-materiali:lang(de) :where(.mx-tab td,.mx-tab th,.mat-dich li,.rovescio p,.mat-prop dd,.mat-prop dt,.toll-scheda dd,.toll-scheda dt,.mat-dove,.cartiglio dd,.mat-sx .lead){
+  -webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}
+
+/* ---------- tablet ---------- */
+@media (max-width:1199px){
+  .p-materiali .mat-sx,.p-materiali .mat-dx{grid-column:1/-1}
+  .p-materiali .mat-dx{padding-top:0}
+  .p-materiali .mat-dx>*{max-width:640px;width:100%}
+  .p-materiali .mat-dx>.link{width:auto}
+  .p-materiali .mat-dich ul{column-gap:var(--gap-card)}
+  .p-materiali .mat-chiusa .rovescio{grid-column:1/span 6}
+  .p-materiali .toll-processi .processo{grid-column:span 4}
+}
+@media (max-width:1199px) and (min-width:768px){
+  .p-materiali .toll-processi .processo:last-child{grid-column:1/span 4}
+  .p-materiali .toll-processi{grid-template-rows:none}
+  .p-materiali .toll-processi .processo{display:flex;flex-direction:column;grid-row:auto}
+  .p-materiali .toll-scheda{display:block}
+  .p-materiali .toll-scheda>div:first-child{margin-top:0}
+  .p-materiali .toll-processi .processo .link{align-self:flex-start}
+}
+
+/* matrice sotto i 900 px: le righe diventano card in fila che scorre con aggancio, il filtro in alto */
+@media (max-width:899px){
+  .p-materiali .mx-tab,.p-materiali .mx-tab tbody{display:block}
+  .p-materiali .mx-tab{width:auto;min-width:0;margin-right:0}   /* 10_interne da' alle tabelle 640 px minimi sul telefono: qui le righe sono card */
+  .p-materiali .mx-tab tr>:last-child{background:none}
+  .p-materiali .mx-tab colgroup{display:none}
+  .p-materiali .mx-tab thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .p-materiali .mx-tab tbody{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    margin-inline:calc(-1 * var(--mx-pad));padding-inline:var(--mx-pad);scroll-padding-inline:var(--mx-pad);padding-bottom:2px}
+  .p-materiali .mx-tab tbody::-webkit-scrollbar{display:none}
+  .p-materiali .mx-tab tbody tr{flex:0 0 min(84%,380px);min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr) auto;
+    column-gap:12px;align-content:start;padding:22px 20px 24px;border:1px solid var(--filo-forte)}
+  .p-materiali .mx-tab tbody tr:hover{background:transparent}
+  .p-materiali .mx-tab tbody tr[hidden]{display:none}
+  .p-materiali .mx-tab th,.p-materiali .mx-tab td,.p-materiali .mx-tab tbody tr:last-child :is(th,td){display:block;padding:0;border:0;min-width:0}
+  .p-materiali .mx-tab tbody th{grid-column:1;grid-row:1}
+  .p-materiali .mx-tab .mx-proc{grid-column:2;grid-row:1;padding-top:6px}
+  .p-materiali .mx-tab .mx-perche,.p-materiali .mx-tab .mx-lim,.p-materiali .mx-tab .mx-dove{grid-column:1/-1;margin-top:18px;padding-top:16px;border-top:1px solid var(--filo)}
+  .p-materiali .mx-lab{display:block;margin-bottom:10px}
+  .p-materiali .mx-filtri{margin-bottom:var(--s4)}
+  .p-materiali .mx-filtri{border-bottom:0;padding-bottom:0}
+  .p-materiali .mx-cartiglio{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- telefono ---------- */
+@media (max-width:767px){
+  .p-materiali .testata-azioni .link{max-width:none}
+  .p-materiali .mx-cornice{margin-top:48px}
+  .p-materiali .mx-corpo{--mx-pad:16px;padding:28px 16px 32px}
+  .p-materiali .mx-testa{margin-bottom:var(--s4)}
+  .p-materiali .mx-testa h2{font-size:1.5rem;line-height:1.1}
+  /* ogni riga di filtri scorre per conto suo, con la sfumatura a destra come il selettore della home */
+  .p-materiali .mx-filtri{display:grid;gap:4px;overflow:visible;margin-inline:-16px;padding-inline:0;-webkit-mask-image:none;mask-image:none}
+  .p-materiali .mx-riga{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-inline:16px;
+    -webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}
+  .p-materiali .mx-riga::-webkit-scrollbar{display:none}
+  .p-materiali .mx-sep{position:static;height:44px;flex:none;margin-right:8px}
+  .p-materiali .mx-sep:not(:first-child){margin-left:16px;padding-left:16px;border-left:1px solid var(--filo-forte);height:24px}
+  .p-materiali .mx-filtri button{flex:none;padding:0 12px}
+  .p-materiali .mx-tab tbody tr{flex-basis:86%}
+
+  .p-materiali .mat-blocco,.p-materiali .mat-coda{padding-block:64px 88px}
+  .p-materiali .mat-coda{padding-top:0}
+  .p-materiali .mat-coda>.mat-blocco{padding-bottom:var(--s5)}
+  .p-materiali .schede-mat>.mat-blocco:first-of-type{padding-top:48px}
+  .p-materiali :is(.mat-blocco,.mat-coda)>.fantasma{font-size:24vw;bottom:-.2em}
+  .p-materiali .mat-griglia{row-gap:var(--s5)}
+  .p-materiali .mat-nome{font-size:3rem}
+  .p-materiali .mat-sx .rovescio{margin-top:var(--s4)}
+  .p-materiali .mat-lab{margin-top:var(--s4)}
+  .p-materiali .mat-sx .lead{font-size:1.1875rem}
+  .p-materiali .mat-prop>div{grid-template-columns:minmax(0,4fr) minmax(0,6fr)}
+  .p-materiali .mat-dich ul{column-count:1}
+  .p-materiali .mat-dich li{font-size:1rem}
+  .p-materiali .mat-chiusa .rovescio{grid-column:1/-1}
+
+  .p-materiali .toll-processi{grid-template-rows:none}
+  .p-materiali .toll-processi .processo{grid-column:1/-1;display:flex;flex-direction:column;grid-row:auto}
+  .p-materiali .toll-scheda{display:block}
+  .p-materiali .toll-scheda>div:first-child{margin-top:0}
+  .p-materiali .toll-processi .processo .link{align-self:flex-start}
+  .p-materiali .proc-tav{top:12px;left:12px}
+}
+
+@media print{
+  .p-materiali .filtri{display:none!important}
+  .p-materiali .mx-tab tr[hidden]{display:table-row!important}
+  .p-materiali .mat-blocco{background:#fff!important}
+}
+
+/* ===== 30_preventivo.css ===== */
+/* =====================================================================
+   30. PREVENTIVO (.p-preventivo): testata col calcolatore in cornice (20_quota.css), tre calcolatori di settore
+   come le card della home, percorso su nero, confronto additive / stampo
+   ===================================================================== */
+
+/* ---------- i calcolatori di settore: la tavola su nero con l'etichetta "Tav.", il testo sulla carta ---------- */
+.p-preventivo #calcolatori h2{max-width:19ch}
+.p-preventivo .calc-carte figure{position:relative}
+.p-preventivo .calc-tav{position:absolute;top:18px;left:20px;z-index:1;color:rgba(250,249,247,.72)}
+.p-preventivo .calc-carte .app h3{max-width:18ch}
+.p-preventivo .calc-carte .app>p{font-size:1rem}
+
+/* ---------- percorso: il riquadro "Preferite scriverci?" nella colonna ferma ---------- */
+.p-preventivo .perc-scrivi{margin:var(--s5) 0}
+.p-preventivo .perc-scrivi p{font-size:1rem;max-width:34ch}
+
+/* ---------- confronto: tabella a fili orizzontali; testo a filo della griglia, la fascia panna sporge di 24 px ---------- */
+.p-preventivo .confronto{grid-column:1/-1;width:calc(100% + 48px);margin:0 -24px;border-collapse:collapse;table-layout:fixed}
+/* colonne misurate sulla griglia (la tabella sporge di 24 px per lato): il testo additive parte dalla colonna 4,
+   quello dello stampo dalla colonna 8, come la lead della testa di sezione */
+.p-preventivo .conf-c1{width:24.6%}
+.p-preventivo .conf-c2{width:32.9%}
+.p-preventivo .conf-c3{width:42.5%}
+.p-preventivo .confronto th,.p-preventivo .confronto td{padding:26px 24px 28px;text-align:left;vertical-align:baseline;border-bottom:1px solid var(--filo)}
+.p-preventivo .confronto thead th{padding-top:0;padding-bottom:16px;font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--i3);border-bottom:1px solid var(--filo-forte)}
+.p-preventivo .confronto thead th.noi{color:var(--i1)}
+.p-preventivo .confronto th.noi::before{content:"";display:inline-block;width:8px;height:8px;margin-right:10px;background:var(--rosso);vertical-align:0}
+.p-preventivo .confronto tbody th{font:600 clamp(1.125rem,1rem + .4vw,1.375rem)/1.25 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+.p-preventivo .confronto td{font:400 var(--f-corpo)/1.5 var(--serif);color:var(--i2)}
+.p-preventivo .confronto td.conf-noi{color:var(--i1)}
+.p-preventivo .conf-et{display:none}
+/* la riga che va contro di noi: detta chiaramente, su una fascia panna, senza rosso */
+.p-preventivo .conf-limite>*{background:var(--c1);border-bottom-color:transparent}
+.p-preventivo .conf-nota{margin-top:var(--s5)}
+
+/* ---------- tablet: le tre card diventano righe (tavola a sinistra, testo a destra) ---------- */
+@media (max-width:1199px) and (min-width:768px){
+  .p-preventivo .calc-carte{row-gap:var(--s6)}
+  .p-preventivo .calc-carte>li{grid-column:1/-1}
+  .p-preventivo .calc-carte .app{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto 1fr;column-gap:var(--gap-card)}
+  .p-preventivo .calc-carte figure{grid-row:1/span 3}
+  .p-preventivo .calc-carte .app h3{margin-top:0;font-size:var(--f-h3)}
+  .p-preventivo .calc-carte .scarica{margin-top:0;align-self:end}
+}
+@media (max-width:1199px){
+  .p-preventivo .perc-scrivi{margin:var(--s4) 0}
+}
+
+/* ---------- telefono: card una sotto l'altra (sono tre: niente fila che scorre); confronto a blocchi ---------- */
+@media (max-width:767px){
+  /* tre righe compatte invece di tre tavole alte uno schermo: miniatura a sinistra, etichetta "Tav." in testa al testo */
+  .p-preventivo .calc-carte{display:grid;overflow:visible;gap:0;padding-bottom:0;border-top:1px solid var(--filo)}
+  .p-preventivo .calc-carte>li{grid-column:1/-1;border-bottom:1px solid var(--filo)}
+  .p-preventivo .calc-carte .app{display:grid;grid-template-columns:120px minmax(0,1fr);grid-template-rows:auto auto auto 1fr;column-gap:18px;padding:20px 0 22px}
+  .p-preventivo .calc-carte figure{display:contents}
+  .p-preventivo .calc-carte img{grid-column:1;grid-row:1/-1;width:120px;height:120px;object-fit:cover;align-self:start;background:var(--nero)}
+  .p-preventivo .calc-tav{position:static;grid-column:2;grid-row:1;color:var(--i3)}
+  .p-preventivo .calc-carte .app h3{grid-column:2;grid-row:2;margin-top:8px;font-size:1.125rem;max-width:none}
+  .p-preventivo .calc-carte .app>p{grid-column:2;grid-row:3;margin-top:6px;font-size:.9375rem;line-height:1.45}
+  .p-preventivo .calc-carte .scarica{grid-column:2;grid-row:4;padding-top:12px}
+  .p-preventivo .calc-carte .app:focus-visible{outline-offset:2px}
+  .p-preventivo .perc-scrivi{margin:var(--s4) 0 var(--s5)}
+
+  .p-preventivo .confronto,.p-preventivo .confronto tbody,.p-preventivo .confronto tr,
+  .p-preventivo .confronto th,.p-preventivo .confronto td{display:block}
+  .p-preventivo .confronto colgroup,.p-preventivo .confronto thead{display:none}
+  .p-preventivo .confronto{width:auto;margin:0 calc(-1 * var(--lato));border-top:1px solid var(--filo-forte)}
+  .p-preventivo .confronto tr{padding:24px var(--lato) 26px;border-bottom:1px solid var(--filo)}
+  .p-preventivo .confronto th,.p-preventivo .confronto td{padding:0;border:0}
+  .p-preventivo .confronto tbody th{font-size:1.25rem;margin-bottom:16px}
+  .p-preventivo .confronto td{font-size:1rem}
+  .p-preventivo .confronto td+td{margin-top:14px}
+  .p-preventivo .conf-et{display:block;margin-bottom:4px;font:500 .6875rem/1.3 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+  .p-preventivo .conf-limite{background:var(--c1);border-bottom-color:transparent}
+  .p-preventivo .conf-limite>*{background:none}
+}
+
+/* ===== 30_settore.css ===== */
+/* =====================================================================
+   30. PAGINE DI SETTORE (.p-settore: settore-oem, settore-vsp, settore-phm) · uno stampo per tre pagine
+   Apertura nera: briciole, H1 su 7 colonne, lead e azioni su 5, la riga che manda alla tavola, la tavola del settore
+   nella cornice smussata della home con i richiami e il cartiglio, i quattro dati, l'indice fermo sotto la barra.
+   Poi: conto (carta) · dentro (nero) · materiali (panna) · casi (carta) · finiture (nero) · preventivo (panna) ·
+   domande e rovescio (carta). Le differenze fra le tre pagine stanno sotto .p-settore-oem / -vsp / -phm.
+   ===================================================================== */
+
+/* ---------- testata ---------- */
+.p-settore .settore-testa{padding-bottom:0}
+.p-settore .settore-testa h1{max-width:15ch}
+/* la scheda PDF del settore: una riga "allegato" sotto le azioni, col filo sopra, lingua e peso */
+.p-settore .pdf-settore{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-top:32px;padding-top:18px;max-width:34ch;
+  border-top:1px solid var(--filo);text-decoration:none;color:var(--i1)}
+.p-settore .pdf-settore .meta{font:400 var(--f-piccolo)/1.2 var(--disp);color:var(--i3)}
+.p-settore .pdf-settore:hover .link,.p-settore .pdf-settore:focus-visible .link{text-decoration-color:var(--rosso)}
+.p-settore .pdf-settore:hover .freccia,.p-settore .pdf-settore:focus-visible .freccia{transform:translateY(2px)}
+/* la riga che manda alla tavola: in fondo alla colonna del titolo, allineata alla riga del PDF, subito sopra la cornice
+   (la colonna destra occupa due righe della griglia; su tablet e telefono la riga scende sotto il PDF) */
+.p-settore .settore-testa .testata-lato{grid-row:1/span 2}
+.p-settore .settore-guida{grid-column:1/span 7;grid-row:2;align-self:end;margin:0;
+  font:500 clamp(1rem,.95rem + .25vw,1.125rem)/1.45 var(--disp);letter-spacing:-.005em;color:var(--i2);max-width:68ch}
+.p-settore .settore-cornice{margin-top:clamp(32px,4vw,56px)}
+
+/* la tavola del settore (1500 x 1000) in una finestra 16:9 sul desktop e 4:3 sul telefono, senza tagliare il soggetto.
+   --ts ingrandimento (larghezza dell'immagine / finestra), --tox e --toy spostamento in frazioni della larghezza,
+   --ta rapporto della finestra. I richiami portano --u e --v (frazioni della tavola) e qui diventano left e top. */
+.p-settore .tavola--settore{aspect-ratio:16/9;--ta:1.7778;--ts:1;--tox:0;--toy:.075;background:#0D0D0F}
+.p-settore .tavola--settore img{position:absolute;top:0;left:calc(var(--tox) * -100%);margin-top:calc(var(--toy) * -100%);
+  width:calc(var(--ts) * 100%);max-width:none;height:auto;object-fit:fill}
+.p-settore .tavola--settore .richiamo{left:calc((var(--u) * var(--ts) - var(--tox)) * 100%);top:calc((var(--v) * var(--ts) / 1.5 - var(--toy)) * var(--ta) * 100%)}
+.p-settore-oem .tavola--settore{--toy:.0754}
+.p-settore-vsp .tavola--settore{--toy:.0654}
+.p-settore-phm .tavola--settore{--toy:.092}
+/* VSP: la seconda riga della scheda del richiamo (processo e materiale) */
+.p-settore .pop span{white-space:normal}
+
+/* dati e indice: i quattro dati della home subito sotto la cornice, poi l'indice */
+.p-settore .settore-dati{padding-bottom:0}
+
+/* ---------- testa di sezione: lead lunga a corpo di testo (la lead della home regge 30 parole, queste ne hanno 50) ---------- */
+.p-settore .lead--corpo{font-size:clamp(1.125rem,1.03rem + .4vw,1.375rem);line-height:1.5;max-width:44ch}
+.p-settore .ts-lead .lead--corpo+.ts-link{margin-top:var(--s4)}
+
+/* ---------- il conto: le voci della home, in fondo il dato che le riassume ---------- */
+.p-settore .voce>.voce-dato{margin:auto 0 0;padding-top:var(--s3);border-top:1px solid var(--filo-forte);
+  font:500 .9375rem/1.45 var(--disp);letter-spacing:-.005em;color:var(--i1);max-width:46ch}
+.p-settore .voce>p:not(.voce-dato){margin-bottom:var(--s5)}
+.p-settore .conto-coda{margin-top:var(--s7)}
+.p-settore .conto-coda span{grid-column:1/span 8;padding-top:var(--s5);border-top:1px solid var(--filo-forte);
+  font:400 var(--f-lead)/1.4 var(--serif);letter-spacing:-.01em;color:var(--i1);max-width:44ch}
+
+/* ---------- dentro: famiglie a schede (tavola 1-7 | distinta 9-12), sequenza e mappa del veicolo ---------- */
+.p-settore .fam-schede{margin-bottom:var(--s5)}
+.p-settore .fam-schede button{font:500 1rem/1 var(--disp);letter-spacing:-.005em;padding:0 18px}
+.p-settore .fam-schede button[aria-selected="true"]{background:rgba(250,249,247,.07)}
+.p-settore .fam-schede button:focus-visible{outline-offset:-2px}
+.p-settore .famiglia{align-items:start;row-gap:var(--s5)}
+.p-settore .famiglia[hidden]{display:none}
+.p-settore .famiglia:focus-visible{outline-offset:8px}
+.p-settore .fam-tav{grid-column:1/span 7;margin:0}
+/* la tavola come un foglio: filo sottile, reperi d'angolo, etichetta "Tav." in alto a sinistra */
+.p-settore .mappa-img,.p-settore .seq-img{position:relative;display:block;background:#0D0D0F}
+.p-settore .mappa-img::before,.p-settore .seq-img::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 1px var(--filo)}
+.p-settore .mappa-img img,.p-settore .seq-img img{width:100%;height:auto}
+.p-settore .mappa-img::after{content:"";position:absolute;inset:14px;z-index:1;pointer-events:none;--r:var(--filo-forte);
+  background:linear-gradient(var(--r),var(--r)) top left/14px 1px no-repeat,linear-gradient(var(--r),var(--r)) top left/1px 14px no-repeat,
+    linear-gradient(var(--r),var(--r)) top right/14px 1px no-repeat,linear-gradient(var(--r),var(--r)) top right/1px 14px no-repeat,
+    linear-gradient(var(--r),var(--r)) bottom left/14px 1px no-repeat,linear-gradient(var(--r),var(--r)) bottom left/1px 14px no-repeat,
+    linear-gradient(var(--r),var(--r)) bottom right/14px 1px no-repeat,linear-gradient(var(--r),var(--r)) bottom right/1px 14px no-repeat}
+.p-settore .tav-et{position:absolute;top:26px;left:30px;z-index:1;color:var(--i2)}
+/* marcatori: i dischi dei richiami della home, fermi; il numero della riga sotto il mouse diventa rosso */
+.p-settore .marcatori{list-style:none;margin:0;padding:0}
+.p-settore .marcatori li{position:absolute;left:var(--x);top:var(--y);z-index:1;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;
+  background:var(--carta);color:var(--nero);font:600 .6875rem/26px var(--disp);text-align:center;font-variant-numeric:tabular-nums;cursor:default;
+  box-shadow:0 0 0 5px rgba(250,249,247,.14);transition:background-color .2s ease-out,color .2s ease-out,box-shadow .2s ease-out}
+.p-settore .marcatori li.acceso{z-index:2;background:var(--rosso);color:var(--carta);box-shadow:0 0 0 6px rgba(230,51,41,.28)}
+/* distinta: il registro delle parti, fili orizzontali; specifica in mono (l'unico mono del blocco) */
+.p-settore .distinta{grid-column:9/span 4;width:100%;border-collapse:collapse}
+.p-settore .distinta thead th{padding:0 12px 12px 0;text-align:left;vertical-align:bottom;font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--i3);border-bottom:1px solid var(--filo-forte)}
+.p-settore .distinta td{padding:17px 0 18px;vertical-align:baseline;border-bottom:1px solid var(--filo);transition:background-color .2s ease-out}
+.p-settore .distinta td.cod{width:48px;padding-right:12px;font:600 .8125rem/1.3 var(--disp);color:var(--i3);font-variant-numeric:tabular-nums;transition:color .2s ease-out}
+.p-settore .d-nome{display:block;font:500 1.0625rem/1.3 var(--disp);letter-spacing:-.01em;color:var(--i1)}
+.p-settore .spec{display:block;margin-top:6px;font:500 .75rem/1.5 var(--mono);letter-spacing:.01em;color:var(--i3)}
+.p-settore .distinta tr.acceso td{background:rgba(250,249,247,.04)}
+.p-settore .distinta tr.acceso td.cod{color:var(--i1)}
+.p-settore .distinta tbody tr{cursor:default}
+.p-settore .dentro-piede{margin-top:var(--s5);row-gap:var(--s3);align-items:start}
+.p-settore .dentro-dida{grid-column:1/span 7;font:400 .875rem/1.5 var(--disp);color:var(--i3);max-width:62ch}
+.p-settore .dentro-dida .etichetta{display:block;margin-bottom:6px}
+.p-settore .dentro-nota{grid-column:9/span 4;font:400 .875rem/1.5 var(--disp);color:var(--i3)}
+
+/* VSP: la sequenza dal telaio al veicolo (tre tavole 4:3) e la mappa con la distinta */
+.p-settore .sequenza{list-style:none;margin:0;row-gap:var(--s5);column-gap:var(--gap-card)}
+.p-settore .seq-voce{grid-column:span 4}
+.p-settore .seq-voce figure{margin:0}
+.p-settore .seq-img{aspect-ratio:4/3;overflow:hidden}
+.p-settore .seq-img img{transform:scale(1.16)}   /* le tre tavole hanno margini neri larghi: il veicolo riempie meglio la finestra */
+.p-settore .seq-voce figcaption{margin-top:16px;color:var(--i2)}
+.p-settore .seq-nota{margin-top:var(--s4)}
+.p-settore .seq-nota span{grid-column:1/-1}
+.p-settore .mappa{margin-top:var(--s7);align-items:start;row-gap:var(--s5)}
+.p-settore .mappa-tav{grid-column:1/span 8;margin:0}
+.p-settore .mappa-tav figcaption{margin-top:16px;font:400 .875rem/1.5 var(--disp);color:var(--i3);max-width:62ch}
+.p-settore .mappa-lato{grid-column:9/span 4}
+.p-settore .mappa-lato h3{max-width:16ch}
+.p-settore .mappa-lato>p{margin:var(--s3) 0 var(--s5);font:400 1rem/1.55 var(--serif);color:var(--i2)}
+.p-settore .mappa-lato .distinta{grid-column:auto}
+.p-settore .mappa-lato>.dentro-nota{margin:var(--s4) 0 0;font:400 .875rem/1.5 var(--disp);color:var(--i3)}
+
+/* ---------- materiali: un materiale per riga sulla griglia (nome 1-4, processo 5-6, perche' qui 8-12) ---------- */
+.p-settore .mat-righe{grid-column:1/-1;display:block;border-collapse:collapse}
+.p-settore .mat-righe thead,.p-settore .mat-righe tbody{display:block}
+.p-settore .mat-righe tr{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:baseline}
+.p-settore .mat-righe th,.p-settore .mat-righe td{padding:0;text-align:left}
+.p-settore .mat-righe tr>:first-child{grid-column:1/span 4}
+.p-settore .mat-righe tr>:nth-child(2){grid-column:5/span 2}
+.p-settore .mat-righe tr>:nth-child(3){grid-column:8/span 5}
+.p-settore .mat-righe thead tr{padding-bottom:14px;border-bottom:1px solid var(--filo-forte)}
+.p-settore .mat-righe thead th{font:500 .75rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-settore .mat-righe tbody tr{padding:36px 0 38px;border-bottom:1px solid var(--filo)}
+.p-settore .mat-righe tbody th{font:700 clamp(1.75rem,1.15rem + 1.9vw,3rem)/1 var(--disp);letter-spacing:-.03em;color:var(--i1)}
+.p-settore .mat-righe tbody th small{font-size:.46em;font-weight:500;letter-spacing:0;color:var(--i2)}
+.p-settore .mat-pro{font:500 .8125rem/1.2 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--i2)}
+.p-settore .mat-per{font:400 var(--f-corpo)/1.55 var(--serif);color:var(--i2);max-width:58ch}
+
+/* ---------- casi: la cornice col cartiglio dei casi della home, senza tavola, su carta ---------- */
+.p-settore .caso--testo{color:var(--i2)}
+/* senza tavola il cartiglio diventa la testata della cornice: la sigla del caso in una fascia, il testo sotto a tutta larghezza */
+.p-settore .caso--testo .caso-cartiglio{border-top:0;grid-template-columns:1fr;grid-template-rows:auto 1fr}
+.p-settore .caso--testo .cc-sx{flex-direction:row;align-items:baseline;padding:16px 32px 15px;border-right:0;border-bottom:1px solid var(--filo-forte)}
+.p-settore .caso--testo .cc-sx .mono{color:var(--i1)}
+.p-settore .caso--testo .cc-dx{gap:0;padding:32px 32px 34px}
+.p-settore .caso--testo h3{max-width:22ch}
+.p-settore .caso--testo .caso-testo{margin:var(--s3) 0 var(--s4);font:400 var(--f-corpo)/1.6 var(--serif);letter-spacing:0;color:var(--i2);max-width:52ch}
+.p-settore .caso--testo .link{margin-top:auto}
+.p-settore .su-carta .caso:hover,.p-settore .su-carta .caso:focus-visible{border-color:rgba(11,11,12,.48)}
+.p-settore .su-carta div.caso:hover{border-color:var(--filo-forte)}
+
+/* ---------- preventivo: la cornice del calcolatore sta subito sotto la testa ---------- */
+.p-settore .sez-quota .quota{margin-top:0}
+/* PHM: la nota di qualifica sotto la cornice, a filo della colonna 1 e su una riga leggibile (in 20_quota.css la larghezza
+   usa --q-pad, che vive solo sulla cornice: fuori dalla cornice la regola cade e la nota correva per tutta la pagina) */
+.p-settore .sez-quota .quota-nota{box-sizing:content-box;max-width:72ch;margin:var(--s4) 0 0;padding-inline:var(--lato);font-size:.875rem}
+
+/* ---------- domande e rovescio: testa e rovescio a sinistra (1-5), domande a destra (7-12) ---------- */
+.p-settore .faq-griglia{align-items:start}
+.p-settore .faq-lato{grid-column:1/span 5;display:flex;flex-direction:column;align-items:flex-start}
+.p-settore .faq-lato h2{max-width:14ch}
+.p-settore .faq-tutte{margin-top:var(--s4)}
+.p-settore .rovescio--grande{align-self:stretch;max-width:none;margin-top:var(--s6);padding:28px 32px 32px}
+.p-settore .rovescio--grande .etichetta{margin-bottom:12px}
+.p-settore .rovescio--grande p{font-size:1.0625rem;line-height:1.6;max-width:52ch}
+.p-settore .faq-elenco{grid-column:7/span 6}
+.p-settore .faq-elenco .domanda summary{grid-template-columns:48px 1fr 32px}
+.p-settore .faq-elenco .risposta{padding-left:64px}
+
+/* ---------- tablet ---------- */
+@media (max-width:1199px){
+  .p-settore .settore-testa .testata-lato{grid-row:auto}
+  .p-settore .settore-guida{grid-column:1/-1;grid-row:auto;margin-top:var(--s3)}
+  .p-settore .conto-coda span{grid-column:1/-1}
+  .p-settore .fam-tav,.p-settore .distinta{grid-column:1/-1}
+  .p-settore .dentro-dida,.p-settore .dentro-nota{grid-column:1/-1}
+  .p-settore .sequenza{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .p-settore .seq-voce{grid-column:auto}
+  .p-settore .mappa-tav,.p-settore .mappa-lato{grid-column:1/-1}
+  .p-settore .mat-righe tr>:first-child{grid-column:1/span 5}
+  .p-settore .mat-righe tr>:nth-child(2){grid-column:6/span 3}
+  .p-settore .mat-righe tr>:nth-child(3){grid-column:1/-1}
+  .p-settore .mat-righe thead tr>:nth-child(3){display:none}
+  .p-settore .mat-righe tbody td.mat-per{margin-top:14px}
+  .p-settore .caso{grid-column:1/-1}
+  .p-settore .faq-lato,.p-settore .faq-elenco{grid-column:1/-1}
+  .p-settore .faq-lato{margin-bottom:var(--s6)}
+  .p-settore .rovescio--grande{margin-top:var(--s5)}
+}
+
+/* ---------- telefono ---------- */
+@media (max-width:767px){
+  .p-settore .settore-guida{margin-top:var(--s2);font-size:.9375rem}
+  .p-settore .settore-cornice{margin-top:20px}
+  .p-settore .pdf-settore{max-width:none}
+  /* finestra 4:3 ritagliata sui richiami: piu' ingrandita dove i richiami sono vicini (OEM) */
+  .p-settore .tavola--settore{aspect-ratio:4/3;--ta:1.3333}
+  .p-settore-oem .tavola--settore{--ts:1.8;--tox:.346;--toy:.303}
+  .p-settore-vsp .tavola--settore{--ts:1.3;--tox:.15;--toy:.058}
+  .p-settore-phm .tavola--settore{--ts:1.4;--tox:.196;--toy:.157}
+  .p-settore .settore-dati{padding-top:var(--s6)}
+  .p-settore .conto-coda{margin-top:var(--s6)}
+  .p-settore .conto-coda span{padding-top:var(--s4);font-size:1.25rem}
+  .p-settore .voce>p:not(.voce-dato){margin-bottom:var(--s4)}
+  .p-settore .fam-schede{margin-bottom:var(--s4)}
+  .p-settore .fam-schede button{padding:0 14px;font-size:.9375rem}
+  .p-settore .tav-et{top:16px;left:18px}
+  .p-settore .mappa-img::after{inset:8px}
+  .p-settore .marcatori li{width:22px;height:22px;font-size:.625rem;line-height:22px;box-shadow:0 0 0 3px rgba(250,249,247,.14)}
+  .p-settore .distinta td{padding:14px 0 15px}
+  .p-settore .distinta td.cod{width:36px}
+  .p-settore .d-nome{font-size:1rem}
+  .p-settore .sequenza{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:var(--s4)}
+  .p-settore .seq-voce{grid-column:1/-1}
+  .p-settore .seq-voce figcaption{margin-top:12px}
+  .p-settore .seq-img img{transform:scale(1.32)}
+  .p-settore .mappa{margin-top:var(--s6)}
+  /* la vista laterale del veicolo e' bassa: sul telefono si ingrandisce del 18 % (il veicolo resta intero) perche' i sette
+     dischi non si tocchino; i marcatori seguono l'ingrandimento. L'etichetta va in alto a destra, dove la tavola e' vuota. */
+  .p-settore .mappa-tav .mappa-img{overflow:hidden}
+  .p-settore .mappa-tav .mappa-img img{transform:scale(1.18)}
+  .p-settore .mappa-tav .marcatori li{left:calc((var(--x) - 50%) * 1.18 + 50%);top:calc((var(--y) - 50%) * 1.18 + 50%)}
+  .p-settore .mappa-tav .tav-et{left:auto;right:18px}
+  .p-settore .mat-righe tr>:first-child,.p-settore .mat-righe tr>:nth-child(2),.p-settore .mat-righe tr>:nth-child(3){grid-column:1/-1}
+  .p-settore .mat-righe thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .p-settore .mat-righe tbody{border-top:1px solid var(--filo-forte)}
+  .p-settore .mat-righe tbody tr{padding:24px 0 26px}
+  .p-settore .mat-righe tbody th{font-size:2rem}
+  .p-settore .mat-righe tbody td.mat-pro{margin-top:10px}
+  .p-settore .mat-righe tbody td.mat-per{margin-top:12px}
+  .p-settore .mat-per{font-size:1rem}
+  .p-settore .caso--testo .cc-sx{padding:16px 20px}
+  .p-settore .caso--testo .cc-dx{padding:20px 20px 24px}
+  .p-settore .rovescio--grande{padding:20px 20px 22px}
+  .p-settore .rovescio--grande p{font-size:1rem}
+  .p-settore .faq-elenco .domanda summary{grid-template-columns:32px 1fr 24px}
+  .p-settore .faq-elenco .risposta{padding-left:40px}
+}
+
+@media print{
+  .p-settore .famiglia[hidden]{display:grid!important;margin-top:24px}
+  .p-settore .tavola--settore .richiamo{display:none}
+}
+
+/* ===== 30_tecnologie.css ===== */
+/* =====================================================================
+   30. TECNOLOGIE (.p-tecnologie): testata con i numeri e l'indice; tre schede di processo una sotto l'altra;
+   tolleranze e fianco a fianco in tabella; scala F0-F3 e visualizzatore (20_finiture.css) sullo stesso nero;
+   reparto, servizi e partner, percorso, confronto.
+   Fondi: testata nero · processi carta · tolleranze panna · fianco a fianco carta · finiture nero · reparto carta ·
+   servizi nero · percorso panna · confronto carta · striscia nero.
+   ===================================================================== */
+
+/* titoli di sezione lunghi (fino a 59 battute): tre righe nelle sei colonne invece di quattro */
+.p-tecnologie .ts-titolo h2{max-width:20ch}
+/* il titolo dei processi non ha una lead accanto: prende la riga e va su due righe */
+.p-tecnologie #processi .ts-titolo{grid-column:1/span 10}
+.p-tecnologie #processi .ts-titolo h2{max-width:26ch}
+/* sotto la barra c'e' anche l'indice (64 + 56 px): le colonne ferme partono piu' in basso */
+.p-tecnologie .perc-lato{top:160px}
+/* dieci voci nell'indice: un po' meno aria fra le voci, cosi' anche il tedesco sta in una riga a 1440 */
+@media (min-width:1200px){.p-tecnologie .indice a{padding-inline:18px}.p-tecnologie .indice a:first-child{padding-left:0}.p-tecnologie .indice a::after{left:18px;right:18px}.p-tecnologie .indice a:first-child::after{left:0}}
+
+/* ---------- PROCESSI: una scheda per riga. Tavola su 6 colonne, ferma mentre si legge; testo su 5 ---------- */
+.p-tecnologie .pr{position:relative;align-items:start;row-gap:var(--s5)}
+.p-tecnologie .pr+.pr{margin-top:var(--s7);padding-top:var(--s7)}
+.p-tecnologie .pr+.pr::before{content:"";position:absolute;top:0;left:var(--lato);right:var(--lato);height:1px;background:var(--filo)}
+/* la tavola e' un foglio nero col suo cartiglio, come la tavola della home */
+.p-tecnologie .pr-tavola{grid-column:1/span 6;position:sticky;top:160px;margin:0;background:var(--n0)}
+.p-tecnologie .pr-fig{display:block;aspect-ratio:4/3;overflow:hidden}
+.p-tecnologie .pr-fig img{width:100%;height:100%;object-fit:cover}
+.p-tecnologie .pr-cartiglio{display:grid;grid-template-columns:3fr 5fr 5fr;margin:0;border-top:1px solid var(--filo-forte)}
+.p-tecnologie .pr-cartiglio>div{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:64px;padding:12px 20px;border-left:1px solid var(--filo-forte)}
+.p-tecnologie .pr-cartiglio>div:first-child{border-left:0}
+.p-tecnologie .pr-cartiglio dt{font:500 .6875rem/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--i3)}
+.p-tecnologie .pr-cartiglio dd{margin:0;font:500 .875rem/1.35 var(--disp);color:var(--i1)}
+.p-tecnologie .pr-cartiglio dd.mono{font:500 .8125rem/1.35 var(--mono);letter-spacing:.02em}
+
+.p-tecnologie .pr-testo{grid-column:8/span 5;display:flex;flex-direction:column}
+.p-tecnologie .pr .sigla{margin-top:-.08em}
+.p-tecnologie .pr .proc-frase{max-width:40ch}
+/* scheda dati sempre visibile: righe di specifica col filo, voce a sinistra, valore pieno */
+.p-tecnologie .pr-dati{margin-top:var(--s5);grid-template-columns:max-content minmax(0,1fr);column-gap:28px;row-gap:0;align-items:start}
+.p-tecnologie .pr-dati dt,.p-tecnologie .pr-dati dd{border-top:1px solid var(--filo)}
+.p-tecnologie .pr-dati dt{padding:15px 0 12px;text-align:left}
+.p-tecnologie .pr-dati dd{padding:11px 0 12px;font-size:.9375rem;line-height:1.4}
+.p-tecnologie .pr-dati>div:last-child>*{border-bottom:1px solid var(--filo)}
+.p-tecnologie .pr-dati dd small{display:block;margin-top:4px;font:400 .8125rem/1.45 var(--disp);color:var(--i3)}
+.p-tecnologie .pr-quando{margin-top:var(--s5);max-width:none}
+.p-tecnologie .pr-quando p{font-size:1.0625rem}
+
+/* ---------- TABELLE con le sigle dei processi in testa (tolleranze, fianco a fianco) ---------- */
+.p-tecnologie .tabella--processi{table-layout:fixed}
+.p-tecnologie .tabella--processi .c-voce{width:22%}
+.p-tecnologie .tol-tabella .c-voce{width:25%}
+.p-tecnologie .tabella--processi tbody th{white-space:normal;padding-right:24px}
+.p-tecnologie .tabella--processi thead th{vertical-align:bottom;padding-bottom:18px}
+.p-tecnologie .tabella--processi thead th b{display:block;font:700 clamp(1.5rem,1.1rem + 1.2vw,2.25rem)/1 var(--disp);letter-spacing:-.03em;text-transform:none;color:var(--i1)}
+.p-tecnologie .tabella--processi thead th small{display:block;margin-top:8px;font:400 .8125rem/1.3 var(--disp);letter-spacing:0;text-transform:none;color:var(--i3);white-space:normal}
+.p-tecnologie .tabella--processi thead th a{display:inline-block;color:inherit;text-decoration:none;padding-bottom:6px;
+  background:linear-gradient(var(--rosso),var(--rosso)) 0 100%/0 2px no-repeat;transition:background-size .4s var(--e-uscita)}
+.p-tecnologie .tabella--processi thead th a:hover,.p-tecnologie .tabella--processi thead th a:focus-visible{background-size:100% 2px}
+.p-tecnologie .tabella tbody th{font-weight:600}
+.p-tecnologie .tabella td{padding-right:28px}
+.p-tecnologie .tabella td.forte{font-weight:500;color:var(--i1)}
+.p-tecnologie .tabella td.limite{color:var(--i3)}
+
+/* tolleranze: tabella su 8 colonne, riquadro su 3 a destra */
+.p-tecnologie .tol-griglia{align-items:start;row-gap:var(--s6)}
+.p-tecnologie .tol-tabella{grid-column:1/span 8}
+.p-tecnologie .tol-nota{grid-column:10/span 3}
+.p-tecnologie .tol-nota p{font-size:1rem;line-height:1.55}
+.p-tecnologie .tol-nota p+p{margin-top:14px}
+/* fianco a fianco: tutta la griglia */
+.p-tecnologie .af-tabella,.p-tecnologie .co-tabella{grid-column:1/-1}
+.p-tecnologie .af-tabella td{font-size:.9375rem}
+
+/* confronto: la colonna "Additive in serie" su una fascia panna, senza rosso */
+.p-tecnologie .tabella--confronto .c-voce{width:20%}
+.p-tecnologie .tabella--confronto col.noi{width:40%;background:var(--c1)}
+.p-tecnologie .tabella--confronto .c-stampo{width:40%}
+.p-tecnologie .tabella--confronto td,.p-tecnologie .tabella--confronto thead th:not(:first-child){padding-left:24px;padding-right:24px}
+.p-tecnologie .tabella--confronto thead th{vertical-align:bottom}
+.p-tecnologie .tabella--confronto thead th:not(:first-child){padding-top:20px;font:600 clamp(1.125rem,1rem + .5vw,1.5rem)/1.15 var(--disp);letter-spacing:-.015em;text-transform:none;color:var(--i1)}
+.p-tecnologie .tabella--confronto td{font-size:1rem;line-height:1.45}
+.p-tecnologie .tabella--confronto td:nth-child(2){color:var(--i1)}
+
+/* ---------- FINITURE: blocco vetrina su nero, scala F0-F3 in quattro colonne, poi il visualizzatore ---------- */
+.p-tecnologie .fin{padding-block:calc(var(--sez) * 1.25)}
+.p-tecnologie .scala{row-gap:var(--s6)}
+.p-tecnologie .scala>li{grid-column:span 3}
+.p-tecnologie .grado{display:flex;flex-direction:column;width:100%;padding-top:var(--s4);border-top:1px solid var(--filo-forte)}
+.p-tecnologie .grado-sigla{font:600 var(--f-numero)/.9 var(--disp);letter-spacing:-.035em;color:var(--i1);font-variant-numeric:tabular-nums}
+.p-tecnologie .grado h3{margin-top:var(--s4);font-size:clamp(1.25rem,1rem + .6vw,1.5rem)}
+.p-tecnologie .grado-tag{margin-top:12px;line-height:1.35}
+.p-tecnologie .grado p{margin-top:var(--s3);font:400 1rem/1.55 var(--serif);color:var(--i2);max-width:34ch}
+.p-tecnologie .fin .sez-nota{margin-top:var(--s5)}
+.p-tecnologie .vis{margin-top:var(--s8)}
+.p-tecnologie .vis-titolo{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.5rem);line-height:1.05;letter-spacing:-.02em;max-width:18ch}
+.p-tecnologie .vis-lead{font:400 1.0625rem/1.55 var(--serif);color:var(--i2);max-width:44ch}
+
+/* ---------- REPARTO: distinta numerata su 3 colonne (filo sopra ogni voce, come i dati), partner in un pannello ---------- */
+.p-tecnologie .rep-griglia{align-items:start;row-gap:var(--s6)}
+.p-tecnologie .rep-elenco{grid-column:1/span 8;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:var(--gap-card);row-gap:var(--s5)}
+.p-tecnologie .rep-elenco li{display:flex;flex-direction:column;gap:10px;padding-top:var(--s3);border-top:1px solid var(--filo)}
+.p-tecnologie .rep-elenco li>span:last-child{font:500 clamp(1.125rem,1rem + .4vw,1.375rem)/1.25 var(--disp);letter-spacing:-.015em;color:var(--i1);max-width:20ch}
+.p-tecnologie .rep-partner{grid-column:10/span 3;margin-top:0;padding:20px 24px 24px}
+.p-tecnologie .rep-partner .etichetta{margin-bottom:10px}
+.p-tecnologie .rep-partner p{font:500 clamp(1.125rem,1rem + .4vw,1.375rem)/1.25 var(--disp);letter-spacing:-.015em;color:var(--i1)}
+
+/* ---------- SERVIZI: tre voci in fila; sotto, la fascia qualita' e partner ---------- */
+.p-tecnologie .servizi{row-gap:var(--s6)}
+.p-tecnologie .servizi .voce{grid-column:span 4}
+.p-tecnologie .servizi .voce>p{margin-bottom:0;max-width:38ch}
+.p-tecnologie .partner{margin-top:var(--s7);row-gap:var(--s5)}
+.p-tecnologie .partner-tit{grid-column:1/-1;margin:0;padding-top:var(--s5);border-top:1px solid var(--filo)}
+.p-tecnologie .partner .nomi{margin-top:0}
+
+/* ---------- tablet ---------- */
+@media (max-width:1199px){
+  .p-tecnologie .pr-tavola{grid-column:1/-1;position:static}
+  .p-tecnologie .pr-testo{grid-column:1/span 7}
+  .p-tecnologie .tol-tabella{grid-column:1/-1}
+  .p-tecnologie .tol-nota{grid-column:1/span 5}
+  .p-tecnologie .scala>li{grid-column:span 4}
+  .p-tecnologie .rep-elenco{grid-column:1/-1}
+  .p-tecnologie .rep-partner{grid-column:1/span 5}
+  .p-tecnologie .servizi .voce{grid-column:span 4}
+  .p-tecnologie .perc-lato{top:auto}
+}
+/* ---------- telefono ---------- */
+@media (max-width:767px){
+  .p-tecnologie .pr+.pr{margin-top:var(--s6);padding-top:var(--s6)}
+  .p-tecnologie .pr-testo{grid-column:1/-1}
+  .p-tecnologie .pr .sigla{font-size:3.5rem}
+  .p-tecnologie .pr-cartiglio{grid-template-columns:auto 1fr}
+  .p-tecnologie .pr-cartiglio>div{min-height:0;padding:12px 16px}
+  .p-tecnologie .pr-cartiglio>div:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--filo-forte)}
+  .p-tecnologie .pr-dati{column-gap:20px}
+  .p-tecnologie .tabella--processi{min-width:600px;table-layout:auto}
+  .p-tecnologie .af-tabella .tabella{min-width:720px}
+  /* confronto su telefono: niente scorrimento; ogni voce sopra, le due colonne affiancate sotto (additive sulla fascia panna) */
+  .p-tecnologie .tabella--confronto,.p-tecnologie .tabella--confronto thead,.p-tecnologie .tabella--confronto tbody{display:block;min-width:0}
+  .p-tecnologie .tabella--confronto colgroup{display:none}
+  .p-tecnologie .tabella--confronto tr{display:grid;grid-template-columns:1fr 1fr}
+  .p-tecnologie .tabella--confronto thead th:first-child{display:none}
+  .p-tecnologie .tabella--confronto thead th:not(:first-child){padding:14px 14px 12px;font-size:1rem}
+  .p-tecnologie .tabella--confronto tbody th{grid-column:1/-1;position:static;padding:20px 0 10px;border-bottom:0;background:none}
+  .p-tecnologie .tabella--confronto td{padding:10px 14px 16px;font-size:.9375rem}
+  .p-tecnologie .tabella--confronto .noi,.p-tecnologie .tabella--confronto td:nth-child(2){background:var(--c1)}
+  .p-tecnologie .co-tabella{overflow:visible}
+  .p-tecnologie .tol-nota{grid-column:1/-1}
+  .p-tecnologie .scala>li{grid-column:auto}
+  .p-tecnologie .grado-sigla{font-size:3.5rem}
+  .p-tecnologie .grado h3{font-size:1.375rem}
+  .p-tecnologie .vis{margin-top:var(--s7)}
+  .p-tecnologie .rep-elenco{grid-template-columns:1fr 1fr;row-gap:var(--s4)}
+  .p-tecnologie .rep-elenco li>span:last-child{font-size:1rem}
+  .p-tecnologie .rep-partner{grid-column:1/-1}
+  .p-tecnologie .servizi .voce{grid-column:1/-1}
+  .p-tecnologie .partner{margin-top:var(--s6)}
+}
