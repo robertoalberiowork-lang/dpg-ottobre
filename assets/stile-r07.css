@@ -1088,11 +1088,15 @@ html:not(.js) .p-applicazioni .filtri-barra{display:none}
 /* la tavola: fondo nero, smusso in basso come la cornice della home, cartiglio a due caselle */
 .p-applicazioni .fam-tav{--smusso:20px;margin:0;display:flex;flex-direction:column;
   clip-path:polygon(0 0,100% 0,100% calc(100% - var(--smusso)),calc(100% - var(--smusso)) 100%,var(--smusso) 100%,0 calc(100% - var(--smusso)))}
-.p-applicazioni .fam-img{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--n0)}
+.p-applicazioni .fam-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--n0)}
 .p-applicazioni .fam-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--e-vast)}
 .p-applicazioni .fam-img--disegno img{object-fit:contain;padding:5% 7%}
 .p-applicazioni .famiglia:hover .fam-img img{transform:scale(1.03)}
-.p-applicazioni .fam-cartiglio{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);margin:0;border-top:1px solid var(--filo-forte)}
+/* la resa illustrativa: rendering al posto della tavola da CAD, stesso ritaglio 3:2; il fuoco verticale segue il pezzo */
+.p-applicazioni .fam-img--resa{background:#D9D9D6}
+.p-applicazioni .fam-img--resa.fam-img--alto img{object-position:50% 30%}
+.p-applicazioni .fam-img--resa.fam-img--basso img{object-position:50% 70%}
+.p-applicazioni .fam-cartiglio{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);margin:0;border-top:1px solid var(--filo-forte)}
 .p-applicazioni .fam-cartiglio>div{display:flex;flex-direction:column;gap:4px;padding:13px 18px 15px;min-width:0}
 .p-applicazioni .fam-cartiglio>div:first-child{padding-left:calc(var(--smusso) + 4px)}
 .p-applicazioni .fam-cartiglio>div+div{border-left:1px solid var(--filo-forte);padding-right:calc(var(--smusso) + 4px)}
@@ -1204,6 +1208,11 @@ html:not(.js) .p-applicazioni .filtri-barra{display:none}
   .p-applicazioni .famiglia[hidden]{display:grid!important}
   .p-applicazioni .fam-tav{clip-path:none}
 }
+
+/* testata: una scena sola (rendering panoramico 12:5) al posto delle tre tavole; sul telefono ritaglio centrale 4:3 dello stesso file */
+.p-applicazioni .insieme.insieme--scena{display:block;aspect-ratio:12/5;overflow:hidden;background:#D9D9D6}
+.p-applicazioni .insieme--scena img{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:700px){.p-applicazioni .insieme.insieme--scena{aspect-ratio:4/3}}
 
 /* ===== 30_casi.css ===== */
 /* =====================================================================
